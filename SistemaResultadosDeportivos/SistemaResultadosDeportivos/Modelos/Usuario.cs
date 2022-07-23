@@ -8,13 +8,15 @@ namespace SistemaResultadosDeportivos.Modelos
 {
     internal class Usuario
     {
-        String correo;
-        String username;
-        int rol;
+        public String correo { get; set; }
+        public String nombre { get; set; }
+        public int rol { get; set; }
 
-        public Usuario()
+        public Usuario(String c, String n, int r)
         {
-
+            correo = c;
+            nombre = n;
+            rol = r;
         }
     }
 }

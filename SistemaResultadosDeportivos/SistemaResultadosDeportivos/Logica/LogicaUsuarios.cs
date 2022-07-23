@@ -3,36 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using SistemaResultadosDeportivos.Modelos;
 using SistemaResultadosDeportivos.AccesoADatos;
+
 
 namespace SistemaResultadosDeportivos
 {
     internal class LogicaUsuarios
     {
-        private AccesoADatos.DatosUsuario dt;
-        public string correoUsuario;
-        public string username;
-        public string contrasena;
-        public short rol;
+        private DatosUsuario dt;
 
-        public LogicaUsuarios(DatosUsuario dt, string correoUsuario, string username, string contrasena, short rol)
+        public LogicaUsuarios()
         {
-            this.dt = dt;
-            this.correoUsuario = correoUsuario;
-            this.username = username;
-            this.contrasena = contrasena;
-            this.rol = rol;
+            dt = new DatosUsuario();
+        }
+        public Logica.RespuestaAutenticacion autenticar(String correo, String contrasena)
+        {
+            Usuario usuario = dt.getPorId(correo);
+            Logica.RespuestaAutenticacion res;
+            if (usuario != null && dt.testConexion(correo, contrasena))
+            {
+                dt.actualizarConexion(correo, contrasena);
+                res = new Logica.RespuestaAutenticacion(true, usuario.rol);
+            }
+            else
+            {
+                res = new Logica.RespuestaAutenticacion(false, -1);
+            }
+            return res;
         }
 
-        public bool agregarUsuario()
+        public bool registrarUsuario(String correo, String nombre, String contrasena, int rol)
         {
-            return dt.agregarUsuario(correoUsuario, username, contrasena, rol);
+            return dt.agregarUsuario(correo, nombre, contrasena, rol);
         }
-
-        public bool eliminarUsuario()
+        public bool bajaUsuario(String correo)
         {
-            return dt.eliminarUsuario(correoUsuario);
+            return dt.eliminarUsuario(correo);
         }
     }
 }

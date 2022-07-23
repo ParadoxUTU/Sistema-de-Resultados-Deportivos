@@ -11,41 +11,59 @@ namespace SistemaResultadosDeportivos.AccesoADatos
 {
     internal class DatosUsuario
     {
-        public bool agregarUsuario(String email, String username, String pass, short rol)
+        public Usuario getPorId(String correo)
         {
             try
             {
+                Usuario usuario;
                 ADODB.Connection cn = Conexion.Crear();
-
-                String sql1 = "INSERT INTO Usuarios VALUES('" + email + "', '" + pass + "', '" + username + "', '" + rol + "');";
-                Console.WriteLine(sql1);
-                String sql2 = "CREATE USER '" + email + "'@'localhost' IDENTIFIED BY '" + pass + "';";
-                cn.Execute(sql1, out object cantFilas, -1);
-                cn.Execute(sql2, out cantFilas, -1);
-                if (rol == 1)
-                {
-                    String sql3 = "GRANT ALL ON Usuarios TO '" + email + "'@'localhost';";
-                    cn.Execute(sql3, out object cantFilas3, -1);
-                }
+                String sql = "SELECT FROM USUARIOS WHERE dirCorreo = '" + correo + "';";
+                ADODB.Recordset rs = cn.Execute(sql, out object cantFilas, -1);
                 cn.Close();
-                return true;
+                if (rs.RecordCount > 0)
+                {
+                    String c = rs.Fields[0].Value();
+                    String n = rs.Fields[1].Value();
+                    int r = rs.Fields[2].Value();
+                    usuario = new Usuario(c, n, r);
+                }
+                else
+                {
+                    usuario = null;
+                }
+                rs.Close();
+                return usuario;
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.ToString());
-                return false;
+                return null;
             }
         }
 
-        public bool eliminarUsuario(String email)
+        public bool agregarUsuario(String correo, String nombre, String contrasena, int rol)
         {
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-                String sql = "DELETE FROM Usuarios WHERE dirCorreo = '" + email + "';";
-                String sql2 = "DROP USER '" + email + "'@'localhost';";
-                cn.Execute(sql, out object cantFilas, -1);
-                cn.Execute(sql2, out object cantFilas2, -1);
+
+                String stringSql = "INSERT INTO Usuarios VALUES('" + correo + "', '" + contrasena + "', '" + nombre + "', '" + rol + "');";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                stringSql = "CREATE USER '" + correo + "'@'localhost' IDENTIFIED BY '" + contrasena + "';";
+                cn.Execute(stringSql, out cantFilas, -1);
+                if (rol == 0)
+                {
+                    stringSql = "GRANT SELECT ON Usuarios TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out cantFilas, -1);
+                    stringSql = "GRANT SELECT ON Publicidad TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out cantFilas, -1);
+                }
+                if (rol == 1)
+                {
+                    stringSql = "GRANT ALL ON Usuarios TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out cantFilas, -1);
+                    stringSql = "GRANT ALL ON Publicidad TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out cantFilas, -1);
+                }
                 cn.Close();
                 return true;
             }
@@ -55,37 +73,41 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             }
         }
 
-        public ADODB.Recordset getAllUsuarios()
+        public bool eliminarUsuario(String correo)
         {
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-                String sql = "SELECT * FROM USUARIOS;";
-                ADODB.Recordset rs = cn.Execute(sql, out object cantFilas, -1);
+                String stringSql = "DELETE FROM Usuarios WHERE dirCorreo = '" + correo + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                stringSql = "DROP USER '" + correo + "'@'localhost';";
+                cn.Execute(stringSql, out cantFilas, -1);
                 cn.Close();
-                return rs;
+                return true;
             }
-            catch (Exception ex)
+            catch
             {
-                return null;
+                return false;
             }
         }
 
-        /*public bool probarConexion(String email, String contrasena)
+        public bool testConexion(String correo, String contrasena)
         {
             try
             {
-                ADODB.Connection cn = new ADODB.Connection();
-                cn.Open("miodbc", email, contrasena);
+                ADODB.Connection cn = Conexion.Crear();
+                return true;
             }
-        }*/
+            catch
+            {
+                return false;
+            }
+        }
 
-        /*public Usuario getUsuarioByID(string email)
+        public void actualizarConexion(String usuario, String contrasena)
         {
-            ADODB.Connection cn = new ADODB.Connection();
-            String sql = "SELECT * FROM USUARIOS WHERE dirCorreo = '" + email + "';";
-            ADODB.Recordset rs = cn.Execute(sql, out object cantFilas, -1);
-            return (short)rs.Fields[3].Value;
-        }*/
+            Conexion.usuario = usuario;
+            Conexion.contrasena = contrasena;
+        }
     }
 }

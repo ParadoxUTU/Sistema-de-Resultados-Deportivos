@@ -48,7 +48,6 @@ C:\Users\Administrador\Source\Repos\Sistema-de-Resultados-Deportivos\SistemaResu
 C:\Users\Administrador\Source\Repos\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.csproj.ResolveComReference.cache
 C:\Users\Administrador\Source\Repos\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.InicioApp.resources
 C:\Users\Administrador\Source\Repos\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.Usuarios.resources
-C:\Users\Administrador\Source\Repos\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.Publicidad.resources
 C:\Users\Administrador\Source\Repos\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.Backoffice.resources
 C:\Users\Administrador\Source\Repos\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.Login.resources
 C:\Users\Administrador\Source\Repos\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.Properties.Resources.resources
@@ -57,3 +56,4 @@ C:\Users\Administrador\Source\Repos\Sistema-de-Resultados-Deportivos\SistemaResu
 C:\Users\Administrador\Source\Repos\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.csproj.CopyComplete
 C:\Users\Administrador\Source\Repos\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.exe
 C:\Users\Administrador\Source\Repos\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.pdb
+C:\Users\Administrador\Source\Repos\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.frmPublicidad.resources

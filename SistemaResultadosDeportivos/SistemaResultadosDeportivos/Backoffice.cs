@@ -37,7 +37,7 @@ namespace SistemaResultadosDeportivos
 
         private void publicidadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Publicidad publicidad = new Publicidad();
+            frmPublicidad publicidad = new frmPublicidad();
             publicidad.MdiParent = this;
             publicidad.Show();
         }
