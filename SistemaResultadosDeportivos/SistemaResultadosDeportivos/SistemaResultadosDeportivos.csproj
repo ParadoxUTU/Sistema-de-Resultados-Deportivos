@@ -67,7 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoADatos\DatosUsuario.cs" />
-    <Compile Include="APIautenticacion.cs" />
+    <Compile Include="APIs\APIautenticacion.cs" />
     <Compile Include="APIpublicidad.cs" />
     <Compile Include="AccesoADatos\Conexion.cs" />
     <Compile Include="AccesoADatos\DatosPublicidad.cs" />
@@ -77,6 +77,7 @@
     <Compile Include="InicioApp.Designer.cs">
       <DependentUpon>InicioApp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\Usuario.cs" />
     <Compile Include="Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,7 +97,7 @@
       <DependentUpon>Backoffice.cs</DependentUpon>
     </Compile>
     <Compile Include="LogicaPublicidad.cs" />
-    <Compile Include="LogicaUsuarios.cs" />
+    <Compile Include="Logica\LogicaUsuarios.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>

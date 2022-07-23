@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaResultadosDeportivos.Modelos;
+using ADODB;
 
 namespace SistemaResultadosDeportivos.AccesoADatos
 {
@@ -68,5 +70,22 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 return null;
             }
         }
+
+        /*public bool probarConexion(String email, String contrasena)
+        {
+            try
+            {
+                ADODB.Connection cn = new ADODB.Connection();
+                cn.Open("miodbc", email, contrasena);
+            }
+        }*/
+
+        /*public Usuario getUsuarioByID(string email)
+        {
+            ADODB.Connection cn = new ADODB.Connection();
+            String sql = "SELECT * FROM USUARIOS WHERE dirCorreo = '" + email + "';";
+            ADODB.Recordset rs = cn.Execute(sql, out object cantFilas, -1);
+            return (short)rs.Fields[3].Value;
+        }*/
     }
 }
