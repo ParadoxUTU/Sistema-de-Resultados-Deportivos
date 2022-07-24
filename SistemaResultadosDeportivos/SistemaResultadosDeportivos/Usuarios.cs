@@ -30,13 +30,13 @@ namespace SistemaResultadosDeportivos
         {
             lviewUsuarios.Items.Clear();
             List<Usuario> l = lg.devolverUsuarios();
-            if (l != null)
+            if (l.Count > 0)
             {
                 foreach (Usuario us in l)
                 {
                     ListViewItem item = new ListViewItem(us.correo);
                     item.SubItems.Add(us.nombre);
-                    item.SubItems.Add(us.rol.ToString()); ;
+                    item.SubItems.Add(us.rol.ToString());
                     lviewUsuarios.Items.Add(item);
                 }
             }

@@ -64,8 +64,8 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                             rol = (int)rs.Fields[2].Value;
                             Usuario usuario = new Usuario(correo, nombre, rol);
                             lista.Add(usuario);
-                            rs.MoveNext();
                         }
+                        rs.MoveNext();
                     }
                     cn.Close();
                 }
@@ -87,10 +87,10 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-
-                String stringSql = "INSERT INTO Usuarios VALUES('" + correo + "', '" + nombre + "', '" + rol + "');";
+       
+                String stringSql = "CREATE USER '" + correo + "'@'localhost' IDENTIFIED BY '" + contrasena + "';";
                 cn.Execute(stringSql, out object cantFilas, -1);
-                stringSql = "CREATE USER '" + correo + "'@'localhost' IDENTIFIED BY '" + contrasena + "';";
+                stringSql = "INSERT INTO Usuarios VALUES('" + correo + "', '" + nombre + "', '" + rol + "');";
                 cn.Execute(stringSql, out cantFilas, -1);
                 if (rol == 0)
                 {
@@ -98,9 +98,13 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                     cn.Execute(stringSql, out cantFilas, -1);
                     stringSql = "GRANT SELECT ON Publicidad TO '" + correo + "'@'localhost';";
                     cn.Execute(stringSql, out cantFilas, -1);
+                    /*stringSql = "GRANT 'Usuario' TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out cantFilas, -1);*/
                 }
                 if (rol == 1)
                 {
+                    /*stringSql = "GRANT 'Admin' TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out cantFilas, -1);*/
                     stringSql = "GRANT ALL ON Usuarios TO '" + correo + "'@'localhost';";
                     cn.Execute(stringSql, out cantFilas, -1);
                     stringSql = "GRANT ALL ON Publicidad TO '" + correo + "'@'localhost';";
