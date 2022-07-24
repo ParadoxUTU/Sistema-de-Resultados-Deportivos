@@ -41,5 +41,10 @@ namespace SistemaResultadosDeportivos
         {
             return dt.eliminarUsuario(correo);
         }
+
+        public List<Usuario> devolverUsuarios()
+        {
+            return dt.getUsuarios();
+        }
     }
 }

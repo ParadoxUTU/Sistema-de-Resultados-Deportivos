@@ -22,7 +22,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 cn.CursorLocation = ADODB.CursorLocationEnum.adUseClient;
                 return cn;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
                 return null;
@@ -34,8 +34,15 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             ADODB.Connection cn = new ADODB.Connection();
             try
             {
-                cn.Open(origenDatos, us, con);
-                cn.CursorLocation = ADODB.CursorLocationEnum.adUseClient;
+                if (!con.Equals(""))
+                {
+                    cn.Open(origenDatos, us, con);
+                    cn.CursorLocation = ADODB.CursorLocationEnum.adUseClient;
+                }
+                else
+                {
+                    cn = null;
+                }
                 return cn;
             }
             catch

@@ -23,7 +23,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 {
                     String c = rs.Fields[0].Value.ToString();
                     String n = rs.Fields[1].Value.ToString();
-                    int r;  
+                    int r;
                     int.TryParse(rs.Fields[2].Value.ToString(), out r);
                     usuario = new Usuario(c, n, r);
                 }
@@ -35,11 +35,51 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 cn.Close();
                 return usuario;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
                 return null;
             }
+        }
+
+        public List<Usuario> getUsuarios()
+        {
+            string correo;
+            string nombre;
+            int rol;
+            List<Usuario> lista = new List<Usuario>();
+            String stringSql = "SELECT * FROM Usuarios;";
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                ADODB.Recordset rs = cn.Execute(stringSql, out object cantFilas, -1);
+                if (rs.RecordCount > 0)
+                {
+                    for (int i = 0; i < (int)cantFilas; i++)
+                    {
+                        correo = (string)rs.Fields[0].Value;
+                        if (correo != Conexion.usuario)
+                        {
+                            nombre = (string)rs.Fields[1].Value;
+                            rol = (int)rs.Fields[2].Value;
+                            Usuario usuario = new Usuario(correo, nombre, rol);
+                            lista.Add(usuario);
+                            rs.MoveNext();
+                        }
+                    }
+                    cn.Close();
+                }
+                else
+                {
+                    cn.Close();
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            return lista;
         }
 
         public bool agregarUsuario(String correo, String nombre, String contrasena, int rol)
@@ -48,7 +88,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             {
                 ADODB.Connection cn = Conexion.Crear();
 
-                String stringSql = "INSERT INTO Usuarios VALUES('" + correo + "', '" + contrasena + "', '" + nombre + "', '" + rol + "');";
+                String stringSql = "INSERT INTO Usuarios VALUES('" + correo + "', '" + nombre + "', '" + rol + "');";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 stringSql = "CREATE USER '" + correo + "'@'localhost' IDENTIFIED BY '" + contrasena + "';";
                 cn.Execute(stringSql, out cantFilas, -1);
@@ -65,12 +105,17 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                     cn.Execute(stringSql, out cantFilas, -1);
                     stringSql = "GRANT ALL ON Publicidad TO '" + correo + "'@'localhost';";
                     cn.Execute(stringSql, out cantFilas, -1);
+                    stringSql = "GRANT CREATE USER ON *.* TO '" + correo + "'@'localhost' WITH GRANT OPTION;";
+                    cn.Execute(stringSql, out cantFilas, -1);
+                    stringSql = "GRANT ALL PRIVILEGES ON prueba.* TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out cantFilas, -1);
                 }
                 cn.Close();
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString());
                 return false;
             }
         }
@@ -87,8 +132,9 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 cn.Close();
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString());
                 return false;
             }
         }

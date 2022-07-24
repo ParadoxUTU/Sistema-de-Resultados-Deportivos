@@ -8,16 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ADODB;
+using SistemaResultadosDeportivos.Logica;
+using SistemaResultadosDeportivos.Modelos;
 
 namespace SistemaResultadosDeportivos
 {
     public partial class Usuarios : Form
     {
-        public ListViewItem lista;
+        private LogicaUsuarios lg;
 
         public Usuarios()
         {
             InitializeComponent();
+            lg = new LogicaUsuarios();
             this.Dock = DockStyle.Fill;
             listarUsuarios();
             lviewUsuarios.FullRowSelect = true;
@@ -25,32 +28,25 @@ namespace SistemaResultadosDeportivos
 
         private void listarUsuarios()
         {
-            /*try
+            lviewUsuarios.Items.Clear();
+            List<Usuario> l = lg.devolverUsuarios();
+            if (l != null)
             {
-                lviewUsuarios.Items.Clear();
-                ADODB.Connection cn = new ADODB.Connection();
-                cn.Open("miodbc", "root", "Veimach0"); //"contraseña" se puede cambiar por la contraseña del portador de la base de datos
-                String sql = "SELECT * FROM USUARIOS;";
-                ADODB.Recordset rs = cn.Execute(sql, out object cantFilas, -1);
-                for (int i = 0; i < (int)cantFilas; i++)
+                foreach (Usuario us in l)
                 {
-                    lista = new ListViewItem(Convert.ToString(rs.Fields[0].Value));
-                    lista.SubItems.Add(Convert.ToString(rs.Fields[1].Value));
-                    lviewUsuarios.Items.Add(lista);
-                    rs.MoveNext();
+                    ListViewItem item = new ListViewItem(us.correo);
+                    item.SubItems.Add(us.nombre);
+                    item.SubItems.Add(us.rol.ToString()); ;
+                    lviewUsuarios.Items.Add(item);
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }*/
         }
 
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
-            string email = txtEmail.Text;
+            string correo = txtEmail.Text;
             string contrasena = txtContrasena.Text;
-            short rol = 0;
+            int rol = 0;
             string username = txtUsername.Text;
             try
             {
@@ -65,54 +61,33 @@ namespace SistemaResultadosDeportivos
             {
                 MessageBox.Show("Las opciones son: 0 para aficionado, 1 para administrador");
             }
-            else
+            else if (lg.registrarUsuario(correo, username, contrasena, rol))
             {
-                try
-                {
-                    ADODB.Connection cn = new ADODB.Connection();
-                    cn.Open("miodbc", "root", "Veimach0");
-                    String sql = "CREATE USER '" + email + "'@'localhost' IDENTIFIED BY '" + contrasena + "';";
-                    String sql2 = "";
-                    String sql3 = "INSERT INTO Usuarios VALUES('" + email + "', '" + username + "', '" + contrasena + "', '" + rol + "');";
-                    cn.Execute(sql, out object cantFilas, -1);
-                    sql2 = "GRANT ALL ON Usuarios TO '" + email + "'@'localhost';";
-                    cn.Execute(sql2, out object cantFilas2, -1);
-                    cn.Execute(sql3, out object cantFilas3, -1);
-                    cn.Close();
-                    listarUsuarios();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-            }
-            txtEmail.Text = null;
-            txtContrasena.Text = null;
-            txtRol.Text = null;
-            txtUsername.Text = null;
-        }
-
-        private void btnEliminar_Click_1(object sender, EventArgs e)
-        {
-            string email = lviewUsuarios.SelectedItems[0].Text;
-            try
-            {
-                ADODB.Connection cn = new ADODB.Connection();
-                cn.Open("miodbc", "root", "Veimach0");
-                String sql = "DELETE FROM Usuarios WHERE dirCorreo = '" + email + "';";
-                String sql2 = "DROP USER '" + email + "'@'localhost';";
-                cn.Execute(sql, out object cantFilas, -1);
-                cn.Execute(sql2, out object cantFilas2, -1);
-                cn.Close();
                 listarUsuarios();
                 txtEmail.Text = null;
                 txtContrasena.Text = null;
                 txtRol.Text = null;
                 txtUsername.Text = null;
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("No se ha podido agregar el usuario");
+            }
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+            if (lviewUsuarios.SelectedItems.Count > 0)
+            {
+                string correo = lviewUsuarios.SelectedItems[0].Text;
+                if (lg.bajaUsuario(correo))
+                {
+                    listarUsuarios();
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido eliminar el usuario");
+                }
             }
         }
 

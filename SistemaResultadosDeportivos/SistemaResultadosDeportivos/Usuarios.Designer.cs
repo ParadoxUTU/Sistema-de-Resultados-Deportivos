@@ -40,8 +40,9 @@
             this.txtContrasena = new System.Windows.Forms.TextBox();
             this.txtRol = new System.Windows.Forms.TextBox();
             this.lviewUsuarios = new System.Windows.Forms.ListView();
-            this.dirCorreo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.username = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.correo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.rol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // btnAgregar
@@ -141,25 +142,30 @@
             // lviewUsuarios
             // 
             this.lviewUsuarios.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.dirCorreo,
-            this.username});
+            this.correo,
+            this.nombre,
+            this.rol});
             this.lviewUsuarios.HideSelection = false;
-            this.lviewUsuarios.Location = new System.Drawing.Point(355, 50);
+            this.lviewUsuarios.Location = new System.Drawing.Point(307, 37);
             this.lviewUsuarios.Name = "lviewUsuarios";
-            this.lviewUsuarios.Size = new System.Drawing.Size(391, 280);
+            this.lviewUsuarios.Size = new System.Drawing.Size(444, 280);
             this.lviewUsuarios.TabIndex = 12;
             this.lviewUsuarios.UseCompatibleStateImageBehavior = false;
             this.lviewUsuarios.View = System.Windows.Forms.View.Details;
             // 
-            // dirCorreo
+            // correo
             // 
-            this.dirCorreo.Text = "Correo";
-            this.dirCorreo.Width = 188;
+            this.correo.Text = "Correo";
+            this.correo.Width = 188;
             // 
-            // username
+            // nombre
             // 
-            this.username.Text = "Nombre de Usuario";
-            this.username.Width = 193;
+            this.nombre.Text = "Nombre de Usuario";
+            this.nombre.Width = 193;
+            // 
+            // rol
+            // 
+            this.rol.Text = "Rol";
             // 
             // Usuarios
             // 
@@ -200,7 +206,8 @@
         private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.TextBox txtRol;
         private System.Windows.Forms.ListView lviewUsuarios;
-        private System.Windows.Forms.ColumnHeader dirCorreo;
-        private System.Windows.Forms.ColumnHeader username;
+        private System.Windows.Forms.ColumnHeader correo;
+        private System.Windows.Forms.ColumnHeader nombre;
+        private System.Windows.Forms.ColumnHeader rol;
     }
 }
