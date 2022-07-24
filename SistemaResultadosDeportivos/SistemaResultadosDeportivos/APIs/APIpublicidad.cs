@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace SistemaResultadosDeportivos
+namespace SistemaResultadosDeportivos.APIs
 {
-    class APIpublicidad
+    public class APIpublicidad
     {
         private LogicaPublicidad p = new LogicaPublicidad();
         public string urlBanner { get; set; }

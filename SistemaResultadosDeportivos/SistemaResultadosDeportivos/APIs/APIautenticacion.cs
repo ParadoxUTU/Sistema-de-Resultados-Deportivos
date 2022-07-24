@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace SistemaResultadosDeportivos
+namespace SistemaResultadosDeportivos.APIs
 {
-    internal class APIautenticacion
+    public class APIautenticacion
     {
         private LogicaUsuarios u;
         public bool exito;
