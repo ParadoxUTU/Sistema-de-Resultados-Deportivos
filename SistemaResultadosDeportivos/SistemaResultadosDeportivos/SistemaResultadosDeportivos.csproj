@@ -68,61 +68,61 @@
   <ItemGroup>
     <Compile Include="AccesoADatos\DatosUsuario.cs" />
     <Compile Include="APIs\APIautenticacion.cs" />
-    <Compile Include="APIs\APIpublicidad.cs" />
     <Compile Include="AccesoADatos\Conexion.cs" />
     <Compile Include="AccesoADatos\DatosPublicidad.cs" />
-    <Compile Include="InicioApp.cs">
+    <Compile Include="APIs\APIpublicidad.cs" />
+    <Compile Include="Grafica\FrmInicioApp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InicioApp.Designer.cs">
-      <DependentUpon>InicioApp.cs</DependentUpon>
+    <Compile Include="Grafica\FrmInicioApp.Designer.cs">
+      <DependentUpon>FrmInicioApp.cs</DependentUpon>
     </Compile>
     <Compile Include="Logica\RespuestaAutenticacion.cs" />
     <Compile Include="Modelos\Publicidad.cs" />
     <Compile Include="Modelos\Usuario.cs" />
     <Compile Include="Logica\RespuestaPublicidad.cs" />
-    <Compile Include="Usuarios.cs">
+    <Compile Include="Grafica\ABMUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios.Designer.cs">
-      <DependentUpon>Usuarios.cs</DependentUpon>
+    <Compile Include="Grafica\ABMUsuarios.Designer.cs">
+      <DependentUpon>ABMUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPublicidad.cs">
+    <Compile Include="Grafica\ABMPublicidad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPublicidad.Designer.cs">
-      <DependentUpon>frmPublicidad.cs</DependentUpon>
+    <Compile Include="Grafica\ABMPublicidad.Designer.cs">
+      <DependentUpon>ABMPublicidad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Backoffice.cs">
+    <Compile Include="Grafica\FrmBackoffice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Backoffice.Designer.cs">
-      <DependentUpon>Backoffice.cs</DependentUpon>
+    <Compile Include="Grafica\FrmBackoffice.Designer.cs">
+      <DependentUpon>FrmBackoffice.cs</DependentUpon>
     </Compile>
     <Compile Include="Logica\LogicaPublicidad.cs" />
     <Compile Include="Logica\LogicaUsuarios.cs" />
-    <Compile Include="Login.cs">
+    <Compile Include="Grafica\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Grafica\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="InicioApp.resx">
-      <DependentUpon>InicioApp.cs</DependentUpon>
+    <EmbeddedResource Include="Grafica\FrmInicioApp.resx">
+      <DependentUpon>FrmInicioApp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios.resx">
-      <DependentUpon>Usuarios.cs</DependentUpon>
+    <EmbeddedResource Include="Grafica\ABMUsuarios.resx">
+      <DependentUpon>ABMUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPublicidad.resx">
-      <DependentUpon>frmPublicidad.cs</DependentUpon>
+    <EmbeddedResource Include="Grafica\ABMPublicidad.resx">
+      <DependentUpon>ABMPublicidad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Backoffice.resx">
-      <DependentUpon>Backoffice.cs</DependentUpon>
+    <EmbeddedResource Include="Grafica\FrmBackoffice.resx">
+      <DependentUpon>FrmBackoffice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Grafica\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -12,17 +12,17 @@ using ADODB;
 
 namespace SistemaResultadosDeportivos
 {
-    public partial class frmPublicidad : Form
+    public partial class ABMPublicidad : Form
     {
         public LogicaPublicidad lg;
 
-        public frmPublicidad()
+        public ABMPublicidad()
         {
             InitializeComponent();
             lg = new LogicaPublicidad();
+            this.Dock = DockStyle.Fill;
             listarPublicidad();
             lviewPublicidad.FullRowSelect = true;
-            this.Dock = DockStyle.Fill;
         }
 
         private void listarPublicidad()
@@ -47,10 +47,18 @@ namespace SistemaResultadosDeportivos
             string marca = txtMarca.Text;
             string pathBanner = txtUrlBanner.Text;
             string urlSitio = txtUrlSitio.Text;
-            if (lg.agregarPublicidad(marca, pathBanner, urlSitio))
+            if(!marca.Equals("") && !pathBanner.Equals("") && !urlSitio.Equals(""))
             {
-                listarPublicidad();
+                if (lg.agregarPublicidad(marca, pathBanner, urlSitio))
+                {
+                    listarPublicidad();
+                }
             }
+            else
+            {
+                MessageBox.Show("No se ha podido agregar la publicidad");
+            }
+            limpiarTextos();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -62,6 +70,14 @@ namespace SistemaResultadosDeportivos
                 {
                     listarPublicidad();
                 }
+                else
+                {
+                    MessageBox.Show("No se ha podido eliminar la publicidad.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se ha publicidad seleccionada.");
             }
         }
 
@@ -69,15 +85,23 @@ namespace SistemaResultadosDeportivos
         {
             try
             {
-                if (lviewPublicidad.SelectedItems != null)
+                if (lviewPublicidad.SelectedItems.Count == 1)
                 {
                     String marca = Microsoft.VisualBasic.Interaction.InputBox("Nombre de Marca:", "Modificar Publicidad");
                     String urlBanner = Microsoft.VisualBasic.Interaction.InputBox("Ruta del Banner:", "Modificar Publicidad");
                     String urlSitio = Microsoft.VisualBasic.Interaction.InputBox("Ruta del Sitio:", "Modificar Publicidad");
-                    String id = lviewPublicidad.SelectedItems[0].Text;
-                    if(lg.modificarPublicidad(id, marca, urlBanner, urlSitio))
+                    int id;
+                    bool exito = int.TryParse(lviewPublicidad.SelectedItems[0].Text, out id);
+                    if (!marca.Equals("") && !urlBanner.Equals("") && !urlSitio.Equals("") && exito)
                     {
-                        listarPublicidad();
+                        if (lg.modificarPublicidad(id, marca, urlBanner, urlSitio))
+                        {
+                            listarPublicidad();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Datos invalidos.");
                     }
                 }
                 else
@@ -91,14 +115,21 @@ namespace SistemaResultadosDeportivos
             }
         }
 
+        private void limpiarTextos()
+        {
+            txtMarca.Text = null;
+            txtUrlBanner.Text = null;
+            txtUrlSitio.Text = null;
+        }
+
         private void Publicidad_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void frmPublicidad_Load(object sender, EventArgs e)
+        private void ABMPublicidad_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

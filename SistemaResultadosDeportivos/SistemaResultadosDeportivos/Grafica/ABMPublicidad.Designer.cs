@@ -1,6 +1,6 @@
 ﻿namespace SistemaResultadosDeportivos
 {
-    partial class frmPublicidad
+    partial class ABMPublicidad
     {
         /// <summary>
         /// Required designer variable.
@@ -129,8 +129,10 @@
             this.marca,
             this.urlbanner,
             this.urlsitio});
+            this.lviewPublicidad.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lviewPublicidad.HideSelection = false;
             this.lviewPublicidad.Location = new System.Drawing.Point(375, 37);
+            this.lviewPublicidad.MultiSelect = false;
             this.lviewPublicidad.Name = "lviewPublicidad";
             this.lviewPublicidad.Size = new System.Drawing.Size(650, 297);
             this.lviewPublicidad.TabIndex = 24;
@@ -156,11 +158,12 @@
             this.urlsitio.Text = "Sitio Web";
             this.urlsitio.Width = 250;
             // 
-            // frmPublicidad
+            // ABMPublicidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 425);
+            this.ControlBox = false;
             this.Controls.Add(this.lviewPublicidad);
             this.Controls.Add(this.txtUrlSitio);
             this.Controls.Add(this.txtUrlBanner);
@@ -171,9 +174,10 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
-            this.Name = "frmPublicidad";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "ABMPublicidad";
             this.Text = "Publicidad";
-            this.Load += new System.EventHandler(this.frmPublicidad_Load);
+            this.Load += new System.EventHandler(this.ABMPublicidad_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

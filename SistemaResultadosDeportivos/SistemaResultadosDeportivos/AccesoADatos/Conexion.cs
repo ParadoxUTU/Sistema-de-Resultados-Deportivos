@@ -10,6 +10,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
     public class Conexion
     {
         private static String origenDatos = "miodbc";
+        public static String nombreBD = "bd_paradox";
         public static String usuario = "auth";
         public static String contrasena = "1";
 

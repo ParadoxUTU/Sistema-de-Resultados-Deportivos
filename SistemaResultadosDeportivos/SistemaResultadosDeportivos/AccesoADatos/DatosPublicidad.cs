@@ -86,7 +86,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             }
         }
 
-        public bool modificarPublicidad(String id, String marca, String pathBanner, String urlSitio)
+        public bool modificarPublicidad(int id, String marca, String pathBanner, String urlSitio)
         {
             try
             {

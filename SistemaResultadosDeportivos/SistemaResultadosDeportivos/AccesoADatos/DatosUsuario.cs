@@ -107,7 +107,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                     cn.Execute(stringSql, out cantFilas, -1);
                     stringSql = "GRANT CREATE USER ON *.* TO '" + correo + "'@'localhost' WITH GRANT OPTION;";
                     cn.Execute(stringSql, out cantFilas, -1);
-                    stringSql = "GRANT ALL PRIVILEGES ON bd_paradox.* TO '" + correo + "'@'localhost';";
+                    stringSql = "GRANT ALL PRIVILEGES ON "+ Conexion.nombreBD + ".* TO '" + correo + "'@'localhost';";
                     cn.Execute(stringSql, out cantFilas, -1);
                 }
                 cn.Close();
