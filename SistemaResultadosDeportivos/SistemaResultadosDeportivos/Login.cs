@@ -8,27 +8,42 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaResultadosDeportivos.Logica;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace SistemaResultadosDeportivos
 {
     public partial class Login : Form
     {
-        LogicaUsuarios lg;
+        APIautenticacion autenticacion;
 
         public Login()
         {
             InitializeComponent();
-            lg = new LogicaUsuarios();
+            autenticacion = new APIautenticacion();
+        }
+
+        private bool getExitoFromJson(string jsonInput)
+        {
+            var autenticacionJSON = JsonConvert.DeserializeObject<APIautenticacion>(jsonInput);
+            return autenticacionJSON.exito;
+        }
+
+        private int getRolFromJson(string jsonInput)
+        {
+            var autenticacionJSON = JsonConvert.DeserializeObject<APIautenticacion>(jsonInput);
+            return autenticacionJSON.rol;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             String correo = txtEmail.Text;
             String contrasena = txtContrasena.Text;
-            RespuestaAutenticacion res = lg.autenticar(correo, contrasena);
-            if (res.exito)
+            bool exito = getExitoFromJson(autenticacion.loginToJSON(correo, contrasena));
+            int rol = getRolFromJson(autenticacion.loginToJSON(correo, contrasena));
+            if (exito)
             {
-                switch (res.rol)
+                switch (rol)
                 {
                     case 0:
                         new InicioApp().Visible = true;
@@ -39,11 +54,6 @@ namespace SistemaResultadosDeportivos
                 }
                 this.Hide();
             }
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

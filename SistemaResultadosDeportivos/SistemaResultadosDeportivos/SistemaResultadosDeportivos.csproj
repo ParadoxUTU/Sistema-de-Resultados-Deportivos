@@ -68,7 +68,7 @@
   <ItemGroup>
     <Compile Include="AccesoADatos\DatosUsuario.cs" />
     <Compile Include="APIs\APIautenticacion.cs" />
-    <Compile Include="APIpublicidad.cs" />
+    <Compile Include="APIs\APIpublicidad.cs" />
     <Compile Include="AccesoADatos\Conexion.cs" />
     <Compile Include="AccesoADatos\DatosPublicidad.cs" />
     <Compile Include="InicioApp.cs">

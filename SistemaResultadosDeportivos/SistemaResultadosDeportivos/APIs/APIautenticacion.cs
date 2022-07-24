@@ -1,53 +1,31 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace SistemaResultadosDeportivos
 {
     internal class APIautenticacion
     {
-        private LogicaUsuarios u = new LogicaUsuarios();
-        public string username;
-        public string contrasena;
-        public string correoUsuario;
-        public short rol;
+        private LogicaUsuarios u;
+        public bool exito;
+        public int rol;
 
         public APIautenticacion()
         {
-
-        }
-        public APIautenticacion(LogicaUsuarios u, string username, string contrasena, string correoUsuario, short rol)
-        {
-            this.u = u;
-            this.username = username;
-            this.contrasena = contrasena;
-            this.correoUsuario = correoUsuario;
-            this.rol = rol;
+            u = new LogicaUsuarios();
         }
 
-        public string crearUsuario()
+        public string loginToJSON(string e, string c)
         {
-            bool valido = u.agregarUsuario(correoUsuario, contrasena, username, rol);
-            return serializar(valido.ToString());
-        }
-
-        public string login()
-        {
-            bool valido = u.login(correoUsuario, contrasena);
-            return serializar(valido.ToString());
-        }
-
-        public string serializar(string entrada)
-        {
-            return JObject.FromObject(entrada).ToString();
-        }
-
-        public string toJSON()
-        {
-            return JObject.FromObject(this).ToString();
+            exito = u.autenticar(e, c).exito;
+            rol = u.autenticar(e, c).rol;
+            var json = JObject.FromObject(this);
+            return json.ToString();
         }
     }
-}*/
+}
 

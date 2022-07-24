@@ -12,7 +12,6 @@ namespace SistemaResultadosDeportivos
     {
         APIpublicidad publicidad;
         string jsonPublicidad;
-        //APIpublicidad objeto;
         string urlSitio, urlBanner;
         Bitmap bitmapBanner;
         Image imagenBanner;
