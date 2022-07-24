@@ -8,7 +8,7 @@ using System.Linq;
 using System.Windows.Forms;
 using SistemaResultadosDeportivos.Modelos;
 
-namespace SistemaResultadosDeportivos
+namespace SistemaResultadosDeportivos.Logica
 {
     public partial class LogicaPublicidad
     {

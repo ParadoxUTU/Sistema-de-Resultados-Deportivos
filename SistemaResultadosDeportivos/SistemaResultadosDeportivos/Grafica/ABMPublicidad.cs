@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaResultadosDeportivos.Modelos;
+using SistemaResultadosDeportivos.Logica;
 using ADODB;
 
 namespace SistemaResultadosDeportivos

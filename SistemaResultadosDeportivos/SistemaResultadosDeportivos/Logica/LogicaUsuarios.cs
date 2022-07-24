@@ -7,7 +7,7 @@ using SistemaResultadosDeportivos.Modelos;
 using SistemaResultadosDeportivos.AccesoADatos;
 
 
-namespace SistemaResultadosDeportivos
+namespace SistemaResultadosDeportivos.Logica
 {
     internal class LogicaUsuarios
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaResultadosDeportivos
+namespace SistemaResultadosDeportivos.Logica
 {
     public class RespuestaPublicidad
     {

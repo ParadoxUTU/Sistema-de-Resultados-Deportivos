@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using SistemaResultadosDeportivos.Logica;
 
 namespace SistemaResultadosDeportivos.APIs
 {
@@ -15,8 +16,9 @@ namespace SistemaResultadosDeportivos.APIs
         public string urlSitio { get; set; }
         public APIpublicidad()
         {
-            urlBanner = p.publicidadRandom().pathBanner;
-            urlSitio = p.publicidadRandom().urlSitio;
+            RespuestaPublicidad publicidad = p.publicidadRandom();
+            urlBanner = publicidad.pathBanner;
+            urlSitio = publicidad.urlSitio;
         }
 
         public String toJSON()
