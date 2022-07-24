@@ -52,6 +52,56 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             return lista;
         }
 
+        public bool agregarPublicidad(String marca, String pathBanner, String urlSitio)
+        {
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "INSERT INTO Publicidad (Marca, PathBanner,  URLSitio) VALUES('" + marca + "', '" + pathBanner + "', '" + urlSitio + "');";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool eliminarPublicidad(String id)
+        {
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "DELETE FROM Publicidad WHERE idPublicidad = '" + id + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool modificarPublicidad(String id, String marca, String pathBanner, String urlSitio)
+        {
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "UPDATE Publicidad SET marca = '" + marca + "', PathBanner = '" + pathBanner + "', URLSitio = '" + urlSitio + "' WHERE IdPublicidad = '" + id + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
+
         public string getBanner(String idPublicidad)
         {
             String stringSql = "SELECT PathBanner FROM Publicidad WHERE idPublicidad ='" + idPublicidad + "';";
@@ -69,34 +119,6 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 return ex.ToString();
             }
             return urlBanner;
-        }
-
-        public string[,] getAllBanners() //retorna urlBanner y urlSitio en un array2D de todas las filas.
-        {
-            String stringSql = "SELECT * FROM Publicidad;";
-            string[,] pareja;
-            string urlSitio, urlBanner;
-            try
-            {
-                ADODB.Connection cn = Conexion.Crear();
-                ADODB.Recordset rs = cn.Execute(stringSql, out object cantFilas, -1);
-                pareja = new string[(int)cantFilas, 2];
-                for (int i = 0; i < (int)cantFilas; i++)
-                {
-                    urlSitio = rs.Fields[3].Value.ToString();
-                    urlBanner = rs.Fields[2].Value.ToString();
-                    pareja[i, 0] = urlSitio;
-                    pareja[i, 1] = urlBanner;
-                    rs.MoveNext();
-                }
-                cn.Close();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                return null;
-            }
-            return pareja;
         }
     }
 }

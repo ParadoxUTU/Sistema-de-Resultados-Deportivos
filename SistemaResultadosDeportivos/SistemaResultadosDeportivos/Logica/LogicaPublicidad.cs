@@ -43,6 +43,21 @@ namespace SistemaResultadosDeportivos
         {
             return datosPublicidad.getPublicidades();
         }
+
+        public bool agregarPublicidad(String marca, String pathBanner, String urlSitio)
+        {
+            return datosPublicidad.agregarPublicidad(marca, pathBanner, urlSitio);
+        }
+
+        public bool eliminarPublicidad(String id)
+        {
+            return datosPublicidad.eliminarPublicidad(id);
+        }
+
+        public bool modificarPublicidad(String id, String marca, String pathBanner, String urlSitio)
+        {
+            return datosPublicidad.modificarPublicidad(id, marca, pathBanner, urlSitio);
+        }
     }
 }
 

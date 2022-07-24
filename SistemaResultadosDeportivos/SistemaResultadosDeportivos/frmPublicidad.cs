@@ -42,38 +42,20 @@ namespace SistemaResultadosDeportivos
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             string marca = txtMarca.Text;
-            string urlBanner = txtUrlBanner.Text;
+            string pathBanner = txtUrlBanner.Text;
             string urlSitio = txtUrlSitio.Text;
-            try
+            if (lg.agregarPublicidad(marca, pathBanner, urlSitio))
             {
-                ADODB.Connection cn = new ADODB.Connection();
-                cn.Open("miodbc", "root", "");
-                String sql = "INSERT INTO Publicidad (Marca, PathBanner, URLSitio) VALUES('" + marca + "', '" + urlBanner + "', '" + urlSitio + "');";
-                cn.Execute(sql, out object cantFilas, -1);
-                cn.Close();
                 listarPublicidad();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
             }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             string id = lviewPublicidad.SelectedItems[0].Text;
-            try
+            if (lg.eliminarPublicidad(id))
             {
-                ADODB.Connection cn = new ADODB.Connection();
-                cn.Open("miodbc", "root", "Veimach0");
-                String sql = "DELETE FROM Publicidad WHERE idPublicidad = '" + id + "';";
-                cn.Execute(sql, out object cantFilas, -1);
-                cn.Close();
                 listarPublicidad();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -87,12 +69,10 @@ namespace SistemaResultadosDeportivos
                     String urlBanner = Microsoft.VisualBasic.Interaction.InputBox("Ruta del Banner:", "Modificar Publicidad");
                     String urlSitio = Microsoft.VisualBasic.Interaction.InputBox("Ruta del Sitio:", "Modificar Publicidad");
                     String id = lviewPublicidad.SelectedItems[0].Text;
-                    ADODB.Connection cn = new ADODB.Connection();
-                    cn.Open("miodbc", "root", "Veimach0");
-                    String sql = "UPDATE Publicidad SET marca = '" + marca + "', PathBanner = '" + urlBanner + "', URLSitio = '" + urlSitio +"' WHERE IdPublicidad = '" + id + "';";
-                    cn.Execute(sql, out object cantFilas, -1);
-                    cn.Close();
-                    listarPublicidad();
+                    if(lg.modificarPublicidad(id, marca, urlBanner, urlSitio))
+                    {
+                        listarPublicidad();
+                    }
                 }
                 else
                 {
