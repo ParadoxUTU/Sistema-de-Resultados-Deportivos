@@ -29,13 +29,16 @@ namespace SistemaResultadosDeportivos
         {
             lviewPublicidad.Items.Clear();
             List<Publicidad> l = lg.devolverPublicidades();
-            foreach (Publicidad pb in l)
+            if(l != null)
             {
-                ListViewItem item = new ListViewItem(pb.idPublicidad.ToString());
-                item.SubItems.Add(pb.marca);
-                item.SubItems.Add(pb.pathBanner);
-                item.SubItems.Add(pb.urlSitio);
-                lviewPublicidad.Items.Add(item);
+                foreach (Publicidad pb in l)
+                {
+                    ListViewItem item = new ListViewItem(pb.idPublicidad.ToString());
+                    item.SubItems.Add(pb.marca);
+                    item.SubItems.Add(pb.pathBanner);
+                    item.SubItems.Add(pb.urlSitio);
+                    lviewPublicidad.Items.Add(item);
+                }
             }
         }
 
@@ -52,10 +55,13 @@ namespace SistemaResultadosDeportivos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            string id = lviewPublicidad.SelectedItems[0].Text;
-            if (lg.eliminarPublicidad(id))
+            if (lviewPublicidad.SelectedItems.Count > 0)
             {
-                listarPublicidad();
+                string id = lviewPublicidad.SelectedItems[0].Text;
+                if (lg.eliminarPublicidad(id))
+                {
+                    listarPublicidad();
+                }
             }
         }
 

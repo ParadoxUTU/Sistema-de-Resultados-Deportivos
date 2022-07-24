@@ -98,28 +98,23 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                     cn.Execute(stringSql, out cantFilas, -1);
                     stringSql = "GRANT SELECT ON Publicidad TO '" + correo + "'@'localhost';";
                     cn.Execute(stringSql, out cantFilas, -1);
-                    /*stringSql = "GRANT 'Usuario' TO '" + correo + "'@'localhost';";
-                    cn.Execute(stringSql, out cantFilas, -1);*/
                 }
                 if (rol == 1)
                 {
-                    /*stringSql = "GRANT 'Admin' TO '" + correo + "'@'localhost';";
-                    cn.Execute(stringSql, out cantFilas, -1);*/
                     stringSql = "GRANT ALL ON Usuarios TO '" + correo + "'@'localhost';";
                     cn.Execute(stringSql, out cantFilas, -1);
                     stringSql = "GRANT ALL ON Publicidad TO '" + correo + "'@'localhost';";
                     cn.Execute(stringSql, out cantFilas, -1);
                     stringSql = "GRANT CREATE USER ON *.* TO '" + correo + "'@'localhost' WITH GRANT OPTION;";
                     cn.Execute(stringSql, out cantFilas, -1);
-                    stringSql = "GRANT ALL PRIVILEGES ON prueba.* TO '" + correo + "'@'localhost';";
+                    stringSql = "GRANT ALL PRIVILEGES ON bd_paradox.* TO '" + correo + "'@'localhost';";
                     cn.Execute(stringSql, out cantFilas, -1);
                 }
                 cn.Close();
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.ToString());
                 return false;
             }
         }
@@ -133,6 +128,23 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 cn.Execute(stringSql, out object cantFilas, -1);
                 stringSql = "DROP USER '" + correo + "'@'localhost';";
                 cn.Execute(stringSql, out cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool modificarUsuario(String correo, String nombre, int rol)
+        {
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "UPDATE Usuarios SET username = '" + nombre + "', rol = '" + rol + "' WHERE dirCorreo = '" + correo + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;
             }

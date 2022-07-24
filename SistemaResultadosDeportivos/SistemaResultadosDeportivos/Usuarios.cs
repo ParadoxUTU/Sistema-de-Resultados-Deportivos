@@ -97,34 +97,21 @@ namespace SistemaResultadosDeportivos
             {
                 if (lviewUsuarios.SelectedItems != null)
                 {
-                    String username = Microsoft.VisualBasic.Interaction.InputBox("Nombre de usuario:", "Modificar Usuario");
-                    short rol = 0;
-                    try
+                    String nombre = Microsoft.VisualBasic.Interaction.InputBox("Nombre del Usuario:", "Modificar Usuario");
+                    int rol;
+                    int.TryParse(Microsoft.VisualBasic.Interaction.InputBox("Rol:", "Modificar Usuario"), out rol);
+                    String correo = lviewUsuarios.SelectedItems[0].Text;
+                    if(rol == 0 || rol == 1)
                     {
-                        rol = short.Parse(Microsoft.VisualBasic.Interaction.InputBox("Rol:", "Modificar Usuario"));
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Tipo de dato no valido, reemplazado por 0.");
-                    }
-                    String email = lviewUsuarios.SelectedItems[0].Text;
-                    if (rol != 0 && rol != 1)
-                    {
-                        MessageBox.Show("Las opciones son: 0 para aficionado, 1 para administrador");
-                    }
-                    else
-                    {
-                        ADODB.Connection cn = new ADODB.Connection();
-                        cn.Open("miodbc", "root", "Veimach0");
-                        String sql = "UPDATE Usuarios SET username = '" + username + "', rol = '" + rol + "' WHERE dirCorreo = '" + email + "';";
-                        cn.Execute(sql, out object cantFilas, -1);
-                        cn.Close();
-                        listarUsuarios();
+                        if (lg.modificarUsuario(correo, nombre, rol))
+                        {
+                            listarUsuarios();
+                        }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No hay usuario seleccionado.");
+                    MessageBox.Show("No hay publicidad seleccionada.");
                 }
             }
             catch (Exception ex)

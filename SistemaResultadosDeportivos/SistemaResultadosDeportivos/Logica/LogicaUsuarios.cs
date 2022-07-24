@@ -46,5 +46,10 @@ namespace SistemaResultadosDeportivos
         {
             return dt.getUsuarios();
         }
+
+        public bool modificarUsuario(String correo, String nombre, int rol)
+        {
+            return dt.modificarUsuario(correo, nombre, rol);
+        }
     }
 }
