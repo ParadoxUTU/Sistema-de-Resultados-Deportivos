@@ -26,7 +26,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             {
                 ADODB.Connection cn = Conexion.Crear();
                 ADODB.Recordset rs = cn.Execute(stringSql, out object cantFilas, -1);
-                if (rs != null)
+                if (rs.RecordCount > 0)
                 {
                     for (int i = 0; i < (int)cantFilas; i++)
                     {

@@ -7,17 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaResultadosDeportivos.Modelos;
 using ADODB;
 
 namespace SistemaResultadosDeportivos
 {
     public partial class frmPublicidad : Form
     {
-        public ListViewItem lista;
+        public LogicaPublicidad lg;
 
         public frmPublicidad()
         {
             InitializeComponent();
+            lg = new LogicaPublicidad();
             listarPublicidad();
             lviewPublicidad.FullRowSelect = true;
             this.Dock = DockStyle.Fill;
@@ -26,26 +28,14 @@ namespace SistemaResultadosDeportivos
         private void listarPublicidad()
         {
             lviewPublicidad.Items.Clear();
-            try
+            List<Publicidad> l = lg.devolverPublicidades();
+            foreach (Publicidad pb in l)
             {
-                lviewPublicidad.Items.Clear();
-                ADODB.Connection cn = new ADODB.Connection();
-                cn.Open("miodbc", "root", "Veimach0"); //"contraseña" se puede cambiar por la contraseña del portador de la base de datos
-                String sql = "SELECT * FROM Publicidad;";
-                ADODB.Recordset rs = cn.Execute(sql, out object cantFilas, -1);
-                for (int i = 0; i < (int)cantFilas; i++)
-                {
-                    lista = new ListViewItem(Convert.ToString(rs.Fields[0].Value));
-                    lista.SubItems.Add(Convert.ToString(rs.Fields[1].Value));
-                    lista.SubItems.Add(Convert.ToString(rs.Fields[2].Value));
-                    lista.SubItems.Add(Convert.ToString(rs.Fields[3].Value));
-                    lviewPublicidad.Items.Add(lista);
-                    rs.MoveNext();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
+                ListViewItem item = new ListViewItem(pb.idPublicidad.ToString());
+                item.SubItems.Add(pb.marca);
+                item.SubItems.Add(pb.pathBanner);
+                item.SubItems.Add(pb.urlSitio);
+                lviewPublicidad.Items.Add(item);
             }
         }
 
@@ -57,7 +47,7 @@ namespace SistemaResultadosDeportivos
             try
             {
                 ADODB.Connection cn = new ADODB.Connection();
-                cn.Open("miodbc", "root", "Veimach0");
+                cn.Open("miodbc", "root", "");
                 String sql = "INSERT INTO Publicidad (Marca, PathBanner, URLSitio) VALUES('" + marca + "', '" + urlBanner + "', '" + urlSitio + "');";
                 cn.Execute(sql, out object cantFilas, -1);
                 cn.Close();
@@ -118,6 +108,11 @@ namespace SistemaResultadosDeportivos
         private void Publicidad_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void frmPublicidad_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

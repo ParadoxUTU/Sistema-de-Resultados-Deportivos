@@ -25,7 +25,7 @@ namespace SistemaResultadosDeportivos
 
         private void listarUsuarios()
         {
-            try
+            /*try
             {
                 lviewUsuarios.Items.Clear();
                 ADODB.Connection cn = new ADODB.Connection();
@@ -43,7 +43,7 @@ namespace SistemaResultadosDeportivos
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-            }
+            }*/
         }
 
         private void btnAgregar_Click_1(object sender, EventArgs e)

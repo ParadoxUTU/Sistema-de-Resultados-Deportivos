@@ -17,14 +17,14 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             {
                 Usuario usuario;
                 ADODB.Connection cn = Conexion.Crear();
-                String sql = "SELECT FROM USUARIOS WHERE dirCorreo = '" + correo + "';";
+                String sql = "SELECT * FROM Usuarios WHERE dirCorreo = '" + correo + "';";
                 ADODB.Recordset rs = cn.Execute(sql, out object cantFilas, -1);
-                cn.Close();
                 if (rs.RecordCount > 0)
                 {
-                    String c = rs.Fields[0].Value();
-                    String n = rs.Fields[1].Value();
-                    int r = rs.Fields[2].Value();
+                    String c = rs.Fields[0].Value.ToString();
+                    String n = rs.Fields[1].Value.ToString();
+                    int r;  
+                    int.TryParse(rs.Fields[2].Value.ToString(), out r);
                     usuario = new Usuario(c, n, r);
                 }
                 else
@@ -32,10 +32,12 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                     usuario = null;
                 }
                 rs.Close();
+                cn.Close();
                 return usuario;
             }
-            catch
+            catch(Exception ex)
             {
+                MessageBox.Show(ex.ToString());
                 return null;
             }
         }
@@ -93,15 +95,17 @@ namespace SistemaResultadosDeportivos.AccesoADatos
 
         public bool testConexion(String correo, String contrasena)
         {
-            try
+            bool resultado;
+            ADODB.Connection cn = Conexion.Crear(correo, contrasena);
+            if (cn != null)
             {
-                ADODB.Connection cn = Conexion.Crear();
-                return true;
+                resultado = true;
             }
-            catch
+            else
             {
-                return false;
+                resultado = false;
             }
+            return resultado;
         }
 
         public void actualizarConexion(String usuario, String contrasena)

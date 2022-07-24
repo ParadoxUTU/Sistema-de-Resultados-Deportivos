@@ -156,7 +156,7 @@
             this.urlsitio.Text = "Sitio Web";
             this.urlsitio.Width = 250;
             // 
-            // Publicidad
+            // frmPublicidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -171,9 +171,9 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
-            this.Name = "Publicidad";
+            this.Name = "frmPublicidad";
             this.Text = "Publicidad";
-            this.Load += new System.EventHandler(this.Publicidad_Load);
+            this.Load += new System.EventHandler(this.frmPublicidad_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

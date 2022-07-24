@@ -80,6 +80,7 @@
     <Compile Include="Logica\RespuestaAutenticacion.cs" />
     <Compile Include="Modelos\Publicidad.cs" />
     <Compile Include="Modelos\Usuario.cs" />
+    <Compile Include="Logica\RespuestaPublicidad.cs" />
     <Compile Include="Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,7 +99,7 @@
     <Compile Include="Backoffice.Designer.cs">
       <DependentUpon>Backoffice.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogicaPublicidad.cs" />
+    <Compile Include="Logica\LogicaPublicidad.cs" />
     <Compile Include="Logica\LogicaUsuarios.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>

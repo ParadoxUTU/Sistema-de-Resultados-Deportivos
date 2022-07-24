@@ -15,8 +15,8 @@ namespace SistemaResultadosDeportivos
         public string urlSitio;
         public APIpublicidad()
         {
-            urlBanner = p.getUrlBanner();
-            urlSitio = p.getUrlSitio();
+            /*urlBanner = p.getUrlBanner();
+            urlSitio = p.getUrlSitio();*/
         }
 
         public string getUrlBanner() { return urlBanner; }

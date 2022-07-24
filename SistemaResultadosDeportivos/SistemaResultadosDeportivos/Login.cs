@@ -7,57 +7,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaResultadosDeportivos.Logica;
 
 namespace SistemaResultadosDeportivos
 {
     public partial class Login : Form
     {
+        LogicaUsuarios lg;
+
         public Login()
         {
             InitializeComponent();
+            lg = new LogicaUsuarios();
         }
-        
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string email = txtEmail.Text;
-            string contrasena = txtContrasena.Text;
-            try
+            String correo = txtEmail.Text;
+            String contrasena = txtContrasena.Text;
+            RespuestaAutenticacion res = lg.autenticar(correo, contrasena);
+            if (res.exito)
             {
-                ADODB.Connection cn = new ADODB.Connection();
-                cn.Open("miodbc", email, contrasena);
-                MessageBox.Show("Logueado con exito");
-                if (getRol(email, contrasena) == 1)
+                switch (res.rol)
                 {
-                    cn.Close();
-                    this.Hide();
-                    Backoffice f = new Backoffice();
-                    f.ShowDialog();
-                    this.Close();
+                    case 0:
+                        new InicioApp().Visible = true;
+                        break;
+                    case 1:
+                        new Backoffice().Visible = true;
+                        break;
                 }
-                else
-                {
-                    cn.Close();
-                    this.Hide();
-                    InicioApp f = new InicioApp();
-                    f.ShowDialog();
-                    this.Close();
-                }
+                this.Hide();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Credenciales incorrectas.");
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private short getRol(string email, string contrasena)
-        {
-            ADODB.Connection cn = new ADODB.Connection();
-            cn.Open("miodbc", email, contrasena);
-            String sql = "SELECT * FROM USUARIOS WHERE dirCorreo = '" + email + "';";
-            ADODB.Recordset rs = cn.Execute(sql, out object cantFilas, -1);
-            return (short)rs.Fields[3].Value;
         }
 
         private void Login_Load(object sender, EventArgs e)
