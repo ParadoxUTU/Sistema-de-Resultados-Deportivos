@@ -26,7 +26,7 @@ namespace SistemaResultadosDeportivos
             lviewPublicidad.FullRowSelect = true;
         }
 
-        private void listarPublicidad()
+        public void listarPublicidad()
         {
             lviewPublicidad.Items.Clear();
             List<Publicidad> l = lg.devolverPublicidades();
@@ -88,21 +88,16 @@ namespace SistemaResultadosDeportivos
             {
                 if (lviewPublicidad.SelectedItems.Count == 1)
                 {
-                    String marca = Microsoft.VisualBasic.Interaction.InputBox("Nombre de Marca:", "Modificar Publicidad");
-                    String urlBanner = Microsoft.VisualBasic.Interaction.InputBox("Ruta del Banner:", "Modificar Publicidad");
-                    String urlSitio = Microsoft.VisualBasic.Interaction.InputBox("Ruta del Sitio:", "Modificar Publicidad");
                     int id;
                     bool exito = int.TryParse(lviewPublicidad.SelectedItems[0].Text, out id);
-                    if (!marca.Equals("") && !urlBanner.Equals("") && !urlSitio.Equals("") && exito)
+                    if (exito)
                     {
-                        if (lg.modificarPublicidad(id, marca, urlBanner, urlSitio))
-                        {
-                            listarPublicidad();
-                        }
+                        SubFrmModificarPublicidad modificar = new SubFrmModificarPublicidad(this, id);
+                        modificar.ShowDialog();
                     }
                     else
                     {
-                        MessageBox.Show("Datos invalidos.");
+                        MessageBox.Show("id inválida.");
                     }
                 }
                 else
@@ -114,6 +109,20 @@ namespace SistemaResultadosDeportivos
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        public bool sqlModificar(int id, String marca, String pathBanner, String urlSitio)
+        {
+            bool exito;
+            if (lg.modificarPublicidad(id, marca, pathBanner, urlSitio))
+            {
+                exito = true;
+            }
+            else
+            {
+                exito = false;
+            }
+            return exito;
         }
 
         private void limpiarTextos()

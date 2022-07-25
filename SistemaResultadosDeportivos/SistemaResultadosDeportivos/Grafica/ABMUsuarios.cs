@@ -19,7 +19,7 @@ namespace SistemaResultadosDeportivos
             lviewUsuarios.FullRowSelect = true;
         }
 
-        private void listarUsuarios()
+        public void listarUsuarios()
         {
             lviewUsuarios.Items.Clear();
             List<Usuario> l = lg.devolverUsuarios();
@@ -96,30 +96,16 @@ namespace SistemaResultadosDeportivos
             }
         }
 
+/******************************************************************************************************************************************/
         private void btnModificar_Click_1(object sender, EventArgs e)
         {
             try
             {
                 if (lviewUsuarios.SelectedItems.Count == 1)
                 {
-                    String nombre = Microsoft.VisualBasic.Interaction.InputBox("Nombre del Usuario:", "Modificar Usuario");
-                    int rol;
-                    bool exito = int.TryParse(Microsoft.VisualBasic.Interaction.InputBox("Rol:", "Modificar Usuario"), out rol);
-                    if(!nombre.Equals("") && exito)
-                    {
-                        String correo = lviewUsuarios.SelectedItems[0].Text;
-                        if (rol == 0 || rol == 1)
-                        {
-                            if (lg.modificarUsuario(correo, nombre, rol))
-                            {
-                                listarUsuarios();
-                            }
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Datos invalidos.");
-                    }
+                    String correo = lviewUsuarios.SelectedItems[0].Text;
+                    SubFrmModificarUsuario modificar = new SubFrmModificarUsuario(this, correo);
+                    modificar.ShowDialog();
                 }
                 else
                 {
@@ -128,6 +114,21 @@ namespace SistemaResultadosDeportivos
             }
             catch { }
         }
+
+        public bool sqlModificar(String correo, String nombre, int rol)
+        {
+            bool exito;
+            if (lg.modificarUsuario(correo, nombre, rol))
+            {
+                exito = true;
+            }
+            else
+            {
+                exito = false;
+            }
+            return exito;
+        }
+/******************************************************************************************************************************************/
 
         private void Usuarios_Load(object sender, EventArgs e)
         {
