@@ -15,24 +15,23 @@ namespace SistemaResultadosDeportivos
 {
     public partial class ABMPublicidad : Form
     {
-        public LogicaPublicidad lg;
+        public LogicaPublicidad lgp;
 
         public ABMPublicidad()
         {
             InitializeComponent();
-            lg = new LogicaPublicidad();
+            lgp = new LogicaPublicidad();
             this.Dock = DockStyle.Fill;
             listarPublicidad();
-            lviewPublicidad.FullRowSelect = true;
         }
-
-        public void listarPublicidad()
+        private void listarPublicidad()
         {
+            //Despliega todas las publicidades como entradas en el listview
             lviewPublicidad.Items.Clear();
-            List<Publicidad> l = lg.devolverPublicidades();
-            if(l != null)
+            List<Publicidad> lista = lgp.devolverPublicidades();
+            if (lista != null)
             {
-                foreach (Publicidad pb in l)
+                foreach (Publicidad pb in lista)
                 {
                     ListViewItem item = new ListViewItem(pb.idPublicidad.ToString());
                     item.SubItems.Add(pb.marca);
@@ -45,12 +44,14 @@ namespace SistemaResultadosDeportivos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            /*Agrega una publicidad a la BD con los datos ingresados en los textboxes, luego
+            lo muestra en el listview*/
             string marca = txtMarca.Text;
-            string pathBanner = txtUrlBanner.Text;
+            string pathBanner = txtPathBanner.Text;
             string urlSitio = txtUrlSitio.Text;
-            if(!marca.Equals("") && !pathBanner.Equals("") && !urlSitio.Equals(""))
+            if (!marca.Equals("") && !pathBanner.Equals("") && !urlSitio.Equals(""))
             {
-                if (lg.agregarPublicidad(marca, pathBanner, urlSitio))
+                if (lgp.agregarPublicidad(marca, pathBanner, urlSitio))
                 {
                     listarPublicidad();
                 }
@@ -64,10 +65,11 @@ namespace SistemaResultadosDeportivos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            //Elimina una publicidad si esta está seleccionada en el listview
             if (lviewPublicidad.SelectedItems.Count > 0)
             {
                 string id = lviewPublicidad.SelectedItems[0].Text;
-                if (lg.eliminarPublicidad(id))
+                if (lgp.eliminarPublicidad(id))
                 {
                     listarPublicidad();
                 }
@@ -84,38 +86,30 @@ namespace SistemaResultadosDeportivos
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            //Modifica marca, path, y url de una publicidad seleccionada en el listview
             try
             {
-                if (lviewPublicidad.SelectedItems.Count == 1)
+                if (lviewPublicidad.SelectedItems.Count > 0)
                 {
-                    int id;
-                    bool exito = int.TryParse(lviewPublicidad.SelectedItems[0].Text, out id);
-                    if (exito)
-                    {
-                        SubFrmModificarPublicidad modificar = new SubFrmModificarPublicidad(this, id);
-                        modificar.ShowDialog();
-                    }
-                    else
-                    {
-                        MessageBox.Show("id inválida.");
-                    }
+                    new SubFrmModificarPublicidad(this).Visible = true;
                 }
                 else
                 {
                     MessageBox.Show("No hay publicidad seleccionada.");
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            catch { }
         }
 
-        public bool sqlModificar(int id, String marca, String pathBanner, String urlSitio)
+        public bool confirmarModificacion(String marca, String pathBanner, String urlSitio)
         {
-            bool exito;
-            if (lg.modificarPublicidad(id, marca, pathBanner, urlSitio))
+            /*Confirma la modificacion de la publicidad seleccionada, con los datos ingresados
+            desde el subframe de modificacion*/
+            int idPublicidad;
+            bool exito = int.TryParse(lviewPublicidad.SelectedItems[0].Text, out idPublicidad);
+            if (exito && lgp.modificarPublicidad(idPublicidad, marca, pathBanner, urlSitio))
             {
+                listarPublicidad();
                 exito = true;
             }
             else
@@ -127,18 +121,16 @@ namespace SistemaResultadosDeportivos
 
         private void limpiarTextos()
         {
+            //Limpia todas las casillas de texto
             txtMarca.Text = null;
-            txtUrlBanner.Text = null;
+            txtPathBanner.Text = null;
             txtUrlSitio.Text = null;
-        }
-
-        private void Publicidad_Load(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
         }
 
         private void ABMPublicidad_Load(object sender, EventArgs e)
         {
+            panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
+            panel2.BackColor = Color.FromArgb(100, 0, 0, 0);
             this.WindowState = FormWindowState.Maximized;
         }
     }

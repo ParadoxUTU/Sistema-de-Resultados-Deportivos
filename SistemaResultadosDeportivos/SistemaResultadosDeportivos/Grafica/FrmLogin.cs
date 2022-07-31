@@ -23,24 +23,14 @@ namespace SistemaResultadosDeportivos
             autenticacion = new APIautenticacion();
         }
 
-        private bool getExitoFromJson(string jsonInput)
-        {
-            var autenticacionJSON = JsonConvert.DeserializeObject<APIautenticacion>(jsonInput);
-            return autenticacionJSON.exito;
-        }
-
-        private int getRolFromJson(string jsonInput)
-        {
-            var autenticacionJSON = JsonConvert.DeserializeObject<APIautenticacion>(jsonInput);
-            return autenticacionJSON.rol;
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            String correo = txtEmail.Text;
+            //Realiza la autenticacion y según el rol, envía el usuario a la app de usuario o al backoffice
+            String correo = txtCorreo.Text;
             String contrasena = txtContrasena.Text;
-            bool exito = getExitoFromJson(autenticacion.loginToJSON(correo, contrasena));
-            int rol = getRolFromJson(autenticacion.loginToJSON(correo, contrasena));
+            RespuestaAutenticacion res = JsonConvert.DeserializeObject<RespuestaAutenticacion>(autenticacion.loginToJSON(correo, contrasena));
+            bool exito = res.exito;
+            int rol = res.rol;
             if (exito)
             {
                 switch (rol)
@@ -58,6 +48,11 @@ namespace SistemaResultadosDeportivos
             {
                 MessageBox.Show("Credenciales inválidas.");
             }
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            panel1.BackColor = Color.FromArgb(100,0,0,0);
         }
     }
 }

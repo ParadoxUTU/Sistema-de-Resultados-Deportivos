@@ -11,62 +11,39 @@ using SistemaResultadosDeportivos.APIs;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
+using System.IO;
 
 namespace SistemaResultadosDeportivos
 {
     public partial class FrmInicioApp : Form
     {
         APIpublicidad publicidad;
-        string jsonPublicidad;
-        string urlSitio, urlBanner;
-        Bitmap bitmapBanner;
         Image imagenBanner;
+        String urlSitio;
+
         public FrmInicioApp()
         {
             InitializeComponent();
             publicidad = new APIpublicidad();
-            jsonPublicidad = publicidad.toJSON();
-            urlBanner = getUrlBannerFromJson(jsonPublicidad);
-            urlSitio = getUrlSitioFromJson(jsonPublicidad);
-            setImageBanner(urlBanner);
-            adjustSizeImageBanner(imagenBanner);
-            setBanner(bitmapBanner);
-        }
-
-        private string getUrlSitioFromJson(string jsonInput)
-        {
-            var publicidadJSON = JsonConvert.DeserializeObject<APIpublicidad>(jsonInput);
-            return publicidadJSON.urlSitio;
-        }
-
-        private string getUrlBannerFromJson(string jsonInput)
-        {
-            var publicidadJSON = JsonConvert.DeserializeObject<APIpublicidad>(jsonInput);
-            return publicidadJSON.urlBanner;
+            RespuestaPublicidad res = JsonConvert.DeserializeObject<RespuestaPublicidad>(publicidad.publicidadToJSON());
+            setImageBanner(res.pathBanner);
+            urlSitio = res.urlSitio;
         }
 
         private void setImageBanner(string path)
         {
-            imagenBanner = Image.FromFile(path);
+            //Establece la imagen del banner, dado la ruta respectiva
+            try
+            {
+                imagenBanner = Image.FromFile(Directory.GetCurrentDirectory() + "\\Img\\" + path);
+                Bitmap bitmapBanner = new Bitmap(imagenBanner, banner.Width, banner.Height);
+                banner.Image = bitmapBanner;
+            }
+            catch { }
         }
-
-        private void setBanner(Bitmap b)
+        private void banner_Click(object sender, EventArgs e)
         {
-            banner.Image = b;
-        }
-
-        private void adjustSizeImageBanner(Image img)
-        {
-            bitmapBanner = new Bitmap(img, banner.Width, banner.Height);
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void banner_Click_1(object sender, EventArgs e)
-        {
+            //Al clickear sobre el banner, te lleva al sitio web respectivo
             try
             {
                 System.Diagnostics.Process.Start(new ProcessStartInfo
@@ -75,10 +52,9 @@ namespace SistemaResultadosDeportivos
                     UseShellExecute = true
                 });
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("No se puede abrir el link.");
-                MessageBox.Show(ex.ToString());
             }
         }
 

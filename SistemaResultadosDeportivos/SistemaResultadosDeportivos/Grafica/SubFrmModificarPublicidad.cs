@@ -13,31 +13,36 @@ namespace SistemaResultadosDeportivos
     public partial class SubFrmModificarPublicidad : Form
     {
         ABMPublicidad publicidad;
-        public int id;
-        public SubFrmModificarPublicidad(ABMPublicidad p, int i)
+
+        public SubFrmModificarPublicidad(ABMPublicidad p)
         {
             InitializeComponent();
             publicidad = p;
-            id = i;
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
+            //Recoge los datos de modificacion, y los envía al frame original para su confirmacion
             String marca = txtMarca.Text;
             String pathBanner = txtUrlBanner.Text;
             String urlSitio = txtUrlSitio.Text;
             if (!marca.Equals("") && !pathBanner.Equals("") && !urlSitio.Equals(""))
             {
-                if (publicidad.sqlModificar(id, marca, pathBanner, urlSitio))
+                this.Dispose();
+                if (!publicidad.confirmarModificacion(marca, pathBanner, urlSitio))
                 {
-                    publicidad.listarPublicidad();
-                    this.Dispose();
+                    new SubFrmModificarPublicidad(publicidad).Visible = true;
                 }
             }
             else
             {
                 MessageBox.Show("Datos invalidos.");
             }
+        }
+
+        private void SubFrmModificarPublicidad_Load(object sender, EventArgs e)
+        {
+            panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
         }
     }
 }

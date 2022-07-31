@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -53,6 +53,7 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -77,10 +78,10 @@
     <Compile Include="Grafica\FrmInicioApp.Designer.cs">
       <DependentUpon>FrmInicioApp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Logica\RespuestaAutenticacion.cs" />
+    <Compile Include="APIs\RespuestaAutenticacion.cs" />
     <Compile Include="Modelos\Publicidad.cs" />
     <Compile Include="Modelos\Usuario.cs" />
-    <Compile Include="Logica\RespuestaPublicidad.cs" />
+    <Compile Include="APIs\RespuestaPublicidad.cs" />
     <Compile Include="Grafica\ABMUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,10 +116,10 @@
     <Compile Include="Grafica\SubFrmModificarUsuario.Designer.cs">
       <DependentUpon>SubFrmModificarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="SubFrmModificarPublicidad.cs">
+    <Compile Include="Grafica\SubFrmModificarPublicidad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SubFrmModificarPublicidad.Designer.cs">
+    <Compile Include="Grafica\SubFrmModificarPublicidad.Designer.cs">
       <DependentUpon>SubFrmModificarPublicidad.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Grafica\FrmInicioApp.resx">
@@ -144,11 +145,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Grafica\SubFrmModificarUsuario.resx">
       <DependentUpon>SubFrmModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SubFrmModificarPublicidad.resx">
+    <EmbeddedResource Include="Grafica\SubFrmModificarPublicidad.resx">
       <DependentUpon>SubFrmModificarPublicidad.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -176,9 +178,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Banners\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
@@ -190,6 +190,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Img\fondo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,20 +11,17 @@ namespace SistemaResultadosDeportivos.APIs
 {
     public class APIautenticacion
     {
-        private LogicaUsuarios u;
-        public bool exito;
-        public int rol;
+        private LogicaUsuarios lgu;
 
         public APIautenticacion()
         {
-            u = new LogicaUsuarios();
+            lgu = new LogicaUsuarios();
         }
 
-        public string loginToJSON(string e, string c)
+        public string loginToJSON(string correo, string con)
         {
-            exito = u.autenticar(e, c).exito;
-            rol = u.autenticar(e, c).rol;
-            var json = JObject.FromObject(this);
+            //Devuelve la respuesta de autenticacion en formato JSON
+            var json = JObject.FromObject(lgu.autenticar(correo, con));
             return json.ToString();
         }
     }

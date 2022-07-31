@@ -8,52 +8,76 @@ namespace SistemaResultadosDeportivos
 {
     public partial class ABMUsuarios : Form
     {
-        private LogicaUsuarios lg;
+        private LogicaUsuarios lgu;
 
         public ABMUsuarios()
         {
             InitializeComponent();
-            lg = new LogicaUsuarios();
+            lgu = new LogicaUsuarios();
             this.Dock = DockStyle.Fill;
             listarUsuarios();
-            lviewUsuarios.FullRowSelect = true;
         }
 
-        public void listarUsuarios()
+        private void listarUsuarios()
         {
+            //Despliega todos los usuarios como entradas en el listview
             lviewUsuarios.Items.Clear();
-            List<Usuario> l = lg.devolverUsuarios();
-            if (l.Count > 0)
+            List<Usuario> lista = lgu.devolverUsuarios();
+            if (lista != null)
             {
-                foreach (Usuario us in l)
+                foreach (Usuario us in lista)
                 {
                     ListViewItem item = new ListViewItem(us.correo);
                     item.SubItems.Add(us.nombre);
-                    item.SubItems.Add(us.rol.ToString());
+                    if(us.rol == 0)
+                    {
+                        item.SubItems.Add("User");
+                    }
+                    else
+                    {
+                        item.SubItems.Add("Admin");
+                    }
                     lviewUsuarios.Items.Add(item);
                 }
             }
         }
 
-        private void btnAgregar_Click_1(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-            string correo = txtEmail.Text;
+            /*Agrega un usuario a la BD con los datos ingresados en los textboxes, luego
+            lo muestra en el listview*/
+            string correo = txtCorreo.Text;
             string contrasena = txtContrasena.Text;
             int rol;
-            string username = txtUsername.Text;
+            string nombre = txtNombre.Text;
             try
             {
-                rol = short.Parse(txtRol.Text);
-                if (!correo.Equals("") && !contrasena.Equals("") && !username.Equals(""))
+                if (cbxRol.SelectedItem != null)
                 {
-                    if (rol != 0 && rol != 1)
+                    if (cbxRol.SelectedItem.ToString().Equals("User"))
                     {
-                        MessageBox.Show("Las opciones son: 0 para aficionado, 1 para administrador");
+                        rol = 0;
                     }
-                    else if (lg.registrarUsuario(correo, username, contrasena, rol))
+                    else
+                    {
+                        rol = 1;
+                    }
+                }
+                else
+                {
+                    rol = -1;
+                }
+                
+                if (!correo.Equals("") && !contrasena.Equals("") && !nombre.Equals("") && rol != -1)
+                {
+                    if (lgu.registrarUsuario(correo, nombre, contrasena, rol))
                     {
                         listarUsuarios();
                         limpiarTextos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha podido agregar el usuario");
                     }
                 }
                 else
@@ -68,20 +92,13 @@ namespace SistemaResultadosDeportivos
             limpiarTextos();
         }
 
-        private void limpiarTextos()
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-            txtEmail.Text = null;
-            txtContrasena.Text = null;
-            txtRol.Text = null;
-            txtUsername.Text = null;
-        }
-
-        private void btnEliminar_Click_1(object sender, EventArgs e)
-        {
+            //Elimina un usuario si este está seleccionado en el listview
             if (lviewUsuarios.SelectedItems.Count > 0)
             {
                 string correo = lviewUsuarios.SelectedItems[0].Text;
-                if (lg.bajaUsuario(correo))
+                if (lgu.bajaUsuario(correo))
                 {
                     listarUsuarios();
                 }
@@ -96,16 +113,14 @@ namespace SistemaResultadosDeportivos
             }
         }
 
-/******************************************************************************************************************************************/
-        private void btnModificar_Click_1(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
         {
+            //Modifica nombre y rol de un usuario seleccionado en el listview
             try
             {
-                if (lviewUsuarios.SelectedItems.Count == 1)
+                if (lviewUsuarios.SelectedItems.Count > 0)
                 {
-                    String correo = lviewUsuarios.SelectedItems[0].Text;
-                    SubFrmModificarUsuario modificar = new SubFrmModificarUsuario(this, correo);
-                    modificar.ShowDialog();
+                    new SubFrmModificarUsuario(this).Visible = true;
                 }
                 else
                 {
@@ -115,11 +130,15 @@ namespace SistemaResultadosDeportivos
             catch { }
         }
 
-        public bool sqlModificar(String correo, String nombre, int rol)
+        public bool confirmarModificacion(String nombre, int rol)
         {
+            /*Confirma la modificacion del usuario seleccionado, con los datos ingresados
+            desde el subframe de modificacion*/
+            String correo = lviewUsuarios.SelectedItems[0].Text;
             bool exito;
-            if (lg.modificarUsuario(correo, nombre, rol))
+            if (lgu.modificarUsuario(correo, nombre, rol))
             {
+                listarUsuarios();
                 exito = true;
             }
             else
@@ -128,10 +147,20 @@ namespace SistemaResultadosDeportivos
             }
             return exito;
         }
-/******************************************************************************************************************************************/
+
+        private void limpiarTextos()
+        {
+            //Limpia todas las casillas de texto
+            txtCorreo.Text = null;
+            txtContrasena.Text = null;
+            cbxRol.SelectedItem = null;
+            txtNombre.Text = null;
+        }
 
         private void Usuarios_Load(object sender, EventArgs e)
         {
+            panel1.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
+            panel2.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
             this.WindowState = FormWindowState.Maximized;
         }
     }

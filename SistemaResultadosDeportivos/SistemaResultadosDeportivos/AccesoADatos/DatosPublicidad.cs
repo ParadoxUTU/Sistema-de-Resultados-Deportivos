@@ -12,10 +12,10 @@ namespace SistemaResultadosDeportivos.AccesoADatos
 {
     public class DatosPublicidad
     {
-        //ADODB.Recordset rs;
 
         public List<Publicidad> getPublicidades()
         {
+            //Mapea las publicidades existentes a los modelos, y las devuelve en una lista
             int idPublicidad;
             string marca;
             string pathBanner;
@@ -46,15 +46,13 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                     return null;
                 }
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            catch{}
             return lista;
         }
 
         public bool agregarPublicidad(String marca, String pathBanner, String urlSitio)
         {
+            //Intenta agregar una publicidad a la BD con los datos dados
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
@@ -63,15 +61,15 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 cn.Close();
                 return true;
             }
-            catch(Exception ex)
+            catch
             {
-                MessageBox.Show(ex.ToString());
                 return false;
             }
         }
 
         public bool eliminarPublicidad(String id)
         {
+            //Intenta eliminar una publicidad de la BD, dada una id
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
@@ -88,6 +86,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
 
         public bool modificarPublicidad(int id, String marca, String pathBanner, String urlSitio)
         {
+            //Intenta modificar una publicidad existente en la BD con los datos dados
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
@@ -96,30 +95,10 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 cn.Close();
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.ToString());
                 return false;
             }
-        }
-
-        public string getBanner(String idPublicidad)
-        {
-            String stringSql = "SELECT PathBanner FROM Publicidad WHERE idPublicidad ='" + idPublicidad + "';";
-            String urlBanner;
-            try
-            {
-                ADODB.Connection cn = Conexion.Crear();
-                ADODB.Recordset rs = cn.Execute(stringSql, out object cantFilas, -1);
-                Console.WriteLine(cantFilas);
-                urlBanner = rs.Fields[0].Value.ToString();
-                cn.Close();
-            }
-            catch (Exception ex)
-            {
-                return ex.ToString();
-            }
-            return urlBanner;
         }
     }
 }

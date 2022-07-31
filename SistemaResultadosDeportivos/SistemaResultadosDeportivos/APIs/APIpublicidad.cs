@@ -11,20 +11,17 @@ namespace SistemaResultadosDeportivos.APIs
 {
     public class APIpublicidad
     {
-        private LogicaPublicidad p = new LogicaPublicidad();
-        public string urlBanner { get; set; }
-        public string urlSitio { get; set; }
+        private LogicaPublicidad lgp;
+
         public APIpublicidad()
         {
-            RespuestaPublicidad publicidad = p.publicidadRandom();
-            urlBanner = publicidad.pathBanner;
-            urlSitio = publicidad.urlSitio;
+            lgp = new LogicaPublicidad();
         }
 
-        public String toJSON()
+        public String publicidadToJSON()
         {
-            var json = JObject.FromObject(this);
-            Console.WriteLine(json);
+            //Devuelve la respuesta de publicidad en formato JSON
+            var json = JObject.FromObject(lgp.publicidadRandom());
             return json.ToString();
         }
     }

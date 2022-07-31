@@ -29,35 +29,41 @@ namespace SistemaResultadosDeportivos
         /// </summary>
         private void InitializeComponent()
         {
-            this.banner = new System.Windows.Forms.Label();
+            this.banner = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.banner)).BeginInit();
             this.SuspendLayout();
             // 
             // banner
             // 
-            this.banner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.banner.Location = new System.Drawing.Point(12, 134);
+            this.banner.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.banner.Location = new System.Drawing.Point(73, 438);
             this.banner.Name = "banner";
             this.banner.Size = new System.Drawing.Size(776, 139);
-            this.banner.TabIndex = 0;
-            this.banner.Click += new System.EventHandler(this.banner_Click_1);
+            this.banner.TabIndex = 1;
+            this.banner.TabStop = false;
+            this.banner.Click += new System.EventHandler(this.banner_Click);
             // 
             // FrmInicioApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
+            this.ClientSize = new System.Drawing.Size(904, 591);
             this.Controls.Add(this.banner);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmInicioApp";
             this.Text = "App";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmInicioApp_FormClosed);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.banner)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label banner;
+        private System.Windows.Forms.PictureBox banner;
     }
 }
 

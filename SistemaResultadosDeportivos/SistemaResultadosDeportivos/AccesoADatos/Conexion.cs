@@ -16,6 +16,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
 
         public static ADODB.Connection Crear()
         {
+            //Se crea una conexion con el usuario y contrasena por defecto
             ADODB.Connection cn = new ADODB.Connection();
             try
             {
@@ -32,6 +33,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
 
         public static ADODB.Connection Crear(String us, String con)
         {
+            //Se crea una conexion con el usuario y la contrasena dados
             ADODB.Connection cn = new ADODB.Connection();
             try
             {
@@ -50,6 +52,13 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             {
                 return null;
             }
+        }
+
+        public static void volverAutenticador()
+        {
+            //El usuario por defecto vuelve a ser el autenticador
+            usuario = "auth";
+            contrasena = "1";
         }
     }
 }

@@ -13,6 +13,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
     {
         public Usuario getPorId(String correo)
         {
+            //Devuelve un usuario mapeado al modelo, dado su correo
             try
             {
                 Usuario usuario;
@@ -35,15 +36,15 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 cn.Close();
                 return usuario;
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.ToString());
                 return null;
             }
         }
 
         public List<Usuario> getUsuarios()
         {
+            //Mapea los usuarios existentes a los modelos, y los devuelve en una lista
             string correo;
             string nombre;
             int rol;
@@ -75,19 +76,16 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                     return null;
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            catch{}
             return lista;
         }
 
         public bool agregarUsuario(String correo, String nombre, String contrasena, int rol)
         {
+            //Intenta agregar una usuario a la BD con los datos dados
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-       
                 String stringSql = "CREATE USER '" + correo + "'@'localhost' IDENTIFIED BY '" + contrasena + "';";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 stringSql = "INSERT INTO Usuarios VALUES('" + correo + "', '" + nombre + "', '" + rol + "');";
@@ -109,19 +107,19 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                     cn.Execute(stringSql, out cantFilas, -1);
                     stringSql = "GRANT ALL PRIVILEGES ON "+ Conexion.nombreBD + ".* TO '" + correo + "'@'localhost';";
                     cn.Execute(stringSql, out cantFilas, -1);
-                }
+                }  
                 cn.Close();
                 return true;
             }
-            catch(Exception ex)
+            catch
             {
-                MessageBox.Show(ex.ToString());
                 return false;
             }
         }
 
         public bool eliminarUsuario(String correo)
         {
+            //Intenta eliminar un usuario de la BD, dado su correo
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
@@ -132,15 +130,15 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 cn.Close();
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.ToString());
                 return false;
             }
         }
 
         public bool modificarUsuario(String correo, String nombre, int rol)
         {
+            //Intenta modificar un usuario existente en la BD con los datos dados
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
@@ -149,15 +147,15 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 cn.Close();
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.ToString());
                 return false;
             }
         }
 
         public bool testConexion(String correo, String contrasena)
         {
+            //Devuelve true si se logra establecer la conexion a la BD con los datos dados, false si no
             bool resultado;
             ADODB.Connection cn = Conexion.Crear(correo, contrasena);
             if (cn != null)
@@ -173,8 +171,15 @@ namespace SistemaResultadosDeportivos.AccesoADatos
 
         public void actualizarConexion(String usuario, String contrasena)
         {
+            //Cambia las credenciales de conexion por defecto a las dadas
             Conexion.usuario = usuario;
             Conexion.contrasena = contrasena;
+        }
+
+        public void volverAutenticador()
+        {
+            //Cambia las credenciales de conexion por defecto a las del usuario autenticador
+            Conexion.volverAutenticador();
         }
     }
 }
