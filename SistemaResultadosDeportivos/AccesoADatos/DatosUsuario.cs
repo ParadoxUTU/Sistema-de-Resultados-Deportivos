@@ -80,6 +80,34 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             return lista;
         }
 
+        public void darPermisos(string correo, int rol)
+        {
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                if (rol == 0)
+                {
+                    String stringSql = "GRANT SELECT ON Usuarios TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out object cantFilas, -1);
+                    stringSql = "GRANT SELECT ON Publicidad TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out cantFilas, -1);
+                }
+                if (rol == 1)
+                {
+                    String stringSql = "GRANT ALL ON Usuarios TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out object cantFilas, -1);
+                    stringSql = "GRANT ALL ON Publicidad TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out cantFilas, -1);
+                    stringSql = "GRANT CREATE USER ON *.* TO '" + correo + "'@'localhost' WITH GRANT OPTION;";
+                    cn.Execute(stringSql, out cantFilas, -1);
+                    stringSql = "GRANT ALL PRIVILEGES ON " + getBaseDeDatosSeleccionada() + ".* TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out cantFilas, -1);
+                }
+                cn.Close();
+            }
+            catch{}
+        }
+
         public bool agregarUsuario(String correo, String nombre, String contrasena, int rol)
         {
             //Intenta agregar una usuario a la BD con los datos dados
@@ -90,24 +118,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 cn.Execute(stringSql, out object cantFilas, -1);
                 stringSql = "INSERT INTO Usuarios VALUES('" + correo + "', '" + nombre + "', '" + rol + "');";
                 cn.Execute(stringSql, out cantFilas, -1);
-                if (rol == 0)
-                {
-                    stringSql = "GRANT SELECT ON Usuarios TO '" + correo + "'@'localhost';";
-                    cn.Execute(stringSql, out cantFilas, -1);
-                    stringSql = "GRANT SELECT ON Publicidad TO '" + correo + "'@'localhost';";
-                    cn.Execute(stringSql, out cantFilas, -1);
-                }
-                if (rol == 1)
-                {
-                    stringSql = "GRANT ALL ON Usuarios TO '" + correo + "'@'localhost';";
-                    cn.Execute(stringSql, out cantFilas, -1);
-                    stringSql = "GRANT ALL ON Publicidad TO '" + correo + "'@'localhost';";
-                    cn.Execute(stringSql, out cantFilas, -1);
-                    stringSql = "GRANT CREATE USER ON *.* TO '" + correo + "'@'localhost' WITH GRANT OPTION;";
-                    cn.Execute(stringSql, out cantFilas, -1);
-                    stringSql = "GRANT ALL PRIVILEGES ON "+ Conexion.nombreBD + ".* TO '" + correo + "'@'localhost';";
-                    cn.Execute(stringSql, out cantFilas, -1);
-                }  
+                darPermisos(correo, rol);
                 cn.Close();
                 return true;
             }
@@ -115,6 +126,21 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             {
                 return false;
             }
+        }
+
+        public string getBaseDeDatosSeleccionada()
+        {
+            string nombreBaseDeDatos = null;
+            String stringSql = "SELECT DATABASE() FROM DUAL;";
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                ADODB.Recordset rs = cn.Execute(stringSql, out object cantFilas, -1);
+                nombreBaseDeDatos = (string)rs.Fields[0].Value;
+                cn.Close();
+            }
+            catch{}
+            return nombreBaseDeDatos;
         }
 
         public bool eliminarUsuario(String correo)
@@ -144,6 +170,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 ADODB.Connection cn = Conexion.Crear();
                 String stringSql = "UPDATE Usuarios SET username = '" + nombre + "', rol = '" + rol + "' WHERE dirCorreo = '" + correo + "';";
                 cn.Execute(stringSql, out object cantFilas, -1);
+                darPermisos(correo, rol);
                 cn.Close();
                 return true;
             }
