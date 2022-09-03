@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{56EC1DD5-D697-4D3F-8DDD-8D5AD4C96566}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SistemaResultadosDeportivos</RootNamespace>
+    <AssemblyName>SistemaResultadosDeportivos</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccesoADatos\DatosAnotacion.cs" />
+    <Compile Include="AccesoADatos\DatosDeporte.cs" />
+    <Compile Include="AccesoADatos\DatosEncuentro.cs" />
+    <Compile Include="AccesoADatos\DatosEquipo.cs" />
+    <Compile Include="AccesoADatos\DatosJugador.cs" />
+    <Compile Include="AccesoADatos\DatosResultado.cs" />
+    <Compile Include="AccesoADatos\DatosSet.cs" />
+    <Compile Include="AccesoADatos\DatosTorneo.cs" />
+    <Compile Include="AccesoADatos\DatosUsuario.cs" />
+    <Compile Include="APIs\APIautenticacion.cs" />
+    <Compile Include="AccesoADatos\Conexion.cs" />
+    <Compile Include="AccesoADatos\DatosPublicidad.cs" />
+    <Compile Include="APIs\APIpublicidad.cs" />
+    <Compile Include="APIs\APIresultados.cs" />
+    <Compile Include="APIs\RespuestaAnotaciones.cs" />
+    <Compile Include="Grafica\AppUsuario\FrmVerEncuentroApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\FrmVerEncuentroApp.Designer.cs">
+      <DependentUpon>FrmVerEncuentroApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\ABMJugadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\ABMJugadores.Designer.cs">
+      <DependentUpon>ABMJugadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\ABMEquipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\ABMEquipos.Designer.cs">
+      <DependentUpon>ABMEquipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\ABMTorneos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\ABMTorneos.Designer.cs">
+      <DependentUpon>ABMTorneos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\ABMDeportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\ABMDeportes.Designer.cs">
+      <DependentUpon>ABMDeportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\ABMEncuentros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\ABMEncuentros.Designer.cs">
+      <DependentUpon>ABMEncuentros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\FrmGestionarEncInd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\FrmGestionarEncInd.Designer.cs">
+      <DependentUpon>FrmGestionarEncInd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\FrmInicioApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\FrmInicioApp.Designer.cs">
+      <DependentUpon>FrmInicioApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APIs\RespuestaAutenticacion.cs" />
+    <Compile Include="Grafica\FrmInicioEncuentros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\FrmInicioEncuentros.Designer.cs">
+      <DependentUpon>FrmInicioEncuentros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\FrmGestionarEncCol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\FrmGestionarEncCol.Designer.cs">
+      <DependentUpon>FrmGestionarEncCol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\FrmInicioEquipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\FrmInicioEquipos.Designer.cs">
+      <DependentUpon>FrmInicioEquipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\FrmSeleccionarPlantel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\FrmSeleccionarPlantel.Designer.cs">
+      <DependentUpon>FrmSeleccionarPlantel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\IDyPosicion.cs" />
+    <Compile Include="Grafica\FrmSeleccionarJugadorAnotacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\FrmSeleccionarJugadorAnotacion.Designer.cs">
+      <DependentUpon>FrmSeleccionarJugadorAnotacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\SubFrmModificarEncuentro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\SubFrmModificarEncuentro.Designer.cs">
+      <DependentUpon>SubFrmModificarEncuentro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\SubFrmModificarJugador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\SubFrmModificarJugador.Designer.cs">
+      <DependentUpon>SubFrmModificarJugador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\SubFrmModificarTorneo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\SubFrmModificarTorneo.Designer.cs">
+      <DependentUpon>SubFrmModificarTorneo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\SubFrmSeleccionarParticipantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\SubFrmSeleccionarParticipantes.Designer.cs">
+      <DependentUpon>SubFrmSeleccionarParticipantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\FrmSeleccionarAlineacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\FrmSeleccionarAlineacion.Designer.cs">
+      <DependentUpon>FrmSeleccionarAlineacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logica\LogicaAnotaciones.cs" />
+    <Compile Include="Logica\LogicaDeportes.cs" />
+    <Compile Include="Logica\LogicaEncuentros.cs" />
+    <Compile Include="Logica\LogicaEquipos.cs" />
+    <Compile Include="Logica\LogicaJugadores.cs" />
+    <Compile Include="Logica\LogicaSets.cs" />
+    <Compile Include="Logica\LogicaTorneos.cs" />
+    <Compile Include="Modelos\Alineacion.cs" />
+    <Compile Include="Modelos\Anotacion.cs" />
+    <Compile Include="Modelos\Deporte.cs" />
+    <Compile Include="Modelos\Encuentro.cs" />
+    <Compile Include="Modelos\Equipo.cs" />
+    <Compile Include="Modelos\Jugador.cs" />
+    <Compile Include="Modelos\Publicidad.cs" />
+    <Compile Include="Modelos\Set.cs" />
+    <Compile Include="Modelos\Torneo.cs" />
+    <Compile Include="Modelos\Usuario.cs" />
+    <Compile Include="APIs\RespuestaPublicidad.cs" />
+    <Compile Include="Grafica\ABMUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\ABMUsuarios.Designer.cs">
+      <DependentUpon>ABMUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\ABMPublicidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\ABMPublicidad.Designer.cs">
+      <DependentUpon>ABMPublicidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\FrmBackoffice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\FrmBackoffice.Designer.cs">
+      <DependentUpon>FrmBackoffice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logica\LogicaPublicidad.cs" />
+    <Compile Include="Logica\LogicaUsuarios.cs" />
+    <Compile Include="Grafica\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Grafica\SubFrmModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\SubFrmModificarUsuario.Designer.cs">
+      <DependentUpon>SubFrmModificarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\SubFrmModificarPublicidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\SubFrmModificarPublicidad.Designer.cs">
+      <DependentUpon>SubFrmModificarPublicidad.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Grafica\ABMDeportes.resx">
+      <DependentUpon>ABMDeportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\ABMEncuentros.resx">
+      <DependentUpon>ABMEncuentros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\ABMEquipos.resx">
+      <DependentUpon>ABMEquipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\ABMJugadores.resx">
+      <DependentUpon>ABMJugadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\ABMTorneos.resx">
+      <DependentUpon>ABMTorneos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmVerEncuentroApp.resx">
+      <DependentUpon>FrmVerEncuentroApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\FrmGestionarEncInd.resx">
+      <DependentUpon>FrmGestionarEncInd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmInicioApp.resx">
+      <DependentUpon>FrmInicioApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\ABMUsuarios.resx">
+      <DependentUpon>ABMUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\ABMPublicidad.resx">
+      <DependentUpon>ABMPublicidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\FrmBackoffice.resx">
+      <DependentUpon>FrmBackoffice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\FrmInicioEncuentros.resx">
+      <DependentUpon>FrmInicioEncuentros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\FrmInicioEquipos.resx">
+      <DependentUpon>FrmInicioEquipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\FrmGestionarEncCol.resx">
+      <DependentUpon>FrmGestionarEncCol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\FrmSeleccionarPlantel.resx">
+      <DependentUpon>FrmSeleccionarPlantel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\FrmSeleccionarJugadorAnotacion.resx">
+      <DependentUpon>FrmSeleccionarJugadorAnotacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmModificarEncuentro.resx">
+      <DependentUpon>SubFrmModificarEncuentro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmModificarJugador.resx">
+      <DependentUpon>SubFrmModificarJugador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmModificarTorneo.resx">
+      <DependentUpon>SubFrmModificarTorneo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmSeleccionarParticipantes.resx">
+      <DependentUpon>SubFrmSeleccionarParticipantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\FrmSeleccionarAlineacion.resx">
+      <DependentUpon>FrmSeleccionarAlineacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Grafica\SubFrmModificarUsuario.resx">
+      <DependentUpon>SubFrmModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmModificarPublicidad.resx">
+      <DependentUpon>SubFrmModificarPublicidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{B691E011-1797-432E-907A-4D8C69339129}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perfil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Img\fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
