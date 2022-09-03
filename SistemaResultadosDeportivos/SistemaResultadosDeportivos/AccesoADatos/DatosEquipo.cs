@@ -156,7 +156,10 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 }
                 cn.Close();
             }
-            catch {}
+            catch(Exception ex) 
+            {
+                MessageBox.Show(ex.ToString());
+            }
             return lista;
         }
 

@@ -81,7 +81,10 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 deporte = new Deporte(id, porEquipos, anotaciones, sets, cantParticipantes, nombreDeporte, tamAlineacion);
                 cn.Close();
             }
-            catch { }
+            catch(Exception ex) 
+            {
+                MessageBox.Show(ex.ToString());
+            }
             return deporte;
         }
 

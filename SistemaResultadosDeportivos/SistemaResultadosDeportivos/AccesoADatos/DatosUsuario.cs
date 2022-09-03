@@ -156,6 +156,22 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                     cn.Execute(stringSql, out cantFilas, -1);
                     stringSql = "GRANT SELECT ON Encuentros TO '" + correo + "'@'localhost';";
                     cn.Execute(stringSql, out cantFilas, -1);
+                    stringSql = "GRANT SELECT ON Equipos TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out cantFilas, -1);
+                    stringSql = "GRANT SELECT ON Alineaciones TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out cantFilas, -1);
+                    stringSql = "GRANT SELECT ON Anotaciones TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out cantFilas, -1);
+                    stringSql = "GRANT SELECT ON Sets TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out cantFilas, -1);
+                    stringSql = "GRANT SELECT ON Enc_eq_sets TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out cantFilas, -1);
+                    stringSql = "GRANT SELECT ON Enc_jug_sets TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out cantFilas, -1);
+                    stringSql = "GRANT SELECT ON Encuentros_equipos TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out cantFilas, -1);
+                    stringSql = "GRANT SELECT ON Deportes TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out cantFilas, -1);
                 }
                 if (rol == 1)
                 {
