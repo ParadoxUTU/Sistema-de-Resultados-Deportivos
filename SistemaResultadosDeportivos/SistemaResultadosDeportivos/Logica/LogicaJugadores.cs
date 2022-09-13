@@ -79,6 +79,48 @@ namespace SistemaResultadosDeportivos.Logica
             return datosJugador.eliminarJugador(id);
         }
 
+        public bool eliminarJugadorDeEncuentro(int idJugador, int idEncuentro)
+        {
+            //Intenta eliminar un jugador de un encuentro de la BD con la id dada
+            return datosJugador.eliminarJugadorDeEncuentro(idJugador, idEncuentro);
+        }
+
+        public bool eliminarJugadorDeTodoEncuentro(int id)
+        {
+            //Intenta eliminar un jugador de todos los encuentros de la BD con la id dada
+            return datosJugador.eliminarJugadorDeTodoEncuentro(id);
+        }
+
+        public bool eliminarJugadorDeTodoPlantel(int id)
+        {
+            //Intenta eliminar un jugador de todos los planteles de la BD con la id dada
+            return datosJugador.eliminarJugadorDeTodoPlantel(id);
+        }
+
+        public bool eliminarJugadorDeTodaAlineacion(int id)
+        {
+            //Intenta eliminar un jugador de todas las alineaciones de la BD con la id dada
+            return datosJugador.eliminarJugadorDeTodaAlineacion(id);
+        }
+
+        public bool eliminarJugadorDeTodaAnotacion(int id)
+        {
+            //Intenta eliminar un jugador de todas las anotaciones de la BD con la id dada
+            return datosJugador.eliminarJugadorDeTodaAnotacion(id);
+        }
+
+        public bool eliminarJugadorDeTodoTorneo(int id)
+        {
+            //Intenta eliminar un jugador de todos los torneos de la BD con la id dada
+            return datosJugador.eliminarJugadorDeTodoTorneo(id);
+        }
+
+        public bool eliminarJugadorDeTodoSet(int id)
+        {
+            //Intenta eliminar un jugador de todos los sets de la BD con la id dada
+            return datosJugador.eliminarJugadorDeTodoSet(id);
+        }
+
         public bool modificarJugador(int id, String nombreJugador, int edad, int peso, int estatura, String pais, int idDeporte)
         {
             //Intenta modificar un jugador en la BD, con los datos dados

@@ -291,8 +291,135 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 cn.Close();
                 return true;
             }
-            catch
+            catch(Exception ex)
             {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool eliminarJugadorDeEncuentro(int idJugador, int idEncuentro)
+        {
+            //Intenta eliminar un jugador de un encuentro de la BD, dada una id
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "DELETE FROM Encuentros_Jugadores WHERE IdEncuentro = '" + idEncuentro + "' AND IdJugador = '" + idJugador + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool eliminarJugadorDeTodoEncuentro(int idJugador)
+        {
+            //Intenta eliminar un jugador de todos los encuentros de la BD, dada una id
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "DELETE FROM Encuentros_Jugadores WHERE IdJugador = '" + idJugador + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool eliminarJugadorDeTodoPlantel(int idJugador)
+        {
+            //Intenta eliminar un jugador de todos los planteles de la BD, dada una id
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "DELETE FROM Plantel WHERE IdJugador = '" + idJugador + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool eliminarJugadorDeTodaAlineacion(int idJugador)
+        {
+            //Intenta eliminar un jugador de todas las alineaciones de la BD, dada una id
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "DELETE FROM Alineaciones WHERE IdJugador = '" + idJugador + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool eliminarJugadorDeTodaAnotacion(int idJugador)
+        {
+            //Intenta eliminar un jugador de todas las anotaciones de la BD, dada una id
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "DELETE FROM Anotaciones WHERE IdJugador = '" + idJugador + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool eliminarJugadorDeTodoTorneo(int idJugador)
+        {
+            //Intenta eliminar un jugador de todos los torneos de la BD, dada una id
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "DELETE FROM Jugadores_Torneos WHERE IdJugador = '" + idJugador + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool eliminarJugadorDeTodoSet(int idJugador)
+        {
+            //Intenta eliminar un jugador de todos los sets de la BD, dada una id
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "DELETE FROM Enc_jug_sets WHERE IdJugador = '" + idJugador + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
                 return false;
             }
         }

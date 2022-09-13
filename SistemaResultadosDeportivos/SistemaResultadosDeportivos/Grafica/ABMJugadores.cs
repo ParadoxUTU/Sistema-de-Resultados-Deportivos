@@ -70,6 +70,12 @@ namespace SistemaResultadosDeportivos
             List<Jugador> lista = lgj.devolverJugadores();
             Jugador jugador = lista[var];
             int idJugador = jugador.idJugador;
+            lgj.eliminarJugadorDeTodoTorneo(idJugador);
+            lgj.eliminarJugadorDeTodoSet(idJugador);
+            lgj.eliminarJugadorDeTodaAnotacion(idJugador);
+            lgj.eliminarJugadorDeTodoPlantel(idJugador);
+            lgj.eliminarJugadorDeTodaAlineacion(idJugador);
+            lgj.eliminarJugadorDeTodoEncuentro(idJugador);
             lgj.eliminarJugador(idJugador);
             listarJugadores();
         }
