@@ -162,6 +162,12 @@
     <Compile Include="Grafica\FrmSeleccionarJugadorAnotacion.Designer.cs">
       <DependentUpon>FrmSeleccionarJugadorAnotacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grafica\SubFrmModificarDeporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\SubFrmModificarDeporte.Designer.cs">
+      <DependentUpon>SubFrmModificarDeporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grafica\SubFrmModificarEncuentro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\FrmSeleccionarJugadorAnotacion.resx">
       <DependentUpon>FrmSeleccionarJugadorAnotacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmModificarDeporte.resx">
+      <DependentUpon>SubFrmModificarDeporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\SubFrmModificarEncuentro.resx">
       <DependentUpon>SubFrmModificarEncuentro.cs</DependentUpon>

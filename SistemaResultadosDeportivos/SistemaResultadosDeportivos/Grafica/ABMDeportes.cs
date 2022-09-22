@@ -92,6 +92,24 @@ namespace SistemaResultadosDeportivos
             }
         }
 
+        public bool confirmarModificacion(bool porEquipos, bool anotaciones, bool sets, int cantParticipantes, String nombreDeporte, int tamAlineacion)
+        {
+            List<Deporte> lista = lgd.devolverDeportes();
+            Deporte deporte = lista[var];
+            int idDeporte = deporte.idDeporte;
+            bool exito;
+            if (lgd.modificarDeporte(idDeporte, porEquipos, anotaciones, sets, cantParticipantes, nombreDeporte, tamAlineacion))
+            {
+                listarDeportes();
+                exito = true;
+            }
+            else
+            {
+                exito = false;
+            }
+            return exito;
+        }
+
         private void propiedadesBoton(Button btn, int i, int t)
         {
             btn.Height = 92;
@@ -118,12 +136,19 @@ namespace SistemaResultadosDeportivos
             lbl.Location = new System.Drawing.Point(110, l);
         }
 
+        public Deporte obtenerDeporte()
+        {
+            List<Deporte> lista = lgd.devolverDeportes();
+            Deporte deporte = lista[var];
+            return deporte;
+        }
+
         private void btnDeporte_Click(object sender, EventArgs e)
         {
             Button btnDeporte = sender as Button;
             int i = (Int32)btnDeporte.Tag;
             var = i;
-            //new SubFrmModificarEncuentro(this).Visible = true;
+            new SubFrmModificarDeporte(this).Visible = true;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
