@@ -24,7 +24,7 @@ namespace SistemaResultadosDeportivos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Estás seguro?", "Confirmar baja de usuario", System.Windows.MessageBoxButton.YesNo);
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Estás seguro?", "Confirmar baja de jugador", System.Windows.MessageBoxButton.YesNo);
             if (messageBoxResult == System.Windows.MessageBoxResult.Yes)
             {
                 jugadores.eliminarJugador();
@@ -55,10 +55,6 @@ namespace SistemaResultadosDeportivos
                 if (!jugadores.confirmarModificacion(nombre, pais, edad, estatura, peso))
                 {
                     new SubFrmModificarJugador(jugadores).Visible = true;
-                }
-                else
-                {
-                    jugadores.listarJugadores();
                 }
             }
             else

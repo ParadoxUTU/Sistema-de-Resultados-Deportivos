@@ -1,4 +1,4 @@
-﻿namespace SistemaResultadosDeportivos.Grafica
+﻿namespace SistemaResultadosDeportivos
 {
     partial class SubFrmModificarTorneo
     {
@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.dateFechaFin = new System.Windows.Forms.DateTimePicker();
             this.dateFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -41,6 +38,9 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,96 @@
             this.panel1.Size = new System.Drawing.Size(709, 496);
             this.panel1.TabIndex = 24;
             // 
+            // dateFechaFin
+            // 
+            this.dateFechaFin.Location = new System.Drawing.Point(409, 270);
+            this.dateFechaFin.Name = "dateFechaFin";
+            this.dateFechaFin.Size = new System.Drawing.Size(200, 20);
+            this.dateFechaFin.TabIndex = 37;
+            // 
+            // dateFechaInicio
+            // 
+            this.dateFechaInicio.Location = new System.Drawing.Point(409, 207);
+            this.dateFechaInicio.Name = "dateFechaInicio";
+            this.dateFechaInicio.Size = new System.Drawing.Size(200, 20);
+            this.dateFechaInicio.TabIndex = 36;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Menu;
+            this.label5.Location = new System.Drawing.Point(421, 239);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(148, 16);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Fecha de finalización:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Menu;
+            this.label4.Location = new System.Drawing.Point(421, 173);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 16);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Fecha de inicio:";
+            // 
+            // txtPais
+            // 
+            this.txtPais.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPais.Location = new System.Drawing.Point(409, 139);
+            this.txtPais.Name = "txtPais";
+            this.txtPais.Size = new System.Drawing.Size(200, 22);
+            this.txtPais.TabIndex = 31;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Menu;
+            this.label3.Location = new System.Drawing.Point(421, 111);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 16);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "País:";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(409, 76);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(200, 22);
+            this.txtNombre.TabIndex = 33;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Menu;
+            this.label2.Location = new System.Drawing.Point(421, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 16);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Nombre:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Menu;
+            this.label1.Location = new System.Drawing.Point(434, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(175, 24);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Agregar torneos";
+            // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.MediumTurquoise;
@@ -73,8 +163,9 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(220, 40);
             this.btnEliminar.TabIndex = 26;
-            this.btnEliminar.Text = "Eliminar jugador";
+            this.btnEliminar.Text = "Eliminar torneo";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -101,96 +192,7 @@
             this.btnAceptar.TabIndex = 21;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
-            // 
-            // dateFechaFin
-            // 
-            this.dateFechaFin.Location = new System.Drawing.Point(419, 243);
-            this.dateFechaFin.Name = "dateFechaFin";
-            this.dateFechaFin.Size = new System.Drawing.Size(200, 20);
-            this.dateFechaFin.TabIndex = 37;
-            // 
-            // dateFechaInicio
-            // 
-            this.dateFechaInicio.Location = new System.Drawing.Point(419, 180);
-            this.dateFechaInicio.Name = "dateFechaInicio";
-            this.dateFechaInicio.Size = new System.Drawing.Size(200, 20);
-            this.dateFechaInicio.TabIndex = 36;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label5.Location = new System.Drawing.Point(431, 212);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(148, 16);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Fecha de finalización:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label4.Location = new System.Drawing.Point(431, 146);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 16);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Fecha de inicio:";
-            // 
-            // txtPais
-            // 
-            this.txtPais.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPais.Location = new System.Drawing.Point(419, 112);
-            this.txtPais.Name = "txtPais";
-            this.txtPais.Size = new System.Drawing.Size(200, 22);
-            this.txtPais.TabIndex = 31;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label3.Location = new System.Drawing.Point(431, 84);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 16);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "País:";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(419, 49);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(200, 22);
-            this.txtNombre.TabIndex = 33;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label2.Location = new System.Drawing.Point(431, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 16);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "Nombre:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label1.Location = new System.Drawing.Point(434, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 24);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "Agregar torneos";
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // SubFrmModificarTorneo
             // 
@@ -201,6 +203,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "SubFrmModificarTorneo";
             this.Text = "SubFrmModificarTorneo";
+            this.Load += new System.EventHandler(this.SubFrmModificarTorneo_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

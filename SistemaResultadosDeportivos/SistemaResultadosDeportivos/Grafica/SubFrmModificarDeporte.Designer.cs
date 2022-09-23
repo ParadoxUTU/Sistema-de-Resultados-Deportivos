@@ -202,6 +202,7 @@
             this.btnEliminar.TabIndex = 26;
             this.btnEliminar.Text = "Eliminar Deporte";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -215,6 +216,7 @@
             this.btnModificar.TabIndex = 25;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // pnlPerfil
             // 
@@ -241,6 +243,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(899, 547);
             this.Controls.Add(this.panel1);
             this.Name = "SubFrmModificarDeporte";

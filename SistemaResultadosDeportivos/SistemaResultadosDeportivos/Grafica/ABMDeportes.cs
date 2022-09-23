@@ -110,7 +110,16 @@ namespace SistemaResultadosDeportivos
             return exito;
         }
 
-        private void propiedadesBoton(Button btn, int i, int t)
+        public void eliminarDeporte()
+        {
+            List<Deporte> lista = lgd.devolverDeportes();
+            Deporte deporte = lista[var];
+            int idDeporte = deporte.idDeporte;
+            lgd.eliminarDeporte(idDeporte);
+            listarDeportes();
+        }
+
+            private void propiedadesBoton(Button btn, int i, int t)
         {
             btn.Height = 92;
             btn.Tag = i;

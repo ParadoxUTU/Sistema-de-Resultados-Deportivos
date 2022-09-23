@@ -118,7 +118,42 @@ namespace SistemaResultadosDeportivos
             Button btnTorneo = sender as Button;
             int i = (Int32)btnTorneo.Tag;
             var = i;
-            //new SubFrmModificarEncuentro(this).Visible = true;
+            new SubFrmModificarTorneo(this).Visible = true;
+        }
+
+        public bool confirmarModificacion(String fechaComienzo, String fechaFin, string nombrePais, string nombreTorneo)
+        {
+            List<Torneo> lista = lgt.devolverTorneos();
+            Torneo torneo = lista[var];
+            int idTorneo = torneo.idTorneo;
+            int idDeporte = torneo.idDeporte;
+            bool exito;
+            if(lgt.modificarTorneo(idTorneo, fechaComienzo, fechaFin, nombrePais, nombreTorneo, idDeporte))
+            {
+                listarTorneos();
+                exito = true;
+            }
+            else
+            {
+                exito = false;
+            }
+            return exito;
+        }
+
+        public Torneo obtenerTorneo()
+        {
+            List<Torneo> lista = lgt.devolverTorneos();
+            Torneo torneo = lista[var];
+            return torneo;
+        }
+
+        public void eliminarTorneo()
+        {
+            List<Torneo> lista = lgt.devolverTorneos();
+            Torneo torneo = lista[var];
+            int idTorneo = torneo.idTorneo;
+            lgt.eliminarTorneo(idTorneo);
+            listarTorneos();
         }
 
         private void ABMTorneos_Load(object sender, EventArgs e)

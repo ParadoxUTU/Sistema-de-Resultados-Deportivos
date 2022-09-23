@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace SistemaResultadosDeportivos
@@ -19,12 +20,17 @@ namespace SistemaResultadosDeportivos
         {
             InitializeComponent();
             deportes = d;
+            txtNombre.Enabled = false;
+            cbxModalidad.Enabled = false;
+            cbxPuntuacion.Enabled = false;
+            numAlineacion.Enabled = false;
+            numParticipantes.Enabled = false;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             String nombre = txtNombre.Text;
-            string modalidad;
+            String modalidad;
             bool porEquipos;
             string puntuacion;
             bool anotaciones;
@@ -43,10 +49,6 @@ namespace SistemaResultadosDeportivos
                 {
                     new SubFrmModificarDeporte(deportes).Visible = true;
                 }
-                else
-                {
-                    deportes.listarDeportes();
-                }
             }
             else
             {
@@ -56,6 +58,7 @@ namespace SistemaResultadosDeportivos
 
         private void SubFrmModificarDeporte_Load(object sender, EventArgs e)
         {
+            panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
             Deporte deporte = deportes.obtenerDeporte();
             txtNombre.Text = deporte.nombreDeporte;
             if (deporte.porEquipos)
@@ -76,6 +79,25 @@ namespace SistemaResultadosDeportivos
             }
             numAlineacion.Value = deporte.tamAlineacion;
             numParticipantes.Value = deporte.cantParticipantes;
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            txtNombre.Enabled = true;
+            cbxModalidad.Enabled = true;
+            cbxPuntuacion.Enabled = true;
+            numAlineacion.Enabled = true;
+            numParticipantes.Enabled = true;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Estás seguro?", "Confirmar baja de deporte", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == System.Windows.MessageBoxResult.Yes)
+            {
+                deportes.eliminarDeporte();
+                this.Dispose();
+            }
         }
     }
 }

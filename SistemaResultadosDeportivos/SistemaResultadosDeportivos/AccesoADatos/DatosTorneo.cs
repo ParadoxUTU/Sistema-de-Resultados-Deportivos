@@ -180,8 +180,9 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 cn.Close();
                 return true;
             }
-            catch
+            catch(Exception ex)
             {
+                MessageBox.Show(ex.ToString());
                 return false;
             }
         }
