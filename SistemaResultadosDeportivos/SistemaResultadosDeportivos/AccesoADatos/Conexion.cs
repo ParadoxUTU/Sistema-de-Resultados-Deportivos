@@ -24,9 +24,8 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 cn.CursorLocation = ADODB.CursorLocationEnum.adUseClient;
                 return cn;
             }
-            catch (Exception ex)
+            catch 
             {
-                MessageBox.Show(ex.ToString());
                 return null;
             }
         }

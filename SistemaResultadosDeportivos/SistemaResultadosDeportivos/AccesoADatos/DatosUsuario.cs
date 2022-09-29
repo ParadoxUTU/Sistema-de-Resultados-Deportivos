@@ -16,29 +16,31 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             //Devuelve un usuario mapeado al modelo, dado su correo
             try
             {
-                Usuario usuario;
+                Usuario usuario = null;
                 ADODB.Connection cn = Conexion.Crear();
                 String sql = "SELECT * FROM Usuarios WHERE dirCorreo = '" + correo + "';";
-                ADODB.Recordset rs = cn.Execute(sql, out object cantFilas, -1);
-                if (rs.RecordCount > 0)
+                if (cn != null)
                 {
-                    String c = rs.Fields[0].Value.ToString();
-                    String n = rs.Fields[1].Value.ToString();
-                    int r;
-                    int.TryParse(rs.Fields[2].Value.ToString(), out r);
-                    usuario = new Usuario(c, n, r);
+                    ADODB.Recordset rs = cn.Execute(sql, out object cantFilas, -1);
+                    if (rs.RecordCount > 0)
+                    {
+                        String c = rs.Fields[0].Value.ToString();
+                        String n = rs.Fields[1].Value.ToString();
+                        int r;
+                        int.TryParse(rs.Fields[2].Value.ToString(), out r);
+                        usuario = new Usuario(c, n, r);
+                    }
+                    else
+                    {
+                        usuario = null;
+                    }
+                    rs.Close();
+                    cn.Close();
                 }
-                else
-                {
-                    usuario = null;
-                }
-                rs.Close();
-                cn.Close();
                 return usuario;
             }
-            catch(Exception ex)
+            catch
             {
-                MessageBox.Show(ex.ToString());
                 return null;
             }
         }
@@ -175,12 +177,8 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 }
                 if (rol == 1)
                 {
-                    String stringSql = "GRANT ALL ON Usuarios TO '" + correo + "'@'localhost';";
+                    String stringSql = "GRANT CREATE USER ON *.* TO '" + correo + "'@'localhost' WITH GRANT OPTION;";
                     cn.Execute(stringSql, out object cantFilas, -1);
-                    stringSql = "GRANT ALL ON Publicidad TO '" + correo + "'@'localhost';";
-                    cn.Execute(stringSql, out cantFilas, -1);
-                    stringSql = "GRANT CREATE USER ON *.* TO '" + correo + "'@'localhost' WITH GRANT OPTION;";
-                    cn.Execute(stringSql, out cantFilas, -1);
                     stringSql = "GRANT ALL PRIVILEGES ON " + getBaseDeDatosSeleccionada() + ".* TO '" + correo + "'@'localhost';";
                     cn.Execute(stringSql, out cantFilas, -1);
                 }
