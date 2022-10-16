@@ -33,7 +33,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.flpJugadores = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblEquipo1 = new System.Windows.Forms.Label();
+            this.lblEquipo = new System.Windows.Forms.Label();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.pnlBuscar.SuspendLayout();
             this.SuspendLayout();
@@ -91,17 +91,17 @@
             this.flpJugadores.TabIndex = 21;
             this.flpJugadores.WrapContents = false;
             // 
-            // lblEquipo1
+            // lblEquipo
             // 
-            this.lblEquipo1.AutoSize = true;
-            this.lblEquipo1.BackColor = System.Drawing.Color.Transparent;
-            this.lblEquipo1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipo1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblEquipo1.Location = new System.Drawing.Point(12, 82);
-            this.lblEquipo1.Name = "lblEquipo1";
-            this.lblEquipo1.Size = new System.Drawing.Size(131, 32);
-            this.lblEquipo1.TabIndex = 24;
-            this.lblEquipo1.Text = "Equipo 1";
+            this.lblEquipo.AutoSize = true;
+            this.lblEquipo.BackColor = System.Drawing.Color.Transparent;
+            this.lblEquipo.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEquipo.ForeColor = System.Drawing.SystemColors.Menu;
+            this.lblEquipo.Location = new System.Drawing.Point(12, 82);
+            this.lblEquipo.Name = "lblEquipo";
+            this.lblEquipo.Size = new System.Drawing.Size(108, 32);
+            this.lblEquipo.TabIndex = 24;
+            this.lblEquipo.Text = "Equipo";
             // 
             // btnSiguiente
             // 
@@ -124,7 +124,7 @@
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(913, 643);
             this.Controls.Add(this.btnSiguiente);
-            this.Controls.Add(this.lblEquipo1);
+            this.Controls.Add(this.lblEquipo);
             this.Controls.Add(this.flpJugadores);
             this.Controls.Add(this.pnlBuscar);
             this.Name = "FrmSeleccionarAlineacion";
@@ -144,7 +144,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.FlowLayoutPanel flpJugadores;
-        private System.Windows.Forms.Label lblEquipo1;
+        private System.Windows.Forms.Label lblEquipo;
         private System.Windows.Forms.Button btnSiguiente;
     }
 }

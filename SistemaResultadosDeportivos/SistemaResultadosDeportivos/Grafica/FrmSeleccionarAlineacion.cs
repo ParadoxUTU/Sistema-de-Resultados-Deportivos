@@ -175,6 +175,7 @@ namespace SistemaResultadosDeportivos
             if(fase == 0)
             {
                 fase++;
+                lblEquipo.Text = equipo2.nombreEquipo;
                 listarJugadoresPorPlantel(equipo2.idEquipo);
             }
             else
@@ -199,7 +200,10 @@ namespace SistemaResultadosDeportivos
 
         private void FrmSeleccionarAlineacion_Load(object sender, EventArgs e)
         {
+            lblEquipo.Text = equipo1.nombreEquipo;
             flpJugadores.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
+            pnlBuscar.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
+            pnlLupa.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
         }
     }
 }

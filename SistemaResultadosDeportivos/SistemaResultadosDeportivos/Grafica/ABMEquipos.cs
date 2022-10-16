@@ -12,13 +12,15 @@ namespace SistemaResultadosDeportivos
     {
         LogicaDeportes lgd;
         LogicaEquipos lgeq;
+        FrmInicioEquipos equipos;
 
-        public ABMEquipos()
+        public ABMEquipos(FrmInicioEquipos equipos)
         {
             InitializeComponent();
             lgd = new LogicaDeportes();
             lgeq = new LogicaEquipos();
             listarDeportes();
+            this.equipos = equipos;
         }
 
         private void listarDeportes()
@@ -62,7 +64,7 @@ namespace SistemaResultadosDeportivos
                     if (lgeq.agregarEquipo(pais, nombre, idDeporte))
                     {
                         MessageBox.Show("Equipo agregado");
-                        //listarEquipos();
+                        equipos.listarEquipos();
                     }
                 }
                 else

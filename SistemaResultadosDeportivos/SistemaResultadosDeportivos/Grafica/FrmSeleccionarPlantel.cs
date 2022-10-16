@@ -133,6 +133,8 @@ namespace SistemaResultadosDeportivos
         private void FrmSeleccionarPlantel_Load(object sender, EventArgs e)
         {
             flpJugadores.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
+            pnlBuscar.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
+            pnlLupa.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
         }
     }
 }

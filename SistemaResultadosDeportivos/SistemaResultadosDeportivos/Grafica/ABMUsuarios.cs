@@ -252,6 +252,7 @@ namespace SistemaResultadosDeportivos
             List<Usuario> lista = lgu.devolverUsuarios();
             Usuario user = lista[var];
             String correo = user.correo;
+            lgu.eliminarMiembro(correo);
             lgu.bajaUsuario(correo);
             listarUsers();
         }

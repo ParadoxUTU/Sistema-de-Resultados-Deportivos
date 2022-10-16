@@ -81,6 +81,25 @@ namespace SistemaResultadosDeportivos
             }
         }
 
+        public bool confirmarModificacion(String nombre, String pais)
+        {
+            List<Equipo> lista = lgeq.devolverEquipos();
+            Equipo equipo = lista[var];
+            int idEquipo = equipo.idEquipo;
+            int idDeporte = equipo.idDeporte;
+            bool exito;
+            if (lgeq.modificarEquipo(idEquipo, pais, nombre, idDeporte))
+            {
+                listarEquipos();
+                exito = true;
+            }
+            else
+            {
+                exito = false;
+            }
+            return exito;
+        }
+
         private void propiedadesLabel(Label lbl, String s, Button btn, int l)
         {
             lbl.Text = s;
@@ -96,12 +115,13 @@ namespace SistemaResultadosDeportivos
             Button btnEncuentro = sender as Button;
             int i = (Int32)btnEncuentro.Tag;
             var = i;
-            new FrmSeleccionarPlantel(this).Visible = true;
+            //new FrmSeleccionarPlantel(this).Visible = true;
+            new SubFrmModificarEquipo(this).Visible = true;
         }
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            new ABMEquipos().Visible = true;
+            new ABMEquipos(this).Visible = true;
         }
 
         public Equipo obtenerEquipo()
