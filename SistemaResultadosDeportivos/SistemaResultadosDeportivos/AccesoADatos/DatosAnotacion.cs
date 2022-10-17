@@ -139,5 +139,22 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 return false;
             }
         }
+
+        public bool eliminarAnotacionesDeDeporte(int idEncuentro)
+        {
+            //Intenta eliminar todas las anotaciones de un encuentro dado en la BD
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "DELETE FROM Anotaciones WHERE IdEncuentro = '" + idEncuentro + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

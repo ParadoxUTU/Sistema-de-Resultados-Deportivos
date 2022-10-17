@@ -10,17 +10,17 @@ namespace SistemaResultadosDeportivos.Modelos
     {
         public int idJugador { get; set; }
         public String nombreJugador { get; set; }
-        public int edad { get; set; }
+        public DateTime fechaNac { get; set; }
         public int peso { get; set; }
         public int estatura { get; set; }
         public String pais { get; set; }
         public int idDeporte { get; set; }
 
-        public Jugador(int idJ, String nJ, int e, int pe, int es, String p, int idD)
+        public Jugador(int idJ, String nJ, DateTime f, int pe, int es, String p, int idD)
         {
             idJugador = idJ;
             nombreJugador = nJ;
-            edad = e;
+            fechaNac = f;
             peso = pe;
             estatura = es;
             pais = p;

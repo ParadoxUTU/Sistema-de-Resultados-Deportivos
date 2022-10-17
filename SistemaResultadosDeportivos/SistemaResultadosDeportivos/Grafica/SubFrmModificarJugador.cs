@@ -36,7 +36,7 @@ namespace SistemaResultadosDeportivos
         {
             txtNombre.Enabled = true;
             txtPais.Enabled = true;
-            numEdad.Enabled = true;
+            dateFecha.Enabled = true;
             numEstatura.Enabled = true;
             numPeso.Enabled = true;
             btnModificar.Enabled = false;
@@ -46,13 +46,14 @@ namespace SistemaResultadosDeportivos
         {
             String nombre = txtNombre.Text;
             String pais = txtPais.Text;
-            int edad = (int)numEdad.Value;
+            DateTime fechaNac = dateFecha.Value;
+            String strFecha = fechaNac.Year.ToString() + "-" + fechaNac.Month.ToString() + "-" + fechaNac.Day.ToString();
             int estatura = (int)numEstatura.Value;
             int peso = (int)numPeso.Value;
             if(!nombre.Equals("") && !pais.Equals(""))
             {
                 this.Dispose();
-                if (!jugadores.confirmarModificacion(nombre, pais, edad, estatura, peso))
+                if (!jugadores.confirmarModificacion(nombre, pais, strFecha, estatura, peso))
                 {
                     new SubFrmModificarJugador(jugadores).Visible = true;
                 }
@@ -68,7 +69,7 @@ namespace SistemaResultadosDeportivos
             Jugador jugador = jugadores.obtenerJugador();
             txtNombre.Text = jugador.nombreJugador;
             txtPais.Text = jugador.pais;
-            numEdad.Value = jugador.edad;
+            dateFecha.Value = jugador.fechaNac;
             numEstatura.Value = jugador.estatura;
             numPeso.Value = jugador.peso;
             panel1.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);

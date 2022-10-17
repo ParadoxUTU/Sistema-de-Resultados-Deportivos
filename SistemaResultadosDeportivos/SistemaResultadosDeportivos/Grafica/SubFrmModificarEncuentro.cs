@@ -118,7 +118,7 @@ namespace SistemaResultadosDeportivos
                 foreach (Jugador j in lista)
                 {
                     String tamanoSt = "Nombre: " + j.nombreJugador;
-                    String tamanoSt2 = "Pais: " + j.edad;
+                    String tamanoSt2 = "Pais: " + j.pais;
                     if (tamanoSt.Length > tamano)
                     {
                         tamano = tamanoSt.Length;
@@ -134,7 +134,7 @@ namespace SistemaResultadosDeportivos
                     idParticipantes.Add(j.idJugador);
                     String textNombre = "Nombre: " + j.nombreJugador;
                     String textPais = "Pais: " + j.pais;
-                    String textEdad = "Edad: " + j.edad;
+                    String textEdad = "Fecha mi Nacimiento: " + j.fechaNac;
                     asignarComponentes(textNombre, textPais, textEdad, i, tamano);
                     i++;
                 }
@@ -256,6 +256,11 @@ namespace SistemaResultadosDeportivos
             numMinActual.Value = en.minActual;
             Deporte dep = lgd.devolverDeportePorID(en.idDeporte);
             cbxDeportes.Text = dep.nombreDeporte;
+            if (dep.porEquipos)
+            {
+                label2.Visible = false;
+                txtNombre.Visible = false;
+            }
             Torneo tor = lgt.devolverTorneoPorEncuentro(en.idEncuentro);
             if (tor != null)
             {
@@ -291,7 +296,19 @@ namespace SistemaResultadosDeportivos
             int minActual = (int)numMinActual.Value;
             bool comenzo = (cbxEstado.SelectedIndex == 0);
             bool finalizo = (cbxEstado.SelectedIndex == 2);
-            String nombreEncuentro = txtNombre.Text;
+            String nombreEncuentro = "";
+            if (deporte.porEquipos)
+            {
+                List<Equipo> participantes = lgeq.devolverEquiposPorEncuentro(en.idEncuentro);
+                if(participantes.Count == 2)
+                {
+                    nombreEncuentro = participantes[0].nombreEquipo + " vs " + participantes[1].nombreEquipo;
+                }
+            }
+            else
+            {
+                nombreEncuentro = txtNombre.Text;
+            }
             if(encuentros.lge.modificarEncuentro(en.idEncuentro, strFecha, strHora, pausado, minActual, comenzo, finalizo, nombreEncuentro, deporte.idDeporte))
             {
                 encuentros.listarEncuentros();

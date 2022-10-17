@@ -9,12 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
+using SistemaResultadosDeportivos.Logica;
 
 namespace SistemaResultadosDeportivos
 {
     public partial class SubFrmModificarDeporte : Form
     {
         ABMDeportes deportes;
+        LogicaAnotaciones lga;
+        LogicaEncuentros lge;
+        LogicaJugadores lgj;
+        LogicaEquipos lgeq;
+        LogicaSets lgs;
+        LogicaTorneos lgu;
 
         public SubFrmModificarDeporte(ABMDeportes d)
         {

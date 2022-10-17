@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.numPeso = new System.Windows.Forms.NumericUpDown();
+            this.numEstatura = new System.Windows.Forms.NumericUpDown();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.cbxDeportes = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -45,19 +47,16 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.flpJugadores = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlLupa = new System.Windows.Forms.Panel();
-            this.numEstatura = new System.Windows.Forms.NumericUpDown();
-            this.numPeso = new System.Windows.Forms.NumericUpDown();
-            this.numEdad = new System.Windows.Forms.NumericUpDown();
+            this.dateFecha = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
-            this.pnlBuscar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numEstatura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPeso)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numEdad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numEstatura)).BeginInit();
+            this.pnlBuscar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.numEdad);
+            this.panel1.Controls.Add(this.dateFecha);
             this.panel1.Controls.Add(this.numPeso);
             this.panel1.Controls.Add(this.numEstatura);
             this.panel1.Controls.Add(this.btnAgregar);
@@ -75,6 +74,50 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(248, 498);
             this.panel1.TabIndex = 0;
+            // 
+            // numPeso
+            // 
+            this.numPeso.Location = new System.Drawing.Point(28, 210);
+            this.numPeso.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.numPeso.Minimum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.numPeso.Name = "numPeso";
+            this.numPeso.Size = new System.Drawing.Size(194, 20);
+            this.numPeso.TabIndex = 5;
+            this.numPeso.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // numEstatura
+            // 
+            this.numEstatura.Location = new System.Drawing.Point(31, 274);
+            this.numEstatura.Maximum = new decimal(new int[] {
+            270,
+            0,
+            0,
+            0});
+            this.numEstatura.Minimum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.numEstatura.Name = "numEstatura";
+            this.numEstatura.Size = new System.Drawing.Size(191, 20);
+            this.numEstatura.TabIndex = 4;
+            this.numEstatura.Value = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             // 
             // btnAgregar
             // 
@@ -163,9 +206,9 @@
             this.label3.ForeColor = System.Drawing.SystemColors.Menu;
             this.label3.Location = new System.Drawing.Point(25, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 16);
+            this.label3.Size = new System.Drawing.Size(146, 16);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Edad:";
+            this.label3.Text = "Fecha de Nacimiento:";
             // 
             // txtNombre
             // 
@@ -248,71 +291,12 @@
             this.pnlLupa.Size = new System.Drawing.Size(54, 39);
             this.pnlLupa.TabIndex = 0;
             // 
-            // numEstatura
+            // dateFecha
             // 
-            this.numEstatura.Location = new System.Drawing.Point(31, 274);
-            this.numEstatura.Maximum = new decimal(new int[] {
-            270,
-            0,
-            0,
-            0});
-            this.numEstatura.Minimum = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            this.numEstatura.Name = "numEstatura";
-            this.numEstatura.Size = new System.Drawing.Size(191, 20);
-            this.numEstatura.TabIndex = 4;
-            this.numEstatura.Value = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            // 
-            // numPeso
-            // 
-            this.numPeso.Location = new System.Drawing.Point(28, 210);
-            this.numPeso.Maximum = new decimal(new int[] {
-            300,
-            0,
-            0,
-            0});
-            this.numPeso.Minimum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.numPeso.Name = "numPeso";
-            this.numPeso.Size = new System.Drawing.Size(194, 20);
-            this.numPeso.TabIndex = 5;
-            this.numPeso.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            // 
-            // numEdad
-            // 
-            this.numEdad.Location = new System.Drawing.Point(28, 146);
-            this.numEdad.Maximum = new decimal(new int[] {
-            120,
-            0,
-            0,
-            0});
-            this.numEdad.Minimum = new decimal(new int[] {
-            14,
-            0,
-            0,
-            0});
-            this.numEdad.Name = "numEdad";
-            this.numEdad.Size = new System.Drawing.Size(194, 20);
-            this.numEdad.TabIndex = 6;
-            this.numEdad.Value = new decimal(new int[] {
-            14,
-            0,
-            0,
-            0});
+            this.dateFecha.Location = new System.Drawing.Point(28, 145);
+            this.dateFecha.Name = "dateFecha";
+            this.dateFecha.Size = new System.Drawing.Size(200, 20);
+            this.dateFecha.TabIndex = 11;
             // 
             // ABMJugadores
             // 
@@ -332,11 +316,10 @@
             this.Load += new System.EventHandler(this.ABMJugadores_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPeso)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numEstatura)).EndInit();
             this.pnlBuscar.ResumeLayout(false);
             this.pnlBuscar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numEstatura)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPeso)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numEdad)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -360,8 +343,8 @@
         private System.Windows.Forms.TextBox txtPais;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.NumericUpDown numEdad;
         private System.Windows.Forms.NumericUpDown numPeso;
         private System.Windows.Forms.NumericUpDown numEstatura;
+        private System.Windows.Forms.DateTimePicker dateFecha;
     }
 }

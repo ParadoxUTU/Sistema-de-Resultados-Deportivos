@@ -37,7 +37,7 @@ namespace SistemaResultadosDeportivos
             foreach (Jugador j in lista)
             {
                 String tamanoSt = "Nombre: " + j.nombreJugador;
-                String tamanoSt2 = "Pais: " + j.edad;
+                String tamanoSt2 = "Pais: " + j.pais;
                 if (tamanoSt.Length > tamano)
                 {
                     tamano = tamanoSt.Length;
@@ -53,7 +53,7 @@ namespace SistemaResultadosDeportivos
                 idJugadores.Add(j.idJugador);
                 String textNombre = "Nombre: " + j.nombreJugador;
                 String textPais = "Pais: " + j.pais;
-                String textEdad = "Edad: " + j.edad;
+                String textEdad = "Fecha de Nacimiento: " + j.fechaNac;
                 asignarComponentes(textNombre, textPais, textEdad, i, tamano);
                 i++;
             }

@@ -29,36 +29,35 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.numEdad = new System.Windows.Forms.NumericUpDown();
             this.numPeso = new System.Windows.Forms.NumericUpDown();
             this.numEstatura = new System.Windows.Forms.NumericUpDown();
             this.txtPais = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.pnlPerfil = new System.Windows.Forms.Panel();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.dateFecha = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numEdad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPeso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numEstatura)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.numEdad);
+            this.panel1.Controls.Add(this.dateFecha);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.numPeso);
             this.panel1.Controls.Add(this.numEstatura);
             this.panel1.Controls.Add(this.txtPais);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnEliminar);
@@ -69,29 +68,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(709, 496);
             this.panel1.TabIndex = 23;
-            // 
-            // numEdad
-            // 
-            this.numEdad.Enabled = false;
-            this.numEdad.Location = new System.Drawing.Point(399, 123);
-            this.numEdad.Maximum = new decimal(new int[] {
-            120,
-            0,
-            0,
-            0});
-            this.numEdad.Minimum = new decimal(new int[] {
-            14,
-            0,
-            0,
-            0});
-            this.numEdad.Name = "numEdad";
-            this.numEdad.Size = new System.Drawing.Size(194, 20);
-            this.numEdad.TabIndex = 38;
-            this.numEdad.Value = new decimal(new int[] {
-            14,
-            0,
-            0,
-            0});
             // 
             // numPeso
             // 
@@ -184,18 +160,6 @@
             this.label4.TabIndex = 32;
             this.label4.Text = "Peso:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label3.Location = new System.Drawing.Point(396, 89);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 16);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Edad:";
-            // 
             // txtNombre
             // 
             this.txtNombre.Enabled = false;
@@ -266,6 +230,26 @@
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // dateFecha
+            // 
+            this.dateFecha.Enabled = false;
+            this.dateFecha.Location = new System.Drawing.Point(399, 132);
+            this.dateFecha.Name = "dateFecha";
+            this.dateFecha.Size = new System.Drawing.Size(200, 20);
+            this.dateFecha.TabIndex = 39;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Menu;
+            this.label3.Location = new System.Drawing.Point(396, 99);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(146, 16);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "Fecha de Nacimiento:";
+            // 
             // SubFrmModificarJugador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,7 +262,6 @@
             this.Load += new System.EventHandler(this.SubFrmModificarJugador_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numEdad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPeso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numEstatura)).EndInit();
             this.ResumeLayout(false);
@@ -292,15 +275,15 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Panel pnlPerfil;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.NumericUpDown numEdad;
         private System.Windows.Forms.NumericUpDown numPeso;
         private System.Windows.Forms.NumericUpDown numEstatura;
         private System.Windows.Forms.TextBox txtPais;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dateFecha;
+        private System.Windows.Forms.Label label3;
     }
 }

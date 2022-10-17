@@ -212,6 +212,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(203, 22);
             this.txtNombre.TabIndex = 0;
+            this.txtNombre.Visible = false;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // label2
@@ -225,6 +226,7 @@
             this.label2.Size = new System.Drawing.Size(61, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Nombre:";
+            this.label2.Visible = false;
             // 
             // btnGuardar
             // 

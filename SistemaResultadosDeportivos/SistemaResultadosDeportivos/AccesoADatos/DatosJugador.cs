@@ -16,7 +16,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             //Mapea los jugadores existentes a los modelos, y los devuelve en una lista
             int idJugador;
             String nombreJugador;
-            int edad;
+            DateTime fechaNac;
             int peso;
             int estatura;
             String pais;
@@ -33,12 +33,12 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                     {
                         idJugador = (int)rs.Fields[0].Value;
                         nombreJugador = (string)rs.Fields[1].Value;
-                        edad = (int)rs.Fields[2].Value;
+                        fechaNac = rs.Fields[2].Value;
                         peso = (int)rs.Fields[3].Value;
                         estatura = (int)rs.Fields[4].Value;
                         pais = (string)rs.Fields[5].Value;
                         idDeporte = (int)rs.Fields[6].Value;
-                        Jugador jugador = new Jugador(idJugador, nombreJugador, edad, peso, estatura, pais, idDeporte);
+                        Jugador jugador = new Jugador(idJugador, nombreJugador, fechaNac, peso, estatura, pais, idDeporte);
                         lista.Add(jugador);
                         rs.MoveNext();
                     }
@@ -54,7 +54,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             //Devuelve un jugador dependiendo de su ID
             int idJugador;
             String nombreJugador;
-            int edad;
+            DateTime fechaNac;
             int peso;
             int estatura;
             String pais;
@@ -67,12 +67,12 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 ADODB.Recordset rs = cn.Execute(stringSql, out object cantFilas, -1);
                 idJugador = (int)rs.Fields[0].Value;
                 nombreJugador = (string)rs.Fields[1].Value;
-                edad = (int)rs.Fields[2].Value;
+                fechaNac = rs.Fields[2].Value;
                 peso = (int)rs.Fields[3].Value;
                 estatura = (int)rs.Fields[4].Value;
                 pais = (string)rs.Fields[5].Value;
                 idDeporte = (int)rs.Fields[6].Value;
-                jugador = new Jugador(idJugador, nombreJugador, edad, peso, estatura, pais, idDeporte);
+                jugador = new Jugador(idJugador, nombreJugador, fechaNac, peso, estatura, pais, idDeporte);
                 cn.Close();
             }
             catch { }
@@ -84,7 +84,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             //Mapea los jugadores pertenecientes a un deporte existentes a los modelos, y los devuelve en una lista
             int idJugador;
             String nombreJugador;
-            int edad;
+            DateTime fechaNac;
             int peso;
             int estatura;
             String pais;
@@ -100,11 +100,11 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                     {
                         idJugador = (int)rs.Fields[0].Value;
                         nombreJugador = (string)rs.Fields[1].Value;
-                        edad = (int)rs.Fields[2].Value;
+                        fechaNac = rs.Fields[2].Value;
                         peso = (int)rs.Fields[3].Value;
                         estatura = (int)rs.Fields[4].Value;
                         pais = (string)rs.Fields[5].Value;
-                        Jugador jugador = new Jugador(idJugador, nombreJugador, edad, peso, estatura, pais, idDeporte);
+                        Jugador jugador = new Jugador(idJugador, nombreJugador, fechaNac, peso, estatura, pais, idDeporte);
                         lista.Add(jugador);
                         rs.MoveNext();
                     }
@@ -120,7 +120,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             //Mapea los jugadores pertenecientes a un torneo existentes a los modelos, y los devuelve en una lista
             int idJugador;
             String nombreJugador;
-            int edad;
+            DateTime fechaNac;
             int peso;
             int estatura;
             String pais;
@@ -137,12 +137,12 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                     {
                         idJugador = (int)rs.Fields[0].Value;
                         nombreJugador = (string)rs.Fields[4].Value;
-                        edad = (int)rs.Fields[5].Value;
+                        fechaNac = rs.Fields[5].Value;
                         peso = (int)rs.Fields[6].Value;
                         estatura = (int)rs.Fields[7].Value;
                         pais = (string)rs.Fields[8].Value;
                         idDeporte = (int)rs.Fields[9].Value;
-                        Jugador jugador = new Jugador(idJugador, nombreJugador, edad, peso, estatura, pais, idDeporte);
+                        Jugador jugador = new Jugador(idJugador, nombreJugador, fechaNac, peso, estatura, pais, idDeporte);
                         lista.Add(jugador);
                         rs.MoveNext();
                     }
@@ -158,7 +158,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             //Mapea los jugadores pertenecientes a un torneo existentes a los modelos, y los devuelve en una lista
             int idJugador;
             String nombreJugador;
-            int edad;
+            DateTime fechaNac;
             int peso;
             int estatura;
             String pais;
@@ -175,12 +175,12 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                     {
                         idJugador = (int)rs.Fields[4].Value;
                         nombreJugador = (string)rs.Fields[5].Value;
-                        edad = (int)rs.Fields[6].Value;
+                        fechaNac = rs.Fields[6].Value;
                         peso = (int)rs.Fields[7].Value;
                         estatura = (int)rs.Fields[8].Value;
                         pais = (string)rs.Fields[9].Value;
                         idDeporte = (int)rs.Fields[10].Value;
-                        Jugador jugador = new Jugador(idJugador, nombreJugador, edad, peso, estatura, pais, idDeporte);
+                        Jugador jugador = new Jugador(idJugador, nombreJugador, fechaNac, peso, estatura, pais, idDeporte);
                         lista.Add(jugador);
                         rs.MoveNext();
                     }
@@ -196,7 +196,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             //Mapea los jugadores pertenecientes a un plantel existentes a los modelos, y los devuelve en una lista
             int idJugador;
             String nombreJugador;
-            int edad;
+            DateTime fechaNac;
             int peso;
             int estatura;
             String pais;
@@ -213,12 +213,12 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                     {
                         idJugador = (int)rs.Fields[2].Value;
                         nombreJugador = (string)rs.Fields[3].Value;
-                        edad = (int)rs.Fields[4].Value;
+                        fechaNac = rs.Fields[4].Value;
                         peso = (int)rs.Fields[5].Value;
                         estatura = (int)rs.Fields[6].Value;
                         pais = (string)rs.Fields[7].Value;
                         idDeporte = (int)rs.Fields[8].Value;
-                        Jugador jugador = new Jugador(idJugador, nombreJugador, edad, peso, estatura, pais, idDeporte);
+                        Jugador jugador = new Jugador(idJugador, nombreJugador, fechaNac, peso, estatura, pais, idDeporte);
                         lista.Add(jugador);
                         rs.MoveNext();
                     }
@@ -229,13 +229,13 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             return lista;
         }
 
-        public bool agregarJugador(String nombreJugador, int edad, int peso, int estatura, String pais, int idDeporte)
+        public bool agregarJugador(String nombreJugador, String fechaNac, int peso, int estatura, String pais, int idDeporte)
         {
             //Intenta agregar un jugador a la BD con los datos dados
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-                String stringSql = "INSERT INTO Jugadores (NombreJugador, Edad, Peso, Estatura, Pais, IdDeporte) VALUES('" + nombreJugador + "', '" + edad + "', '" + peso + "', '" + estatura + "', '" + pais + "', '"+ idDeporte + "');";
+                String stringSql = "INSERT INTO Jugadores (NombreJugador, FechaNac, Peso, Estatura, Pais, IdDeporte) VALUES('" + nombreJugador + "', '" + fechaNac + "', '" + peso + "', '" + estatura + "', '" + pais + "', '"+ idDeporte + "');";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;
@@ -424,13 +424,13 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             }
         }
 
-        public bool modificarJugador(int id, String nombreJugador, int edad, int peso, int estatura, String pais, int idDeporte)
+        public bool modificarJugador(int id, String nombreJugador, String fechaNac, int peso, int estatura, String pais, int idDeporte)
         {
             //Intenta modificar un torneo existente en la BD con los datos dados
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-                String stringSql = "UPDATE Jugadores SET NombreJugador = '" + nombreJugador + "', Edad = '" + edad + "', peso = '" + peso + "', Estatura = '" + estatura + "', Pais = '" + pais + "' WHERE IdJugador = '" + id + "';";
+                String stringSql = "UPDATE Jugadores SET NombreJugador = '" + nombreJugador + "', FechaNac = '" + fechaNac + "', peso = '" + peso + "', Estatura = '" + estatura + "', Pais = '" + pais + "' WHERE IdJugador = '" + id + "';";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;

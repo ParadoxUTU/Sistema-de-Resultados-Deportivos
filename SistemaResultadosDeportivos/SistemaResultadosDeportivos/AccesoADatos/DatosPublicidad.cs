@@ -34,7 +34,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                         marca = (string)rs.Fields[1].Value;
                         urlSitio = (string)rs.Fields[2].Value;
                         pathBanner = (string)rs.Fields[3].Value;
-                        Publicidad publicidad = new Publicidad(idPublicidad, marca, pathBanner, urlSitio);
+                        Publicidad publicidad = new Publicidad(idPublicidad, marca, urlSitio, pathBanner);
                         lista.Add(publicidad);
                         rs.MoveNext();
                     }

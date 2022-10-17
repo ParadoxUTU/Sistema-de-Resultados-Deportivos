@@ -55,10 +55,10 @@ namespace SistemaResultadosDeportivos.Logica
             return datosJugador.getJugadoresByEquipo(idEquipo);
         }
 
-        public bool agregarJugador(String nombreJugador, int edad, int peso, int estatura, String pais, int idDeporte)
+        public bool agregarJugador(String nombreJugador, String fechaNac, int peso, int estatura, String pais, int idDeporte)
         {
             //Intenta agregar un jugador a la BD, con los datos dados
-            return datosJugador.agregarJugador(nombreJugador, edad, peso, estatura, pais, idDeporte);
+            return datosJugador.agregarJugador(nombreJugador, fechaNac, peso, estatura, pais, idDeporte);
         }
 
         public bool agregarJugadorAPlantel(int idJugador, int idEquipo)
@@ -121,10 +121,10 @@ namespace SistemaResultadosDeportivos.Logica
             return datosJugador.eliminarJugadorDeTodoSet(id);
         }
 
-        public bool modificarJugador(int id, String nombreJugador, int edad, int peso, int estatura, String pais, int idDeporte)
+        public bool modificarJugador(int id, String nombreJugador, String fechaNac, int peso, int estatura, String pais, int idDeporte)
         {
             //Intenta modificar un jugador en la BD, con los datos dados
-            return datosJugador.modificarJugador(id, nombreJugador, edad, peso, estatura, pais, idDeporte);
+            return datosJugador.modificarJugador(id, nombreJugador, fechaNac, peso, estatura, pais, idDeporte);
         }
 
         public int devolverUltimaID()

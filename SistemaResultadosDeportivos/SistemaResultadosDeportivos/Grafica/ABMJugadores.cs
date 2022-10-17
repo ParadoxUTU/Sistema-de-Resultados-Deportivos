@@ -44,7 +44,7 @@ namespace SistemaResultadosDeportivos
             foreach (Jugador j in lista)
             {
                 String tamanoSt = "Nombre: " + j.nombreJugador;
-                String tamanoSt2 = "Pais: " + j.edad;
+                String tamanoSt2 = "Pais: " + j.pais;
                 if (tamanoSt.Length > tamano)
                 {
                     tamano = tamanoSt.Length;
@@ -59,7 +59,7 @@ namespace SistemaResultadosDeportivos
             {
                 String textNombre = "Nombre: " + j.nombreJugador;
                 String textPais = "Pais: " + j.pais;
-                String textEdad = "Edad: " + j.edad;
+                String textEdad = "Fecha de Nacimiento: " + j.fechaNac;
                 asignarComponentes(textNombre, textPais, textEdad, i, tamano);
                 i++;
             }
@@ -108,14 +108,14 @@ namespace SistemaResultadosDeportivos
             return jugador;
         }
 
-        public bool confirmarModificacion(String nombre, String pais, int edad, int estatura, int peso)
+        public bool confirmarModificacion(String nombre, String pais, String fechaNac, int estatura, int peso)
         {
             List<Jugador> lista = lgj.devolverJugadores();
             Jugador jugador = lista[var];
             int idJugador = jugador.idJugador;
             int idDeporte = jugador.idDeporte;
             bool exito;
-            if (lgj.modificarJugador(idJugador, nombre, edad, peso, estatura, pais, idDeporte))
+            if (lgj.modificarJugador(idJugador, nombre, fechaNac, peso, estatura, pais, idDeporte))
             {
                 listarJugadores();
                 exito = true;
@@ -190,13 +190,14 @@ namespace SistemaResultadosDeportivos
                 if(txtNombre.Text != "" && cbxDeportes.SelectedItem != null)
                 {
                     string nombre = txtNombre.Text;
-                    int edad = (int)numEdad.Value;
+                    DateTime fechaNac = dateFecha.Value;
+                    String strFecha = fechaNac.Year.ToString() + "-" + fechaNac.Month.ToString() + "-" + fechaNac.Day.ToString();
                     int peso = (int)numPeso.Value;
                     int estatura = (int)numEstatura.Value;
                     string pais = txtPais.Text;
                     Deporte deporte = lgd.devolverDeportes()[cbxDeportes.SelectedIndex];
                     int idDeporte = deporte.idDeporte;
-                    if (lgj.agregarJugador(nombre, edad, peso, estatura, pais, idDeporte))
+                    if (lgj.agregarJugador(nombre, strFecha, peso, estatura, pais, idDeporte))
                     {
                         listarJugadores();
                     }

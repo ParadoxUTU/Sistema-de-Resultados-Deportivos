@@ -145,6 +145,16 @@ namespace SistemaResultadosDeportivos
             Deporte deporte = lgd.devolverDeportes()[cbxDeportes.SelectedIndex];
             int idDeporte = deporte.idDeporte;
             listarTorneos(idDeporte);
+            if (deporte.porEquipos)
+            {
+                txtNombre.Visible = false;
+                label2.Visible = false;
+            }
+            else
+            {
+                txtNombre.Visible = true;
+                label2.Visible = true;
+            }
         }
     }
 }
