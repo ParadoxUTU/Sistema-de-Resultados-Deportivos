@@ -61,6 +61,24 @@ namespace SistemaResultadosDeportivos.Logica
             return datosSet.agregarSetJugador(idSet, idJugador, idEncuentro);
         }
 
+        public int getMaxNumSet(int idEncuentro)
+        {
+            //Devuelve el número del último set
+            return datosSet.getMaxNumSet(idEncuentro);
+        }
+
+        public bool eliminarSet(int idSet)
+        {
+            //Elimina un set
+            return datosSet.eliminarSet(idSet);
+        }
+
+        public bool eliminarSetPorEncuentro(int idEncuentro)
+        {
+            //Elimina todos los sets de un encuentro
+            return datosSet.eliminarSetPorEncuentro(idEncuentro);
+        }
+
         public bool eliminarSetsEncuentroEquipos(int idEncuentro)
         {
             //Elimina todos los sets de un encuentro por equipos

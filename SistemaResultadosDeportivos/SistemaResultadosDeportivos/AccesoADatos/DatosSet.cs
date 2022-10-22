@@ -101,6 +101,22 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             return lista;
         }
 
+        public int getMaxNumSet(int idEncuentro)
+        {
+            //Devuelve el número del último set
+            int numSet = 0;
+            String stringSql = "SELECT MAX(NumeroSet) FROM Sets INNER JOIN enc_eq_sets ON sets.IdSet = enc_eq_sets.IdSet AND enc_eq_sets.IdEncuentro = '" + idEncuentro + "';";
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                ADODB.Recordset rs = cn.Execute(stringSql, out object cantFilas, -1);
+                numSet = (int)rs.Fields[0].Value;
+                cn.Close();
+            }
+            catch { }
+            return numSet;
+        }
+
         public Set getSetByID(int id)
         {
             //Devuelve un set dependiendo de su ID
@@ -179,6 +195,23 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             {
                 ADODB.Connection cn = Conexion.Crear();
                 String stringSql = "DELETE FROM Sets WHERE idSet = '" + id + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool eliminarSetPorEncuentro(int idEncuentro)
+        {
+            //Intenta eliminar un set dada una ID de encuentro en la BD
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "DELETE FROM Sets WHERE idEncuentro = '" + idEncuentro + "';";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;

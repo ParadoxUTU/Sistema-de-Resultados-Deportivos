@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using SistemaResultadosDeportivos.Logica;
 using System.Drawing;
+using System.Windows;
 
 namespace SistemaResultadosDeportivos
 {
@@ -36,24 +37,8 @@ namespace SistemaResultadosDeportivos
             }
             else
             {
-                List<Set> sets1 = lgs.devolverSetsEquipoEncuentro(equipo1.idEquipo, encuentro.idEncuentro);
-                List<Set> sets2 = lgs.devolverSetsEquipoEncuentro(equipo2.idEquipo, encuentro.idEncuentro);
-                if(sets1.Count > 0)
-                {
-                    lblPuntaje1.Text = sets1[sets1.Count - 1].numeroSet.ToString();
-                }
-                else
-                {
-                    lblPuntaje1.Text = "0";
-                }
-                if(sets2.Count > 0)
-                {
-                    lblPuntaje2.Text = sets2[sets2.Count - 1].numeroSet.ToString();
-                }
-                else
-                {
-                    lblPuntaje2.Text = "0";
-                }
+                setSetsEquipo(equipo1.idEquipo, lblPuntaje1);
+                setSetsEquipo(equipo2.idEquipo, lblPuntaje2); 
             }
             
         }
@@ -64,28 +49,26 @@ namespace SistemaResultadosDeportivos
             lbl.Text = puntaje.ToString();
         }
 
-        public void setSetsEquipo(int idSet, Label lbl)
+        public void setSetsEquipo(int idEquipo, Label lbl)
         {
-            Set set = lgs.devolverSetPorID(idSet);
-            lbl.Text = set.numeroSet.ToString();
+            List<Set> setsEquipo = lgs.devolverSetsEquipoEncuentro(idEquipo, encuentro.idEncuentro);
+            lbl.Text = "";
+            foreach(Set set in setsEquipo)
+            {
+                lbl.Text += " " + set.puntuacionSet;
+            }
         }
 
         private void btnAgregarPuntos1_Click(object sender, EventArgs e)
         {
             if (deporte.anotaciones)
             {
-                int minuto = Int32.Parse(lblMinuto.Text);
-                FrmSeleccionarJugadorAnotacion frmsja = new FrmSeleccionarJugadorAnotacion(this, equipo1, lblPuntaje1);
-                frmsja.Visible = true;
-                frmsja.listarJugadoresPorAlineacion(equipo1.idEquipo, encuentro.idEncuentro);
+                agregarAnotacion(equipo1);
             }
             else if (deporte.sets)
             {
-                int puntajeActual = int.Parse(lblPuntaje1.Text);
-                lgs.agregarSet(puntajeActual + 1, 0);
-                int idSet = lgs.devolverUltimaID();
-                lgs.agregarSetEquipo(idSet, equipo1.idEquipo, encuentro.idEncuentro);
-                setSetsEquipo(idSet, lblPuntaje1);
+                new SubFrmDatosSet(this, equipo1, lblPuntaje1).Visible = true;
+                setSetsEquipo(equipo1.idEquipo, lblPuntaje1);
             }
         }
 
@@ -93,25 +76,39 @@ namespace SistemaResultadosDeportivos
         {
             if (deporte.anotaciones)
             {
-                int minuto = Int32.Parse(lblMinuto.Text);
-                FrmSeleccionarJugadorAnotacion frmsja = new FrmSeleccionarJugadorAnotacion(this, equipo2, lblPuntaje2);
-                frmsja.Visible = true;
-                frmsja.listarJugadoresPorAlineacion(equipo2.idEquipo, encuentro.idEncuentro);
+                agregarAnotacion(equipo2);
             }
             else if (deporte.sets)
             {
-                int puntajeActual = int.Parse(lblPuntaje2.Text);
-                lgs.agregarSet(puntajeActual + 1, 0);
-                int idSet = lgs.devolverUltimaID();
-                lgs.agregarSetEquipo(idSet, equipo2.idEquipo, encuentro.idEncuentro);
-                setSetsEquipo(idSet, lblPuntaje2);
+                new SubFrmDatosSet(this, equipo2, lblPuntaje2).Visible = true;
+                setSetsEquipo(equipo2.idEquipo, lblPuntaje2);
             }
+        }
 
+        public void agregarSet(Equipo equipo, int puntuacion)
+        {
+            int numSetActual = lgs.getMaxNumSet(encuentro.idEncuentro);
+            lgs.agregarSet(numSetActual + 1, puntuacion);
+            int idSet = lgs.devolverUltimaID();
+            lgs.agregarSetEquipo(idSet, equipo.idEquipo, encuentro.idEncuentro);
+        }
+
+        public void agregarAnotacion(Equipo equipo)
+        {
+            int minuto = Int32.Parse(lblMinuto.Text);
+            FrmSeleccionarJugadorAnotacion frmsja = new FrmSeleccionarJugadorAnotacion(this, equipo, lblPuntaje2);
+            frmsja.Visible = true;
+            frmsja.listarJugadoresPorAlineacion(equipo.idEquipo, encuentro.idEncuentro);
         }
 
         private void FrmGestionarEncCol_Load(object sender, EventArgs e)
         {
             flpIncidencias.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
+        }
+
+        private void lblPuntaje2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

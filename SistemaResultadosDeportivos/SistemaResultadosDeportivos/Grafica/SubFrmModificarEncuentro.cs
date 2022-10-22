@@ -13,6 +13,7 @@ namespace SistemaResultadosDeportivos
         public FrmInicioEncuentros encuentros;
         public LogicaDeportes lgd;
         public LogicaTorneos lgt;
+        public LogicaSets lgs;
         LogicaJugadores lgj;
         public LogicaEquipos lgeq;
         LogicaAnotaciones lga;
@@ -28,6 +29,7 @@ namespace SistemaResultadosDeportivos
             lgj = new LogicaJugadores();
             lgeq = new LogicaEquipos();
             lga = new LogicaAnotaciones();
+            lgs = new LogicaSets();
             listarDeportes();
             Encuentro encuentro = encuentros.obtenerEncuentro();
             listarTorneos(encuentro.idDeporte);
@@ -329,22 +331,16 @@ namespace SistemaResultadosDeportivos
             MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Estás seguro?", "Confirmar baja de encuentro", System.Windows.MessageBoxButton.YesNo);
             if (messageBoxResult == System.Windows.MessageBoxResult.Yes)
             {
+                lgs.eliminarSetsEncuentroEquipos(en.idEncuentro);
+                lgs.eliminarSetsEncuentroIndividual(en.idEncuentro);
+                lgs.eliminarSetPorEncuentro(en.idEncuentro);
                 lga.eliminarAnotacionesDeEncuentro(en.idEncuentro);
                 encuentros.lge.eliminarAlineacionesDeEncuentro(en.idEncuentro);
-                if (deporte.porEquipos)
-                {
-                    encuentros.lge.eliminarEncuentroEquipoPorEncuentro(en.idEncuentro);
-                    encuentros.lge.eliminarEncCol(en.idEncuentro);
-                }
-                else
-                {
-                    encuentros.lge.eliminarEncuentroJugadorPorEncuentro(en.idEncuentro);
-                    encuentros.lge.eliminarEncInd(en.idEncuentro);
-                }
-                if(torneo != null)
-                {
-                    encuentros.lge.eliminarEncuentroTorneo(en.idEncuentro);
-                }
+                encuentros.lge.eliminarEncuentroEquipoPorEncuentro(en.idEncuentro);
+                encuentros.lge.eliminarEncCol(en.idEncuentro);
+                encuentros.lge.eliminarEncuentroJugadorPorEncuentro(en.idEncuentro);
+                encuentros.lge.eliminarEncInd(en.idEncuentro);
+                encuentros.lge.eliminarEncuentroTorneo(en.idEncuentro);
                 encuentros.lge.eliminarEncuentro(en.idEncuentro);
                 encuentros.listarEncuentros();
                 this.Dispose();

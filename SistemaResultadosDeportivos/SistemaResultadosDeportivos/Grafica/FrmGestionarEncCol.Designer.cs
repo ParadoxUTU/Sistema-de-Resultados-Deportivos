@@ -34,8 +34,8 @@
             this.lblEquipo2 = new System.Windows.Forms.Label();
             this.lblPuntaje1 = new System.Windows.Forms.Label();
             this.lblPuntaje2 = new System.Windows.Forms.Label();
-            this.lblMinuto = new System.Windows.Forms.Label();
             this.btnAgregarPuntos2 = new System.Windows.Forms.Button();
+            this.lblMinuto = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // flpIncidencias
@@ -63,7 +63,6 @@
             // 
             // lblEquipo1
             // 
-            this.lblEquipo1.AutoSize = true;
             this.lblEquipo1.BackColor = System.Drawing.Color.Transparent;
             this.lblEquipo1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo1.ForeColor = System.Drawing.SystemColors.Menu;
@@ -75,7 +74,6 @@
             // 
             // lblEquipo2
             // 
-            this.lblEquipo2.AutoSize = true;
             this.lblEquipo2.BackColor = System.Drawing.Color.Transparent;
             this.lblEquipo2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo2.ForeColor = System.Drawing.SystemColors.Menu;
@@ -84,42 +82,31 @@
             this.lblEquipo2.Size = new System.Drawing.Size(131, 32);
             this.lblEquipo2.TabIndex = 24;
             this.lblEquipo2.Text = "Equipo 2";
+            this.lblEquipo2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblPuntaje1
             // 
-            this.lblPuntaje1.AutoSize = true;
             this.lblPuntaje1.BackColor = System.Drawing.Color.Transparent;
             this.lblPuntaje1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPuntaje1.ForeColor = System.Drawing.SystemColors.Menu;
             this.lblPuntaje1.Location = new System.Drawing.Point(208, 31);
             this.lblPuntaje1.Name = "lblPuntaje1";
-            this.lblPuntaje1.Size = new System.Drawing.Size(29, 32);
+            this.lblPuntaje1.Size = new System.Drawing.Size(250, 32);
             this.lblPuntaje1.TabIndex = 25;
             this.lblPuntaje1.Text = "0";
             // 
             // lblPuntaje2
             // 
-            this.lblPuntaje2.AutoSize = true;
             this.lblPuntaje2.BackColor = System.Drawing.Color.Transparent;
             this.lblPuntaje2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPuntaje2.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblPuntaje2.Location = new System.Drawing.Point(711, 31);
+            this.lblPuntaje2.Location = new System.Drawing.Point(510, 31);
             this.lblPuntaje2.Name = "lblPuntaje2";
-            this.lblPuntaje2.Size = new System.Drawing.Size(29, 32);
+            this.lblPuntaje2.Size = new System.Drawing.Size(250, 32);
             this.lblPuntaje2.TabIndex = 26;
             this.lblPuntaje2.Text = "0";
-            // 
-            // lblMinuto
-            // 
-            this.lblMinuto.AutoSize = true;
-            this.lblMinuto.BackColor = System.Drawing.Color.Transparent;
-            this.lblMinuto.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMinuto.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblMinuto.Location = new System.Drawing.Point(455, 31);
-            this.lblMinuto.Name = "lblMinuto";
-            this.lblMinuto.Size = new System.Drawing.Size(29, 32);
-            this.lblMinuto.TabIndex = 27;
-            this.lblMinuto.Text = "0";
+            this.lblPuntaje2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblPuntaje2.Click += new System.EventHandler(this.lblPuntaje2_Click);
             // 
             // btnAgregarPuntos2
             // 
@@ -134,6 +121,18 @@
             this.btnAgregarPuntos2.Text = "Agregar Puntos";
             this.btnAgregarPuntos2.UseVisualStyleBackColor = false;
             this.btnAgregarPuntos2.Click += new System.EventHandler(this.btnAgregarPuntos2_Click);
+            // 
+            // lblMinuto
+            // 
+            this.lblMinuto.AutoSize = true;
+            this.lblMinuto.BackColor = System.Drawing.Color.Transparent;
+            this.lblMinuto.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinuto.ForeColor = System.Drawing.SystemColors.Menu;
+            this.lblMinuto.Location = new System.Drawing.Point(464, 31);
+            this.lblMinuto.Name = "lblMinuto";
+            this.lblMinuto.Size = new System.Drawing.Size(29, 32);
+            this.lblMinuto.TabIndex = 27;
+            this.lblMinuto.Text = "0";
             // 
             // FrmGestionarEncCol
             // 
