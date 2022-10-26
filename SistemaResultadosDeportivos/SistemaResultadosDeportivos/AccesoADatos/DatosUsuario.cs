@@ -204,8 +204,9 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 cn.Close();
                 return true;
             }
-            catch
+            catch(Exception e)
             {
+                MessageBox.Show(e.ToString());
                 return false;
             }
         }

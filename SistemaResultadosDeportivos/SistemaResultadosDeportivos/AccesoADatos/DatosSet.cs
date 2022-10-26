@@ -78,7 +78,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             int numeroSet;
             int puntuacionSet;
             List<Set> lista = new List<Set>();
-            String stringSql = "SELECT * FROM Enc_jug_sets INNER JOIN sets ON enc_jug_sets.IdSet=sets.IdSet WHERE IdEquipo = '" + idJugador + "' AND '" + idEncuentro + "' ;";
+            String stringSql = "SELECT * FROM Enc_jug_sets INNER JOIN sets ON enc_jug_sets.IdSet=sets.IdSet WHERE IdJugador = '" + idJugador + "' AND '" + idEncuentro + "' ;";
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
@@ -97,7 +97,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 }
                 cn.Close();
             }
-            catch { }
+            catch{}
             return lista;
         }
 
@@ -106,6 +106,22 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             //Devuelve el número del último set
             int numSet = 0;
             String stringSql = "SELECT MAX(NumeroSet) FROM Sets INNER JOIN enc_eq_sets ON sets.IdSet = enc_eq_sets.IdSet AND enc_eq_sets.IdEncuentro = '" + idEncuentro + "';";
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                ADODB.Recordset rs = cn.Execute(stringSql, out object cantFilas, -1);
+                numSet = (int)rs.Fields[0].Value;
+                cn.Close();
+            }
+            catch { }
+            return numSet;
+        }
+
+        public int getMaxNumSetJug(int idEncuentro)
+        {
+            //Devuelve el número del último set
+            int numSet = 0;
+            String stringSql = "SELECT MAX(NumeroSet) FROM Sets INNER JOIN enc_jug_sets ON sets.IdSet = enc_jug_sets.IdSet AND enc_jug_sets.IdEncuentro = '" + idEncuentro + "';";
             try
             {
                 ADODB.Connection cn = Conexion.Crear();

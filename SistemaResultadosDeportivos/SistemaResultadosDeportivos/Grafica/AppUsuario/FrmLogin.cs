@@ -55,5 +55,10 @@ namespace SistemaResultadosDeportivos
         {
             panel1.BackColor = Color.FromArgb(100,0,0,0);
         }
+
+        private void btnRegistrarse_Click(object sender, EventArgs e)
+        {
+            new FrmRegistro().Visible = true;
+        }
     }
 }

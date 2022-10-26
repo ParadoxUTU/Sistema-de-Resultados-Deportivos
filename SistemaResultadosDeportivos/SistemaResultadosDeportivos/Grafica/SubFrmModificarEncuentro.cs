@@ -365,6 +365,15 @@ namespace SistemaResultadosDeportivos
                     new FrmSeleccionarAlineacion(equipo1, equipo2, en).Visible = true;
                 }
             }
+            else
+            {
+                if(dep.cantParticipantes == 2)
+                {
+                    Jugador jugador1 = lgj.devolverJugadorPorID(idParticipantes[0]);
+                    Jugador jugador2 = lgj.devolverJugadorPorID(idParticipantes[1]);
+                    new FrmGestionarEncIndDeADos(en, jugador1, jugador2, dep).Visible = true;
+                }
+            }
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)

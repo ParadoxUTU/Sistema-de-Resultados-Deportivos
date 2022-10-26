@@ -11,24 +11,24 @@ using SistemaResultadosDeportivos.Modelos;
 
 namespace SistemaResultadosDeportivos
 {
-    public partial class SubFrmDatosSet : Form
+    public partial class SubFrmDatosSetJug : Form
     {
-        public FrmGestionarEncCol encuentro;
-        public Equipo equipo;
+        public FrmGestionarEncIndDeADos encuentro;
+        public Jugador jugador;
         public Label lbl;
 
-        public SubFrmDatosSet(FrmGestionarEncCol encuentro, Equipo equipo, Label lbl)
+        public SubFrmDatosSetJug(FrmGestionarEncIndDeADos encuentro, Jugador jugador, Label lbl)
         {
             InitializeComponent();
             this.encuentro = encuentro;
-            this.equipo = equipo;
+            this.jugador = jugador;
             this.lbl = lbl;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            encuentro.agregarSet(equipo, Convert.ToInt16(numPuntuacion.Value));
-            encuentro.setSetsEquipo(equipo.idEquipo, lbl);
+            encuentro.agregarSet(jugador, Convert.ToInt16(numPuntuacion.Value));
+            encuentro.setSetsJugador(jugador.idJugador, lbl);
             this.Dispose();
         }
     }

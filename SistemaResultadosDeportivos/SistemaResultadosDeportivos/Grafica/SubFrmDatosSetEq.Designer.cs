@@ -1,6 +1,6 @@
 ﻿namespace SistemaResultadosDeportivos
 {
-    partial class SubFrmDatosSet
+    partial class SubFrmDatosSetEq
     {
         /// <summary>
         /// Required designer variable.

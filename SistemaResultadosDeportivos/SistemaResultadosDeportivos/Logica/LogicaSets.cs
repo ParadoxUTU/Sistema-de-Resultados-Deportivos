@@ -63,8 +63,14 @@ namespace SistemaResultadosDeportivos.Logica
 
         public int getMaxNumSet(int idEncuentro)
         {
-            //Devuelve el número del último set
+            //Devuelve el número del último set de un encuentro por equipos
             return datosSet.getMaxNumSet(idEncuentro);
+        }
+
+        public int getMaxNumSetJug(int idEncuentro)
+        {
+            //Devuelve el número del último set de un encuentro individual
+            return datosSet.getMaxNumSetJug(idEncuentro);
         }
 
         public bool eliminarSet(int idSet)

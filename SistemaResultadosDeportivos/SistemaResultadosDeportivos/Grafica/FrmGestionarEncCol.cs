@@ -63,11 +63,11 @@ namespace SistemaResultadosDeportivos
         {
             if (deporte.anotaciones)
             {
-                agregarAnotacion(equipo1);
+                agregarAnotacion(equipo1, lblPuntaje1);
             }
             else if (deporte.sets)
             {
-                new SubFrmDatosSet(this, equipo1, lblPuntaje1).Visible = true;
+                new SubFrmDatosSetEq(this, equipo1, lblPuntaje1).Visible = true;
                 setSetsEquipo(equipo1.idEquipo, lblPuntaje1);
             }
         }
@@ -76,11 +76,11 @@ namespace SistemaResultadosDeportivos
         {
             if (deporte.anotaciones)
             {
-                agregarAnotacion(equipo2);
+                agregarAnotacion(equipo2, lblPuntaje2);
             }
             else if (deporte.sets)
             {
-                new SubFrmDatosSet(this, equipo2, lblPuntaje2).Visible = true;
+                new SubFrmDatosSetEq(this, equipo2, lblPuntaje2).Visible = true;
                 setSetsEquipo(equipo2.idEquipo, lblPuntaje2);
             }
         }
@@ -93,10 +93,10 @@ namespace SistemaResultadosDeportivos
             lgs.agregarSetEquipo(idSet, equipo.idEquipo, encuentro.idEncuentro);
         }
 
-        public void agregarAnotacion(Equipo equipo)
+        public void agregarAnotacion(Equipo equipo, Label lbl)
         {
             int minuto = Int32.Parse(lblMinuto.Text);
-            FrmSeleccionarJugadorAnotacion frmsja = new FrmSeleccionarJugadorAnotacion(this, equipo, lblPuntaje2);
+            FrmSeleccionarJugadorAnotacion frmsja = new FrmSeleccionarJugadorAnotacion(this, equipo, lbl);
             frmsja.Visible = true;
             frmsja.listarJugadoresPorAlineacion(equipo.idEquipo, encuentro.idEncuentro);
         }

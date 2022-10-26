@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SistemaResultadosDeportivos.Modelos;
 using SistemaResultadosDeportivos.AccesoADatos;
 using SistemaResultadosDeportivos.APIs;
-
+using System.Windows.Forms;
 
 namespace SistemaResultadosDeportivos.Logica
 {
@@ -65,6 +65,17 @@ namespace SistemaResultadosDeportivos.Logica
             //Intenta agregar un usuario a la BD, con los datos dados
             return dt.agregarUsuario(correo, nombre, contrasena, rol);
         }
+
+        public RespuestaRegistro registrarUsuarioAPI(String correo, String nombre, String contrasena, int rol)
+        {
+            //Intenta agregar un usuario a la BD, con los datos dados
+            bool exito = dt.agregarUsuario(correo, nombre, contrasena, rol);
+            dt.darPermisos(correo, rol);
+            RespuestaRegistro res = new RespuestaRegistro(exito);
+            MessageBox.Show(res.exito.ToString());
+            return res;
+        }
+
         public bool bajaUsuario(String correo)
         {
             //Intenta eliminar un usuario de la BD con el correo dado
