@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -77,6 +77,43 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             }
             catch { }
             return jugador;
+        }
+
+        public List<JugadorDeEncuentro> getJugadoresDeEncuentro(int idEncuentro)
+        {
+            //Devuelve la puntuación y puesto de los jugadores en un encuentro dado
+            int idJugador;
+            int puntuacion = 0;
+            int puesto = 0;
+            String nombreJugador;
+            String pais;
+            List<JugadorDeEncuentro> jugadores = new List<JugadorDeEncuentro>();
+            String stringSql = "SELECT encuentros_jugadores.IdEncuentro, Jugadores.IdJugador, encuentros_jugadores.Puesto, encuentros_jugadores.Puntuacion, jugadores.NombreJugador, Jugadores.Pais FROM encuentros_jugadores INNER JOIN Jugadores ON Jugadores.IdJugador = Encuentros_Jugadores.IdJugador AND IdEncuentro = '" + idEncuentro + "' ORDER BY encuentros_jugadores.puntuacion DESC;";
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                ADODB.Recordset rs = cn.Execute(stringSql, out object cantFilas, -1);
+                if (rs.RecordCount > 0)
+                {
+                    for (int i = 0; i < (int)cantFilas; i++)
+                    {
+                        idJugador = (int)rs.Fields[1].Value;
+                        puesto = (int)rs.Fields[2].Value;
+                        puntuacion = (int)rs.Fields[3].Value;
+                        nombreJugador = (String)rs.Fields[4].Value;
+                        pais = (String)rs.Fields[5].Value;
+                        JugadorDeEncuentro jugador = new JugadorDeEncuentro(idEncuentro, idJugador, puesto, puntuacion, nombreJugador, pais);
+                        jugadores.Add(jugador);
+                        rs.MoveNext();
+                    }
+                }
+                cn.Close();
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            return jugadores;
         }
 
         public List<Jugador> getJugadoresByDeporte(int idDeporte)
@@ -431,6 +468,23 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             {
                 ADODB.Connection cn = Conexion.Crear();
                 String stringSql = "UPDATE Jugadores SET NombreJugador = '" + nombreJugador + "', FechaNac = '" + fechaNac + "', peso = '" + peso + "', Estatura = '" + estatura + "', Pais = '" + pais + "' WHERE IdJugador = '" + id + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool agregarOQuitarPuntosEncuentro(int idJugador, int idEncuentro, int puntos)
+        {
+            //Intenta agregar puntos de un encuentro a un jugador
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "UPDATE Encuentros_Jugadores SET puntuacion = puntuacion + '" + puntos + "' WHERE IdJugador = '" + idJugador + "' AND IdEncuentro = '" + idEncuentro + "';";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;

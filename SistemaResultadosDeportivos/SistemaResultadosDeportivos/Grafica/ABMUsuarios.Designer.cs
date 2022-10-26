@@ -70,7 +70,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Menu;
             this.label1.Location = new System.Drawing.Point(39, 65);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 16);
+            this.label1.Size = new System.Drawing.Size(75, 16);
             this.label1.TabIndex = 4;
             this.label1.Text = "Username:";
             // 
@@ -94,7 +94,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.Menu;
             this.label3.Location = new System.Drawing.Point(39, 215);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 16);
+            this.label3.Size = new System.Drawing.Size(83, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "Contraseña:";
             // 
@@ -106,7 +106,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.Menu;
             this.label4.Location = new System.Drawing.Point(39, 288);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 16);
+            this.label4.Size = new System.Drawing.Size(32, 16);
             this.label4.TabIndex = 7;
             this.label4.Text = "Rol:";
             // 
@@ -179,7 +179,7 @@
             // flpUsuarios
             // 
             this.flpUsuarios.AutoScroll = true;
-            this.flpUsuarios.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpUsuarios.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flpUsuarios.Location = new System.Drawing.Point(296, 110);
             this.flpUsuarios.Name = "flpUsuarios";
             this.flpUsuarios.Size = new System.Drawing.Size(608, 441);

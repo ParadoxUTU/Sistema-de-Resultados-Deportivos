@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateFecha = new System.Windows.Forms.DateTimePicker();
             this.numPeso = new System.Windows.Forms.NumericUpDown();
             this.numEstatura = new System.Windows.Forms.NumericUpDown();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.flpJugadores = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlLupa = new System.Windows.Forms.Panel();
-            this.dateFecha = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPeso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numEstatura)).BeginInit();
@@ -74,6 +74,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(248, 498);
             this.panel1.TabIndex = 0;
+            // 
+            // dateFecha
+            // 
+            this.dateFecha.Location = new System.Drawing.Point(28, 145);
+            this.dateFecha.Name = "dateFecha";
+            this.dateFecha.Size = new System.Drawing.Size(200, 20);
+            this.dateFecha.TabIndex = 11;
             // 
             // numPeso
             // 
@@ -277,7 +284,7 @@
             // flpJugadores
             // 
             this.flpJugadores.AutoScroll = true;
-            this.flpJugadores.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpJugadores.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flpJugadores.Location = new System.Drawing.Point(296, 67);
             this.flpJugadores.Name = "flpJugadores";
             this.flpJugadores.Size = new System.Drawing.Size(586, 498);
@@ -290,13 +297,6 @@
             this.pnlLupa.Name = "pnlLupa";
             this.pnlLupa.Size = new System.Drawing.Size(54, 39);
             this.pnlLupa.TabIndex = 0;
-            // 
-            // dateFecha
-            // 
-            this.dateFecha.Location = new System.Drawing.Point(28, 145);
-            this.dateFecha.Name = "dateFecha";
-            this.dateFecha.Size = new System.Drawing.Size(200, 20);
-            this.dateFecha.TabIndex = 11;
             // 
             // ABMJugadores
             // 

@@ -21,12 +21,38 @@ namespace SistemaResultadosDeportivos
             usuarios = u;
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private void SubFrmModificarUsuario_Load_1(object sender, EventArgs e)
+        {
+            panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
+            Image imagenPerfil = Properties.Resources.perfil;
+            Bitmap bitmapPerfil = new Bitmap(imagenPerfil, pnlPerfil.Width, pnlPerfil.Height - 1);
+            pnlPerfil.BackgroundImage = bitmapPerfil;
+            txtUsername.Text = usuarios.obtenerUsuario();
+            cbxRol.SelectedIndex = usuarios.obtenerRol();
+            cbxTipoUsuario.Enabled = false;
+            cbxRol.Enabled = false;
+            if (usuarios.esMiembro())
+                cbxTipoUsuario.SelectedIndex = 0;
+            else
+                cbxTipoUsuario.SelectedIndex = 1;
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Estás seguro?", "Confirmar baja de usuario", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == System.Windows.MessageBoxResult.Yes)
+            {
+                usuarios.eliminarUsuario();
+                this.Dispose();
+            }
+        }
+
+        private void btnAceptar_Click_1(object sender, EventArgs e)
         {
             //Recoge los datos de modificacion, y los envía al frame original para su confirmacion
             String nombre = txtUsername.Text;
             int rol;
-            if(cbxRol.SelectedItem != null)
+            if (cbxRol.SelectedItem != null)
             {
                 if (cbxRol.SelectedItem.ToString().Equals("User"))
                 {
@@ -41,7 +67,7 @@ namespace SistemaResultadosDeportivos
             {
                 rol = -1;
             }
-            
+
             if (!nombre.Equals("") && rol != -1)
             {
                 this.Dispose();
@@ -51,7 +77,7 @@ namespace SistemaResultadosDeportivos
                 }
                 else
                 {
-                    if(cbxTipoUsuario.SelectedIndex == 0)
+                    if (cbxTipoUsuario.SelectedIndex == 0)
                     {
                         usuarios.agregarMiembro();
                     }
@@ -68,41 +94,7 @@ namespace SistemaResultadosDeportivos
             }
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            txtUsername.Enabled = true;
-            cbxRol.Enabled = true;
-            if(cbxRol.SelectedIndex == 0)
-                cbxTipoUsuario.Enabled = true;
-            btnModificar.Enabled = false;
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Estás seguro?", "Confirmar baja de usuario", System.Windows.MessageBoxButton.YesNo);
-            if (messageBoxResult == System.Windows.MessageBoxResult.Yes)
-            {
-                usuarios.eliminarUsuario();
-                this.Dispose();
-            }
-        }
-
-        private void SubFrmModificarUsuario_Load(object sender, EventArgs e)
-        {
-            panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
-            Image imagenPerfil = Properties.Resources.perfil;
-            Bitmap bitmapPerfil = new Bitmap(imagenPerfil, pnlPerfil.Width, pnlPerfil.Height - 1);
-            pnlPerfil.BackgroundImage = bitmapPerfil;
-            txtUsername.Text = usuarios.obtenerUsuario();
-            cbxRol.SelectedIndex = usuarios.obtenerRol();
-            cbxTipoUsuario.Enabled = false;
-            if (usuarios.esMiembro())
-                cbxTipoUsuario.SelectedIndex = 0;
-            else
-                cbxTipoUsuario.SelectedIndex = 1;
-        }
-
-        private void cbxRol_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbxRol_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cbxRol.SelectedIndex == 0)
             {
@@ -113,7 +105,16 @@ namespace SistemaResultadosDeportivos
                 cbxTipoUsuario.SelectedIndex = 1;
                 cbxTipoUsuario.Text = "";
                 cbxTipoUsuario.Enabled = false;
-            }   
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            txtUsername.Enabled = true;
+            cbxRol.Enabled = true;
+            if (cbxRol.SelectedIndex == 0)
+                cbxTipoUsuario.Enabled = true;
+            btnModificar.Enabled = false;
         }
     }
 }

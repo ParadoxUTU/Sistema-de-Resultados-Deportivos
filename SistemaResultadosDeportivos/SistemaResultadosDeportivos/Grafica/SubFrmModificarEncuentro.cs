@@ -373,6 +373,10 @@ namespace SistemaResultadosDeportivos
                     Jugador jugador2 = lgj.devolverJugadorPorID(idParticipantes[1]);
                     new FrmGestionarEncIndDeADos(en, jugador1, jugador2, dep).Visible = true;
                 }
+                else
+                {
+                    new FrmGestionarEncInd(en, dep).Visible = true;
+                }
             }
         }
 

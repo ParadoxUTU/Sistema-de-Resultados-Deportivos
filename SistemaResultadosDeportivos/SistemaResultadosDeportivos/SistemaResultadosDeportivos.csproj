@@ -125,6 +125,12 @@
     <Compile Include="Grafica\ABMEncuentros.Designer.cs">
       <DependentUpon>ABMEncuentros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grafica\FrmGestionarEncInd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\FrmGestionarEncInd.Designer.cs">
+      <DependentUpon>FrmGestionarEncInd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grafica\FrmGestionarEncIndDeADos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,12 @@
     <Compile Include="Grafica\SubFrmModificarTorneo.Designer.cs">
       <DependentUpon>SubFrmModificarTorneo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grafica\SubFrmModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\SubFrmModificarUsuario.Designer.cs">
+      <DependentUpon>SubFrmModificarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grafica\SubFrmSeleccionarParticipantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +248,7 @@
     <Compile Include="Modelos\Encuentro.cs" />
     <Compile Include="Modelos\Equipo.cs" />
     <Compile Include="Modelos\Jugador.cs" />
+    <Compile Include="Modelos\JugadorDeEncuentro.cs" />
     <Compile Include="Modelos\Publicidad.cs" />
     <Compile Include="Modelos\Set.cs" />
     <Compile Include="Modelos\Torneo.cs" />
@@ -269,12 +282,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Grafica\SubFrmModificarUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Grafica\SubFrmModificarUsuario.Designer.cs">
-      <DependentUpon>SubFrmModificarUsuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Grafica\SubFrmModificarPublicidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\AppUsuario\FrmVerEncuentroApp.resx">
       <DependentUpon>FrmVerEncuentroApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\FrmGestionarEncInd.resx">
+      <DependentUpon>FrmGestionarEncInd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\FrmGestionarEncIndDeADos.resx">
       <DependentUpon>FrmGestionarEncIndDeADos.cs</DependentUpon>
@@ -356,6 +366,9 @@
     <EmbeddedResource Include="Grafica\SubFrmModificarTorneo.resx">
       <DependentUpon>SubFrmModificarTorneo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmModificarUsuario.resx">
+      <DependentUpon>SubFrmModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\SubFrmSeleccionarParticipantes.resx">
       <DependentUpon>SubFrmSeleccionarParticipantes.cs</DependentUpon>
     </EmbeddedResource>
@@ -372,9 +385,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Grafica\SubFrmModificarUsuario.resx">
-      <DependentUpon>SubFrmModificarUsuario.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\SubFrmModificarPublicidad.resx">
       <DependentUpon>SubFrmModificarPublicidad.cs</DependentUpon>
     </EmbeddedResource>

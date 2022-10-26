@@ -166,18 +166,19 @@ namespace SistemaResultadosDeportivos
             lo muestra en el listview*/
             try
             {
-                if (cbxModalidad.SelectedItem != null && cbxPuntuacion.SelectedItem != null && txtNombre.Text != "")
+                if (cbxModalidad.SelectedItem != null && txtNombre.Text != "")
                 {
                     string nombre = txtNombre.Text;
                     string modalidad;
                     bool porEquipos;
-                    string puntuacion;
+                    string puntuacion = null;
                     bool anotaciones;
                     bool sets;
                     int participantes = (int)numParticipantes.Value;
                     int alineacion = (int)numAlineacion.Value;
                     modalidad = cbxModalidad.SelectedItem.ToString();
-                    puntuacion = cbxPuntuacion.SelectedItem.ToString();
+                    if(cbxPuntuacion.SelectedItem != null)
+                        puntuacion = cbxPuntuacion.SelectedItem.ToString();
                     porEquipos = (modalidad == "Por equipos");
                     anotaciones = (puntuacion == "Anotaciones");
                     sets = (puntuacion == "Sets");

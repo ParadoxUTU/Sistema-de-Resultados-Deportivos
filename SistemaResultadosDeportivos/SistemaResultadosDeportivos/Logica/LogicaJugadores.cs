@@ -10,7 +10,7 @@ using SistemaResultadosDeportivos.Modelos;
 
 namespace SistemaResultadosDeportivos.Logica
 {
-    internal class LogicaJugadores
+    public class LogicaJugadores
     {
         DatosJugador datosJugador;
 
@@ -29,6 +29,12 @@ namespace SistemaResultadosDeportivos.Logica
         {
             //Devuelve un jugador en específico por ID
             return datosJugador.getJugadorByID(id);
+        }
+
+        public List<JugadorDeEncuentro> devolverJugadoresDeEncuentro(int idEncuentro)
+        {
+            //Devuelve los jugadores de encuentro dado un encuentro
+            return datosJugador.getJugadoresDeEncuentro(idEncuentro);
         }
 
         public List<Jugador> devolverJugadoresPorDeporte(int idDeporte)
@@ -125,6 +131,12 @@ namespace SistemaResultadosDeportivos.Logica
         {
             //Intenta modificar un jugador en la BD, con los datos dados
             return datosJugador.modificarJugador(id, nombreJugador, fechaNac, peso, estatura, pais, idDeporte);
+        }
+
+        public bool agregarOQuitarPuntos(int idJugador, int idEncuentro, int puntuacion)
+        {
+            //Intenta agregar o quitar puntos a un jugador en un encuentro dado
+            return datosJugador.agregarOQuitarPuntosEncuentro(idJugador, idEncuentro, puntuacion);
         }
 
         public int devolverUltimaID()
