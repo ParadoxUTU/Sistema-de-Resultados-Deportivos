@@ -40,8 +40,9 @@ namespace SistemaResultadosDeportivos
             flpJugadores.Controls.Clear();
             int i = 0;
             int tamano = flpJugadores.Width - 5;
-            List<JugadorDeEncuentro> lista = lgj.devolverJugadoresDeEncuentro(encuentro.idEncuentro);
-            foreach (JugadorDeEncuentro j in lista)
+            //List<JugadorDeEncuentro> lista = lgj.devolverJugadoresDeEncuentro(encuentro.idEncuentro);
+            jugadores = lgj.devolverJugadoresDeEncuentro(encuentro.idEncuentro);
+            foreach (JugadorDeEncuentro j in jugadores)
             {
                 String tamanoSt = "Nombre: " + j.nombreJugador;
                 String tamanoSt2 = "Puntuación: " + j.puntuacion;
@@ -55,7 +56,7 @@ namespace SistemaResultadosDeportivos
                 }
             }
 
-            foreach (JugadorDeEncuentro j in lista)
+            foreach (JugadorDeEncuentro j in jugadores)
             {
                 String textNombre = "Nombre: " + j.nombreJugador;
                 String textPuntuacion = "Puntuacion: " + j.puntuacion;
@@ -126,7 +127,7 @@ namespace SistemaResultadosDeportivos
                 botonAnterior.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
             Button btnJugador = sender as Button;
             int i = (Int32)btnJugador.Tag;
-            btnJugador.BackColor = System.Drawing.Color.FromArgb(90, 10, 0, 0);
+            btnJugador.BackColor = System.Drawing.Color.FromArgb(90, 40, 0, 0);
             var = i;
             botonAnterior = btnJugador;
         }
@@ -148,6 +149,7 @@ namespace SistemaResultadosDeportivos
         {
             int puntuacion = -(int)numPuntuacion.Value;
             int idJugador = jugadores[var].idJugador;
+            System.Windows.MessageBox.Show(puntuacion.ToString());
             lgj.agregarOQuitarPuntos(idJugador, encuentro.idEncuentro, puntuacion);
             listarJugadores();
         }

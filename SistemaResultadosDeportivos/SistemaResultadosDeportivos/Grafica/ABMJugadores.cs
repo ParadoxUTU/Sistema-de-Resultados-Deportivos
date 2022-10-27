@@ -208,6 +208,11 @@ namespace SistemaResultadosDeportivos
                 }
             }
             catch { }
+            txtNombre.Text = "";
+            txtPais.Text = "";
+            numEstatura.Value = numEstatura.Minimum;
+            numPeso.Value = numPeso.Minimum;
+            cbxDeportes.Text = "";
         }
     }
 }
