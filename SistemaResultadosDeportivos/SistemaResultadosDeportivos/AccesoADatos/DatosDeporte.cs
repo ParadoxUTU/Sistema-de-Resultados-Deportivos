@@ -88,6 +88,43 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             return deporte;
         }
 
+        public Deporte getDeporteByIdTorneo(int idTorneo)
+        {
+            //Devuelve un deporte dependiendo de su torneo
+            int idDeporte;
+            bool porEquipos;
+            bool anotaciones;
+            bool sets;
+            int cantParticipantes;
+            String nombreDeporte;
+            int tamAlineacion = 0;
+            Deporte deporte = null;
+            String stringSql = "SELECT Deportes.IdDeporte, Deportes.PorEquipos, Deportes.Anotaciones, Deportes.Sets, Deportes.CantParticipantes, Deportes.NombreDeporte, Deportes.TamAlineacion FROM Deportes INNER JOIN Torneos ON Deportes.IdDeporte=Torneos.IdDeporte AND IdTorneo = '" + idTorneo + "';";
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                ADODB.Recordset rs = cn.Execute(stringSql, out object cantFilas, -1);
+                idDeporte = (int)rs.Fields[0].Value;
+                porEquipos = Convert.ToBoolean(rs.Fields[1].Value);
+                anotaciones = Convert.ToBoolean(rs.Fields[2].Value);
+                sets = Convert.ToBoolean(rs.Fields[3].Value);
+                cantParticipantes = (int)rs.Fields[4].Value;
+                nombreDeporte = (String)rs.Fields[5].Value;
+                try
+                {
+                    tamAlineacion = (int)rs.Fields[6].Value;
+                }
+                catch { }
+                deporte = new Deporte(idDeporte, porEquipos, anotaciones, sets, cantParticipantes, nombreDeporte, tamAlineacion);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            return deporte;
+        }
+
         public bool agregarDeporte(bool porEquipos, bool anotaciones, bool sets, int cantParticipantes, String nombreDeporte, int tamAlineacion)
         {
             //Intenta agregar un deporte a la BD con los datos dados

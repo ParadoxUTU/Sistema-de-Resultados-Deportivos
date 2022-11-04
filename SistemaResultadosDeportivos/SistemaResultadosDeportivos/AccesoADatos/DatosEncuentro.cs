@@ -55,7 +55,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             return lista;
         }
 
-        public List<Encuentro> getEncuentrosByTorneo(int idTorneo)
+        public List<EncuentroTorneo> getEncuentrosByTorneo(int idTorneo)
         {
             //Mapea los encuentros existentes a los modelos, y los devuelve en una lista
             int idEncuentro;
@@ -67,7 +67,8 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             bool finalizo;
             String nombreEncuentro;
             int idDeporte;
-            List<Encuentro> lista = new List<Encuentro>();
+            String etapa;
+            List<EncuentroTorneo> lista = new List<EncuentroTorneo>();
             String stringSql = "SELECT * FROM Encuentros_Torneos INNER JOIN Encuentros ON encuentros_torneos.IdEncuentro=Encuentros.IdEncuentro WHERE IdTorneo = '" + idTorneo + "';";
             try
             {
@@ -77,6 +78,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 {
                     for (int i = 0; i < (int)cantFilas; i++)
                     {
+                        etapa = (string)rs.Fields[2].Value;
                         idEncuentro = (int)rs.Fields[3].Value;
                         fecha = rs.Fields[4].Value;
                         hora = rs.Fields[5].Value;
@@ -86,7 +88,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                         finalizo = Convert.ToBoolean(rs.Fields[9].Value);
                         nombreEncuentro = (String)rs.Fields[10].Value;
                         idDeporte = (int)rs.Fields[11].Value;
-                        Encuentro encuentro = new Encuentro(idEncuentro, fecha, hora, pausado, minActual, comenzo, finalizo, nombreEncuentro, idDeporte);
+                        EncuentroTorneo encuentro = new EncuentroTorneo(etapa, idEncuentro, fecha, hora, pausado, minActual, comenzo, finalizo, nombreEncuentro, idDeporte);
                         lista.Add(encuentro);
                         rs.MoveNext();
                     }

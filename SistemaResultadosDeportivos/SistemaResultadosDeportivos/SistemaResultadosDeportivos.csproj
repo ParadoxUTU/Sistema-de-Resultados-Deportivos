@@ -187,6 +187,12 @@
     <Compile Include="Grafica\SubFrmDatosSetJug.Designer.cs">
       <DependentUpon>SubFrmDatosSetJug.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grafica\SubFrmEncuentrosTorneo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\SubFrmEncuentrosTorneo.Designer.cs">
+      <DependentUpon>SubFrmEncuentrosTorneo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grafica\SubFrmModificarDeporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,18 @@
     <Compile Include="Grafica\FrmSeleccionarAlineacion.Designer.cs">
       <DependentUpon>FrmSeleccionarAlineacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grafica\SubFrmSeleccionarParticipantesTorneo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\SubFrmSeleccionarParticipantesTorneo.Designer.cs">
+      <DependentUpon>SubFrmSeleccionarParticipantesTorneo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\SubFrmVerParticipantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\SubFrmVerParticipantes.Designer.cs">
+      <DependentUpon>SubFrmVerParticipantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logica\LogicaAnotaciones.cs" />
     <Compile Include="Logica\LogicaDeportes.cs" />
     <Compile Include="Logica\LogicaEncuentros.cs" />
@@ -246,6 +264,7 @@
     <Compile Include="Modelos\Anotacion.cs" />
     <Compile Include="Modelos\Deporte.cs" />
     <Compile Include="Modelos\Encuentro.cs" />
+    <Compile Include="Modelos\EncuentroTorneo.cs" />
     <Compile Include="Modelos\Equipo.cs" />
     <Compile Include="Modelos\Jugador.cs" />
     <Compile Include="Modelos\JugadorDeEncuentro.cs" />
@@ -351,6 +370,9 @@
     <EmbeddedResource Include="Grafica\SubFrmDatosSetJug.resx">
       <DependentUpon>SubFrmDatosSetJug.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmEncuentrosTorneo.resx">
+      <DependentUpon>SubFrmEncuentrosTorneo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\SubFrmModificarDeporte.resx">
       <DependentUpon>SubFrmModificarDeporte.cs</DependentUpon>
     </EmbeddedResource>
@@ -374,6 +396,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\FrmSeleccionarAlineacion.resx">
       <DependentUpon>FrmSeleccionarAlineacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmSeleccionarParticipantesTorneo.resx">
+      <DependentUpon>SubFrmSeleccionarParticipantesTorneo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmVerParticipantes.resx">
+      <DependentUpon>SubFrmVerParticipantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

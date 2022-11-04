@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnVerParticipantes = new System.Windows.Forms.Button();
+            this.btnVerEncuentros = new System.Windows.Forms.Button();
             this.dateFechaFin = new System.Windows.Forms.DateTimePicker();
             this.dateFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,6 +48,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnVerParticipantes);
+            this.panel1.Controls.Add(this.btnVerEncuentros);
             this.panel1.Controls.Add(this.dateFechaFin);
             this.panel1.Controls.Add(this.dateFechaInicio);
             this.panel1.Controls.Add(this.label5);
@@ -60,8 +64,37 @@
             this.panel1.Controls.Add(this.btnAceptar);
             this.panel1.Location = new System.Drawing.Point(105, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(709, 496);
+            this.panel1.Size = new System.Drawing.Size(709, 548);
             this.panel1.TabIndex = 24;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnVerParticipantes
+            // 
+            this.btnVerParticipantes.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnVerParticipantes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVerParticipantes.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerParticipantes.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnVerParticipantes.Location = new System.Drawing.Point(222, 486);
+            this.btnVerParticipantes.Name = "btnVerParticipantes";
+            this.btnVerParticipantes.Size = new System.Drawing.Size(220, 40);
+            this.btnVerParticipantes.TabIndex = 39;
+            this.btnVerParticipantes.Text = "Ver Participantes";
+            this.btnVerParticipantes.UseVisualStyleBackColor = false;
+            this.btnVerParticipantes.Click += new System.EventHandler(this.btnVerParticipantes_Click);
+            // 
+            // btnVerEncuentros
+            // 
+            this.btnVerEncuentros.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnVerEncuentros.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVerEncuentros.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerEncuentros.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnVerEncuentros.Location = new System.Drawing.Point(399, 430);
+            this.btnVerEncuentros.Name = "btnVerEncuentros";
+            this.btnVerEncuentros.Size = new System.Drawing.Size(220, 40);
+            this.btnVerEncuentros.TabIndex = 38;
+            this.btnVerEncuentros.Text = "Ver Encuentros";
+            this.btnVerEncuentros.UseVisualStyleBackColor = false;
+            this.btnVerEncuentros.Click += new System.EventHandler(this.btnVerEncuentros_Click);
             // 
             // dateFechaFin
             // 
@@ -199,7 +232,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(918, 552);
+            this.ClientSize = new System.Drawing.Size(918, 588);
             this.Controls.Add(this.panel1);
             this.Name = "SubFrmModificarTorneo";
             this.Text = "SubFrmModificarTorneo";
@@ -225,5 +258,7 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnVerEncuentros;
+        private System.Windows.Forms.Button btnVerParticipantes;
     }
 }

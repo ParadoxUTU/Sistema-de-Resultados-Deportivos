@@ -300,6 +300,23 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             }
         }
 
+        public bool agregarJugadorATorneo(int idJugador, int idTorneo)
+        {
+            //Intenta agregar un jugador a un torneo de la BD con los datos dados
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "INSERT INTO Jugadores_Torneos (IdJugador, IdTorneo) VALUES('" + idJugador + "', '" + idTorneo + "');";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public bool agregarJugadorAAlineacion(int idJugador, int idEquipo, int idEncuentro, int numero)
         {
             //Intenta agregar un jugador a una alineacion de la BD con los datos dados
@@ -342,6 +359,24 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             {
                 ADODB.Connection cn = Conexion.Crear();
                 String stringSql = "DELETE FROM Encuentros_Jugadores WHERE IdEncuentro = '" + idEncuentro + "' AND IdJugador = '" + idJugador + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool eliminarJugadorDeTorneo(int idJugador, int idTorneo)
+        {
+            //Intenta eliminar un jugador de un torneo de la BD, dada una id
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "DELETE FROM Jugadores_Torneos WHERE IdTorneo = '" + idTorneo + "' AND IdJugador = '" + idJugador + "';";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;

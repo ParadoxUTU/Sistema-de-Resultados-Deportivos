@@ -25,7 +25,7 @@ namespace SistemaResultadosDeportivos.Logica
             return datosEncuentro.getEncuentros();
         }
 
-        public List<Encuentro> devolverEncuentrosPorTorneo(int idTorneo)
+        public List<EncuentroTorneo> devolverEncuentrosPorTorneo(int idTorneo)
         {
             //Devuelve una lista con los encuentros de un torneo en la BD
             return datosEncuentro.getEncuentrosByTorneo(idTorneo);

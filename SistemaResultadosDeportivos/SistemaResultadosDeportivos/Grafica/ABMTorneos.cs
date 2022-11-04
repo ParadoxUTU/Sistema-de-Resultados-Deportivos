@@ -10,7 +10,7 @@ namespace SistemaResultadosDeportivos
 {
     public partial class ABMTorneos : Form
     {
-        LogicaDeportes lgd;
+        public LogicaDeportes lgd;
         LogicaTorneos lgt;
         int var = 0;
 

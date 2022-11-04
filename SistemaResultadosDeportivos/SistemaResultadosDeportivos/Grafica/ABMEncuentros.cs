@@ -66,6 +66,8 @@ namespace SistemaResultadosDeportivos
             pnlBuscar.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
             pnlLupa.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
             flpEncuentros.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
+            label5.Visible = false;
+            cbxEtapa.Visible = false;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -75,7 +77,6 @@ namespace SistemaResultadosDeportivos
             DateTime horaEncuentro = timeHora.Value;
             String strHora = horaEncuentro.Hour.ToString() + ":" + horaEncuentro.Minute.ToString();
             bool pausado = (cbxEstado.SelectedIndex == 1);
-            int minActual = (int)numMinActual.Value;
             bool comenzo = (cbxEstado.SelectedIndex == 0);
             bool finalizo = (cbxEstado.SelectedIndex == 2);
             String nombreEncuentro = txtNombre.Text;
@@ -84,8 +85,8 @@ namespace SistemaResultadosDeportivos
                 if (cbxDeportes.SelectedItem != null)
                 {
                     Deporte deporte = lgd.devolverDeportes()[cbxDeportes.SelectedIndex];
-                    Encuentro encuentro = new Encuentro(0, fechaEncuentro, horaEncuentro, pausado, minActual, comenzo, finalizo, nombreEncuentro, deporte.idDeporte); //Se crea un objeto de tipo Encuentro con una id = 0 para pasarlo por parametro y obtener sus demas atributos
-                    if (confirmarAgregacion(strFecha, strHora, pausado, minActual, comenzo, finalizo, nombreEncuentro, deporte.idDeporte))
+                    Encuentro encuentro = new Encuentro(0, fechaEncuentro, horaEncuentro, pausado, 0, comenzo, finalizo, nombreEncuentro, deporte.idDeporte); //Se crea un objeto de tipo Encuentro con una id = 0 para pasarlo por parametro y obtener sus demas atributos
+                    if (confirmarAgregacion(strFecha, strHora, pausado, 0, comenzo, finalizo, nombreEncuentro, deporte.idDeporte))
                     {
                         int idEncuentro = lge.devolverUltimaID();
                         if (deporte.porEquipos)
@@ -98,8 +99,7 @@ namespace SistemaResultadosDeportivos
                             else
                             {
                                 Torneo torneo = lgt.devolverTorneosPorDeporte(deporte.idDeporte)[cbxTorneos.SelectedIndex];
-                                lge.agregarEncuentroTorneo(idEncuentro, torneo.idTorneo, "G");
-                                //new SubFrmEncCol(this, torneo, encuentro).Visible = true;
+                                lge.agregarEncuentroTorneo(idEncuentro, torneo.idTorneo, cbxEtapa.Text);
                             }
                         }
                         else
@@ -112,8 +112,7 @@ namespace SistemaResultadosDeportivos
                             else
                             {
                                 Torneo torneo = lgt.devolverTorneosPorDeporte(deporte.idDeporte)[cbxTorneos.SelectedIndex];
-                                lge.agregarEncuentroTorneo(idEncuentro, torneo.idTorneo, "G");
-                                //new SubFrmEncInd(this, torneo, deporte, encuentro).Visible = true;
+                                lge.agregarEncuentroTorneo(idEncuentro, torneo.idTorneo, cbxEtapa.Text);
                             }
                         }
                     }
@@ -155,6 +154,12 @@ namespace SistemaResultadosDeportivos
                 txtNombre.Visible = true;
                 label2.Visible = true;
             }
+        }
+
+        private void cbxTorneos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label5.Visible = true;
+            cbxEtapa.Visible = true;
         }
     }
 }

@@ -15,11 +15,13 @@ namespace SistemaResultadosDeportivos
     public partial class SubFrmModificarTorneo : Form
     {
         ABMTorneos torneos;
+        Torneo torneo;
         
         public SubFrmModificarTorneo(ABMTorneos t)
         {
             InitializeComponent();
             torneos = t;
+            torneo = torneos.obtenerTorneo();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -40,7 +42,6 @@ namespace SistemaResultadosDeportivos
         private void SubFrmModificarTorneo_Load(object sender, EventArgs e)
         {
             panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
-            Torneo torneo = torneos.obtenerTorneo();
             txtNombre.Text = torneo.nombreTorneo;
             txtPais.Text = torneo.nombrePais;
             DateTime fechaInicio = Convert.ToDateTime(torneo.fechaComienzo);
@@ -57,6 +58,22 @@ namespace SistemaResultadosDeportivos
                 torneos.eliminarTorneo();
                 this.Dispose();
             }
+        }
+
+        private void btnVerEncuentros_Click(object sender, EventArgs e)
+        {
+            new SubFrmEncuentrosTorneo(torneo).Visible = true;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnVerParticipantes_Click(object sender, EventArgs e)
+        {
+            Deporte deporte = torneos.lgd.devolverDeportePorTorneo(torneos.obtenerTorneo().idTorneo);
+            new SubFrmVerParticipantes(torneo, deporte).Visible = true;
         }
     }
 }

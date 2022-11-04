@@ -24,6 +24,12 @@ namespace SistemaResultadosDeportivos.Logica
             return datosDeporte.getDeportes();
         }
 
+        public Deporte devolverDeportePorTorneo(int idTorneo)
+        {
+            //Devuelve un deporte según torneo en la BD
+            return datosDeporte.getDeporteByIdTorneo(idTorneo);
+        }
+
         public Deporte devolverDeportePorID(int id)
         {
             //Devuelve un deporte en específico por ID

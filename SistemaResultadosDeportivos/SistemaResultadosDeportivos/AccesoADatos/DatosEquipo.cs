@@ -180,6 +180,23 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             }
         }
 
+        public bool agregarEquipoATorneo(int idEquipo, int idTorneo)
+        {
+            //Intenta agregar un equipo a un torneo de la BD con los datos dados
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "INSERT INTO Equipos_Torneos (IdEquipo, IdTorneo) VALUES('" + idEquipo + "', '" + idTorneo + "');";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public bool eliminarEquipo(int id)
         {
             //Intenta eliminar un equipo de la BD, dada una id
@@ -187,6 +204,23 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             {
                 ADODB.Connection cn = Conexion.Crear();
                 String stringSql = "DELETE FROM Equipos WHERE IdEquipo = '" + id + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool eliminarEquipoDeTorneo(int idTorneo, int idEquipo)
+        {
+            //Intenta eliminar un equipo de un torneo de la BD, dada una id
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "DELETE FROM Equipos_Torneos WHERE IdTorneo = '" + idTorneo + "' AND IdEquipo = '" + idEquipo + "';";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;

@@ -55,10 +55,22 @@ namespace SistemaResultadosDeportivos.Logica
             return datosEquipo.agregarEquipo(nombrePais, nombreEquipo, idDeporte);
         }
 
+        public bool agregarEquipoATorneo(int idEquipo, int idTorneo)
+        {
+            //Intenta agregar un equipo a un torneo en la BD con los datos dados
+            return datosEquipo.agregarEquipoATorneo(idEquipo, idTorneo);
+        }
+
         public bool eliminarEquipo(int id)
         {
             //Intenta eliminar un equipo de la BD con la id dada
             return datosEquipo.eliminarEquipo(id);
+        }
+
+        public bool eliminarEquipoDeTorneo(int idTorneo, int idEquipo)
+        {
+            //Intenta eliminar un equipo de un torneo de la BD, con la id dada
+            return datosEquipo.eliminarEquipoDeTorneo(idTorneo, idEquipo);
         }
 
         public bool modificarEquipo(int id, String nombrePais, String nombreEquipo, int idDeporte)

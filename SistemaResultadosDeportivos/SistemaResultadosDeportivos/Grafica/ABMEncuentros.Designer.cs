@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbxEtapa = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.timeHora = new System.Windows.Forms.DateTimePicker();
             this.dateFecha = new System.Windows.Forms.DateTimePicker();
             this.cbxTorneos = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.numMinActual = new System.Windows.Forms.NumericUpDown();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.cbxDeportes = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cbxEstado = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -51,23 +51,22 @@
             this.flpEncuentros = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlLupa = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numMinActual)).BeginInit();
             this.pnlBuscar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbxEtapa);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.timeHora);
             this.panel1.Controls.Add(this.dateFecha);
             this.panel1.Controls.Add(this.cbxTorneos);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.numMinActual);
             this.panel1.Controls.Add(this.btnAgregar);
             this.panel1.Controls.Add(this.cbxDeportes);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.cbxEstado);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtNombre);
@@ -77,6 +76,34 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(248, 564);
             this.panel1.TabIndex = 0;
+            // 
+            // cbxEtapa
+            // 
+            this.cbxEtapa.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxEtapa.FormattingEnabled = true;
+            this.cbxEtapa.Items.AddRange(new object[] {
+            "Grupos",
+            "Dieciseisavos",
+            "Octavos",
+            "Cuartos",
+            "Semifinales",
+            "Final"});
+            this.cbxEtapa.Location = new System.Drawing.Point(23, 476);
+            this.cbxEtapa.Name = "cbxEtapa";
+            this.cbxEtapa.Size = new System.Drawing.Size(203, 24);
+            this.cbxEtapa.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Menu;
+            this.label5.Location = new System.Drawing.Point(21, 446);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 16);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Etapa:";
             // 
             // timeHora
             // 
@@ -97,10 +124,11 @@
             // 
             this.cbxTorneos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTorneos.FormattingEnabled = true;
-            this.cbxTorneos.Location = new System.Drawing.Point(22, 474);
+            this.cbxTorneos.Location = new System.Drawing.Point(22, 411);
             this.cbxTorneos.Name = "cbxTorneos";
             this.cbxTorneos.Size = new System.Drawing.Size(203, 24);
             this.cbxTorneos.TabIndex = 9;
+            this.cbxTorneos.SelectedIndexChanged += new System.EventHandler(this.cbxTorneos_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -108,23 +136,11 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label8.Location = new System.Drawing.Point(20, 444);
+            this.label8.Location = new System.Drawing.Point(20, 381);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 16);
             this.label8.TabIndex = 8;
             this.label8.Text = "Torneo:";
-            // 
-            // numMinActual
-            // 
-            this.numMinActual.Location = new System.Drawing.Point(19, 273);
-            this.numMinActual.Maximum = new decimal(new int[] {
-            90,
-            0,
-            0,
-            0});
-            this.numMinActual.Name = "numMinActual";
-            this.numMinActual.Size = new System.Drawing.Size(36, 20);
-            this.numMinActual.TabIndex = 7;
             // 
             // btnAgregar
             // 
@@ -144,7 +160,7 @@
             // 
             this.cbxDeportes.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxDeportes.FormattingEnabled = true;
-            this.cbxDeportes.Location = new System.Drawing.Point(19, 407);
+            this.cbxDeportes.Location = new System.Drawing.Point(19, 344);
             this.cbxDeportes.Name = "cbxDeportes";
             this.cbxDeportes.Size = new System.Drawing.Size(203, 24);
             this.cbxDeportes.TabIndex = 0;
@@ -156,7 +172,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label7.Location = new System.Drawing.Point(19, 379);
+            this.label7.Location = new System.Drawing.Point(19, 316);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 16);
             this.label7.TabIndex = 0;
@@ -170,7 +186,7 @@
             "Iniciado",
             "Pausado",
             "Finalizado"});
-            this.cbxEstado.Location = new System.Drawing.Point(19, 340);
+            this.cbxEstado.Location = new System.Drawing.Point(19, 277);
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(203, 24);
             this.cbxEstado.TabIndex = 0;
@@ -181,23 +197,11 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label6.Location = new System.Drawing.Point(19, 309);
+            this.label6.Location = new System.Drawing.Point(19, 246);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(145, 16);
             this.label6.TabIndex = 0;
             this.label6.Text = "Estado del encuentro:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label5.Location = new System.Drawing.Point(19, 240);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 16);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Minuto actual:";
             // 
             // label4
             // 
@@ -322,7 +326,6 @@
             this.Load += new System.EventHandler(this.ABMEncuentros_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numMinActual)).EndInit();
             this.pnlBuscar.ResumeLayout(false);
             this.pnlBuscar.PerformLayout();
             this.ResumeLayout(false);
@@ -342,16 +345,16 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbxEstado;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numMinActual;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbxTorneos;
         private System.Windows.Forms.DateTimePicker dateFecha;
         private System.Windows.Forms.DateTimePicker timeHora;
+        private System.Windows.Forms.ComboBox cbxEtapa;
+        private System.Windows.Forms.Label label5;
     }
 }

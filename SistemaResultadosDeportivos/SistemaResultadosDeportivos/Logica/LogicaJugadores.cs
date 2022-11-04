@@ -73,6 +73,12 @@ namespace SistemaResultadosDeportivos.Logica
             return datosJugador.agregarJugadorAPlantel(idJugador, idEquipo);
         }
 
+        public bool agregarJugadorATorneo(int idJugador, int idTorneo)
+        {
+            //Intenta agregar un jugador a un torneo de la BD, con los datos dados
+            return datosJugador.agregarJugadorATorneo(idJugador, idTorneo);
+        }
+
         public bool agregarJugadorAAlineacion(int idJugador, int idEquipo, int idEncuentro, int numero)
         {
             //Intenta agregar un jugador a una alineacion de la BD, con los datos dados
@@ -89,6 +95,12 @@ namespace SistemaResultadosDeportivos.Logica
         {
             //Intenta eliminar un jugador de un encuentro de la BD con la id dada
             return datosJugador.eliminarJugadorDeEncuentro(idJugador, idEncuentro);
+        }
+
+        public bool eliminarJugadorDeTorneo(int idTorneo, int idJugador)
+        {
+            //Intenta eliminar un jugador de un torneo de la BD con la id dada
+            return datosJugador.eliminarJugadorDeTorneo(idTorneo, idJugador);
         }
 
         public bool eliminarJugadorDeTodoEncuentro(int id)
