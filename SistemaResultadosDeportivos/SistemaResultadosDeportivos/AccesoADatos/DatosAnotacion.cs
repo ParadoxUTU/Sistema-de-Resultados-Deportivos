@@ -17,6 +17,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             int idAnotacion;
             int idJugador;
             int minuto;
+            int puntuacion;
             List<Anotacion> lista = new List<Anotacion>();
             String stringSql = "SELECT * FROM Anotaciones WHERE IdEncuentro = '" + idEncuentro + "';";
             try
@@ -28,9 +29,10 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                     for (int i = 0; i < (int)cantFilas; i++)
                     {
                         idAnotacion = (int)rs.Fields[0].Value;
-                        idJugador = (int)rs.Fields[1].Value;
-                        minuto = (int)rs.Fields[2].Value;
-                        Anotacion anotacion = new Anotacion(idAnotacion, idJugador, minuto, idEncuentro);
+                        minuto = (int)rs.Fields[1].Value;
+                        idJugador = (int)rs.Fields[4].Value;
+                        puntuacion = (int)rs.Fields[5].Value;
+                        Anotacion anotacion = new Anotacion(idAnotacion, idJugador, minuto, idEncuentro, 0);
                         lista.Add(anotacion);
                         rs.MoveNext();
                     }
@@ -47,6 +49,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             int idAnotacion;
             int idJugador;
             int minuto;
+            int puntuacion;
             List<Anotacion> lista = new List<Anotacion>();
             String stringSql = "SELECT * FROM Anotaciones WHERE IdEncuentro = '" + idEncuentro + "' AND IdEquipo = '" + idEquipo + "';";
             try
@@ -58,9 +61,10 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                     for (int i = 0; i < (int)cantFilas; i++)
                     {
                         idAnotacion = (int)rs.Fields[0].Value;
-                        idJugador = (int)rs.Fields[1].Value;
-                        minuto = (int)rs.Fields[2].Value;
-                        Anotacion anotacion = new Anotacion(idAnotacion, idJugador, minuto, idEncuentro);
+                        minuto = (int)rs.Fields[1].Value;
+                        idJugador = (int)rs.Fields[4].Value;
+                        puntuacion = (int)rs.Fields[5].Value;
+                        Anotacion anotacion = new Anotacion(idAnotacion, idJugador, minuto, idEncuentro, puntuacion);
                         lista.Add(anotacion);
                         rs.MoveNext();
                     }
@@ -71,30 +75,30 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             return lista;
         }
 
-        public int getCountAnotaciones(int idEncuentro, int idEquipo)
+        public int getSumAnotaciones(int idEncuentro, int idEquipo)
         {
-            //Devuelve la cantidad de anotaciones de un equipo en un encuentro dado
-            int cantidadAnotaciones = 0;
-            String stringSql = "SELECT * FROM Anotaciones WHERE IdEncuentro = '" + idEncuentro + "' AND IdEquipo = '" + idEquipo + "';";
+            //Devuelve el total del puntaje de anotaciones de un equipo en un encuentro dado
+            int sumaAnotaciones = 0;
+            String stringSql = "SELECT SUM(puntuacion) FROM Anotaciones WHERE IdEncuentro = '" + idEncuentro + "' AND IdEquipo = '" + idEquipo + "';";
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
                 ADODB.Recordset rs = cn.Execute(stringSql, out object cantFilas, -1);
-                cantidadAnotaciones = rs.RecordCount;
+                sumaAnotaciones = (int)rs.Fields[0].Value;
             }catch
             {
-                cantidadAnotaciones = 0;
+                sumaAnotaciones = 0;
             }
-            return cantidadAnotaciones;
+            return sumaAnotaciones;
         }
 
-        public bool agregarAnotacion(int idJugador, int minuto, int idEquipo, int idEncuentro)
+        public bool agregarAnotacion(int idJugador, int minuto, int idEquipo, int idEncuentro, int puntuacion)
         {
             //Intenta agregar un equipo a la BD con los datos dados
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-                String stringSql = "INSERT INTO Anotaciones (IdJugador, Minuto, IdEquipo, IdEncuentro) VALUES('" + idJugador + "', '" + minuto + "', '" + idEquipo + "', '" + idEncuentro + "');";
+                String stringSql = "INSERT INTO Anotaciones (IdJugador, Minuto, IdEquipo, IdEncuentro, puntuacion) VALUES('" + idJugador + "', '" + minuto + "', '" + idEquipo + "', '" + idEncuentro + "', '" + puntuacion + "');";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;

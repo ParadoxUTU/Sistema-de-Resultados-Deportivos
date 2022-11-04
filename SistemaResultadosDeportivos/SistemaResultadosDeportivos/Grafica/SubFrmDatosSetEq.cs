@@ -31,5 +31,10 @@ namespace SistemaResultadosDeportivos
             encuentro.setSetsEquipo(equipo.idEquipo, lbl);
             this.Dispose();
         }
+
+        private void SubFrmDatosSetEq_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

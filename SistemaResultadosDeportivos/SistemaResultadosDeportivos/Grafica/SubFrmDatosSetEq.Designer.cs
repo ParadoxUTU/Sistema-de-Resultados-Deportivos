@@ -72,7 +72,7 @@
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // SubFrmDatosSet
+            // SubFrmDatosSetEq
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -81,8 +81,9 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.numPuntuacion);
             this.Controls.Add(this.lblEquipo1);
-            this.Name = "SubFrmDatosSet";
+            this.Name = "SubFrmDatosSetEq";
             this.Text = "SubFrmDatosSet";
+            this.Load += new System.EventHandler(this.SubFrmDatosSetEq_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numPuntuacion)).EndInit();
             this.ResumeLayout(false);
 

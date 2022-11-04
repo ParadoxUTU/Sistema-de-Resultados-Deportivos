@@ -35,13 +35,13 @@ namespace SistemaResultadosDeportivos.Logica
         public int devolverAnotacionesEquipo(int idEncuentro, int idEquipo)
         {
             //Suma las anotaciones de un equipo en un encuentro para determinar su puntaje
-            return datosAnotacion.getCountAnotaciones(idEncuentro, idEquipo);
+            return datosAnotacion.getSumAnotaciones(idEncuentro, idEquipo);
         }
 
-        public bool agregarAnotacion(int idJugador, int minuto, int idEquipo, int idEncuentro)
+        public bool agregarAnotacion(int idJugador, int minuto, int idEquipo, int idEncuentro, int puntuacion)
         {
             //Agrega una anotación a un equipo en determinado encuentro
-            return datosAnotacion.agregarAnotacion(idJugador, minuto, idEquipo, idEncuentro);
+            return datosAnotacion.agregarAnotacion(idJugador, minuto, idEquipo, idEncuentro, puntuacion);
         }
 
 
@@ -60,7 +60,7 @@ namespace SistemaResultadosDeportivos.Logica
         public RespuestaAnotaciones devolverAnotacionesEquipoEnObjeto(int idEncuentro, int idEquipo)
         {
             //Suma las anotaciones de un equipo en un encuentro para determinar su puntaje y lo devuelve en un objeto de respuesta
-            int puntaje = datosAnotacion.getCountAnotaciones(idEncuentro, idEquipo);
+            int puntaje = datosAnotacion.getSumAnotaciones(idEncuentro, idEquipo);
             RespuestaAnotaciones res = new RespuestaAnotaciones(puntaje);
             return res;
         }

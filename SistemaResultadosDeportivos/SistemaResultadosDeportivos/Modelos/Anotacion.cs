@@ -12,13 +12,15 @@ namespace SistemaResultadosDeportivos.Modelos
         public int idJugador { get; set; }
         public int minuto { get; set; }
         public int idEncuentro { get; set; }
+        public int puntuacion { get; set; }
 
-        public Anotacion(int idA, int idJ, int m, int idE)
+        public Anotacion(int idA, int idJ, int m, int idE, int p)
         {
             idAnotacion = idA;
             idJugador = idJ;
             minuto = m;
             idEncuentro = idE;
+            puntuacion = p;
         }
     }
 }

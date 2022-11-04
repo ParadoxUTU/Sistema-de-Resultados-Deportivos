@@ -15,6 +15,7 @@ namespace SistemaResultadosDeportivos
         Equipo equipoActual;
         int var = 0;
         Label lbl;
+        Button botonAnterior = null;
 
         public FrmSeleccionarJugadorAnotacion(FrmGestionarEncCol g, Equipo eq, Label l)
         {
@@ -117,20 +118,29 @@ namespace SistemaResultadosDeportivos
 
         private void btnJugadores_Click(object sender, EventArgs e)
         {
+            if (botonAnterior != null)
+                botonAnterior.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
             Button btnJugador = sender as Button;
             int i = (Int32)btnJugador.Tag;
+            btnJugador.BackColor = System.Drawing.Color.FromArgb(90, 40, 0, 0);
             var = i;
-            List<Alineacion> alineacion = gestionar.lge.devolverAlineacion(equipoActual.idEquipo, gestionar.encuentro.idEncuentro);
-            Jugador jugador = lgj.devolverJugadorPorID(alineacion[var].idJugador);
-            int minuto = int.Parse(gestionar.lblMinuto.Text);
-            gestionar.lga.agregarAnotacion(jugador.idJugador, minuto, equipoActual.idEquipo, gestionar.encuentro.idEncuentro);
-            gestionar.setAnotacionesEquipo(gestionar.encuentro.idEncuentro, equipoActual.idEquipo, lbl);
-            this.Dispose();
+            botonAnterior = btnJugador;
         }
 
         private void SeleccionarJugadorAlineacion_Load(object sender, EventArgs e)
         {
             flpJugadores.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            List<Alineacion> alineacion = gestionar.lge.devolverAlineacion(equipoActual.idEquipo, gestionar.encuentro.idEncuentro);
+            Jugador jugador = lgj.devolverJugadorPorID(alineacion[var].idJugador);
+            int minuto = int.Parse(gestionar.lblMinuto.Text);
+            int puntuacion = (int)numPuntuacion.Value;
+            gestionar.lga.agregarAnotacion(jugador.idJugador, minuto, equipoActual.idEquipo, gestionar.encuentro.idEncuentro, puntuacion);
+            gestionar.setAnotacionesEquipo(gestionar.encuentro.idEncuentro, equipoActual.idEquipo, lbl);
+            this.Dispose();
         }
     }
 }
