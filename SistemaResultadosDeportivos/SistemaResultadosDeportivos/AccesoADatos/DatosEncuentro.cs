@@ -55,6 +55,46 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             return lista;
         }
 
+        public Encuentro getEncuentroById(int id)
+        {
+            //Devuelve un encuentro dependiendo de su ID
+            DateTime fecha;
+            DateTime hora;
+            bool pausado = false;
+            int minActual;
+            bool comenzo = false;
+            bool finalizo = false;
+            String nombreEncuentro;
+            int idDeporte;
+            Encuentro encuentro = null;
+            String stringSql = "SELECT * FROM Encuentros WHERE IdEncuentro = '" + id + "';";
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                ADODB.Recordset rs = cn.Execute(stringSql, out object cantFilas, -1);
+                if (rs.RecordCount > 0)
+                {
+                    fecha = rs.Fields[1].Value;
+                    hora = rs.Fields[2].Value;
+                    pausado = Convert.ToBoolean(rs.Fields[3].Value);
+                    minActual = (int)rs.Fields[4].Value;
+                    comenzo = Convert.ToBoolean(rs.Fields[5].Value);
+                    finalizo = Convert.ToBoolean(rs.Fields[6].Value);
+                    nombreEncuentro = (String)rs.Fields[7].Value;
+                    idDeporte = (int)rs.Fields[8].Value;
+                    encuentro = new Encuentro(id, fecha, hora, pausado, minActual, comenzo, finalizo, nombreEncuentro, idDeporte);
+                    rs.MoveNext();
+
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            return encuentro;
+        }
+
         public List<EncuentroTorneo> getEncuentrosByTorneo(int idTorneo)
         {
             //Mapea los encuentros existentes a los modelos, y los devuelve en una lista
@@ -136,6 +176,106 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 cantidadJugadores = 0;
             }
             return cantidadJugadores;
+        }
+
+        public int getMinActual(int idEncuentro)
+        {
+            //Devuelve el minuto actual de un encuentro
+            int minActual = 0;
+            String stringSql = "SELECT MinActual FROM Encuentros WHERE IdEncuentro = '" + idEncuentro + "';";
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                ADODB.Recordset rs = cn.Execute(stringSql, out object cantFilas, -1);
+                minActual = Convert.ToInt16(rs.Fields[0]);
+            }
+            catch{}
+            return minActual;
+        }
+
+        public bool actualizarMinActual(int id, int minActual)
+        {
+            //Intenta actualizar el minuto actual de un encuentro
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "UPDATE Encuentros SET MinActual = '" + minActual + "' WHERE IdEncuentro = '" + id + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool pausarEncuentro(int id)
+        {
+            //Intenta pausar el encuentro
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "UPDATE Encuentros SET Pausado = '1' WHERE IdEncuentro = '" + id + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool reanudarEncuentro(int id)
+        {
+            //Intenta pausar el encuentro
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "UPDATE Encuentros SET Pausado = '0' WHERE IdEncuentro = '" + id + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool iniciarEncuentro(int id)
+        {
+            //Intenta iniciar el encuentro
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "UPDATE Encuentros SET Comenzo = '1' WHERE IdEncuentro = '" + id + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool finalizarEncuentro(int id)
+        {
+            //Intenta iniciar el encuentro
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "UPDATE Encuentros SET Finalizo = '1' WHERE IdEncuentro = '" + id + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public List<Alineacion> getAlineacion(int idEquipo, int idEncuentro)

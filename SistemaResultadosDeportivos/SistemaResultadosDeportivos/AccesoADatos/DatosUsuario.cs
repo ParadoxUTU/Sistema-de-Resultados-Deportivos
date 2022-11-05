@@ -152,7 +152,9 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 ADODB.Connection cn = Conexion.Crear();
                 if (rol == 0)
                 {
-                    String stringSql = "GRANT SELECT ON Usuarios TO '" + correo + "'@'localhost';";
+                    String stringSql = "GRANT SELECT ON " + getBaseDeDatosSeleccionada() + ".* TO '" + correo + "'@'localhost';";
+                    cn.Execute(stringSql, out object cantFilas, -1);
+                    /*String stringSql = "GRANT SELECT ON Usuarios TO '" + correo + "'@'localhost';";
                     cn.Execute(stringSql, out object cantFilas, -1);
                     stringSql = "GRANT SELECT ON Publicidad TO '" + correo + "'@'localhost';";
                     cn.Execute(stringSql, out cantFilas, -1);
@@ -173,7 +175,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                     stringSql = "GRANT SELECT ON Encuentros_equipos TO '" + correo + "'@'localhost';";
                     cn.Execute(stringSql, out cantFilas, -1);
                     stringSql = "GRANT SELECT ON Deportes TO '" + correo + "'@'localhost';";
-                    cn.Execute(stringSql, out cantFilas, -1);
+                    cn.Execute(stringSql, out cantFilas, -1);*/
                 }
                 if (rol == 1)
                 {

@@ -136,7 +136,7 @@ namespace SistemaResultadosDeportivos
         {
             List<Alineacion> alineacion = gestionar.lge.devolverAlineacion(equipoActual.idEquipo, gestionar.encuentro.idEncuentro);
             Jugador jugador = lgj.devolverJugadorPorID(alineacion[var].idJugador);
-            int minuto = int.Parse(gestionar.lblMinuto.Text);
+            int minuto = gestionar.ts.Minutes;
             int puntuacion = (int)numPuntuacion.Value;
             gestionar.lga.agregarAnotacion(jugador.idJugador, minuto, equipoActual.idEquipo, gestionar.encuentro.idEncuentro, puntuacion);
             gestionar.setAnotacionesEquipo(gestionar.encuentro.idEncuentro, equipoActual.idEquipo, lbl);

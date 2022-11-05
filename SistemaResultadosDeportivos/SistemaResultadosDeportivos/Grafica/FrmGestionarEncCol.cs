@@ -5,11 +5,14 @@ using System.Windows.Forms;
 using SistemaResultadosDeportivos.Logica;
 using System.Drawing;
 using System.Windows;
+using System.Diagnostics;
 
 namespace SistemaResultadosDeportivos
 {
     public partial class FrmGestionarEncCol : Form
     {
+        public Stopwatch oSW = new Stopwatch();
+        public TimeSpan ts;
         public LogicaAnotaciones lga;
         public LogicaEncuentros lge;
         public LogicaSets lgs;
@@ -40,7 +43,62 @@ namespace SistemaResultadosDeportivos
                 setSetsEquipo(equipo1.idEquipo, lblPuntaje1);
                 setSetsEquipo(equipo2.idEquipo, lblPuntaje2); 
             }
-            
+            ts = new TimeSpan(0, 0, encuentro.minActual, 0, (int)oSW.ElapsedMilliseconds);
+            lblMinuto.Text = ts.Minutes.ToString();
+            actualizarBotones();
+        }
+
+        public void actualizarBotones()
+        {
+            if (!encuentro.comenzo)
+            {
+                btnIniciar.Enabled = true;
+                btnPausar.Enabled = false;
+                btnFinalizar.Enabled = false;
+                btnReanudar.Enabled = false;
+                btnAgregarPuntos1.Enabled = false;
+                btnAgregarPuntos2.Enabled = false;
+            }
+            else if (encuentro.comenzo && !encuentro.pausado && !encuentro.finalizo)
+            {
+                btnIniciar.Enabled = false;
+                btnPausar.Enabled = true;
+                btnFinalizar.Enabled = true;
+                btnReanudar.Enabled = false;
+                btnAgregarPuntos1.Enabled = true;
+                btnAgregarPuntos2.Enabled = true;
+            }
+            else if(!encuentro.finalizo && encuentro.pausado)
+            {
+                btnIniciar.Enabled = false;
+                btnPausar.Enabled = false;
+                btnFinalizar.Enabled = true;
+                btnReanudar.Enabled = true;
+                btnAgregarPuntos1.Enabled = false;
+                btnAgregarPuntos2.Enabled = false;
+            }
+            else if (encuentro.finalizo)
+            {
+                btnIniciar.Enabled = false;
+                btnPausar.Enabled = false;
+                btnFinalizar.Enabled = false;
+                btnReanudar.Enabled = false;
+                btnAgregarPuntos1.Enabled = false;
+                btnAgregarPuntos2.Enabled = false;
+            }
+        }
+
+        public void iniciarTimer()
+        {
+            ts = new TimeSpan(0, 0, encuentro.minActual, 0, (int)oSW.ElapsedTicks);
+            oSW.Start();
+            timer1.Enabled = true;
+        }
+
+        public void detenerTimer()
+        {
+            oSW.Stop();
+            timer1.Enabled = false;
         }
 
         public void setAnotacionesEquipo(int idEncuentro, int idEquipo, Label lbl)
@@ -109,6 +167,45 @@ namespace SistemaResultadosDeportivos
         private void lblPuntaje2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            ts = new TimeSpan(0, 0, encuentro.minActual, 0, (int)oSW.ElapsedMilliseconds);
+            lge.actualizarMinActual(encuentro.idEncuentro, (int)ts.Minutes);
+            lblMinuto.Text = ts.Minutes.ToString();
+        }
+
+        private void btnIniciar_Click(object sender, EventArgs e)
+        {
+            lge.iniciarEncuentro(encuentro.idEncuentro);
+            encuentro = lge.devolverEncuentroPorId(encuentro.idEncuentro);
+            iniciarTimer();
+            actualizarBotones();
+        }
+
+        private void btnPausar_Click(object sender, EventArgs e)
+        {
+            lge.pausarEncuentro(encuentro.idEncuentro);
+            encuentro = lge.devolverEncuentroPorId(encuentro.idEncuentro);
+            detenerTimer();
+            actualizarBotones();
+        }
+
+        private void btnReanudar_Click(object sender, EventArgs e)
+        {
+            lge.reanudarEncuentro(encuentro.idEncuentro);
+            encuentro = lge.devolverEncuentroPorId(encuentro.idEncuentro);
+            iniciarTimer();
+            actualizarBotones();
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            lge.finalizarEncuentro(encuentro.idEncuentro);
+            encuentro = lge.devolverEncuentroPorId(encuentro.idEncuentro);
+            detenerTimer();
+            actualizarBotones();
         }
     }
 }

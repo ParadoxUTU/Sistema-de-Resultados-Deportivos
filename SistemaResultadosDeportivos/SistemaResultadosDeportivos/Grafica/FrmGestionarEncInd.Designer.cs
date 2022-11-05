@@ -28,12 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.flpJugadores = new System.Windows.Forms.FlowLayoutPanel();
             this.lblMinuto = new System.Windows.Forms.Label();
             this.lblNombreEncuentro = new System.Windows.Forms.Label();
             this.btnAgregarPuntos = new System.Windows.Forms.Button();
             this.btnQuitarPuntos = new System.Windows.Forms.Button();
             this.numPuntuacion = new System.Windows.Forms.NumericUpDown();
+            this.btnIniciar = new System.Windows.Forms.Button();
+            this.btnPausar = new System.Windows.Forms.Button();
+            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.btnReanudar = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numPuntuacion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,12 +116,76 @@
             this.numPuntuacion.Size = new System.Drawing.Size(180, 38);
             this.numPuntuacion.TabIndex = 32;
             // 
+            // btnIniciar
+            // 
+            this.btnIniciar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnIniciar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIniciar.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnIniciar.Location = new System.Drawing.Point(281, 551);
+            this.btnIniciar.Name = "btnIniciar";
+            this.btnIniciar.Size = new System.Drawing.Size(87, 40);
+            this.btnIniciar.TabIndex = 40;
+            this.btnIniciar.Text = "Iniciar";
+            this.btnIniciar.UseVisualStyleBackColor = false;
+            this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
+            // 
+            // btnPausar
+            // 
+            this.btnPausar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnPausar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPausar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPausar.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnPausar.Location = new System.Drawing.Point(281, 597);
+            this.btnPausar.Name = "btnPausar";
+            this.btnPausar.Size = new System.Drawing.Size(87, 40);
+            this.btnPausar.TabIndex = 39;
+            this.btnPausar.Text = "Pausar";
+            this.btnPausar.UseVisualStyleBackColor = false;
+            this.btnPausar.Click += new System.EventHandler(this.btnPausar_Click);
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFinalizar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizar.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnFinalizar.Location = new System.Drawing.Point(632, 551);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(87, 40);
+            this.btnFinalizar.TabIndex = 42;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = false;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
+            // btnReanudar
+            // 
+            this.btnReanudar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnReanudar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReanudar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReanudar.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnReanudar.Location = new System.Drawing.Point(632, 597);
+            this.btnReanudar.Name = "btnReanudar";
+            this.btnReanudar.Size = new System.Drawing.Size(87, 40);
+            this.btnReanudar.TabIndex = 41;
+            this.btnReanudar.Text = "Reanudar";
+            this.btnReanudar.UseVisualStyleBackColor = false;
+            this.btnReanudar.Click += new System.EventHandler(this.btnReanudar_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FrmGestionarEncInd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(1008, 620);
+            this.ClientSize = new System.Drawing.Size(1008, 649);
+            this.Controls.Add(this.btnFinalizar);
+            this.Controls.Add(this.btnReanudar);
+            this.Controls.Add(this.btnIniciar);
+            this.Controls.Add(this.btnPausar);
             this.Controls.Add(this.numPuntuacion);
             this.Controls.Add(this.btnQuitarPuntos);
             this.Controls.Add(this.btnAgregarPuntos);
@@ -139,5 +209,10 @@
         private System.Windows.Forms.Button btnAgregarPuntos;
         private System.Windows.Forms.Button btnQuitarPuntos;
         private System.Windows.Forms.NumericUpDown numPuntuacion;
+        private System.Windows.Forms.Button btnIniciar;
+        private System.Windows.Forms.Button btnPausar;
+        private System.Windows.Forms.Button btnFinalizar;
+        private System.Windows.Forms.Button btnReanudar;
+        private System.Windows.Forms.Timer timer1;
     }
 }

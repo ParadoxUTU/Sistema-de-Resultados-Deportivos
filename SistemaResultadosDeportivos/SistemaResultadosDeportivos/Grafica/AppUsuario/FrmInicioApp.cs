@@ -77,8 +77,16 @@ namespace SistemaResultadosDeportivos
                     Label lblBoton3 = new Label();
                     Button btnEncuentro = new Button();
                     String textNombre = en.nombreEncuentro;
-                    String textFecha = "Fecha: " + en.fecha;
-                    String textHora = "Hora: " + en.hora;
+                    String textFecha = "Fecha: " + en.fecha.Day + "/" + en.fecha.Month + "/" + en.fecha.Year;
+                    String textHora = "Hora:";
+                    if (en.hora.Hour < 10)
+                        textHora += " 0" + en.hora.Hour + ":";
+                    else
+                        textHora += " " + en.hora.Hour + ":";
+                    if (en.hora.Minute < 10)
+                        textHora += "0" + en.hora.Minute;
+                    else
+                        textHora += en.hora.Minute;
                     propiedadesBoton(btnEncuentro, i, tamano);
                     propiedadesLabel(lblBoton, textNombre, btnEncuentro, 8);
                     propiedadesLabel(lblBoton2, textFecha, btnEncuentro, 39);
@@ -128,7 +136,15 @@ namespace SistemaResultadosDeportivos
             Deporte deporte = JsonConvert.DeserializeObject<Deporte>(resultados.getDeporte(encuentro.idDeporte));
             if (deporte.porEquipos)
             {
-                new FrmVerEncuentroApp(encuentro).Visible = true;
+                new FrmVerEncuentroEquipo(encuentro).Visible = true;
+            }
+            else if(!deporte.porEquipos && deporte.cantParticipantes == 2)
+            {
+                new FrmVerEncuentroIndDeADos(encuentro).Visible = true;
+            }
+            else if(deporte.cantParticipantes > 2)
+            {
+                new FrmVerEncuentroInd(encuentro).Visible = true;
             }
         }
 

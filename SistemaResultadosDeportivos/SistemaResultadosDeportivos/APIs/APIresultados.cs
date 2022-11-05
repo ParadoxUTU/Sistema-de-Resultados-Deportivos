@@ -17,6 +17,7 @@ namespace SistemaResultadosDeportivos.APIs
         private LogicaSets lgs;
         private LogicaDeportes lgd;
         private LogicaEquipos lgeq;
+        private LogicaJugadores lgj;
 
         public APIresultados()
         {
@@ -25,6 +26,7 @@ namespace SistemaResultadosDeportivos.APIs
             lgs = new LogicaSets();
             lgd = new LogicaDeportes();
             lgeq = new LogicaEquipos();
+            lgj = new LogicaJugadores();
         }
 
         public List<String> encuentrosToJSON()
@@ -63,11 +65,71 @@ namespace SistemaResultadosDeportivos.APIs
             return listJson;
         }
 
+        public List<String> getSetsJugador(int idJugador, int idEncuentro)
+        {
+            List<Set> lista = lgs.devolverSetsJugadorEncuentro(idJugador, idEncuentro);
+            List<String> listJson = new List<String>();
+            foreach (Set s in lista)
+            {
+                JObject json = JObject.FromObject(s);
+                listJson.Add(json.ToString());
+            }
+            return listJson;
+        }
+
         public List<String> getEquiposPorEncuentro(int idEncuentro)
         {
             List<Equipo> lista = lgeq.devolverEquiposPorEncuentro(idEncuentro);
             List<String> listJson = new List<String>();
             foreach(Equipo e in lista)
+            {
+                JObject json = JObject.FromObject(e);
+                listJson.Add(json.ToString());
+            }
+            return listJson;
+        }
+
+        public List<String> getJugadoresPorEncuentro(int idEncuentro)
+        {
+            List<Jugador> lista = lgj.devolverJugadoresPorEncuentro(idEncuentro);
+            List<String> listJson = new List<String>();
+            foreach (Jugador e in lista)
+            {
+                JObject json = JObject.FromObject(e);
+                listJson.Add(json.ToString());
+            }
+            return listJson;
+        }
+
+        public List<String> getJugadoresDeEncuentro(int idEncuentro)
+        {
+            List<JugadorDeEncuentro> lista = lgj.devolverJugadoresDeEncuentro(idEncuentro);
+            List<String> listJson = new List<String>();
+            foreach (JugadorDeEncuentro e in lista)
+            {
+                JObject json = JObject.FromObject(e);
+                listJson.Add(json.ToString());
+            }
+            return listJson;
+        }
+
+        public List<String> getEquiposPorDeporte(int idDeporte)
+        {
+            List<Equipo> lista = lgeq.devolverEquiposPorDeporte(idDeporte);
+            List<String> listJson = new List<String>();
+            foreach (Equipo e in lista)
+            {
+                JObject json = JObject.FromObject(e);
+                listJson.Add(json.ToString());
+            }
+            return listJson;
+        }
+
+        public List<String> getEquiposPorTorneo(int idTorneo)
+        {
+            List<Equipo> lista = lgeq.devolverEquiposPorTorneo(idTorneo);
+            List<String> listJson = new List<String>();
+            foreach (Equipo e in lista)
             {
                 JObject json = JObject.FromObject(e);
                 listJson.Add(json.ToString());

@@ -16,7 +16,7 @@ using System.IO;
 
 namespace SistemaResultadosDeportivos
 {
-    public partial class FrmVerEncuentroApp : Form
+    public partial class FrmVerEncuentroEquipo : Form
     {
         APIresultados resultados;
         Encuentro encuentro;
@@ -24,7 +24,7 @@ namespace SistemaResultadosDeportivos
         Equipo equipo1;
         Equipo equipo2;
 
-        public FrmVerEncuentroApp(Encuentro e)
+        public FrmVerEncuentroEquipo(Encuentro e)
         {
             InitializeComponent();
             resultados = new APIresultados();
@@ -44,6 +44,7 @@ namespace SistemaResultadosDeportivos
                 setSetsEquipo(encuentro.idEncuentro, equipo1.idEquipo, lblPuntaje1);
                 setSetsEquipo(encuentro.idEncuentro, equipo2.idEquipo, lblPuntaje2);
             }
+            lblMinuto.Text = Convert.ToString(encuentro.minActual);
         }
 
         public void setSetsEquipo(int idEncuentro, int idEquipo, Label lbl)
@@ -57,11 +58,11 @@ namespace SistemaResultadosDeportivos
             }
             if(sets.Count > 0)
             {
-                lbl.Text = sets[sets.Count - 1].numeroSet.ToString();
-            }
-            else
-            {
-                lbl.Text = "0";
+                lbl.Text = "";
+                foreach (Set set in sets)
+                {
+                    lbl.Text += " " + set.puntuacionSet;
+                }
             }
         }
 

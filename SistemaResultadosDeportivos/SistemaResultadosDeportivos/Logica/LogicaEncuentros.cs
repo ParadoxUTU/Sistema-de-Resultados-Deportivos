@@ -25,10 +25,22 @@ namespace SistemaResultadosDeportivos.Logica
             return datosEncuentro.getEncuentros();
         }
 
+        public Encuentro devolverEncuentroPorId(int id)
+        {
+            //Devuelve una encuentro por Id
+            return datosEncuentro.getEncuentroById(id);
+        }
+
         public List<EncuentroTorneo> devolverEncuentrosPorTorneo(int idTorneo)
         {
             //Devuelve una lista con los encuentros de un torneo en la BD
             return datosEncuentro.getEncuentrosByTorneo(idTorneo);
+        }
+
+        public bool actualizarMinActual(int id, int minActual)
+        {
+            //Intenta actualizar el minuto actual de un encuentro
+            return datosEncuentro.actualizarMinActual(id, minActual);
         }
 
         public List<Alineacion> devolverAlineacion(int idEquipo, int idEncuentro)
@@ -59,6 +71,30 @@ namespace SistemaResultadosDeportivos.Logica
         {
             //Intenta agregar un encuentro de torneo a la BD, con los datos dados
             return datosEncuentro.agregarEncuentroTorneo(idEncuentro, idTorneo, etapa);
+        }
+
+        public bool pausarEncuentro(int idEncuentro)
+        {
+            //Intenta pausar un encuentro
+            return datosEncuentro.pausarEncuentro(idEncuentro);
+        }
+
+        public bool reanudarEncuentro(int idEncuentro)
+        {
+            //Intenta pausar un encuentro
+            return datosEncuentro.reanudarEncuentro(idEncuentro);
+        }
+
+        public bool iniciarEncuentro(int idEncuentro)
+        {
+            //Intenta pausar un encuentro
+            return datosEncuentro.iniciarEncuentro(idEncuentro);
+        }
+
+        public bool finalizarEncuentro(int idEncuentro)
+        {
+            //Intenta pausar un encuentro
+            return datosEncuentro.finalizarEncuentro(idEncuentro);
         }
 
         public bool agregarEncuentroJugador(int idEncuentro, int idJugador, int puesto, int puntuacion)

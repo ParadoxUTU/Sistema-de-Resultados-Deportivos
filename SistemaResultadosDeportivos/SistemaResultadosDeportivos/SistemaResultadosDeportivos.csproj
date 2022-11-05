@@ -89,11 +89,11 @@
     <Compile Include="Grafica\AppUsuario\FrmRegistro.Designer.cs">
       <DependentUpon>FrmRegistro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grafica\AppUsuario\FrmVerEncuentroApp.cs">
+    <Compile Include="Grafica\AppUsuario\FrmVerEncuentroEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grafica\AppUsuario\FrmVerEncuentroApp.Designer.cs">
-      <DependentUpon>FrmVerEncuentroApp.cs</DependentUpon>
+    <Compile Include="Grafica\AppUsuario\FrmVerEncuentroEquipo.Designer.cs">
+      <DependentUpon>FrmVerEncuentroEquipo.cs</DependentUpon>
     </Compile>
     <Compile Include="Grafica\ABMJugadores.cs">
       <SubType>Form</SubType>
@@ -124,6 +124,18 @@
     </Compile>
     <Compile Include="Grafica\ABMEncuentros.Designer.cs">
       <DependentUpon>ABMEncuentros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\FrmVerEncuentroInd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\FrmVerEncuentroInd.Designer.cs">
+      <DependentUpon>FrmVerEncuentroInd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\FrmVerEncuentroIndDeADos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\FrmVerEncuentroIndDeADos.Designer.cs">
+      <DependentUpon>FrmVerEncuentroIndDeADos.cs</DependentUpon>
     </Compile>
     <Compile Include="Grafica\FrmGestionarEncInd.cs">
       <SubType>Form</SubType>
@@ -325,8 +337,14 @@
     <EmbeddedResource Include="Grafica\AppUsuario\FrmRegistro.resx">
       <DependentUpon>FrmRegistro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grafica\AppUsuario\FrmVerEncuentroApp.resx">
-      <DependentUpon>FrmVerEncuentroApp.cs</DependentUpon>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmVerEncuentroEquipo.resx">
+      <DependentUpon>FrmVerEncuentroEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmVerEncuentroInd.resx">
+      <DependentUpon>FrmVerEncuentroInd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmVerEncuentroIndDeADos.resx">
+      <DependentUpon>FrmVerEncuentroIndDeADos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\FrmGestionarEncInd.resx">
       <DependentUpon>FrmGestionarEncInd.cs</DependentUpon>

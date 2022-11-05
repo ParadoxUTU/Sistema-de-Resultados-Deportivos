@@ -1,6 +1,6 @@
 ﻿namespace SistemaResultadosDeportivos
 {
-    partial class FrmVerEncuentroApp
+    partial class FrmVerEncuentroEquipo
     {
         /// <summary>
         /// Required designer variable.

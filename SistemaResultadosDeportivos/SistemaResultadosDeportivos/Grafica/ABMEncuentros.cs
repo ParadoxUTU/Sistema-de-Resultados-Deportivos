@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using SistemaResultadosDeportivos.Logica;
 using System.Drawing;
+using System.Timers;
 
 
 namespace SistemaResultadosDeportivos
