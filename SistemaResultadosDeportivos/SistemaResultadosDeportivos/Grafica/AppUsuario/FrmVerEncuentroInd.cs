@@ -25,6 +25,7 @@ namespace SistemaResultadosDeportivos
         public FrmVerEncuentroInd(Encuentro e)
         {
             InitializeComponent();
+            timer1.Enabled = true;
             jugadores = new List<JugadorDeEncuentro>();
             resultados = new APIresultados();
             encuentro = e;
@@ -137,6 +138,13 @@ namespace SistemaResultadosDeportivos
         private void FrmVerEncuentroInd_Load(object sender, EventArgs e)
         {
             flpJugadores.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            encuentro = JsonConvert.DeserializeObject<Encuentro>(resultados.getEncuentro(encuentro.idEncuentro));
+            lblMinuto.Text = encuentro.minActual.ToString();
+            listarJugadores();
         }
     }
 }

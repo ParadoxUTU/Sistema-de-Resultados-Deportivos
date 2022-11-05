@@ -47,6 +47,12 @@ namespace SistemaResultadosDeportivos.APIs
             return json.ToString();
         }
 
+        public String getEncuentro(int idEncuentro)
+        {
+            JObject json = JObject.FromObject(lge.devolverEncuentroPorId(idEncuentro));
+            return json.ToString();
+        }
+
         public String getAnotacionesEquipo(int idEncuentro, int idEquipo)
         {
             JObject json = JObject.FromObject(lga.devolverAnotacionesEquipoEnObjeto(idEncuentro, idEquipo));

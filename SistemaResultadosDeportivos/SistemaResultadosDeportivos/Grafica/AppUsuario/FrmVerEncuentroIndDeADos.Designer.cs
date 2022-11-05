@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblMinuto = new System.Windows.Forms.Label();
             this.lblPuntaje2 = new System.Windows.Forms.Label();
             this.lblPuntaje1 = new System.Windows.Forms.Label();
             this.lblJugador2 = new System.Windows.Forms.Label();
             this.lblJugador1 = new System.Windows.Forms.Label();
             this.flpIncidencias = new System.Windows.Forms.FlowLayoutPanel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lblMinuto
@@ -105,6 +107,11 @@
             this.flpIncidencias.TabIndex = 33;
             this.flpIncidencias.Paint += new System.Windows.Forms.PaintEventHandler(this.flpIncidencias_Paint);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 10000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FrmVerEncuentroIndDeADos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,6 +126,7 @@
             this.Controls.Add(this.flpIncidencias);
             this.Name = "FrmVerEncuentroIndDeADos";
             this.Text = "FrmVerEncuentroIndDeADos";
+            this.Load += new System.EventHandler(this.FrmVerEncuentroIndDeADos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,5 +140,6 @@
         private System.Windows.Forms.Label lblJugador2;
         private System.Windows.Forms.Label lblJugador1;
         private System.Windows.Forms.FlowLayoutPanel flpIncidencias;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -66,5 +66,16 @@ namespace SistemaResultadosDeportivos
         {
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            encuentro = JsonConvert.DeserializeObject<Encuentro>(resultados.getEncuentro(encuentro.idEncuentro));
+            lblMinuto.Text = encuentro.minActual.ToString();
+        }
+
+        private void FrmVerEncuentroIndDeADos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

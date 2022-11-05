@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblNombreEncuentro = new System.Windows.Forms.Label();
             this.lblMinuto = new System.Windows.Forms.Label();
             this.flpJugadores = new System.Windows.Forms.FlowLayoutPanel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lblNombreEncuentro
@@ -66,6 +68,11 @@
             this.flpJugadores.Size = new System.Drawing.Size(964, 436);
             this.flpJugadores.TabIndex = 30;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 10000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FrmVerEncuentroInd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -88,5 +95,6 @@
         private System.Windows.Forms.Label lblNombreEncuentro;
         public System.Windows.Forms.Label lblMinuto;
         private System.Windows.Forms.FlowLayoutPanel flpJugadores;
+        private System.Windows.Forms.Timer timer1;
     }
 }
