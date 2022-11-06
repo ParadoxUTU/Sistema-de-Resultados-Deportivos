@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnInvitado = new System.Windows.Forms.Button();
             this.btnRegistrarse = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -95,6 +96,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnInvitado);
             this.panel1.Controls.Add(this.btnRegistrarse);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnLogin);
@@ -107,6 +109,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(333, 396);
             this.panel1.TabIndex = 5;
+            // 
+            // btnInvitado
+            // 
+            this.btnInvitado.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnInvitado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnInvitado.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvitado.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnInvitado.Location = new System.Drawing.Point(65, 226);
+            this.btnInvitado.Name = "btnInvitado";
+            this.btnInvitado.Size = new System.Drawing.Size(220, 40);
+            this.btnInvitado.TabIndex = 7;
+            this.btnInvitado.Text = "Continuar como Invitado";
+            this.btnInvitado.UseVisualStyleBackColor = false;
+            this.btnInvitado.Click += new System.EventHandler(this.btnInvitado_Click);
             // 
             // btnRegistrarse
             // 
@@ -163,5 +179,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnRegistrarse;
+        private System.Windows.Forms.Button btnInvitado;
     }
 }

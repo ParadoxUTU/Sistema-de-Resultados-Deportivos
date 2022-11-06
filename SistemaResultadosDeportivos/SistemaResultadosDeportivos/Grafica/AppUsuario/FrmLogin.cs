@@ -36,7 +36,7 @@ namespace SistemaResultadosDeportivos
                 switch (rol)
                 {
                     case 0:
-                        new FrmInicioApp().Visible = true;
+                        new FrmInicioAppLogin().Visible = true;
                         break;
                     case 1:
                         
@@ -59,6 +59,16 @@ namespace SistemaResultadosDeportivos
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
             new FrmRegistro().Visible = true;
+        }
+
+        private void btnInvitado_Click(object sender, EventArgs e)
+        {
+            RespuestaAutenticacion res = JsonConvert.DeserializeObject<RespuestaAutenticacion>(autenticacion.loginToJSON("guest", "1"));
+            bool exito = res.exito;
+            if (exito)
+            {
+                new FrmInicioAppInvitado().Visible = true;
+            }
         }
     }
 }

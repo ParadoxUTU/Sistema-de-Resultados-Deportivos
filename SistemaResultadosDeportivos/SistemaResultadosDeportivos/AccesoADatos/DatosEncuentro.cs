@@ -142,6 +142,49 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             return lista;
         }
 
+        public List<Encuentro> getEncuentrosByDeporte(int idDeporte)
+        {
+            //Mapea los encuentros existentes a los modelos, y los devuelve en una lista
+            int idEncuentro;
+            DateTime fecha;
+            DateTime hora;
+            bool pausado;
+            int minActual;
+            bool comenzo;
+            bool finalizo;
+            String nombreEncuentro;
+            List<Encuentro> lista = new List<Encuentro>();
+            String stringSql = "SELECT * FROM Encuentros WHERE IdDeporte = '" + idDeporte + "';";
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                ADODB.Recordset rs = cn.Execute(stringSql, out object cantFilas, -1);
+                if (rs.RecordCount > 0)
+                {
+                    for (int i = 0; i < (int)cantFilas; i++)
+                    {
+                        idEncuentro = (int)rs.Fields[0].Value;
+                        fecha = rs.Fields[1].Value;
+                        hora = rs.Fields[2].Value;
+                        pausado = Convert.ToBoolean(rs.Fields[3].Value);
+                        minActual = (int)rs.Fields[4].Value;
+                        comenzo = Convert.ToBoolean(rs.Fields[5].Value);
+                        finalizo = Convert.ToBoolean(rs.Fields[6].Value);
+                        nombreEncuentro = (String)rs.Fields[7].Value;
+                        Encuentro encuentro = new Encuentro(idEncuentro, fecha, hora, pausado, minActual, comenzo, finalizo, nombreEncuentro, idDeporte);
+                        lista.Add(encuentro);
+                        rs.MoveNext();
+                    }
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            return lista;
+        }
+
         public int getCountEncuentrosEquipos(int idEncuentro)
         {
             //Devuelve la cantidad de equipos que hay seleccionados en un encuentro

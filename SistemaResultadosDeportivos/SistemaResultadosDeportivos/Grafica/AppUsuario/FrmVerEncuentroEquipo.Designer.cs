@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.flpIncidencias = new System.Windows.Forms.FlowLayoutPanel();
             this.lblMinuto = new System.Windows.Forms.Label();
             this.lblPuntaje2 = new System.Windows.Forms.Label();
             this.lblPuntaje1 = new System.Windows.Forms.Label();
             this.lblEquipo2 = new System.Windows.Forms.Label();
             this.lblEquipo1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // flpIncidencias
@@ -105,7 +107,12 @@
             this.lblEquipo1.TabIndex = 28;
             this.lblEquipo1.Text = "Equipo 1";
             // 
-            // FrmVerEncuentroApp
+            // timer1
+            // 
+            this.timer1.Interval = 10000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // FrmVerEncuentroEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -117,7 +124,7 @@
             this.Controls.Add(this.lblEquipo2);
             this.Controls.Add(this.lblEquipo1);
             this.Controls.Add(this.flpIncidencias);
-            this.Name = "FrmVerEncuentroApp";
+            this.Name = "FrmVerEncuentroEquipo";
             this.Text = "FrmVerEncuentroApp";
             this.Load += new System.EventHandler(this.FrmVerEncuentroApp_Load);
             this.ResumeLayout(false);
@@ -133,5 +140,6 @@
         public System.Windows.Forms.Label lblPuntaje1;
         private System.Windows.Forms.Label lblEquipo2;
         private System.Windows.Forms.Label lblEquipo1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

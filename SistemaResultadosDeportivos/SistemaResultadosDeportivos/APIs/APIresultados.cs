@@ -18,6 +18,7 @@ namespace SistemaResultadosDeportivos.APIs
         private LogicaDeportes lgd;
         private LogicaEquipos lgeq;
         private LogicaJugadores lgj;
+        private LogicaTorneos lgt;
 
         public APIresultados()
         {
@@ -27,6 +28,7 @@ namespace SistemaResultadosDeportivos.APIs
             lgd = new LogicaDeportes();
             lgeq = new LogicaEquipos();
             lgj = new LogicaJugadores();
+            lgt = new LogicaTorneos();
         }
 
         public List<String> encuentrosToJSON()
@@ -36,6 +38,42 @@ namespace SistemaResultadosDeportivos.APIs
             foreach(Encuentro e in lista)
             {
                 JObject json = JObject.FromObject(e);
+                listJson.Add(json.ToString());
+            }
+            return listJson;
+        }
+
+        public List<String> getEncuentrosByDeporte(int idDeporte)
+        {
+            List<Encuentro> lista = lge.devolverEncuentrosPorDeporte(idDeporte);
+            List<String> listJson = new List<String>();
+            foreach (Encuentro e in lista)
+            {
+                JObject json = JObject.FromObject(e);
+                listJson.Add(json.ToString());
+            }
+            return listJson;
+        }
+
+        public List<String> getTorneosByDeporte(int idDeporte)
+        {
+            List<Torneo> lista = lgt.devolverTorneosPorDeporte(idDeporte);
+            List<String> listJson = new List<String>();
+            foreach (Torneo t in lista)
+            {
+                JObject json = JObject.FromObject(t);
+                listJson.Add(json.ToString());
+            }
+            return listJson;
+        }
+
+        public List<String> getJugadoresByDeporte(int idDeporte)
+        {
+            List<Jugador> lista = lgj.devolverJugadoresPorDeporte(idDeporte);
+            List<String> listJson = new List<String>();
+            foreach (Jugador j in lista)
+            {
+                JObject json = JObject.FromObject(j);
                 listJson.Add(json.ToString());
             }
             return listJson;
@@ -78,6 +116,18 @@ namespace SistemaResultadosDeportivos.APIs
             foreach (Set s in lista)
             {
                 JObject json = JObject.FromObject(s);
+                listJson.Add(json.ToString());
+            }
+            return listJson;
+        }
+
+        public List<String> getDeportes()
+        {
+            List<Deporte> lista = lgd.devolverDeportes();
+            List<String> listJson = new List<String>();
+            foreach (Deporte d in lista)
+            {
+                JObject json = JObject.FromObject(d);
                 listJson.Add(json.ToString());
             }
             return listJson;

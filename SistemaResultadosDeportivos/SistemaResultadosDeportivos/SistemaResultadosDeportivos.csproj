@@ -96,11 +96,47 @@
     <Compile Include="APIs\APIresultados.cs" />
     <Compile Include="APIs\RespuestaAnotaciones.cs" />
     <Compile Include="APIs\RespuestaRegistro.cs" />
+    <Compile Include="Grafica\AppUsuario\FrmEncuentrosDeporteApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\FrmEncuentrosDeporteApp.Designer.cs">
+      <DependentUpon>FrmEncuentrosDeporteApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\FrmEquiposDeporteApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\FrmEquiposDeporteApp.Designer.cs">
+      <DependentUpon>FrmEquiposDeporteApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\FrmInicioAppLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\FrmInicioAppLogin.Designer.cs">
+      <DependentUpon>FrmInicioAppLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\FrmJugadoresDeporteApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\FrmJugadoresDeporteApp.Designer.cs">
+      <DependentUpon>FrmJugadoresDeporteApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\FrmParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\FrmParent.Designer.cs">
+      <DependentUpon>FrmParent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grafica\AppUsuario\FrmRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Grafica\AppUsuario\FrmRegistro.Designer.cs">
       <DependentUpon>FrmRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\FrmTorneosDeporteApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\FrmTorneosDeporteApp.Designer.cs">
+      <DependentUpon>FrmTorneosDeporteApp.cs</DependentUpon>
     </Compile>
     <Compile Include="Grafica\AppUsuario\FrmVerEncuentroEquipo.cs">
       <SubType>Form</SubType>
@@ -162,11 +198,11 @@
     <Compile Include="Grafica\FrmGestionarEncIndDeADos.Designer.cs">
       <DependentUpon>FrmGestionarEncIndDeADos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grafica\AppUsuario\FrmInicioApp.cs">
+    <Compile Include="Grafica\AppUsuario\FrmInicioAppInvitado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grafica\AppUsuario\FrmInicioApp.Designer.cs">
-      <DependentUpon>FrmInicioApp.cs</DependentUpon>
+    <Compile Include="Grafica\AppUsuario\FrmInicioAppInvitado.Designer.cs">
+      <DependentUpon>FrmInicioAppInvitado.cs</DependentUpon>
     </Compile>
     <Compile Include="APIs\RespuestaAutenticacion.cs" />
     <Compile Include="Grafica\FrmInicioEncuentros.cs">
@@ -347,8 +383,26 @@
     <EmbeddedResource Include="Grafica\ABMTorneos.resx">
       <DependentUpon>ABMTorneos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmEncuentrosDeporteApp.resx">
+      <DependentUpon>FrmEncuentrosDeporteApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmEquiposDeporteApp.resx">
+      <DependentUpon>FrmEquiposDeporteApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmInicioAppLogin.resx">
+      <DependentUpon>FrmInicioAppLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmJugadoresDeporteApp.resx">
+      <DependentUpon>FrmJugadoresDeporteApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmParent.resx">
+      <DependentUpon>FrmParent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\AppUsuario\FrmRegistro.resx">
       <DependentUpon>FrmRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmTorneosDeporteApp.resx">
+      <DependentUpon>FrmTorneosDeporteApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\AppUsuario\FrmVerEncuentroEquipo.resx">
       <DependentUpon>FrmVerEncuentroEquipo.cs</DependentUpon>
@@ -365,8 +419,8 @@
     <EmbeddedResource Include="Grafica\FrmGestionarEncIndDeADos.resx">
       <DependentUpon>FrmGestionarEncIndDeADos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grafica\AppUsuario\FrmInicioApp.resx">
-      <DependentUpon>FrmInicioApp.cs</DependentUpon>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmInicioAppInvitado.resx">
+      <DependentUpon>FrmInicioAppInvitado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\ABMUsuarios.resx">
       <DependentUpon>ABMUsuarios.cs</DependentUpon>

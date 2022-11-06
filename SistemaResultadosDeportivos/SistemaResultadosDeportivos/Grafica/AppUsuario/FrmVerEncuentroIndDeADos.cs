@@ -26,6 +26,7 @@ namespace SistemaResultadosDeportivos
         public FrmVerEncuentroIndDeADos(Encuentro e)
         {
             InitializeComponent();
+            timer1.Enabled = true;
             resultados = new APIresultados();
             encuentro = e;
             deporte = JsonConvert.DeserializeObject<Deporte>(resultados.getDeporte(encuentro.idDeporte));

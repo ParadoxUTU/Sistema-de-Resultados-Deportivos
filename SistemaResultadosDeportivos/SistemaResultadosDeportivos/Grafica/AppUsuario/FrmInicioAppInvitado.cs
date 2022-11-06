@@ -16,7 +16,7 @@ using System.IO;
 
 namespace SistemaResultadosDeportivos
 {
-    public partial class FrmInicioApp : Form
+    public partial class FrmInicioAppInvitado : Form
     {
         APIpublicidad publicidad;
         APIresultados resultados;
@@ -25,7 +25,7 @@ namespace SistemaResultadosDeportivos
         List<Encuentro> encuentros;
         int var = 0;
 
-        public FrmInicioApp()
+        public FrmInicioAppInvitado()
         {
             InitializeComponent();
             publicidad = new APIpublicidad();
@@ -72,11 +72,12 @@ namespace SistemaResultadosDeportivos
 
                 foreach (Encuentro en in encuentros)
                 {
+                    Deporte deporte = JsonConvert.DeserializeObject<Deporte>(resultados.getDeporte(en.idDeporte));
                     Label lblBoton = new Label();
                     Label lblBoton2 = new Label();
                     Label lblBoton3 = new Label();
                     Button btnEncuentro = new Button();
-                    String textNombre = en.nombreEncuentro;
+                    String textNombre = en.nombreEncuentro + "                          " + deporte.nombreDeporte;
                     String textFecha = "Fecha: " + en.fecha.Day + "/" + en.fecha.Month + "/" + en.fecha.Year;
                     String textHora = "Hora:";
                     if (en.hora.Hour < 10)

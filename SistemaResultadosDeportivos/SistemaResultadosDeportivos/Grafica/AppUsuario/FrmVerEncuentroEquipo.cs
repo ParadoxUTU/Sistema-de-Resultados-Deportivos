@@ -27,6 +27,7 @@ namespace SistemaResultadosDeportivos
         public FrmVerEncuentroEquipo(Encuentro e)
         {
             InitializeComponent();
+            timer1.Enabled = true;
             resultados = new APIresultados();
             encuentro = e;
             deporte = JsonConvert.DeserializeObject<Deporte>(resultados.getDeporte(encuentro.idDeporte));
@@ -75,6 +76,12 @@ namespace SistemaResultadosDeportivos
         private void FrmVerEncuentroApp_Load(object sender, EventArgs e)
         {
             flpIncidencias.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            encuentro = JsonConvert.DeserializeObject<Encuentro>(resultados.getEncuentro(encuentro.idEncuentro));
+            lblMinuto.Text = encuentro.minActual.ToString();
         }
     }
 }

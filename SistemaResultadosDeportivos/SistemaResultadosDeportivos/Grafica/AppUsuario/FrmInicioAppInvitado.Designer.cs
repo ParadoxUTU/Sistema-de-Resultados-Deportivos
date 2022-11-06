@@ -1,7 +1,7 @@
 ﻿
 namespace SistemaResultadosDeportivos
 {
-    partial class FrmInicioApp
+    partial class FrmInicioAppInvitado
     {
         /// <summary>
         /// Variable del diseñador necesaria.

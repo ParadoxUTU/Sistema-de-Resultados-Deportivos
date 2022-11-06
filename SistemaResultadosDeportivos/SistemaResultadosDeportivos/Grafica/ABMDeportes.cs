@@ -119,7 +119,7 @@ namespace SistemaResultadosDeportivos
             listarDeportes();
         }
 
-            private void propiedadesBoton(Button btn, int i, int t)
+        private void propiedadesBoton(Button btn, int i, int t)
         {
             btn.Height = 92;
             btn.Tag = i;

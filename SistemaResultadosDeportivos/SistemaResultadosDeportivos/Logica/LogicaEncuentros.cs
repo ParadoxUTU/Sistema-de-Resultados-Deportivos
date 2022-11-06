@@ -37,6 +37,12 @@ namespace SistemaResultadosDeportivos.Logica
             return datosEncuentro.getEncuentrosByTorneo(idTorneo);
         }
 
+        public List<Encuentro> devolverEncuentrosPorDeporte(int idDeporte)
+        {
+            //Devuelve una lista con los encuentros de un deporte en la BD
+            return datosEncuentro.getEncuentrosByDeporte(idDeporte);
+        }
+
         public bool actualizarMinActual(int id, int minActual)
         {
             //Intenta actualizar el minuto actual de un encuentro
