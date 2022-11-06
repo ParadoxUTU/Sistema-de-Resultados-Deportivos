@@ -23,56 +23,31 @@ namespace SistemaResultadosDeportivos
         public FrmParent(Deporte deporte)
         {
             InitializeComponent();
-            this.IsMdiContainer = true;
             this.deporte = deporte;
-            if (!deporte.porEquipos) 
+            if (!deporte.porEquipos)
             {
-                menuStrip1.Items[1].Visible = false;
+                btnEquipos.Enabled = false;
             }
         }
 
-        private void encuentrosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnEncuentros_Click(object sender, EventArgs e)
         {
-            if (this.MdiChildren.Count() > 0)
-            {
-                this.MdiChildren[0].Dispose();
-            }
-            FrmEncuentrosDeporteApp encuentros = new FrmEncuentrosDeporteApp(deporte);
-            encuentros.MdiParent = this;
-            encuentros.Show();
+            new FrmEncuentrosDeporteApp(deporte).Visible = true;
         }
 
-        private void equiposToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnEquipos_Click(object sender, EventArgs e)
         {
-            if (this.MdiChildren.Count() > 0)
-            {
-                this.MdiChildren[0].Dispose();
-            }
-            FrmEquiposDeporteApp equipos = new FrmEquiposDeporteApp(deporte);
-            equipos.MdiParent = this;
-            equipos.Show();
+            new FrmEquiposDeporteApp(deporte).Visible = true;
         }
 
-        private void torneosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnJugadores_Click(object sender, EventArgs e)
         {
-            if (this.MdiChildren.Count() > 0)
-            {
-                this.MdiChildren[0].Dispose();
-            }
-            FrmTorneosDeporteApp torneos = new FrmTorneosDeporteApp(deporte);
-            torneos.MdiParent = this;
-            torneos.Show();
+            new FrmJugadoresDeporteApp(deporte).Visible = true;
         }
 
-        private void jugadoresToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnTorneos_Click(object sender, EventArgs e)
         {
-            if (this.MdiChildren.Count() > 0)
-            {
-                this.MdiChildren[0].Dispose();
-            }
-            FrmJugadoresDeporteApp jugadores = new FrmJugadoresDeporteApp(deporte);
-            jugadores.MdiParent = this;
-            jugadores.Show();
+            new FrmTorneosDeporteApp(deporte).Visible = true;
         }
     }
 }

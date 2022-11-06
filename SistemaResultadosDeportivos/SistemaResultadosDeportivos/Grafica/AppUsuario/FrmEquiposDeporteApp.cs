@@ -27,7 +27,6 @@ namespace SistemaResultadosDeportivos
         public FrmEquiposDeporteApp(Deporte deporte)
         {
             InitializeComponent();
-            this.Dock = DockStyle.Fill;
             equipos = new List<Equipo>();
             resultados = new APIresultados();
             this.deporte = deporte;
@@ -125,7 +124,6 @@ namespace SistemaResultadosDeportivos
         private void FrmEquiposDeporteApp_Load(object sender, EventArgs e)
         {
             flpEquipos.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
-            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

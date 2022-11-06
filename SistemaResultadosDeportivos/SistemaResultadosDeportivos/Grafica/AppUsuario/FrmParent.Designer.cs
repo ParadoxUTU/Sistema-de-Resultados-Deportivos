@@ -28,103 +28,89 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.encuentrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.equiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.jugadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.torneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.btnEncuentros = new System.Windows.Forms.Button();
+            this.btnEquipos = new System.Windows.Forms.Button();
+            this.btnJugadores = new System.Windows.Forms.Button();
+            this.btnTorneos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // btnEncuentros
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(16)))), ((int)(((byte)(17)))));
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(0);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.encuentrosToolStripMenuItem,
-            this.equiposToolStripMenuItem,
-            this.jugadoresToolStripMenuItem,
-            this.torneosToolStripMenuItem,
-            this.logoutToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.menuStrip1.Size = new System.Drawing.Size(1016, 24);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
+            this.btnEncuentros.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnEncuentros.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEncuentros.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEncuentros.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnEncuentros.Location = new System.Drawing.Point(16, 28);
+            this.btnEncuentros.Name = "btnEncuentros";
+            this.btnEncuentros.Size = new System.Drawing.Size(220, 40);
+            this.btnEncuentros.TabIndex = 7;
+            this.btnEncuentros.Text = "Encuentros";
+            this.btnEncuentros.UseVisualStyleBackColor = false;
+            this.btnEncuentros.Click += new System.EventHandler(this.btnEncuentros_Click);
             // 
-            // encuentrosToolStripMenuItem
+            // btnEquipos
             // 
-            this.encuentrosToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.encuentrosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.encuentrosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Menu;
-            this.encuentrosToolStripMenuItem.Name = "encuentrosToolStripMenuItem";
-            this.encuentrosToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
-            this.encuentrosToolStripMenuItem.Text = "Encuentros";
-            this.encuentrosToolStripMenuItem.Click += new System.EventHandler(this.encuentrosToolStripMenuItem_Click);
+            this.btnEquipos.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnEquipos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEquipos.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEquipos.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnEquipos.Location = new System.Drawing.Point(16, 131);
+            this.btnEquipos.Name = "btnEquipos";
+            this.btnEquipos.Size = new System.Drawing.Size(220, 40);
+            this.btnEquipos.TabIndex = 8;
+            this.btnEquipos.Text = "Equipos";
+            this.btnEquipos.UseVisualStyleBackColor = false;
+            this.btnEquipos.Click += new System.EventHandler(this.btnEquipos_Click);
             // 
-            // equiposToolStripMenuItem
+            // btnJugadores
             // 
-            this.equiposToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.equiposToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.equiposToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Menu;
-            this.equiposToolStripMenuItem.Name = "equiposToolStripMenuItem";
-            this.equiposToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
-            this.equiposToolStripMenuItem.Text = "Equipos";
-            this.equiposToolStripMenuItem.Click += new System.EventHandler(this.equiposToolStripMenuItem_Click);
+            this.btnJugadores.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnJugadores.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnJugadores.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJugadores.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnJugadores.Location = new System.Drawing.Point(348, 28);
+            this.btnJugadores.Name = "btnJugadores";
+            this.btnJugadores.Size = new System.Drawing.Size(220, 40);
+            this.btnJugadores.TabIndex = 9;
+            this.btnJugadores.Text = "Jugadores";
+            this.btnJugadores.UseVisualStyleBackColor = false;
+            this.btnJugadores.Click += new System.EventHandler(this.btnJugadores_Click);
             // 
-            // jugadoresToolStripMenuItem
+            // btnTorneos
             // 
-            this.jugadoresToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.jugadoresToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jugadoresToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Menu;
-            this.jugadoresToolStripMenuItem.Name = "jugadoresToolStripMenuItem";
-            this.jugadoresToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
-            this.jugadoresToolStripMenuItem.Text = "Jugadores";
-            this.jugadoresToolStripMenuItem.Click += new System.EventHandler(this.jugadoresToolStripMenuItem_Click);
-            // 
-            // torneosToolStripMenuItem
-            // 
-            this.torneosToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.torneosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.torneosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Menu;
-            this.torneosToolStripMenuItem.Name = "torneosToolStripMenuItem";
-            this.torneosToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
-            this.torneosToolStripMenuItem.Text = "Torneos";
-            this.torneosToolStripMenuItem.Click += new System.EventHandler(this.torneosToolStripMenuItem_Click);
-            // 
-            // logoutToolStripMenuItem
-            // 
-            this.logoutToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.logoutToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Menu;
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
-            this.logoutToolStripMenuItem.Text = "Logout";
+            this.btnTorneos.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnTorneos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTorneos.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTorneos.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnTorneos.Location = new System.Drawing.Point(348, 131);
+            this.btnTorneos.Name = "btnTorneos";
+            this.btnTorneos.Size = new System.Drawing.Size(220, 40);
+            this.btnTorneos.TabIndex = 10;
+            this.btnTorneos.Text = "Torneos";
+            this.btnTorneos.UseVisualStyleBackColor = false;
+            this.btnTorneos.Click += new System.EventHandler(this.btnTorneos_Click);
             // 
             // FrmParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 694);
-            this.Controls.Add(this.menuStrip1);
+            this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
+            this.ClientSize = new System.Drawing.Size(589, 200);
+            this.Controls.Add(this.btnTorneos);
+            this.Controls.Add(this.btnJugadores);
+            this.Controls.Add(this.btnEquipos);
+            this.Controls.Add(this.btnEncuentros);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmParent";
             this.Text = "FrmParent";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem encuentrosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem equiposToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem jugadoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem torneosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.Button btnEncuentros;
+        private System.Windows.Forms.Button btnEquipos;
+        private System.Windows.Forms.Button btnJugadores;
+        private System.Windows.Forms.Button btnTorneos;
     }
 }

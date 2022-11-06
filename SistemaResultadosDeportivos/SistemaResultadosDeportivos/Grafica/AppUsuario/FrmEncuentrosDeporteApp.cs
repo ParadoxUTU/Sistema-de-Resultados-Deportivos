@@ -29,7 +29,6 @@ namespace SistemaResultadosDeportivos
         public FrmEncuentrosDeporteApp(Deporte deporte)
         {
             InitializeComponent();
-            this.Dock = DockStyle.Fill;
             publicidad = new APIpublicidad();
             resultados = new APIresultados();
             this.deporte = deporte;
@@ -167,7 +166,6 @@ namespace SistemaResultadosDeportivos
         private void FrmEncuentrosDeporteApp_Load(object sender, EventArgs e)
         {
             flpEncuentros.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
-            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

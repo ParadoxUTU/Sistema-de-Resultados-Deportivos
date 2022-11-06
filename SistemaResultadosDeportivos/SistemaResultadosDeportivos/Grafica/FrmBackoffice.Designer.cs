@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.publicidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.torneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.encuentrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.equiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jugadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.encuentrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.torneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.publicidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -60,35 +60,15 @@
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // usuariosToolStripMenuItem
+            // encuentrosToolStripMenuItem
             // 
-            this.usuariosToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.usuariosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuariosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Menu;
-            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
-            this.usuariosToolStripMenuItem.Text = "Usuarios";
-            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
-            // 
-            // publicidadToolStripMenuItem
-            // 
-            this.publicidadToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.publicidadToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.publicidadToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Menu;
-            this.publicidadToolStripMenuItem.Name = "publicidadToolStripMenuItem";
-            this.publicidadToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
-            this.publicidadToolStripMenuItem.Text = "Publicidad";
-            this.publicidadToolStripMenuItem.Click += new System.EventHandler(this.publicidadToolStripMenuItem_Click);
-            // 
-            // torneosToolStripMenuItem
-            // 
-            this.torneosToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.torneosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.torneosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Menu;
-            this.torneosToolStripMenuItem.Name = "torneosToolStripMenuItem";
-            this.torneosToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
-            this.torneosToolStripMenuItem.Text = "Torneos";
-            this.torneosToolStripMenuItem.Click += new System.EventHandler(this.torneosToolStripMenuItem_Click);
+            this.encuentrosToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.encuentrosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.encuentrosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Menu;
+            this.encuentrosToolStripMenuItem.Name = "encuentrosToolStripMenuItem";
+            this.encuentrosToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
+            this.encuentrosToolStripMenuItem.Text = "Encuentros";
+            this.encuentrosToolStripMenuItem.Click += new System.EventHandler(this.encuentrosToolStripMenuItem_Click);
             // 
             // equiposToolStripMenuItem
             // 
@@ -110,15 +90,15 @@
             this.jugadoresToolStripMenuItem.Text = "Jugadores";
             this.jugadoresToolStripMenuItem.Click += new System.EventHandler(this.jugadoresToolStripMenuItem_Click);
             // 
-            // encuentrosToolStripMenuItem
+            // torneosToolStripMenuItem
             // 
-            this.encuentrosToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.encuentrosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.encuentrosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Menu;
-            this.encuentrosToolStripMenuItem.Name = "encuentrosToolStripMenuItem";
-            this.encuentrosToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
-            this.encuentrosToolStripMenuItem.Text = "Encuentros";
-            this.encuentrosToolStripMenuItem.Click += new System.EventHandler(this.encuentrosToolStripMenuItem_Click);
+            this.torneosToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.torneosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.torneosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Menu;
+            this.torneosToolStripMenuItem.Name = "torneosToolStripMenuItem";
+            this.torneosToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
+            this.torneosToolStripMenuItem.Text = "Torneos";
+            this.torneosToolStripMenuItem.Click += new System.EventHandler(this.torneosToolStripMenuItem_Click);
             // 
             // deportesToolStripMenuItem
             // 
@@ -129,6 +109,26 @@
             this.deportesToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.deportesToolStripMenuItem.Text = "Deportes";
             this.deportesToolStripMenuItem.Click += new System.EventHandler(this.deportesToolStripMenuItem_Click);
+            // 
+            // publicidadToolStripMenuItem
+            // 
+            this.publicidadToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.publicidadToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.publicidadToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Menu;
+            this.publicidadToolStripMenuItem.Name = "publicidadToolStripMenuItem";
+            this.publicidadToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
+            this.publicidadToolStripMenuItem.Text = "Publicidad";
+            this.publicidadToolStripMenuItem.Click += new System.EventHandler(this.publicidadToolStripMenuItem_Click);
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.usuariosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usuariosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Menu;
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
