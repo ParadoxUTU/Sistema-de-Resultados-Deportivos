@@ -119,6 +119,7 @@ namespace SistemaResultadosDeportivos
             Button btnTorneo = sender as Button;
             int i = (Int32)btnTorneo.Tag;
             var = i;
+            new FrmEncuentrosTorneoApp(deporte, torneos[var]).Visible = true;
         }
 
         private void FrmTorneosDeporteApp_Load(object sender, EventArgs e)

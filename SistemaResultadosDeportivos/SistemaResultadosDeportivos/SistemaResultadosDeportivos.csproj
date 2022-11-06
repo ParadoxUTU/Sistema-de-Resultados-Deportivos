@@ -102,6 +102,12 @@
     <Compile Include="Grafica\AppUsuario\FrmEncuentrosDeporteApp.Designer.cs">
       <DependentUpon>FrmEncuentrosDeporteApp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grafica\AppUsuario\FrmEncuentrosTorneoApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\FrmEncuentrosTorneoApp.Designer.cs">
+      <DependentUpon>FrmEncuentrosTorneoApp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grafica\AppUsuario\FrmEquiposDeporteApp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -385,6 +391,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\AppUsuario\FrmEncuentrosDeporteApp.resx">
       <DependentUpon>FrmEncuentrosDeporteApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmEncuentrosTorneoApp.resx">
+      <DependentUpon>FrmEncuentrosTorneoApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\AppUsuario\FrmEquiposDeporteApp.resx">
       <DependentUpon>FrmEquiposDeporteApp.cs</DependentUpon>

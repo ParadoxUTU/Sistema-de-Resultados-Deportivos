@@ -67,6 +67,18 @@ namespace SistemaResultadosDeportivos.APIs
             return listJson;
         }
 
+        public List<String> getEncuentrosByTorneo(int idTorneo)
+        {
+            List<EncuentroTorneo> lista = lge.devolverEncuentrosPorTorneo(idTorneo);
+            List<String> listJson = new List<String>();
+            foreach (EncuentroTorneo e in lista)
+            {
+                JObject json = JObject.FromObject(e);
+                listJson.Add(json.ToString());
+            }
+            return listJson;
+        }
+
         public List<String> getJugadoresByDeporte(int idDeporte)
         {
             List<Jugador> lista = lgj.devolverJugadoresPorDeporte(idDeporte);

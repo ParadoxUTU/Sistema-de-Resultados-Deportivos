@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaResultadosDeportivos.exe" size="351248">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaResultadosDeportivos.exe" size="354320">
       <assemblyIdentity name="SistemaResultadosDeportivos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aQmrBel5Xd9BN0DX7/oghiqOJG8raiX8TynaFp+WFVI=</dsig:DigestValue>
+        <dsig:DigestValue>+RnJ1o0swXkuUgZ9xg3K9JJUxsVVKpW2Z6IiQFnYg38=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
