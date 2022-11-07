@@ -100,7 +100,7 @@ namespace SistemaResultadosDeportivos.Logica
         public bool eliminarJugadorDeTorneo(int idTorneo, int idJugador)
         {
             //Intenta eliminar un jugador de un torneo de la BD con la id dada
-            return datosJugador.eliminarJugadorDeTorneo(idTorneo, idJugador);
+            return datosJugador.eliminarJugadorDeTorneo(idJugador, idTorneo);
         }
 
         public bool eliminarJugadorDeTodoEncuentro(int id)

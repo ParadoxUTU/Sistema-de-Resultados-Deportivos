@@ -136,7 +136,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             String nombreEquipo;
             int idDeporte;
             List<Equipo> lista = new List<Equipo>();
-            String stringSql = "SELECT * FROM encuentros_equipos INNER JOIN Equipos ON encuentros_equipos.IdEquipo=Equipos.IdEquipo WHERE IdEncuentro = '" + idEncuentro + "';";
+            String stringSql = "SELECT * FROM Encuentros_Equipos INNER JOIN Equipos ON Encuentros_Equipos.IdEquipo=Equipos.IdEquipo WHERE IdEncuentro = '" + idEncuentro + "';";
             try
             {
                 ADODB.Connection cn = Conexion.Crear();

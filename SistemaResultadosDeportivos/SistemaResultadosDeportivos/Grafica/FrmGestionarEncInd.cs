@@ -83,7 +83,7 @@ namespace SistemaResultadosDeportivos
 
         public void iniciarTimer()
         {
-            ts = new TimeSpan(0, 0, encuentro.minActual, 0, (int)oSW.ElapsedTicks);
+            ts = new TimeSpan(0, 0, encuentro.minActual, 0, 0);
             oSW.Start();
             timer1.Enabled = true;
         }

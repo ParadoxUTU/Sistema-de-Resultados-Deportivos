@@ -109,7 +109,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             int idDeporte;
             String etapa;
             List<EncuentroTorneo> lista = new List<EncuentroTorneo>();
-            String stringSql = "SELECT * FROM Encuentros_Torneos INNER JOIN Encuentros ON encuentros_torneos.IdEncuentro=Encuentros.IdEncuentro WHERE IdTorneo = '" + idTorneo + "';";
+            String stringSql = "SELECT * FROM Encuentros_Torneos INNER JOIN Encuentros ON Encuentros_Torneos.IdEncuentro=Encuentros.IdEncuentro WHERE IdTorneo = '" + idTorneo + "';";
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
@@ -189,7 +189,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
         {
             //Devuelve la cantidad de equipos que hay seleccionados en un encuentro
             int cantidadEquipos = 0;
-            String stringSql = "SELECT * FROM encuentros_equipos WHERE IdEncuentro = '" + idEncuentro + "';";
+            String stringSql = "SELECT * FROM Encuentros_Equipos WHERE IdEncuentro = '" + idEncuentro + "';";
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
@@ -207,7 +207,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
         {
             //Devuelve la cantidad de equipos que hay seleccionados en un encuentro
             int cantidadJugadores = 0;
-            String stringSql = "SELECT * FROM encuentros_jugadores WHERE IdEncuentro = '" + idEncuentro + "';";
+            String stringSql = "SELECT * FROM Encuentros_Jugadores WHERE IdEncuentro = '" + idEncuentro + "';";
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
@@ -464,7 +464,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-                String stringSql = "INSERT INTO encuentros_equipos(IdEncuentro, IdEquipo, Ganador, Puntuacion) VALUES('" + idEncuentro + "', '" + idEquipo + "', '" + ganador + "', '" + puntuacion + "');";
+                String stringSql = "INSERT INTO Encuentros_Equipos(IdEncuentro, IdEquipo, Ganador, Puntuacion) VALUES('" + idEncuentro + "', '" + idEquipo + "', '" + ganador + "', '" + puntuacion + "');";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;
@@ -516,7 +516,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-                String stringSql = "DELETE FROM enc_ind WHERE IdEncuentro = '" + id + "';";
+                String stringSql = "DELETE FROM Enc_ind WHERE IdEncuentro = '" + id + "';";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;
@@ -533,7 +533,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-                String stringSql = "DELETE FROM enc_col WHERE IdEncuentro = '" + id + "';";
+                String stringSql = "DELETE FROM Enc_col WHERE IdEncuentro = '" + id + "';";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;
@@ -550,7 +550,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-                String stringSql = "DELETE FROM encuentros_torneos WHERE IdEncuentro = '" + id + "';";
+                String stringSql = "DELETE FROM Encuentros_Torneos WHERE IdEncuentro = '" + id + "';";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;

@@ -36,6 +36,7 @@ namespace SistemaResultadosDeportivos
 
         public void listarEquiposPorTorneo(int idTorneo)
         {
+            idParticipantes.Clear();
             flpParticipantes.Controls.Clear();
             int i = 0;
             int tamano = flpParticipantes.Width - 5;
@@ -67,6 +68,7 @@ namespace SistemaResultadosDeportivos
 
         public void listarJugadoresPorTorneo(int idTorneo)
         {
+            idParticipantes.Clear();
             flpParticipantes.Controls.Clear();
             int i = 0;
             int tamano = flpParticipantes.Width - 5;
@@ -182,6 +184,7 @@ namespace SistemaResultadosDeportivos
                 Equipo equipo = lgeq.devolverEquipoPorID(idParticipantes[var]);
                 if(lgeq.eliminarEquipoDeTorneo(torneo.idTorneo, equipo.idEquipo))
                 {
+                    MessageBox.Show(Convert.ToString(var));
                     var = 0;
                     idParticipantes.Clear();
                     listarEquiposPorTorneo(torneo.idTorneo);

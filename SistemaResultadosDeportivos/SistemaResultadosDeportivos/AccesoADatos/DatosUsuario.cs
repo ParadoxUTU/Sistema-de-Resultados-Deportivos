@@ -198,7 +198,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-                String stringSql = "CREATE USER '" + correo + "'@'localhost' IDENTIFIED BY '" + contrasena + "';";
+                String stringSql = "CREATE USER '" + correo + "'@'%' IDENTIFIED BY '" + contrasena + "';";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 stringSql = "INSERT INTO Usuarios VALUES('" + correo + "', '" + nombre + "', '" + rol + "');";
                 cn.Execute(stringSql, out cantFilas, -1);

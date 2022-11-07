@@ -242,7 +242,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             String pais;
             int idDeporte;
             List<Jugador> lista = new List<Jugador>();
-            String stringSql = "SELECT * FROM Plantel INNER JOIN Jugadores ON plantel.IdJugador=jugadores.IdJugador WHERE IdEquipo = '" + idEquipo + "';";
+            String stringSql = "SELECT * FROM Plantel INNER JOIN Jugadores ON Plantel.IdJugador=Jugadores.IdJugador WHERE IdEquipo = '" + idEquipo + "';";
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
@@ -326,7 +326,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-                String stringSql = "INSERT INTO Alineaciones (IdJugador, IdEquipo, IdEncuentro, Numero) VALUES('" + idJugador + "', '" + idEquipo + "', '" + idEncuentro + "', '" + numero + "');";
+                String stringSql = "INSERT INTO Alineaciones(IdJugador, IdEquipo, IdEncuentro, Numero) VALUES('" + idJugador + "', '" + idEquipo + "', '" + idEncuentro + "', '" + numero + "');";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;
@@ -380,6 +380,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             {
                 ADODB.Connection cn = Conexion.Crear();
                 String stringSql = "DELETE FROM Jugadores_Torneos WHERE IdTorneo = '" + idTorneo + "' AND IdJugador = '" + idJugador + "';";
+                MessageBox.Show(stringSql);
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;

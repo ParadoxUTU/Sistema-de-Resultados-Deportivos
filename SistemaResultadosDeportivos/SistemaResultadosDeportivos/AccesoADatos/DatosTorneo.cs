@@ -176,7 +176,6 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             {
                 ADODB.Connection cn = Conexion.Crear();
                 String stringSql = "UPDATE Torneos SET FechaComienzo = '" + fechaComienzo + "', FechaFin = '" + fechaFin + "', NombrePais = '" + nombrePais + "', NombreTorneo = '" + nombreTorneo + "' WHERE IdTorneo = '" + id + "';";
-                cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;
             }

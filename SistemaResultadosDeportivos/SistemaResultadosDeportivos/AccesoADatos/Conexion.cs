@@ -11,8 +11,8 @@ namespace SistemaResultadosDeportivos.AccesoADatos
     {
         private static String origenDatos = "miodbc";
         public static String nombreBD = "bd_paradox";
-        public static String usuario = "auth";
-        public static String contrasena = "1";
+        public static String usuario = "admin";
+        public static String contrasena = "root";
 
         public static ADODB.Connection Crear()
         {
@@ -57,8 +57,8 @@ namespace SistemaResultadosDeportivos.AccesoADatos
         public static void volverAutenticador()
         {
             //El usuario por defecto vuelve a ser el autenticador
-            usuario = "auth";
-            contrasena = "1";
+            usuario = "admin";
+            contrasena = "root";
         }
     }
 }
