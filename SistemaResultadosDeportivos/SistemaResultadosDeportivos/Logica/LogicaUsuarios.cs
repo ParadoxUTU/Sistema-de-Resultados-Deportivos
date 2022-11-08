@@ -18,15 +18,33 @@ namespace SistemaResultadosDeportivos.Logica
         {
             dt = new DatosUsuario();
         }
+
+        /*public RespuestaAutenticacion autenticar(String correo, String contrasena)
+        {*/
+        /*Autentica las credenciales dadas en la BD, y devuelve una respuesta
+        con el rol del usuario, y si fue exitosa la autenticacion*/
+        /*Usuario usuario = dt.getPorId(correo);
+        RespuestaAutenticacion res;
+        if (usuario != null && dt.testConexion(correo, contrasena))
+        {
+            dt.actualizarConexion(correo, contrasena);
+            res = new RespuestaAutenticacion(true, usuario.rol);
+        }
+        else
+        {
+            res = new RespuestaAutenticacion(false, -1);
+        }
+        return res;
+        }*/
+
         public RespuestaAutenticacion autenticar(String correo, String contrasena)
         {
             /*Autentica las credenciales dadas en la BD, y devuelve una respuesta
             con el rol del usuario, y si fue exitosa la autenticacion*/
             Usuario usuario = dt.getPorId(correo);
             RespuestaAutenticacion res;
-            if (usuario != null && dt.testConexion(correo, contrasena))
+            if (usuario != null && dt.autenticar(correo, contrasena))
             {
-                dt.actualizarConexion(correo, contrasena);
                 res = new RespuestaAutenticacion(true, usuario.rol);
             }
             else
@@ -40,6 +58,12 @@ namespace SistemaResultadosDeportivos.Logica
         {
             //Devuelve una lista con los usuarios en la BD
             return dt.getUsuarios();
+        }
+
+        public Usuario devolverUsuarioPorId(string correo)
+        {
+            //Devuelve un usuario por su id
+            return dt.getPorId(correo);
         }
 
         public bool esMiembro(string correo)
@@ -86,6 +110,12 @@ namespace SistemaResultadosDeportivos.Logica
         {
             //Intenta modificar un usuario en la BD, con los datos dados
             return dt.modificarUsuario(correo, nombre, rol);
+        }
+
+        public bool modificarContrasena(String correo, String contrasena)
+        {
+            //Intenta modificar la contrasena de un usuario en la BD, con los datos dados
+            return dt.modificarContrasena(correo, contrasena);
         }
 
         public void volverAutenticador()

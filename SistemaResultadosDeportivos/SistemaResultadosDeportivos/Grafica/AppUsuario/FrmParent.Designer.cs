@@ -32,6 +32,7 @@
             this.btnEquipos = new System.Windows.Forms.Button();
             this.btnJugadores = new System.Windows.Forms.Button();
             this.btnTorneos = new System.Windows.Forms.Button();
+            this.btnPerfil = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEncuentros
@@ -90,12 +91,27 @@
             this.btnTorneos.UseVisualStyleBackColor = false;
             this.btnTorneos.Click += new System.EventHandler(this.btnTorneos_Click);
             // 
+            // btnPerfil
+            // 
+            this.btnPerfil.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPerfil.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPerfil.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnPerfil.Location = new System.Drawing.Point(188, 196);
+            this.btnPerfil.Name = "btnPerfil";
+            this.btnPerfil.Size = new System.Drawing.Size(220, 40);
+            this.btnPerfil.TabIndex = 11;
+            this.btnPerfil.Text = "Perfil";
+            this.btnPerfil.UseVisualStyleBackColor = false;
+            this.btnPerfil.Click += new System.EventHandler(this.btnPerfil_Click);
+            // 
             // FrmParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(589, 200);
+            this.ClientSize = new System.Drawing.Size(589, 260);
+            this.Controls.Add(this.btnPerfil);
             this.Controls.Add(this.btnTorneos);
             this.Controls.Add(this.btnJugadores);
             this.Controls.Add(this.btnEquipos);
@@ -112,5 +128,6 @@
         private System.Windows.Forms.Button btnEquipos;
         private System.Windows.Forms.Button btnJugadores;
         private System.Windows.Forms.Button btnTorneos;
+        private System.Windows.Forms.Button btnPerfil;
     }
 }

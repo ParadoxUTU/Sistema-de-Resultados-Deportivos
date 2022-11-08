@@ -21,14 +21,16 @@ namespace SistemaResultadosDeportivos
         APIresultados resultados; 
         List<Deporte> deportes;
         int var = 0;
+        Usuario usuario;
 
-        public FrmInicioAppLogin()
+        public FrmInicioAppLogin(Usuario usuario)
         {
             InitializeComponent();
             resultados = new APIresultados();
             deportes = new List<Deporte>();
             setDeportes();
             listarDeportes();
+            this.usuario = usuario;
         }
 
         public void setDeportes()
@@ -123,7 +125,7 @@ namespace SistemaResultadosDeportivos
             Button btnDeporte = sender as Button;
             int i = (Int32)btnDeporte.Tag;
             var = i;
-            new FrmParent(deportes[var]).Visible = true;
+            new FrmParent(deportes[var], usuario).Visible = true;
         }
 
         public Deporte obtenerDeporte()

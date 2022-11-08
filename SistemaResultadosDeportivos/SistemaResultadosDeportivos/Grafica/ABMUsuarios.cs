@@ -128,7 +128,7 @@ namespace SistemaResultadosDeportivos
             int r = 0;
             int i = 0;
             List<Usuario> lista = lgu.devolverUsuarios();
-            Usuario user = new Usuario(c, n, r);
+            Usuario user = new Usuario(c, n, r, "");
             bool bandera = true;
             if (lista != null)
             {

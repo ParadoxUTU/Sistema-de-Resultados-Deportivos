@@ -19,8 +19,9 @@ namespace SistemaResultadosDeportivos
     public partial class FrmParent : Form
     {
         Deporte deporte;
+        Usuario usuario;
 
-        public FrmParent(Deporte deporte)
+        public FrmParent(Deporte deporte, Usuario usuario)
         {
             InitializeComponent();
             this.deporte = deporte;
@@ -28,6 +29,7 @@ namespace SistemaResultadosDeportivos
             {
                 btnEquipos.Enabled = false;
             }
+            this.usuario = usuario;
         }
 
         private void btnEncuentros_Click(object sender, EventArgs e)
@@ -48,6 +50,11 @@ namespace SistemaResultadosDeportivos
         private void btnTorneos_Click(object sender, EventArgs e)
         {
             new FrmTorneosDeporteApp(deporte).Visible = true;
+        }
+
+        private void btnPerfil_Click(object sender, EventArgs e)
+        {
+            new FrmPerfil(usuario).Visible = true;
         }
     }
 }

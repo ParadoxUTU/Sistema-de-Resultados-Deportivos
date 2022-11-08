@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SistemaResultadosDeportivos.Logica;
+using System.Windows;
 
 namespace SistemaResultadosDeportivos.APIs
 {

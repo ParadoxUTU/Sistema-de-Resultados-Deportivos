@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaResultadosDeportivos.Modelos;
 using ADODB;
+using System.Security.Cryptography;
 
 namespace SistemaResultadosDeportivos.AccesoADatos
 {
@@ -28,7 +29,8 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                         String n = rs.Fields[1].Value.ToString();
                         int r;
                         int.TryParse(rs.Fields[2].Value.ToString(), out r);
-                        usuario = new Usuario(c, n, r);
+                        String co = rs.Fields[3].Value.ToString();
+                        usuario = new Usuario(c, n, r, co);
                     }
                     else
                     {
@@ -113,6 +115,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             string correo;
             string nombre;
             int rol;
+            string contrasena;
             List<Usuario> lista = new List<Usuario>();
             String stringSql = "SELECT * FROM Usuarios;";
             try
@@ -128,7 +131,8 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                         {
                             nombre = (string)rs.Fields[1].Value;
                             rol = (int)rs.Fields[2].Value;
-                            Usuario usuario = new Usuario(correo, nombre, rol);
+                            contrasena = (string)rs.Fields[3].Value;
+                            Usuario usuario = new Usuario(correo, nombre, rol, contrasena);
                             lista.Add(usuario);
                         }
                         rs.MoveNext();
@@ -188,7 +192,6 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             }
             catch(Exception ex) 
             {
-                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -198,11 +201,9 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-                String stringSql = "CREATE USER '" + correo + "'@'%' IDENTIFIED BY '" + contrasena + "';";
+                String stringSql = "INSERT INTO Usuarios VALUES('" + correo + "', '" + nombre + "', '" + rol + "', '" + encriptar(contrasena) + "');";
                 cn.Execute(stringSql, out object cantFilas, -1);
-                stringSql = "INSERT INTO Usuarios VALUES('" + correo + "', '" + nombre + "', '" + rol + "');";
-                cn.Execute(stringSql, out cantFilas, -1);
-                darPermisos(correo, rol);
+                //darPermisos(correo, rol);
                 cn.Close();
                 return true;
             }
@@ -255,11 +256,28 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 ADODB.Connection cn = Conexion.Crear();
                 String stringSql = "UPDATE Usuarios SET NombreUsuario = '" + nombre + "', rol = '" + rol + "' WHERE dirCorreo = '" + correo + "';";
                 cn.Execute(stringSql, out object cantFilas, -1);
-                darPermisos(correo, rol);
                 cn.Close();
                 return true;
             }
             catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool modificarContrasena(String correo, String contrasena)
+        {
+            //Intenta modificar la contrasena de un usuario existente en la BD con los datos dados
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "UPDATE Usuarios SET Contrasena = '" + encriptar(contrasena) + "' WHERE dirCorreo = '" + correo + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
                 return false;
@@ -280,6 +298,45 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 resultado = false;
             }
             return resultado;
+        }
+
+        public bool autenticar(String correo, String contrasena)
+        {
+            bool exito;
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "SELECT * FROM Usuarios WHERE DirCorreo = '" + correo + "' AND contrasena = '" + encriptar(contrasena) + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                if((int)cantFilas > 0)
+                {
+                    exito = true;
+                }
+                else
+                {
+                    exito = false;
+                }
+                cn.Close();
+                return exito;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                return false;
+            }
+        }
+
+        public string encriptar(string contrasena)
+        {
+            string hash = "paradox mejor empresa";
+            byte[] data = UTF8Encoding.UTF8.GetBytes(contrasena);
+            MD5 md5 = MD5.Create(); 
+            TripleDES tripledes = TripleDES.Create();
+            tripledes.Key = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+            tripledes.Mode = CipherMode.ECB;
+            ICryptoTransform transform = tripledes.CreateEncryptor();
+            byte[] result = transform.TransformFinalBlock(data, 0, data.Length);
+            return Convert.ToBase64String(result);
         }
 
         public void actualizarConexion(String usuario, String contrasena)
