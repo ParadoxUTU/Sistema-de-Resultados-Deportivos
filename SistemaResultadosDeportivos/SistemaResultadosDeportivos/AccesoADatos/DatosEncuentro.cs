@@ -19,6 +19,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             DateTime hora;
             bool pausado = false;
             int minActual;
+            int segActual;
             bool comenzo = false;
             bool finalizo = false;
             String nombreEncuentro;
@@ -38,11 +39,15 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                         hora = rs.Fields[2].Value;
                         pausado = Convert.ToBoolean(rs.Fields[3].Value);
                         minActual = (int)rs.Fields[4].Value;
-                        comenzo = Convert.ToBoolean(rs.Fields[5].Value);
-                        finalizo = Convert.ToBoolean(rs.Fields[6].Value);
-                        nombreEncuentro = (String)rs.Fields[7].Value;
-                        idDeporte = (int)rs.Fields[8].Value;
-                        Encuentro encuentro = new Encuentro(idEncuentro, fecha, hora, pausado, minActual, comenzo, finalizo, nombreEncuentro, idDeporte);
+                        if (rs.Fields[5].Value != null)
+                            segActual = (int)rs.Fields[5].Value;
+                        else
+                            segActual = 0;
+                        comenzo = Convert.ToBoolean(rs.Fields[6].Value);
+                        finalizo = Convert.ToBoolean(rs.Fields[7].Value);
+                        nombreEncuentro = (String)rs.Fields[8].Value;
+                        idDeporte = (int)rs.Fields[9].Value;
+                        Encuentro encuentro = new Encuentro(idEncuentro, fecha, hora, pausado, minActual, segActual, comenzo, finalizo, nombreEncuentro, idDeporte);
                         lista.Add(encuentro);
                         rs.MoveNext();
                     }
@@ -62,6 +67,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             DateTime hora;
             bool pausado = false;
             int minActual;
+            int segActual;
             bool comenzo = false;
             bool finalizo = false;
             String nombreEncuentro;
@@ -78,11 +84,12 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                     hora = rs.Fields[2].Value;
                     pausado = Convert.ToBoolean(rs.Fields[3].Value);
                     minActual = (int)rs.Fields[4].Value;
-                    comenzo = Convert.ToBoolean(rs.Fields[5].Value);
-                    finalizo = Convert.ToBoolean(rs.Fields[6].Value);
-                    nombreEncuentro = (String)rs.Fields[7].Value;
-                    idDeporte = (int)rs.Fields[8].Value;
-                    encuentro = new Encuentro(id, fecha, hora, pausado, minActual, comenzo, finalizo, nombreEncuentro, idDeporte);
+                    segActual = (int)rs.Fields[5].Value;
+                    comenzo = Convert.ToBoolean(rs.Fields[6].Value);
+                    finalizo = Convert.ToBoolean(rs.Fields[7].Value);
+                    nombreEncuentro = (String)rs.Fields[8].Value;
+                    idDeporte = (int)rs.Fields[9].Value;
+                    encuentro = new Encuentro(id, fecha, hora, pausado, minActual, segActual, comenzo, finalizo, nombreEncuentro, idDeporte);
                     rs.MoveNext();
 
                 }
@@ -103,6 +110,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             DateTime hora;
             bool pausado;
             int minActual;
+            int segActual;
             bool comenzo;
             bool finalizo;
             String nombreEncuentro;
@@ -124,11 +132,12 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                         hora = rs.Fields[5].Value;
                         pausado = Convert.ToBoolean(rs.Fields[6].Value);
                         minActual = (int)rs.Fields[7].Value;
-                        comenzo = Convert.ToBoolean(rs.Fields[8].Value);
-                        finalizo = Convert.ToBoolean(rs.Fields[9].Value);
-                        nombreEncuentro = (String)rs.Fields[10].Value;
-                        idDeporte = (int)rs.Fields[11].Value;
-                        EncuentroTorneo encuentro = new EncuentroTorneo(etapa, idEncuentro, fecha, hora, pausado, minActual, comenzo, finalizo, nombreEncuentro, idDeporte);
+                        segActual = (int)rs.Fields[5].Value;
+                        comenzo = Convert.ToBoolean(rs.Fields[6].Value);
+                        finalizo = Convert.ToBoolean(rs.Fields[7].Value);
+                        nombreEncuentro = (String)rs.Fields[8].Value;
+                        idDeporte = (int)rs.Fields[9].Value;
+                        EncuentroTorneo encuentro = new EncuentroTorneo(etapa, idEncuentro, fecha, hora, pausado, minActual, segActual, comenzo, finalizo, nombreEncuentro, idDeporte);
                         lista.Add(encuentro);
                         rs.MoveNext();
                     }
@@ -150,6 +159,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             DateTime hora;
             bool pausado;
             int minActual;
+            int segActual;
             bool comenzo;
             bool finalizo;
             String nombreEncuentro;
@@ -168,10 +178,12 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                         hora = rs.Fields[2].Value;
                         pausado = Convert.ToBoolean(rs.Fields[3].Value);
                         minActual = (int)rs.Fields[4].Value;
-                        comenzo = Convert.ToBoolean(rs.Fields[5].Value);
-                        finalizo = Convert.ToBoolean(rs.Fields[6].Value);
-                        nombreEncuentro = (String)rs.Fields[7].Value;
-                        Encuentro encuentro = new Encuentro(idEncuentro, fecha, hora, pausado, minActual, comenzo, finalizo, nombreEncuentro, idDeporte);
+                        segActual = (int)rs.Fields[5].Value;
+                        comenzo = Convert.ToBoolean(rs.Fields[6].Value);
+                        finalizo = Convert.ToBoolean(rs.Fields[7].Value);
+                        nombreEncuentro = (String)rs.Fields[8].Value;
+                        idDeporte = (int)rs.Fields[9].Value;
+                        Encuentro encuentro = new Encuentro(idEncuentro, fecha, hora, pausado, minActual, segActual, comenzo, finalizo, nombreEncuentro, idDeporte);
                         lista.Add(encuentro);
                         rs.MoveNext();
                     }
@@ -236,13 +248,13 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             return minActual;
         }
 
-        public bool actualizarMinActual(int id, int minActual)
+        public bool actualizarMinActual(int id, int minActual, int segActual)
         {
             //Intenta actualizar el minuto actual de un encuentro
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-                String stringSql = "UPDATE Encuentros SET MinActual = '" + minActual + "' WHERE IdEncuentro = '" + id + "';";
+                String stringSql = "UPDATE Encuentros SET MinActual = '" + minActual + "', SegActual = '" + segActual + "' WHERE IdEncuentro = '" + id + "';";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;
@@ -409,7 +421,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             return lista;
         }
 
-        public bool agregarEncuentro(String fecha, String hora, bool pausado, int minActual, bool comenzo, bool finalizo, String nombreEncuentro, int idDeporte)
+        public bool agregarEncuentro(String fecha, String hora, bool pausado, int minActual, int segActual, bool comenzo, bool finalizo, String nombreEncuentro, int idDeporte)
         {
             //Intenta agregar un encuentro a la BD con los datos dados
             sbyte p = Convert.ToSByte(pausado);
@@ -418,7 +430,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-                String stringSql = "INSERT INTO Encuentros (Fecha, Hora, Pausado, MinActual, Comenzo, Finalizo, NombreEncuentro, IdDeporte) VALUES('" + fecha + "', '" + hora + "', '" + p + "', '" + minActual + "', '" + c + "', '" + f + "', '" + nombreEncuentro + "', '" + idDeporte + "');";
+                String stringSql = "INSERT INTO Encuentros (Fecha, Hora, Pausado, MinActual, SegActual, Comenzo, Finalizo, NombreEncuentro, IdDeporte) VALUES('" + fecha + "', '" + hora + "', '" + p + "', '" + minActual + "', '" + segActual + "', '" + c + "', '" + f + "', '" + nombreEncuentro + "', '" + idDeporte + "');";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;

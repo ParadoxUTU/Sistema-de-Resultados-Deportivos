@@ -51,7 +51,7 @@
             // flpIncidencias
             // 
             this.flpIncidencias.AutoScroll = true;
-            this.flpIncidencias.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpIncidencias.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flpIncidencias.Location = new System.Drawing.Point(12, 93);
             this.flpIncidencias.Name = "flpIncidencias";
             this.flpIncidencias.Size = new System.Drawing.Size(964, 331);

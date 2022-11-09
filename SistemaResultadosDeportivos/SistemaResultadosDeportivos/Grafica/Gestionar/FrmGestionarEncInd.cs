@@ -248,7 +248,7 @@ namespace SistemaResultadosDeportivos
         private void timer1_Tick(object sender, EventArgs e)
         {
             ts = new TimeSpan(0, 0, encuentro.minActual, 0, (int)oSW.ElapsedMilliseconds);
-            lge.actualizarMinActual(encuentro.idEncuentro, (int)ts.Minutes);
+            lge.actualizarMinActual(encuentro.idEncuentro, (int)ts.Minutes, (int)ts.Seconds);
             lblMinuto.Text = ts.Minutes.ToString();
         }
     }

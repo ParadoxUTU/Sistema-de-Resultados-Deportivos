@@ -22,11 +22,12 @@ namespace SistemaResultadosDeportivos
         APIresultados resultados;
         Image imagenBanner;
         Deporte deporte;
+        Usuario usuario;
         String urlSitio;
         List<Encuentro> encuentros;
         int var = 0;
 
-        public FrmEncuentrosDeporteApp(Deporte deporte)
+        public FrmEncuentrosDeporteApp(Deporte deporte, Usuario usuario)
         {
             InitializeComponent();
             publicidad = new APIpublicidad();
@@ -38,6 +39,7 @@ namespace SistemaResultadosDeportivos
             encuentros = new List<Encuentro>();
             setEncuentros();
             listarEncuentros();
+            this.usuario = usuario;
         }
 
         private void setEncuentros()
@@ -139,7 +141,7 @@ namespace SistemaResultadosDeportivos
             Deporte deporte = JsonConvert.DeserializeObject<Deporte>(resultados.getDeporte(encuentro.idDeporte));
             if (deporte.porEquipos)
             {
-                new FrmVerEncuentroEquipo(encuentro).Visible = true;
+                new FrmVerEncuentroEquipo(encuentro, usuario).Visible = true;
             }
             else if (!deporte.porEquipos && deporte.cantParticipantes == 2)
             {

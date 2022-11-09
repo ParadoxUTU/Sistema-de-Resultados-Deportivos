@@ -138,10 +138,10 @@ namespace SistemaResultadosDeportivos
             int i = (Int32)btnEncuentro.Tag;
             var = i;
             EncuentroTorneo enT = encuentros[var];
-            Encuentro encuentro = new Encuentro(enT.idEncuentro, enT.fecha, enT.hora, enT.pausado, enT.minActual, enT.comenzo, enT.finalizo, enT.nombreEncuentro, enT.idDeporte);
+            Encuentro encuentro = new Encuentro(enT.idEncuentro, enT.fecha, enT.hora, enT.pausado, enT.minActual, enT.segActual, enT.comenzo, enT.finalizo, enT.nombreEncuentro, enT.idDeporte);
             if (deporte.porEquipos)
             {
-                new FrmVerEncuentroEquipo(encuentro).Visible = true;
+                new FrmVerEncuentroEquipo(encuentro, null).Visible = true;
             }
             else if (!deporte.porEquipos && deporte.cantParticipantes == 2)
             {

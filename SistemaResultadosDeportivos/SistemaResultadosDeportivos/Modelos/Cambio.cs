@@ -14,8 +14,9 @@ namespace SistemaResultadosDeportivos.Modelos
         public int idEquipo { get; set; }
         public int jugadorEntrante { get; set; }
         public int jugadorSaliente { get; set; }
+        public int segundo { get; set; }
 
-        public Cambio(int idCambio, int minuto, int idEncuentro, int idEquipo, int jugadorEntrante, int jugadorSaliente)
+        public Cambio(int idCambio, int minuto, int idEncuentro, int idEquipo, int jugadorEntrante, int jugadorSaliente, int segundo)
         {
             this.idCambio = idCambio;
             this.minuto = minuto;
@@ -23,6 +24,7 @@ namespace SistemaResultadosDeportivos.Modelos
             this.idEquipo = idEquipo;
             this.jugadorEntrante = jugadorEntrante;
             this.jugadorSaliente = jugadorSaliente;
+            this.segundo = segundo;
         }
     }
 }

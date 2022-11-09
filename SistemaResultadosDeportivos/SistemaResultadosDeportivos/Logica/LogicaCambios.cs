@@ -27,10 +27,10 @@ namespace SistemaResultadosDeportivos.Logica
             return datosCambio.getCambiosByEncuentro(idEncuentro);
         }
 
-        public bool agregarCambio(int minuto, int idEncuentro, int idEquipo, int jugadorEntrante, int jugadorSaliente)
+        public bool agregarCambio(int minuto, int idEncuentro, int idEquipo, int jugadorEntrante, int jugadorSaliente, int segundo)
         {
             //Agrega un cambio a un encuentro
-            return datosCambio.agregarCambio(minuto, idEncuentro, idEquipo, jugadorEntrante, jugadorSaliente);
+            return datosCambio.agregarCambio(minuto, idEncuentro, idEquipo, jugadorEntrante, jugadorSaliente, segundo);
         }
     }
 }

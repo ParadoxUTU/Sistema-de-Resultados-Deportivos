@@ -86,8 +86,8 @@ namespace SistemaResultadosDeportivos
                 if (cbxDeportes.SelectedItem != null)
                 {
                     Deporte deporte = lgd.devolverDeportes()[cbxDeportes.SelectedIndex];
-                    Encuentro encuentro = new Encuentro(0, fechaEncuentro, horaEncuentro, pausado, 0, comenzo, finalizo, nombreEncuentro, deporte.idDeporte); //Se crea un objeto de tipo Encuentro con una id = 0 para pasarlo por parametro y obtener sus demas atributos
-                    if (confirmarAgregacion(strFecha, strHora, pausado, 0, comenzo, finalizo, nombreEncuentro, deporte.idDeporte))
+                    Encuentro encuentro = new Encuentro(0, fechaEncuentro, horaEncuentro, pausado, 0, 0, comenzo, finalizo, nombreEncuentro, deporte.idDeporte); //Se crea un objeto de tipo Encuentro con una id = 0 para pasarlo por parametro y obtener sus demas atributos
+                    if (confirmarAgregacion(strFecha, strHora, pausado, 0, 0, comenzo, finalizo, nombreEncuentro, deporte.idDeporte))
                     {
                         int idEncuentro = lge.devolverUltimaID();
                         if (deporte.porEquipos)
@@ -128,12 +128,12 @@ namespace SistemaResultadosDeportivos
             catch { }
         }
 
-        public bool confirmarAgregacion(String fecha, String hora, bool pausado, int minActual, bool comenzo, bool finalizo, String nombreEncuentro, int idDeporte)
+        public bool confirmarAgregacion(String fecha, String hora, bool pausado, int minActual, int segActual, bool comenzo, bool finalizo, String nombreEncuentro, int idDeporte)
         {
             /*Confirma la agregación del encuentro con los datos ingresados
             desde el subframe de agregación*/
             bool exito = false;
-            if(lge.agregarEncuentro(fecha, hora, pausado, minActual, comenzo, finalizo, nombreEncuentro, idDeporte))
+            if(lge.agregarEncuentro(fecha, hora, pausado, minActual, segActual, comenzo, finalizo, nombreEncuentro, idDeporte))
             {
                 exito = true;
             }

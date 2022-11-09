@@ -31,7 +31,7 @@ namespace SistemaResultadosDeportivos
             flpJugadores.Controls.Clear();
             int i = 0;
             int tamano = flpJugadores.Width - 5;
-            List<Alineacion> lista = gestionar.lge.devolverAlineacion(idEquipo, idEncuentro);
+            List<Alineacion> lista = gestionar.lge.devolverJugando(idEquipo, idEncuentro);
             foreach (Alineacion a in lista)
             {
                 Jugador j = lgj.devolverJugadorPorID(a.idJugador);
@@ -134,12 +134,15 @@ namespace SistemaResultadosDeportivos
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            List<Alineacion> alineacion = gestionar.lge.devolverAlineacion(equipoActual.idEquipo, gestionar.encuentro.idEncuentro);
+            List<Alineacion> alineacion = gestionar.lge.devolverJugando(equipoActual.idEquipo, gestionar.encuentro.idEncuentro);
             Jugador jugador = lgj.devolverJugadorPorID(alineacion[var].idJugador);
             int minuto = gestionar.ts.Minutes;
+            int segundo = gestionar.ts.Seconds;
             int puntuacion = (int)numPuntuacion.Value;
-            gestionar.lga.agregarAnotacion(jugador.idJugador, minuto, equipoActual.idEquipo, gestionar.encuentro.idEncuentro, puntuacion);
+            gestionar.lga.agregarAnotacion(jugador.idJugador, minuto, equipoActual.idEquipo, gestionar.encuentro.idEncuentro, puntuacion, segundo);
             gestionar.setAnotacionesEquipo(gestionar.encuentro.idEncuentro, equipoActual.idEquipo, lbl);
+            gestionar.setIncidencias();
+            gestionar.listarIncidencias();
             this.Dispose();
         }
     }

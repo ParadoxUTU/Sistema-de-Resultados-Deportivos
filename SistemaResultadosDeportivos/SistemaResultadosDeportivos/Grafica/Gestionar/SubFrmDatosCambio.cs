@@ -251,8 +251,10 @@ namespace SistemaResultadosDeportivos
         {
             Jugador jugadorSaliente = lgj.devolverJugadorPorID(idJugadoresAlineacion[var2]);
             Jugador jugadorEntrante = lgj.devolverJugadorPorID(idJugadoresPlantel[var1]);
-            lgc.agregarCambio(gestionar.ts.Minutes, gestionar.encuentro.idEncuentro, equipoActual.idEquipo, jugadorEntrante.idJugador, jugadorSaliente.idJugador);
+            lgc.agregarCambio(gestionar.ts.Minutes, gestionar.encuentro.idEncuentro, equipoActual.idEquipo, jugadorEntrante.idJugador, jugadorSaliente.idJugador, gestionar.ts.Seconds);
             lgj.agregarJugadorAAlineacion(jugadorEntrante.idJugador, equipoActual.idEquipo, gestionar.encuentro.idEncuentro, 0);
+            gestionar.setIncidencias();
+            gestionar.listarIncidencias();
         }
     }
 }

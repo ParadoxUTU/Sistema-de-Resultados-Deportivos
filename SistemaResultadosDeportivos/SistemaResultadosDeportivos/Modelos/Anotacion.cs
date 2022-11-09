@@ -13,14 +13,16 @@ namespace SistemaResultadosDeportivos.Modelos
         public int minuto { get; set; }
         public int idEncuentro { get; set; }
         public int puntuacion { get; set; }
+        public int segundo { get; set; }
 
-        public Anotacion(int idA, int idJ, int m, int idE, int p)
+        public Anotacion(int idA, int idJ, int m, int idE, int p, int segundo)
         {
             idAnotacion = idA;
             idJugador = idJ;
             minuto = m;
             idEncuentro = idE;
             puntuacion = p;
+            this.segundo = segundo;
         }
     }
 }

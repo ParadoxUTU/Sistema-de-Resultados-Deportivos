@@ -18,6 +18,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             int idJugador;
             int minuto;
             int puntuacion;
+            int segundo;
             List<Anotacion> lista = new List<Anotacion>();
             String stringSql = "SELECT * FROM Anotaciones WHERE IdEncuentro = '" + idEncuentro + "';";
             try
@@ -32,7 +33,8 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                         minuto = (int)rs.Fields[1].Value;
                         idJugador = (int)rs.Fields[4].Value;
                         puntuacion = (int)rs.Fields[5].Value;
-                        Anotacion anotacion = new Anotacion(idAnotacion, idJugador, minuto, idEncuentro, 0);
+                        segundo = (int)rs.Fields[6].Value;
+                        Anotacion anotacion = new Anotacion(idAnotacion, idJugador, minuto, idEncuentro, puntuacion, segundo);
                         lista.Add(anotacion);
                         rs.MoveNext();
                     }
@@ -50,6 +52,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             int idJugador;
             int minuto;
             int puntuacion;
+            int segundo;
             List<Anotacion> lista = new List<Anotacion>();
             String stringSql = "SELECT * FROM Anotaciones WHERE IdEncuentro = '" + idEncuentro + "' AND IdEquipo = '" + idEquipo + "';";
             try
@@ -64,7 +67,8 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                         minuto = (int)rs.Fields[1].Value;
                         idJugador = (int)rs.Fields[4].Value;
                         puntuacion = (int)rs.Fields[5].Value;
-                        Anotacion anotacion = new Anotacion(idAnotacion, idJugador, minuto, idEncuentro, puntuacion);
+                        segundo = (int)rs.Fields[6].Value;
+                        Anotacion anotacion = new Anotacion(idAnotacion, idJugador, minuto, idEncuentro, puntuacion, segundo);
                         lista.Add(anotacion);
                         rs.MoveNext();
                     }
@@ -92,13 +96,13 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             return sumaAnotaciones;
         }
 
-        public bool agregarAnotacion(int idJugador, int minuto, int idEquipo, int idEncuentro, int puntuacion)
+        public bool agregarAnotacion(int idJugador, int minuto, int idEquipo, int idEncuentro, int puntuacion, int segundo)
         {
             //Intenta agregar un equipo a la BD con los datos dados
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-                String stringSql = "INSERT INTO Anotaciones (IdJugador, Minuto, IdEquipo, IdEncuentro, puntuacion) VALUES('" + idJugador + "', '" + minuto + "', '" + idEquipo + "', '" + idEncuentro + "', '" + puntuacion + "');";
+                String stringSql = "INSERT INTO Anotaciones (IdJugador, Minuto, IdEquipo, IdEncuentro, puntuacion, segundo) VALUES('" + idJugador + "', '" + minuto + "', '" + idEquipo + "', '" + idEncuentro + "', '" + puntuacion + "', '" + segundo + "');";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;
@@ -169,6 +173,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             int idDeporte;
             string nombreAmonestacion;
             int minuto;
+            int segundo;
             List<AmonestacionAlineacion> lista = new List<AmonestacionAlineacion>();
             String stringSql = "SELECT * FROM Alin_amonestaciones WHERE IdEncuentro = '" + idEncuentro + "';";
             try
@@ -184,7 +189,8 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                         idDeporte = (int)rs.Fields[3].Value;
                         nombreAmonestacion = (String)rs.Fields[4].Value;
                         minuto = (int)rs.Fields[5].Value;
-                        AmonestacionAlineacion amonestacion = new AmonestacionAlineacion(idEquipo, idEncuentro, idJugador, idDeporte, nombreAmonestacion, minuto);
+                        segundo = (int)rs.Fields[6].Value;
+                        AmonestacionAlineacion amonestacion = new AmonestacionAlineacion(idEquipo, idEncuentro, idJugador, idDeporte, nombreAmonestacion, minuto, segundo);
                         lista.Add(amonestacion);
                         rs.MoveNext();
                     }
@@ -195,13 +201,13 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             return lista;
         }
 
-        public bool agregarAmonestacionAlineacion(int idEquipo, int idEncuentro, int idJugador, int idDeporte, string nombreAmonestacion, int minuto)
+        public bool agregarAmonestacionAlineacion(int idEquipo, int idEncuentro, int idJugador, int idDeporte, string nombreAmonestacion, int minuto, int segundo)
         {
             //Intenta agregar una amonestacion a la BD con los datos dados
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-                String stringSql = "INSERT INTO Alin_amonestaciones (IdEquipo, IdEncuentro, IdJugador, IdDeporte, NombreAmonestacion, Minuto) VALUES('" + idEquipo + "', '" + idEncuentro + "', '" + idJugador + "', '" + idDeporte + "', '" + nombreAmonestacion + "', '" + minuto + "');";
+                String stringSql = "INSERT INTO Alin_amonestaciones (IdEquipo, IdEncuentro, IdJugador, IdDeporte, NombreAmonestacion, Minuto, segundo) VALUES('" + idEquipo + "', '" + idEncuentro + "', '" + idJugador + "', '" + idDeporte + "', '" + nombreAmonestacion + "', '" + minuto + "', '" + segundo + "');";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;
@@ -229,7 +235,5 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 return false;
             }
         }
-
-
     }
 }

@@ -6,6 +6,7 @@ using SistemaResultadosDeportivos.Logica;
 using System.Drawing;
 using System.Windows;
 using System.Diagnostics;
+using System.Linq;
 
 namespace SistemaResultadosDeportivos
 {
@@ -16,10 +17,15 @@ namespace SistemaResultadosDeportivos
         public LogicaIncidencias lga;
         public LogicaEncuentros lge;
         public LogicaSets lgs;
+        public LogicaCambios lgc;
+        public LogicaJugadores lgj;
+        public LogicaNotificaciones lgn;
         public Encuentro encuentro;
         public Equipo equipo1;
         public Equipo equipo2;
-        Deporte deporte;
+        public Deporte deporte;
+        public List<Incidencia> incidencias;
+        int var = 0;
 
         public FrmGestionarEncCol(Encuentro en, Equipo eq1, Equipo eq2, Deporte dep)
         {
@@ -27,6 +33,10 @@ namespace SistemaResultadosDeportivos
             lga = new LogicaIncidencias();
             lge = new LogicaEncuentros();
             lgs = new LogicaSets();
+            lgc = new LogicaCambios();
+            lgj = new LogicaJugadores();
+            lgn = new LogicaNotificaciones();
+            incidencias = new List<Incidencia>();
             encuentro = en;
             equipo1 = eq1;
             equipo2 = eq2;
@@ -43,9 +53,164 @@ namespace SistemaResultadosDeportivos
                 setSetsEquipo(equipo1.idEquipo, lblPuntaje1);
                 setSetsEquipo(equipo2.idEquipo, lblPuntaje2); 
             }
-            ts = new TimeSpan(0, 0, encuentro.minActual, 0, (int)oSW.ElapsedMilliseconds);
-            lblMinuto.Text = ts.Minutes.ToString();
+            if(encuentro.comenzo && !encuentro.pausado && !encuentro.finalizo)
+            {
+                iniciarTimer();
+            }
+            else
+            {
+                ts = new TimeSpan(0, 0, encuentro.minActual, encuentro.segActual, (int)oSW.ElapsedMilliseconds);
+            }
+            if (ts.Minutes < 10)
+            {
+                lblMinuto.Text = "0" + ts.Minutes.ToString();
+            }
+            else
+            {
+                lblMinuto.Text = ts.Minutes.ToString();
+            }
+            if (ts.Seconds < 10)
+            {
+                lblMinuto.Text += ":0" + ts.Seconds.ToString();
+            }
+            else
+            {
+                lblMinuto.Text += ":" + ts.Seconds.ToString();
+            }
             actualizarBotones();
+            setIncidencias();
+            listarIncidencias();
+        }
+
+        public void listarIncidencias()
+        {
+            flpIncidencias.Controls.Clear();
+            int i = 0;
+            int tamano = flpIncidencias.Width - 5;
+            foreach (Incidencia incidencia in incidencias)
+            {
+                String tamanoSt = incidencia.tipoIncidencia;
+                Jugador jugador1 = lgj.devolverJugadorPorID(incidencia.idJugador1);
+                String tamanoSt2 = jugador1.nombreJugador.ToString();
+                if (incidencia.tipoIncidencia == "Cambio")
+                {
+                    Jugador jugador2 = lgj.devolverJugadorPorID(incidencia.idJugador2);
+                    tamanoSt2 += " => " + jugador2.nombreJugador;
+                }
+                if (tamanoSt.Length > tamano)
+                {
+                    tamano = tamanoSt.Length;
+                }
+                else if (tamanoSt2.Length > tamano)
+                {
+                    tamano = tamanoSt2.Length;
+                }
+            }
+
+            foreach (Incidencia incidencia in incidencias)
+            {
+                String textNombre = incidencia.tipoIncidencia;
+                Jugador jugador1 = lgj.devolverJugadorPorID(incidencia.idJugador1);
+                String textJugador = jugador1.nombreJugador.ToString();
+                if (incidencia.tipoIncidencia == "Cambio")
+                {
+                    Jugador jugador2 = lgj.devolverJugadorPorID(incidencia.idJugador2);
+                    textJugador += " => " + jugador2.nombreJugador;
+                }
+                String textMinuto = incidencia.minuto.ToString() + ":" + incidencia.segundo.ToString();
+                asignarComponentes(textNombre, textJugador, textMinuto, i, tamano);
+                i++;
+            }
+        }
+
+        public void asignarComponentes(String n, String p, String e, int i, int tamano)
+        {
+            Label lblBoton = new Label();
+            Label lblBoton2 = new Label();
+            Label lblBoton3 = new Label();
+            Panel pnlPerfil = new Panel();
+            Button btnParticipante = new Button();
+            String textNombre = n;
+            String textPais = p;
+            String textEdad = e;
+            propiedadesBoton(btnParticipante, i, tamano);
+            propiedadesLabel(lblBoton, textNombre, btnParticipante, 8);
+            propiedadesLabel(lblBoton2, textPais, btnParticipante, 39);
+            propiedadesLabel(lblBoton3, textEdad, btnParticipante, 70);
+            propiedadesPanel(pnlPerfil);
+            btnParticipante.Controls.Add(pnlPerfil);
+            btnParticipante.Controls.Add(lblBoton);
+            btnParticipante.Controls.Add(lblBoton2);
+            btnParticipante.Controls.Add(lblBoton3);
+            flpIncidencias.Controls.Add(btnParticipante);
+            btnParticipante.Click += new EventHandler(btnJugadores_Click);
+        }
+
+        private void propiedadesBoton(Button btn, int i, int t)
+        {
+            btn.Height = 92;
+            btn.Tag = i;
+            btn.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
+            btn.FlatStyle = FlatStyle.Flat;
+            if (t == (flpIncidencias.Width - 5))
+            {
+                btn.Width = t;
+            }
+            else
+            {
+                btn.Width = t * 10;
+            }
+        }
+
+        private void propiedadesLabel(Label lbl, String s, Button btn, int l)
+        {
+            lbl.Text = s;
+            lbl.BackColor = System.Drawing.Color.Transparent;
+            lbl.Font = new System.Drawing.Font("Arial", 10, System.Drawing.FontStyle.Bold);
+            lbl.ForeColor = System.Drawing.Color.White;
+            lbl.Width = s.Length * 10;
+            lbl.Location = new System.Drawing.Point(110, l);
+        }
+
+        private void propiedadesPanel(Panel pnl)
+        {
+            pnl.Width = 92;
+            pnl.Height = 91;
+            Image imagenPerfil = Properties.Resources.perfil;
+            Bitmap bitmapPerfil = new Bitmap(imagenPerfil, pnl.Width, pnl.Height - 1);
+            pnl.BackgroundImage = bitmapPerfil;
+        }
+
+        private void btnJugadores_Click(object sender, EventArgs e)
+        {
+            Button btnJugador = sender as Button;
+            int i = (Int32)btnJugador.Tag;
+            btnJugador.BackColor = System.Drawing.Color.FromArgb(90, 40, 0, 0);
+            var = i;
+        }
+
+        public void setIncidencias()
+        {
+            incidencias.Clear();
+            List<Anotacion> anotaciones = lga.devolverAnotacionesPorEncuentro(encuentro.idEncuentro);
+            foreach (Anotacion a in anotaciones)
+            {
+                Incidencia incidencia = new Incidencia(a.idAnotacion, "Anotación", a.minuto, a.segundo, 0, a.idJugador, -1);
+                incidencias.Add(incidencia);
+            }
+            List<AmonestacionAlineacion> amonestaciones = lga.devolverAmonestacionesPorEncuentro(encuentro.idEncuentro);
+            foreach (AmonestacionAlineacion a in amonestaciones)
+            {
+                Incidencia incidencia = new Incidencia(0, a.nombreAmonestacion, a.minuto, a.segundo, a.idEquipo, a.idJugador, -1);
+                incidencias.Add(incidencia);
+            }
+            List<Cambio> cambios = lgc.devolverCambiosPorEncuentro(encuentro.idEncuentro);
+            foreach (Cambio c in cambios)
+            {
+                Incidencia incidencia = new Incidencia(c.idCambio, "Cambio", c.minuto, c.segundo, c.idEquipo, c.jugadorSaliente, c.jugadorEntrante);
+                incidencias.Add(incidencia);
+            }
+            incidencias.Sort((a, b) => (a.minuto * 60 + a.segundo).CompareTo(b.minuto * 60 + b.segundo));
         }
 
         public void actualizarBotones()
@@ -106,7 +271,7 @@ namespace SistemaResultadosDeportivos
 
         public void iniciarTimer()
         {
-            ts = new TimeSpan(0, 0, encuentro.minActual, 0, 0);
+            ts = new TimeSpan(0, 0, encuentro.minActual, encuentro.segActual, 0);
             oSW.Start();
             timer1.Enabled = true;
         }
@@ -169,7 +334,7 @@ namespace SistemaResultadosDeportivos
 
         public void agregarAnotacion(Equipo equipo, Label lbl)
         {
-            int minuto = Int32.Parse(lblMinuto.Text);
+            int minuto = ts.Minutes;
             FrmSeleccionarJugadorAnotacion frmsja = new FrmSeleccionarJugadorAnotacion(this, equipo, lbl);
             frmsja.Visible = true;
             frmsja.listarJugadoresPorAlineacion(equipo.idEquipo, encuentro.idEncuentro);
@@ -177,7 +342,7 @@ namespace SistemaResultadosDeportivos
 
         public void agregarAmonestacion(Equipo equipo)
         {
-            int minuto = Int32.Parse(lblMinuto.Text);
+            int minuto = ts.Minutes;
             SubFrmDatosAmonestacion frmda = new SubFrmDatosAmonestacion(this, equipo);
             frmda.Visible = true;
             frmda.listarJugadoresPorAlineacion(equipo.idEquipo, encuentro.idEncuentro);
@@ -195,9 +360,24 @@ namespace SistemaResultadosDeportivos
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            ts = new TimeSpan(0, 0, encuentro.minActual, 0, (int)oSW.ElapsedMilliseconds);
-            lge.actualizarMinActual(encuentro.idEncuentro, (int)ts.Minutes);
-            lblMinuto.Text = ts.Minutes.ToString();
+            ts = new TimeSpan(0, 0, encuentro.minActual, encuentro.segActual, (int)oSW.ElapsedMilliseconds);
+            lge.actualizarMinActual(encuentro.idEncuentro, (int)ts.Minutes, (int)ts.Seconds);
+            if(ts.Minutes < 10)
+            {
+                lblMinuto.Text = "0" + ts.Minutes.ToString();
+            }
+            else
+            {
+                lblMinuto.Text = ts.Minutes.ToString();
+            }
+            if(ts.Seconds < 10)
+            {
+                lblMinuto.Text += ":0" + ts.Seconds.ToString();
+            }
+            else
+            {
+                lblMinuto.Text += ":" + ts.Seconds.ToString();
+            }
         }
 
         private void btnIniciar_Click(object sender, EventArgs e)
@@ -206,6 +386,21 @@ namespace SistemaResultadosDeportivos
             encuentro = lge.devolverEncuentroPorId(encuentro.idEncuentro);
             iniciarTimer();
             actualizarBotones();
+            List<String> correosEncuentro = lgn.devolverMiembrosPorSuscripcionEncuentro(encuentro.idEncuentro);
+            List<String> correosEquipo1 = lgn.devolverMiembrosPorSuscripcionEquipo(equipo1.idEquipo);
+            List<String> correosEquipo2 = lgn.devolverMiembrosPorSuscripcionEquipo(equipo2.idEquipo);
+            foreach (String correo in correosEncuentro)
+            {
+                lgn.agregarNotificacion(correo, "Ha empezado el encuentro de " + equipo1.nombreEquipo + " VS " + equipo2.nombreEquipo);
+            }
+            foreach (String correo in correosEquipo1)
+            {
+                lgn.agregarNotificacion(correo, "Ha empezado el encuentro de " + equipo1.nombreEquipo + " VS " + equipo2.nombreEquipo);
+            }
+            foreach (String correo in correosEquipo2)
+            {
+                lgn.agregarNotificacion(correo, "Ha empezado el encuentro de " + equipo1.nombreEquipo + " VS " + equipo2.nombreEquipo);
+            }
         }
 
         private void btnPausar_Click(object sender, EventArgs e)

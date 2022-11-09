@@ -38,10 +38,10 @@ namespace SistemaResultadosDeportivos.Logica
             return datosAnotacion.getSumAnotaciones(idEncuentro, idEquipo);
         }
 
-        public bool agregarAnotacion(int idJugador, int minuto, int idEquipo, int idEncuentro, int puntuacion)
+        public bool agregarAnotacion(int idJugador, int minuto, int idEquipo, int idEncuentro, int puntuacion, int segundo)
         {
             //Agrega una anotación a un equipo en determinado encuentro
-            return datosAnotacion.agregarAnotacion(idJugador, minuto, idEquipo, idEncuentro, puntuacion);
+            return datosAnotacion.agregarAnotacion(idJugador, minuto, idEquipo, idEncuentro, puntuacion, segundo);
         }
 
 
@@ -65,16 +65,16 @@ namespace SistemaResultadosDeportivos.Logica
             return res;
         }
 
-        public List<AmonestacionAlineacion> devolverAmonestacionesPorEncuentroo(int idEncuentro, int idEquipo)
+        public List<AmonestacionAlineacion> devolverAmonestacionesPorEncuentro(int idEncuentro)
         {
             //Devuelve una lista con las amonestaciones pertenecientes a un encuentro en la BD
             return datosAnotacion.getAmonestacionesByEncuentro(idEncuentro);
         }
 
-        public bool agregarAmonestacionAlineacion(int idEquipo, int idEncuentro, int idJugador, int idDeporte, string nombreAmonestacion, int minuto)
+        public bool agregarAmonestacionAlineacion(int idEquipo, int idEncuentro, int idJugador, int idDeporte, string nombreAmonestacion, int minuto, int segundo)
         {
             //Agrega una amonestacion a un jugador en determinado encuentro
-            return datosAnotacion.agregarAmonestacionAlineacion(idEquipo, idEncuentro, idJugador, idDeporte, nombreAmonestacion, minuto);
+            return datosAnotacion.agregarAmonestacionAlineacion(idEquipo, idEncuentro, idJugador, idDeporte, nombreAmonestacion, minuto, segundo);
         }
 
         public bool eliminarAmonestacion(int idEquipo, int idEncuentro, int idJugador, int idDeporte, string nombreAmonestacion, int minuto)

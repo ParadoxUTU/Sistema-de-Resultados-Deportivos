@@ -36,6 +36,7 @@
             this.lblEquipo2 = new System.Windows.Forms.Label();
             this.lblEquipo1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnSuscribirse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flpIncidencias
@@ -112,12 +113,27 @@
             this.timer1.Interval = 10000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnSuscribirse
+            // 
+            this.btnSuscribirse.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSuscribirse.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSuscribirse.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuscribirse.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnSuscribirse.Location = new System.Drawing.Point(23, 5);
+            this.btnSuscribirse.Name = "btnSuscribirse";
+            this.btnSuscribirse.Size = new System.Drawing.Size(101, 29);
+            this.btnSuscribirse.TabIndex = 39;
+            this.btnSuscribirse.Text = "Suscribirse";
+            this.btnSuscribirse.UseVisualStyleBackColor = false;
+            this.btnSuscribirse.Click += new System.EventHandler(this.btnSuscribirse_Click);
+            // 
             // FrmVerEncuentroEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(1007, 532);
+            this.Controls.Add(this.btnSuscribirse);
             this.Controls.Add(this.lblMinuto);
             this.Controls.Add(this.lblPuntaje2);
             this.Controls.Add(this.lblPuntaje1);
@@ -141,5 +157,6 @@
         private System.Windows.Forms.Label lblEquipo2;
         private System.Windows.Forms.Label lblEquipo1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnSuscribirse;
     }
 }

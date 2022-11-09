@@ -9,12 +9,23 @@ namespace SistemaResultadosDeportivos.Modelos
     public class Incidencia
     {
         public int idIncidencia { get; set; }
-        public String tipoIncidencia { get; set; }
+        public string tipoIncidencia { get; set; }
+        public int minuto { get; set; }
+        public int segundo { get; set; }
 
-        public Incidencia(int id, String tI)
+        public int idEquipo { get; set; }
+        public int idJugador1 { get; set; }
+        public int idJugador2 { get; set; }
+
+        public Incidencia(int idIncidencia, string tipoIncidencia, int minuto, int segundo, int idEquipo, int idJugador1, int idJugador2)
         {
-            idIncidencia = id;
-            tipoIncidencia = tI;
+            this.idIncidencia = idIncidencia;
+            this.tipoIncidencia = tipoIncidencia;
+            this.minuto = minuto;
+            this.segundo = segundo;
+            this.idEquipo = idEquipo;
+            this.idJugador1 = idJugador1;
+            this.idJugador2 = idJugador2;
         }
     }
 }

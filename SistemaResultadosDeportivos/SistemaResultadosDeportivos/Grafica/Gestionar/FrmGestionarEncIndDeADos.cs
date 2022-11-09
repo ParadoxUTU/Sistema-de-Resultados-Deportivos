@@ -41,8 +41,30 @@ namespace SistemaResultadosDeportivos
             lblJugador2.Text = jugador2.nombreJugador;
             setSetsJugador(jugador1.idJugador, lblPuntaje1);
             setSetsJugador(jugador2.idJugador, lblPuntaje2);
-            ts = new TimeSpan(0, 0, encuentro.minActual, 0, (int)oSW.ElapsedMilliseconds);
-            lblMinuto.Text = ts.Minutes.ToString();
+            if (encuentro.comenzo && !encuentro.pausado && !encuentro.finalizo)
+            {
+                iniciarTimer();
+            }
+            else
+            {
+                ts = new TimeSpan(0, 0, encuentro.minActual, encuentro.segActual, (int)oSW.ElapsedMilliseconds);
+            }
+            if (ts.Minutes < 10)
+            {
+                lblMinuto.Text = "0" + ts.Minutes.ToString();
+            }
+            else
+            {
+                lblMinuto.Text = ts.Minutes.ToString();
+            }
+            if (ts.Seconds < 10)
+            {
+                lblMinuto.Text += ":0" + ts.Seconds.ToString();
+            }
+            else
+            {
+                lblMinuto.Text += ":" + ts.Seconds.ToString();
+            }
             actualizarBotones();
         }
 
@@ -168,9 +190,24 @@ namespace SistemaResultadosDeportivos
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            ts = new TimeSpan(0, 0, encuentro.minActual, 0, (int)oSW.ElapsedMilliseconds);
-            lge.actualizarMinActual(encuentro.idEncuentro, (int)ts.Minutes);
-            lblMinuto.Text = ts.Minutes.ToString();
+            ts = new TimeSpan(0, 0, encuentro.minActual, encuentro.segActual, (int)oSW.ElapsedMilliseconds);
+            lge.actualizarMinActual(encuentro.idEncuentro, (int)ts.Minutes, (int)ts.Seconds);
+            if (ts.Minutes < 10)
+            {
+                lblMinuto.Text = "0" + ts.Minutes.ToString();
+            }
+            else
+            {
+                lblMinuto.Text = ts.Minutes.ToString();
+            }
+            if (ts.Seconds < 10)
+            {
+                lblMinuto.Text += ":0" + ts.Seconds.ToString();
+            }
+            else
+            {
+                lblMinuto.Text += ":" + ts.Seconds.ToString();
+            }
         }
     }
 }

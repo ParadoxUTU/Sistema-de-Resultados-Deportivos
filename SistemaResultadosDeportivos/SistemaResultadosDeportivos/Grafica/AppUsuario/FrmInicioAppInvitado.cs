@@ -137,7 +137,7 @@ namespace SistemaResultadosDeportivos
             Deporte deporte = JsonConvert.DeserializeObject<Deporte>(resultados.getDeporte(encuentro.idDeporte));
             if (deporte.porEquipos)
             {
-                new FrmVerEncuentroEquipo(encuentro).Visible = true;
+                new FrmVerEncuentroEquipo(encuentro, null).Visible = true;
             }
             else if(!deporte.porEquipos && deporte.cantParticipantes == 2)
             {

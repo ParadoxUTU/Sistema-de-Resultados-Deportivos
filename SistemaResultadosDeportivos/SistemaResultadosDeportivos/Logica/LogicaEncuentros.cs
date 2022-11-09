@@ -55,10 +55,10 @@ namespace SistemaResultadosDeportivos.Logica
             return datosEncuentro.getBanco(idEquipo, idEncuentro);
         }
 
-        public bool actualizarMinActual(int id, int minActual)
+        public bool actualizarMinActual(int id, int minActual, int segActual)
         {
             //Intenta actualizar el minuto actual de un encuentro
-            return datosEncuentro.actualizarMinActual(id, minActual);
+            return datosEncuentro.actualizarMinActual(id, minActual, segActual);
         }
 
         public List<Alineacion> devolverAlineacion(int idEquipo, int idEncuentro)
@@ -67,10 +67,10 @@ namespace SistemaResultadosDeportivos.Logica
             return datosEncuentro.getAlineacion(idEquipo, idEncuentro);
         }
 
-        public bool agregarEncuentro(String fecha, String hora, bool pausado, int minActual, bool comenzo, bool finalizo, String nombreEncuentro, int idDeporte)
+        public bool agregarEncuentro(String fecha, String hora, bool pausado, int minActual, int segActual, bool comenzo, bool finalizo, String nombreEncuentro, int idDeporte)
         {
             //Intenta agregar un encuentro a la BD, con los datos dados
-            return datosEncuentro.agregarEncuentro(fecha, hora, pausado, minActual, comenzo, finalizo, nombreEncuentro, idDeporte);
+            return datosEncuentro.agregarEncuentro(fecha, hora, pausado, minActual, segActual, comenzo, finalizo, nombreEncuentro, idDeporte);
         }
 
         public bool agregarEncInd(int idEncuentro)

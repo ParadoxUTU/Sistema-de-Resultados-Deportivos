@@ -87,6 +87,7 @@
     <Compile Include="AccesoADatos\DatosEncuentro.cs" />
     <Compile Include="AccesoADatos\DatosEquipo.cs" />
     <Compile Include="AccesoADatos\DatosJugador.cs" />
+    <Compile Include="AccesoADatos\DatosNotificacion.cs" />
     <Compile Include="AccesoADatos\DatosResultado.cs" />
     <Compile Include="AccesoADatos\DatosSet.cs" />
     <Compile Include="AccesoADatos\DatosTorneo.cs" />
@@ -348,6 +349,7 @@
     <Compile Include="Logica\LogicaEncuentros.cs" />
     <Compile Include="Logica\LogicaEquipos.cs" />
     <Compile Include="Logica\LogicaJugadores.cs" />
+    <Compile Include="Logica\LogicaNotificaciones.cs" />
     <Compile Include="Logica\LogicaSets.cs" />
     <Compile Include="Logica\LogicaTorneos.cs" />
     <Compile Include="Modelos\Alineacion.cs" />
@@ -359,8 +361,10 @@
     <Compile Include="Modelos\Encuentro.cs" />
     <Compile Include="Modelos\EncuentroTorneo.cs" />
     <Compile Include="Modelos\Equipo.cs" />
+    <Compile Include="Modelos\Incidencia.cs" />
     <Compile Include="Modelos\Jugador.cs" />
     <Compile Include="Modelos\JugadorDeEncuentro.cs" />
+    <Compile Include="Modelos\Notificacion.cs" />
     <Compile Include="Modelos\Publicidad.cs" />
     <Compile Include="Modelos\Set.cs" />
     <Compile Include="Modelos\Torneo.cs" />

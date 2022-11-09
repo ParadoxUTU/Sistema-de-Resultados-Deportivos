@@ -129,10 +129,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 numSet = (int)rs.Fields[0].Value;
                 cn.Close();
             }
-            catch(Exception ex) 
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            catch{}
             return numSet;
         }
 

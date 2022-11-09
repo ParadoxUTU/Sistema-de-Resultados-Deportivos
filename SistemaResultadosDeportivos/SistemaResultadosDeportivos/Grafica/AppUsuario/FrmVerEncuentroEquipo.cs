@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaResultadosDeportivos.APIs;
 using SistemaResultadosDeportivos.Modelos;
+using SistemaResultadosDeportivos.Logica;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
@@ -19,16 +20,19 @@ namespace SistemaResultadosDeportivos
     public partial class FrmVerEncuentroEquipo : Form
     {
         APIresultados resultados;
+        LogicaNotificaciones lgn;
         Encuentro encuentro;
         Deporte deporte;
         Equipo equipo1;
         Equipo equipo2;
+        Usuario usuario;
 
-        public FrmVerEncuentroEquipo(Encuentro e)
+        public FrmVerEncuentroEquipo(Encuentro e, Usuario usuario)
         {
             InitializeComponent();
             timer1.Enabled = true;
             resultados = new APIresultados();
+            lgn = new LogicaNotificaciones();
             encuentro = e;
             deporte = JsonConvert.DeserializeObject<Deporte>(resultados.getDeporte(encuentro.idDeporte));
             equipo1 = JsonConvert.DeserializeObject<Equipo>(resultados.getEquiposPorEncuentro(encuentro.idEncuentro)[0]);
@@ -46,6 +50,7 @@ namespace SistemaResultadosDeportivos
                 setSetsEquipo(encuentro.idEncuentro, equipo2.idEquipo, lblPuntaje2);
             }
             lblMinuto.Text = Convert.ToString(encuentro.minActual);
+            this.usuario = usuario;
         }
 
         public void setSetsEquipo(int idEncuentro, int idEquipo, Label lbl)
@@ -82,6 +87,11 @@ namespace SistemaResultadosDeportivos
         {
             encuentro = JsonConvert.DeserializeObject<Encuentro>(resultados.getEncuentro(encuentro.idEncuentro));
             lblMinuto.Text = encuentro.minActual.ToString();
+        }
+
+        private void btnSuscribirse_Click(object sender, EventArgs e)
+        {
+            lgn.agregarSuscripcionAEncuentro(usuario.correo, encuentro.idEncuentro);
         }
     }
 }
