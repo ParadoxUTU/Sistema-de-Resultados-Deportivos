@@ -80,7 +80,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccesoADatos\DatosAnotacion.cs" />
+    <Compile Include="AccesoADatos\DatosAmonestacion.cs" />
+    <Compile Include="AccesoADatos\DatosCambio.cs" />
+    <Compile Include="AccesoADatos\DatosIncidencias.cs" />
     <Compile Include="AccesoADatos\DatosDeporte.cs" />
     <Compile Include="AccesoADatos\DatosEncuentro.cs" />
     <Compile Include="AccesoADatos\DatosEquipo.cs" />
@@ -198,16 +200,16 @@
     <Compile Include="Grafica\AppUsuario\FrmVerEncuentroIndDeADos.Designer.cs">
       <DependentUpon>FrmVerEncuentroIndDeADos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grafica\FrmGestionarEncInd.cs">
+    <Compile Include="Grafica\Gestionar\FrmGestionarEncInd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grafica\FrmGestionarEncInd.Designer.cs">
+    <Compile Include="Grafica\Gestionar\FrmGestionarEncInd.Designer.cs">
       <DependentUpon>FrmGestionarEncInd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grafica\FrmGestionarEncIndDeADos.cs">
+    <Compile Include="Grafica\Gestionar\FrmGestionarEncIndDeADos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grafica\FrmGestionarEncIndDeADos.Designer.cs">
+    <Compile Include="Grafica\Gestionar\FrmGestionarEncIndDeADos.Designer.cs">
       <DependentUpon>FrmGestionarEncIndDeADos.cs</DependentUpon>
     </Compile>
     <Compile Include="Grafica\AppUsuario\FrmInicioAppInvitado.cs">
@@ -223,10 +225,10 @@
     <Compile Include="Grafica\FrmInicioEncuentros.Designer.cs">
       <DependentUpon>FrmInicioEncuentros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grafica\FrmGestionarEncCol.cs">
+    <Compile Include="Grafica\Gestionar\FrmGestionarEncCol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grafica\FrmGestionarEncCol.Designer.cs">
+    <Compile Include="Grafica\Gestionar\FrmGestionarEncCol.Designer.cs">
       <DependentUpon>FrmGestionarEncCol.cs</DependentUpon>
     </Compile>
     <Compile Include="Grafica\FrmInicioEquipos.cs">
@@ -241,23 +243,35 @@
     <Compile Include="Grafica\FrmSeleccionarPlantel.Designer.cs">
       <DependentUpon>FrmSeleccionarPlantel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grafica\IDyPosicion.cs" />
-    <Compile Include="Grafica\FrmSeleccionarJugadorAnotacion.cs">
+    <Compile Include="Grafica\Gestionar\SubFrmDatosAmonestacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grafica\FrmSeleccionarJugadorAnotacion.Designer.cs">
+    <Compile Include="Grafica\Gestionar\SubFrmDatosAmonestacion.Designer.cs">
+      <DependentUpon>SubFrmDatosAmonestacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\Gestionar\SubFrmDatosCambio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\Gestionar\SubFrmDatosCambio.Designer.cs">
+      <DependentUpon>SubFrmDatosCambio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\IDyPosicion.cs" />
+    <Compile Include="Grafica\Gestionar\FrmSeleccionarJugadorAnotacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\Gestionar\FrmSeleccionarJugadorAnotacion.Designer.cs">
       <DependentUpon>FrmSeleccionarJugadorAnotacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grafica\SubFrmDatosSetEq.cs">
+    <Compile Include="Grafica\Gestionar\SubFrmDatosSetEq.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grafica\SubFrmDatosSetEq.Designer.cs">
+    <Compile Include="Grafica\Gestionar\SubFrmDatosSetEq.Designer.cs">
       <DependentUpon>SubFrmDatosSetEq.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grafica\SubFrmDatosSetJug.cs">
+    <Compile Include="Grafica\Gestionar\SubFrmDatosSetJug.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grafica\SubFrmDatosSetJug.Designer.cs">
+    <Compile Include="Grafica\Gestionar\SubFrmDatosSetJug.Designer.cs">
       <DependentUpon>SubFrmDatosSetJug.cs</DependentUpon>
     </Compile>
     <Compile Include="Grafica\SubFrmEncuentrosTorneo.cs">
@@ -308,10 +322,10 @@
     <Compile Include="Grafica\SubFrmSeleccionarParticipantes.Designer.cs">
       <DependentUpon>SubFrmSeleccionarParticipantes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grafica\FrmSeleccionarAlineacion.cs">
+    <Compile Include="Grafica\Gestionar\FrmSeleccionarAlineacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grafica\FrmSeleccionarAlineacion.Designer.cs">
+    <Compile Include="Grafica\Gestionar\FrmSeleccionarAlineacion.Designer.cs">
       <DependentUpon>FrmSeleccionarAlineacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Grafica\SubFrmSeleccionarParticipantesTorneo.cs">
@@ -327,7 +341,9 @@
       <DependentUpon>SubFrmVerParticipantes.cs</DependentUpon>
     </Compile>
     <Compile Include="Logica\Correos.cs" />
-    <Compile Include="Logica\LogicaAnotaciones.cs" />
+    <Compile Include="Logica\LogicaAmonestaciones.cs" />
+    <Compile Include="Logica\LogicaCambios.cs" />
+    <Compile Include="Logica\LogicaIncidencias.cs" />
     <Compile Include="Logica\LogicaDeportes.cs" />
     <Compile Include="Logica\LogicaEncuentros.cs" />
     <Compile Include="Logica\LogicaEquipos.cs" />
@@ -335,7 +351,10 @@
     <Compile Include="Logica\LogicaSets.cs" />
     <Compile Include="Logica\LogicaTorneos.cs" />
     <Compile Include="Modelos\Alineacion.cs" />
+    <Compile Include="Modelos\Amonestacion.cs" />
+    <Compile Include="Modelos\AmonestacionAlineacion.cs" />
     <Compile Include="Modelos\Anotacion.cs" />
+    <Compile Include="Modelos\Cambio.cs" />
     <Compile Include="Modelos\Deporte.cs" />
     <Compile Include="Modelos\Encuentro.cs" />
     <Compile Include="Modelos\EncuentroTorneo.cs" />
@@ -432,10 +451,10 @@
     <EmbeddedResource Include="Grafica\AppUsuario\FrmVerEncuentroIndDeADos.resx">
       <DependentUpon>FrmVerEncuentroIndDeADos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grafica\FrmGestionarEncInd.resx">
+    <EmbeddedResource Include="Grafica\Gestionar\FrmGestionarEncInd.resx">
       <DependentUpon>FrmGestionarEncInd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grafica\FrmGestionarEncIndDeADos.resx">
+    <EmbeddedResource Include="Grafica\Gestionar\FrmGestionarEncIndDeADos.resx">
       <DependentUpon>FrmGestionarEncIndDeADos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\AppUsuario\FrmInicioAppInvitado.resx">
@@ -459,19 +478,25 @@
     <EmbeddedResource Include="Grafica\AppUsuario\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grafica\FrmGestionarEncCol.resx">
+    <EmbeddedResource Include="Grafica\Gestionar\FrmGestionarEncCol.resx">
       <DependentUpon>FrmGestionarEncCol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\FrmSeleccionarPlantel.resx">
       <DependentUpon>FrmSeleccionarPlantel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grafica\FrmSeleccionarJugadorAnotacion.resx">
+    <EmbeddedResource Include="Grafica\Gestionar\FrmSeleccionarJugadorAnotacion.resx">
       <DependentUpon>FrmSeleccionarJugadorAnotacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grafica\SubFrmDatosSetEq.resx">
+    <EmbeddedResource Include="Grafica\Gestionar\SubFrmDatosAmonestacion.resx">
+      <DependentUpon>SubFrmDatosAmonestacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\Gestionar\SubFrmDatosCambio.resx">
+      <DependentUpon>SubFrmDatosCambio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\Gestionar\SubFrmDatosSetEq.resx">
       <DependentUpon>SubFrmDatosSetEq.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grafica\SubFrmDatosSetJug.resx">
+    <EmbeddedResource Include="Grafica\Gestionar\SubFrmDatosSetJug.resx">
       <DependentUpon>SubFrmDatosSetJug.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\SubFrmEncuentrosTorneo.resx">
@@ -498,7 +523,7 @@
     <EmbeddedResource Include="Grafica\SubFrmSeleccionarParticipantes.resx">
       <DependentUpon>SubFrmSeleccionarParticipantes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grafica\FrmSeleccionarAlineacion.resx">
+    <EmbeddedResource Include="Grafica\Gestionar\FrmSeleccionarAlineacion.resx">
       <DependentUpon>FrmSeleccionarAlineacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\SubFrmSeleccionarParticipantesTorneo.resx">

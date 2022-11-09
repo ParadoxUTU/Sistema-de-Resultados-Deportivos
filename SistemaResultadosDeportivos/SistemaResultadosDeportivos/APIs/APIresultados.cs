@@ -13,7 +13,7 @@ namespace SistemaResultadosDeportivos.APIs
     public class APIresultados
     {
         private LogicaEncuentros lge;
-        private LogicaAnotaciones lga;
+        private LogicaIncidencias lga;
         private LogicaSets lgs;
         private LogicaDeportes lgd;
         private LogicaEquipos lgeq;
@@ -23,7 +23,7 @@ namespace SistemaResultadosDeportivos.APIs
         public APIresultados()
         {
             lge = new LogicaEncuentros();
-            lga = new LogicaAnotaciones();
+            lga = new LogicaIncidencias();
             lgs = new LogicaSets();
             lgd = new LogicaDeportes();
             lgeq = new LogicaEquipos();

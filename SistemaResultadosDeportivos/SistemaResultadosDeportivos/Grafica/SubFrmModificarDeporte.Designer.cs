@@ -43,6 +43,9 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.pnlPerfil = new System.Windows.Forms.Panel();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnAmonestacion = new System.Windows.Forms.Button();
+            this.txtAmonestacion = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAlineacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numParticipantes)).BeginInit();
@@ -50,6 +53,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtAmonestacion);
+            this.panel1.Controls.Add(this.btnAmonestacion);
             this.panel1.Controls.Add(this.numAlineacion);
             this.panel1.Controls.Add(this.numParticipantes);
             this.panel1.Controls.Add(this.label6);
@@ -66,7 +72,7 @@
             this.panel1.Controls.Add(this.btnAceptar);
             this.panel1.Location = new System.Drawing.Point(95, 25);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(709, 496);
+            this.panel1.Size = new System.Drawing.Size(709, 528);
             this.panel1.TabIndex = 24;
             // 
             // numAlineacion
@@ -196,7 +202,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnEliminar.Location = new System.Drawing.Point(44, 430);
+            this.btnEliminar.Location = new System.Drawing.Point(44, 468);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(220, 40);
             this.btnEliminar.TabIndex = 26;
@@ -239,12 +245,48 @@
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // btnAmonestacion
+            // 
+            this.btnAmonestacion.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnAmonestacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAmonestacion.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAmonestacion.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnAmonestacion.Location = new System.Drawing.Point(399, 468);
+            this.btnAmonestacion.Name = "btnAmonestacion";
+            this.btnAmonestacion.Size = new System.Drawing.Size(220, 40);
+            this.btnAmonestacion.TabIndex = 37;
+            this.btnAmonestacion.Text = "Agregar amonestación";
+            this.btnAmonestacion.UseVisualStyleBackColor = false;
+            this.btnAmonestacion.Click += new System.EventHandler(this.btnAmonestacion_Click);
+            // 
+            // txtAmonestacion
+            // 
+            this.txtAmonestacion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmonestacion.Location = new System.Drawing.Point(399, 440);
+            this.txtAmonestacion.Name = "txtAmonestacion";
+            this.txtAmonestacion.Size = new System.Drawing.Size(220, 22);
+            this.txtAmonestacion.TabIndex = 38;
+            this.txtAmonestacion.TextChanged += new System.EventHandler(this.txtAmonestacion_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Menu;
+            this.label1.Location = new System.Drawing.Point(396, 421);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(190, 16);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Nombre de la amonestación:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // SubFrmModificarDeporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(899, 547);
+            this.ClientSize = new System.Drawing.Size(899, 583);
             this.Controls.Add(this.panel1);
             this.Name = "SubFrmModificarDeporte";
             this.Text = "SubFrmModificarDeporte";
@@ -274,5 +316,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnAmonestacion;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtAmonestacion;
     }
 }

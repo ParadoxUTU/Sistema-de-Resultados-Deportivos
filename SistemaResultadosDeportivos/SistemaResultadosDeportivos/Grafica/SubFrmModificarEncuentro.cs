@@ -16,7 +16,7 @@ namespace SistemaResultadosDeportivos
         public LogicaSets lgs;
         LogicaJugadores lgj;
         public LogicaEquipos lgeq;
-        LogicaAnotaciones lga;
+        LogicaIncidencias lga;
         public int var = 0;
         public List<int> idParticipantes = new List<int>();
 
@@ -28,7 +28,7 @@ namespace SistemaResultadosDeportivos
             lgt = new LogicaTorneos();
             lgj = new LogicaJugadores();
             lgeq = new LogicaEquipos();
-            lga = new LogicaAnotaciones();
+            lga = new LogicaIncidencias();
             lgs = new LogicaSets();
             listarDeportes();
             Encuentro encuentro = encuentros.obtenerEncuentro();

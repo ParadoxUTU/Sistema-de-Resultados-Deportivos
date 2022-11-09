@@ -325,7 +325,6 @@ namespace SistemaResultadosDeportivos.AccesoADatos
         {
             //Devuelve la alineacion de un equipo en un encuentro dado
             int idJugador;
-            int numero;
             List<Alineacion> lista = new List<Alineacion>();
             String stringSql = "SELECT * FROM Alineaciones WHERE IdEquipo = '" + idEquipo + "' AND IdEncuentro = '" + idEncuentro + "';";
             try
@@ -336,9 +335,67 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                 {
                     for (int i = 0; i < (int)cantFilas; i++)
                     {
-                        idJugador = (int)rs.Fields[2].Value;
-                        numero = (int)rs.Fields[3].Value;
-                        Alineacion alineacion = new Alineacion(idEquipo, idEncuentro, idJugador, numero);
+                        idJugador = (int)rs.Fields[0].Value;
+                        Alineacion alineacion = new Alineacion(idEquipo, idEncuentro, idJugador, 0);
+                        lista.Add(alineacion);
+                        rs.MoveNext();
+                    }
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            return lista;
+        }
+
+        public List<Alineacion> getJugando(int idEquipo, int idEncuentro)
+        {
+            //Devuelve los jugadores que están jugando de un equipo en un encuentro dado
+            int idJugador;
+            List<Alineacion> lista = new List<Alineacion>();
+            String stringSql = "SELECT IdJugador FROM Alineaciones WHERE IdEquipo = '" + idEquipo + "' AND (Alineaciones.IdJugador NOT IN (SELECT JugadorSaliente FROM Enc_eq_cambios WHERE IdEncuentro = '" + idEncuentro + "') AND IdEncuentro = '" + idEncuentro + "'); ";
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                ADODB.Recordset rs = cn.Execute(stringSql, out object cantFilas, -1);
+                if (rs.RecordCount > 0)
+                {
+                    for (int i = 0; i < (int)cantFilas; i++)
+                    {
+                        idJugador = (int)rs.Fields[0].Value;
+                        Alineacion alineacion = new Alineacion(idEquipo, idEncuentro, idJugador, 0);
+                        lista.Add(alineacion);
+                        rs.MoveNext();
+                    }
+                }
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            return lista;
+        }
+
+        public List<Alineacion> getBanco(int idEquipo, int idEncuentro)
+        {
+            //Devuelve los jugadores que están jugando de un equipo en un encuentro dado
+            int idJugador;
+            List<Alineacion> lista = new List<Alineacion>();
+            String stringSql = "SELECT * FROM Plantel WHERE IdEquipo = '" + idEquipo + "' AND (Plantel.IdJugador NOT IN (SELECT Alineaciones.IdJugador FROM Alineaciones WHERE Alineaciones.IdJugador NOT IN (SELECT JugadorSaliente FROM Enc_eq_cambios WHERE IdEncuentro = '" + idEncuentro + "') AND IdEncuentro = '" + idEncuentro + "')) AND Plantel.IdJugador NOT IN (SELECT JugadorSaliente FROM Enc_eq_cambios WHERE IdEquipo = '" + idEquipo + "' AND IdEncuentro = '" + idEncuentro + "');";
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                ADODB.Recordset rs = cn.Execute(stringSql, out object cantFilas, -1);
+                if (rs.RecordCount > 0)
+                {
+                    for (int i = 0; i < (int)cantFilas; i++)
+                    {
+                        idJugador = (int)rs.Fields[1].Value;
+                        MessageBox.Show(idJugador.ToString());
+                        Alineacion alineacion = new Alineacion(idEquipo, idEncuentro, idJugador, 0);
                         lista.Add(alineacion);
                         rs.MoveNext();
                     }

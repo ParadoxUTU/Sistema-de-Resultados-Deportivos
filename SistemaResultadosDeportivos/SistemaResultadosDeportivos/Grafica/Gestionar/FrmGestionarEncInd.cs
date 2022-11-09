@@ -13,7 +13,7 @@ namespace SistemaResultadosDeportivos
     {
         public Stopwatch oSW = new Stopwatch();
         public TimeSpan ts;
-        public LogicaAnotaciones lga;
+        public LogicaIncidencias lga;
         public LogicaEncuentros lge;
         public LogicaSets lgs;
         public LogicaJugadores lgj;
@@ -26,7 +26,7 @@ namespace SistemaResultadosDeportivos
         public FrmGestionarEncInd(Encuentro en, Deporte dep)
         {
             InitializeComponent();
-            lga = new LogicaAnotaciones();
+            lga = new LogicaIncidencias();
             lge = new LogicaEncuentros();
             lgs = new LogicaSets();
             lgj = new LogicaJugadores();
@@ -90,7 +90,7 @@ namespace SistemaResultadosDeportivos
 
         public void detenerTimer()
         {
-            oSW.Stop();
+            oSW.Reset();
             timer1.Enabled = false;
         }
 

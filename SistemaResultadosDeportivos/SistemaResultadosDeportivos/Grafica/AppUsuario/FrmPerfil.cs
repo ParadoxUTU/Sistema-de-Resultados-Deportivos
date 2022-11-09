@@ -85,6 +85,15 @@ namespace SistemaResultadosDeportivos
             if(lgu.modificarContrasena(usuario.correo, txtContrasena.Text))
             {
                 mail.enviarCorreo(usuario.correo, txtContrasena.Text);
+                MessageBox.Show("Contraseña cambiada con éxito, revise correo.");
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (lgu.modificarUsuario(usuario.correo, txtUsername.Text, usuario.rol))
+            {
+                MessageBox.Show("Nombre de usuario modificado, reinicie la aplicación para visualizar los cambios.");
             }
         }
     }

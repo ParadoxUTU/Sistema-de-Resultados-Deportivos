@@ -88,7 +88,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             String nombreJugador;
             String pais;
             List<JugadorDeEncuentro> jugadores = new List<JugadorDeEncuentro>();
-            String stringSql = "SELECT encuentros_jugadores.IdEncuentro, Jugadores.IdJugador, encuentros_jugadores.Puesto, encuentros_jugadores.Puntuacion, jugadores.NombreJugador, Jugadores.Pais FROM encuentros_jugadores INNER JOIN Jugadores ON Jugadores.IdJugador = Encuentros_Jugadores.IdJugador AND IdEncuentro = '" + idEncuentro + "' ORDER BY encuentros_jugadores.puntuacion DESC;";
+            String stringSql = "SELECT Encuentros_Jugadores.IdEncuentro, Jugadores.IdJugador, Encuentros_Jugadores.Puesto, Encuentros_Jugadores.Puntuacion, Jugadores.NombreJugador, Jugadores.Pais FROM Encuentros_Jugadores INNER JOIN Jugadores ON Jugadores.IdJugador = Encuentros_Jugadores.IdJugador AND IdEncuentro = '" + idEncuentro + "' ORDER BY Encuentros_Jugadores.puntuacion DESC;";
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
@@ -201,7 +201,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             String pais;
             int idDeporte;
             List<Jugador> lista = new List<Jugador>();
-            String stringSql = "SELECT * FROM encuentros_jugadores INNER JOIN Jugadores ON encuentros_jugadores.IdJugador=Jugadores.IdJugador WHERE IdEncuentro = '" + idEncuentro + "';";
+            String stringSql = "SELECT * FROM Encuentros_Jugadores INNER JOIN Jugadores ON Encuentros_Jugadores.IdJugador=Jugadores.IdJugador WHERE IdEncuentro = '" + idEncuentro + "';";
             try
             {
                 ADODB.Connection cn = Conexion.Crear();

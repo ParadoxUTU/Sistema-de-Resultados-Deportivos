@@ -16,17 +16,19 @@ namespace SistemaResultadosDeportivos
     public partial class SubFrmModificarDeporte : Form
     {
         ABMDeportes deportes;
-        LogicaAnotaciones lga;
+        LogicaIncidencias lga;
         LogicaEncuentros lge;
         LogicaJugadores lgj;
         LogicaEquipos lgeq;
         LogicaSets lgs;
         LogicaTorneos lgu;
+        LogicaAmonestaciones lgam;
 
         public SubFrmModificarDeporte(ABMDeportes d)
         {
             InitializeComponent();
             deportes = d;
+            lgam = new LogicaAmonestaciones();
             txtNombre.Enabled = false;
             cbxModalidad.Enabled = false;
             cbxPuntuacion.Enabled = false;
@@ -105,6 +107,29 @@ namespace SistemaResultadosDeportivos
                 deportes.eliminarDeporte();
                 this.Dispose();
             }
+        }
+
+        private void btnAmonestacion_Click(object sender, EventArgs e)
+        {
+            if(txtAmonestacion.Text != "")
+            {
+                Deporte deporte = deportes.obtenerDeporte();
+                lgam.agregarAmonestacion(deporte.idDeporte, txtAmonestacion.Text);
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("Datos mal colocados");
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAmonestacion_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

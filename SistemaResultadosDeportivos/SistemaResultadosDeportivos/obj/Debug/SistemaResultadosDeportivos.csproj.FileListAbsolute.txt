@@ -192,3 +192,5 @@ C:\Users\Administrador\Documents\GitHub\Sistema-de-Resultados-Deportivos\Sistema
 C:\Users\Administrador\Documents\GitHub\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.csproj.AssemblyReference.cache
 C:\Users\Administrador\Documents\GitHub\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.csproj.SuggestedBindingRedirects.cache
 C:\Users\Administrador\Documents\GitHub\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.FrmPerfil.resources
+C:\Users\Administrador\Documents\GitHub\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.SubFrmDatosAmonestacion.resources
+C:\Users\Administrador\Documents\GitHub\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.SubFrmDatosCambio.resources

@@ -42,6 +42,10 @@
             this.btnReanudar = new System.Windows.Forms.Button();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.btnIniciar = new System.Windows.Forms.Button();
+            this.btnAmonestacion1 = new System.Windows.Forms.Button();
+            this.btnAmonestacion2 = new System.Windows.Forms.Button();
+            this.btnCambio1 = new System.Windows.Forms.Button();
+            this.btnCambio2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flpIncidencias
@@ -50,8 +54,9 @@
             this.flpIncidencias.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpIncidencias.Location = new System.Drawing.Point(12, 93);
             this.flpIncidencias.Name = "flpIncidencias";
-            this.flpIncidencias.Size = new System.Drawing.Size(964, 408);
+            this.flpIncidencias.Size = new System.Drawing.Size(964, 331);
             this.flpIncidencias.TabIndex = 5;
+            this.flpIncidencias.Paint += new System.Windows.Forms.PaintEventHandler(this.flpIncidencias_Paint);
             // 
             // btnAgregarPuntos1
             // 
@@ -59,7 +64,7 @@
             this.btnAgregarPuntos1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAgregarPuntos1.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarPuntos1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnAgregarPuntos1.Location = new System.Drawing.Point(12, 527);
+            this.btnAgregarPuntos1.Location = new System.Drawing.Point(12, 442);
             this.btnAgregarPuntos1.Name = "btnAgregarPuntos1";
             this.btnAgregarPuntos1.Size = new System.Drawing.Size(220, 40);
             this.btnAgregarPuntos1.TabIndex = 22;
@@ -77,6 +82,7 @@
             this.lblEquipo1.Size = new System.Drawing.Size(131, 32);
             this.lblEquipo1.TabIndex = 23;
             this.lblEquipo1.Text = "Equipo 1";
+            this.lblEquipo1.Click += new System.EventHandler(this.lblEquipo1_Click);
             // 
             // lblEquipo2
             // 
@@ -120,7 +126,7 @@
             this.btnAgregarPuntos2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAgregarPuntos2.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarPuntos2.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnAgregarPuntos2.Location = new System.Drawing.Point(756, 527);
+            this.btnAgregarPuntos2.Location = new System.Drawing.Point(756, 442);
             this.btnAgregarPuntos2.Name = "btnAgregarPuntos2";
             this.btnAgregarPuntos2.Size = new System.Drawing.Size(220, 40);
             this.btnAgregarPuntos2.TabIndex = 28;
@@ -151,7 +157,7 @@
             this.btnPausar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPausar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPausar.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnPausar.Location = new System.Drawing.Point(391, 527);
+            this.btnPausar.Location = new System.Drawing.Point(391, 442);
             this.btnPausar.Name = "btnPausar";
             this.btnPausar.Size = new System.Drawing.Size(87, 40);
             this.btnPausar.TabIndex = 29;
@@ -165,7 +171,7 @@
             this.btnReanudar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReanudar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReanudar.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnReanudar.Location = new System.Drawing.Point(509, 527);
+            this.btnReanudar.Location = new System.Drawing.Point(509, 442);
             this.btnReanudar.Name = "btnReanudar";
             this.btnReanudar.Size = new System.Drawing.Size(87, 40);
             this.btnReanudar.TabIndex = 30;
@@ -179,7 +185,7 @@
             this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFinalizar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnFinalizar.Location = new System.Drawing.Point(626, 527);
+            this.btnFinalizar.Location = new System.Drawing.Point(626, 442);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(87, 40);
             this.btnFinalizar.TabIndex = 31;
@@ -193,7 +199,7 @@
             this.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIniciar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciar.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnIniciar.Location = new System.Drawing.Point(275, 527);
+            this.btnIniciar.Location = new System.Drawing.Point(275, 442);
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(87, 40);
             this.btnIniciar.TabIndex = 32;
@@ -201,12 +207,72 @@
             this.btnIniciar.UseVisualStyleBackColor = false;
             this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
+            // btnAmonestacion1
+            // 
+            this.btnAmonestacion1.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnAmonestacion1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAmonestacion1.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAmonestacion1.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnAmonestacion1.Location = new System.Drawing.Point(12, 488);
+            this.btnAmonestacion1.Name = "btnAmonestacion1";
+            this.btnAmonestacion1.Size = new System.Drawing.Size(220, 40);
+            this.btnAmonestacion1.TabIndex = 33;
+            this.btnAmonestacion1.Text = "Amonestación";
+            this.btnAmonestacion1.UseVisualStyleBackColor = false;
+            this.btnAmonestacion1.Click += new System.EventHandler(this.btnAmonestacion1_Click);
+            // 
+            // btnAmonestacion2
+            // 
+            this.btnAmonestacion2.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnAmonestacion2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAmonestacion2.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAmonestacion2.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnAmonestacion2.Location = new System.Drawing.Point(756, 488);
+            this.btnAmonestacion2.Name = "btnAmonestacion2";
+            this.btnAmonestacion2.Size = new System.Drawing.Size(220, 40);
+            this.btnAmonestacion2.TabIndex = 34;
+            this.btnAmonestacion2.Text = "Amonestación";
+            this.btnAmonestacion2.UseVisualStyleBackColor = false;
+            this.btnAmonestacion2.Click += new System.EventHandler(this.btnAmonestacion2_Click);
+            // 
+            // btnCambio1
+            // 
+            this.btnCambio1.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnCambio1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCambio1.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambio1.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnCambio1.Location = new System.Drawing.Point(12, 534);
+            this.btnCambio1.Name = "btnCambio1";
+            this.btnCambio1.Size = new System.Drawing.Size(220, 40);
+            this.btnCambio1.TabIndex = 35;
+            this.btnCambio1.Text = "Cambio";
+            this.btnCambio1.UseVisualStyleBackColor = false;
+            this.btnCambio1.Click += new System.EventHandler(this.btnCambio1_Click);
+            // 
+            // btnCambio2
+            // 
+            this.btnCambio2.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnCambio2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCambio2.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambio2.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnCambio2.Location = new System.Drawing.Point(756, 534);
+            this.btnCambio2.Name = "btnCambio2";
+            this.btnCambio2.Size = new System.Drawing.Size(220, 40);
+            this.btnCambio2.TabIndex = 36;
+            this.btnCambio2.Text = "Cambio";
+            this.btnCambio2.UseVisualStyleBackColor = false;
+            this.btnCambio2.Click += new System.EventHandler(this.btnCambio2_Click);
+            // 
             // FrmGestionarEncCol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(991, 600);
+            this.ClientSize = new System.Drawing.Size(991, 589);
+            this.Controls.Add(this.btnCambio2);
+            this.Controls.Add(this.btnCambio1);
+            this.Controls.Add(this.btnAmonestacion2);
+            this.Controls.Add(this.btnAmonestacion1);
             this.Controls.Add(this.btnIniciar);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.btnReanudar);
@@ -241,5 +307,9 @@
         private System.Windows.Forms.Button btnReanudar;
         private System.Windows.Forms.Button btnFinalizar;
         private System.Windows.Forms.Button btnIniciar;
+        private System.Windows.Forms.Button btnAmonestacion1;
+        private System.Windows.Forms.Button btnAmonestacion2;
+        private System.Windows.Forms.Button btnCambio1;
+        private System.Windows.Forms.Button btnCambio2;
     }
 }

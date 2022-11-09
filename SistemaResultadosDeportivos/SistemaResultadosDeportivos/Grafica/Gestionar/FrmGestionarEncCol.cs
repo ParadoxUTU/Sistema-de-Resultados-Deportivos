@@ -13,7 +13,7 @@ namespace SistemaResultadosDeportivos
     {
         public Stopwatch oSW = new Stopwatch();
         public TimeSpan ts;
-        public LogicaAnotaciones lga;
+        public LogicaIncidencias lga;
         public LogicaEncuentros lge;
         public LogicaSets lgs;
         public Encuentro encuentro;
@@ -24,7 +24,7 @@ namespace SistemaResultadosDeportivos
         public FrmGestionarEncCol(Encuentro en, Equipo eq1, Equipo eq2, Deporte dep)
         {
             InitializeComponent();
-            lga = new LogicaAnotaciones();
+            lga = new LogicaIncidencias();
             lge = new LogicaEncuentros();
             lgs = new LogicaSets();
             encuentro = en;
@@ -58,6 +58,10 @@ namespace SistemaResultadosDeportivos
                 btnReanudar.Enabled = false;
                 btnAgregarPuntos1.Enabled = false;
                 btnAgregarPuntos2.Enabled = false;
+                btnAmonestacion1.Enabled = false;
+                btnAmonestacion2.Enabled = false;
+                btnCambio1.Enabled = false;
+                btnCambio2.Enabled = false;
             }
             else if (encuentro.comenzo && !encuentro.pausado && !encuentro.finalizo)
             {
@@ -67,6 +71,10 @@ namespace SistemaResultadosDeportivos
                 btnReanudar.Enabled = false;
                 btnAgregarPuntos1.Enabled = true;
                 btnAgregarPuntos2.Enabled = true;
+                btnAmonestacion1.Enabled = true;
+                btnAmonestacion2.Enabled = true;
+                btnCambio1.Enabled = true;
+                btnCambio2.Enabled = true;
             }
             else if(!encuentro.finalizo && encuentro.pausado)
             {
@@ -76,6 +84,10 @@ namespace SistemaResultadosDeportivos
                 btnReanudar.Enabled = true;
                 btnAgregarPuntos1.Enabled = false;
                 btnAgregarPuntos2.Enabled = false;
+                btnAmonestacion1.Enabled = false;
+                btnAmonestacion2.Enabled = false;
+                btnCambio1.Enabled = false;
+                btnCambio2.Enabled = false;
             }
             else if (encuentro.finalizo)
             {
@@ -85,6 +97,10 @@ namespace SistemaResultadosDeportivos
                 btnReanudar.Enabled = false;
                 btnAgregarPuntos1.Enabled = false;
                 btnAgregarPuntos2.Enabled = false;
+                btnAmonestacion1.Enabled = false;
+                btnAmonestacion2.Enabled = false;
+                btnCambio1.Enabled = false;
+                btnCambio2.Enabled = false;
             }
         }
 
@@ -97,7 +113,7 @@ namespace SistemaResultadosDeportivos
 
         public void detenerTimer()
         {
-            oSW.Stop();
+            oSW.Reset();
             timer1.Enabled = false;
         }
 
@@ -159,6 +175,14 @@ namespace SistemaResultadosDeportivos
             frmsja.listarJugadoresPorAlineacion(equipo.idEquipo, encuentro.idEncuentro);
         }
 
+        public void agregarAmonestacion(Equipo equipo)
+        {
+            int minuto = Int32.Parse(lblMinuto.Text);
+            SubFrmDatosAmonestacion frmda = new SubFrmDatosAmonestacion(this, equipo);
+            frmda.Visible = true;
+            frmda.listarJugadoresPorAlineacion(equipo.idEquipo, encuentro.idEncuentro);
+        }
+
         private void FrmGestionarEncCol_Load(object sender, EventArgs e)
         {
             flpIncidencias.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
@@ -206,6 +230,36 @@ namespace SistemaResultadosDeportivos
             encuentro = lge.devolverEncuentroPorId(encuentro.idEncuentro);
             detenerTimer();
             actualizarBotones();
+        }
+
+        private void flpIncidencias_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnAmonestacion1_Click(object sender, EventArgs e)
+        {
+            agregarAmonestacion(equipo1);
+        }
+
+        private void btnAmonestacion2_Click(object sender, EventArgs e)
+        {
+            agregarAmonestacion(equipo2);
+        }
+
+        private void lblEquipo1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCambio1_Click(object sender, EventArgs e)
+        {
+            new SubFrmDatosCambio(this, equipo1).Visible = true;
+        }
+
+        private void btnCambio2_Click(object sender, EventArgs e)
+        {
+            new SubFrmDatosCambio(this, equipo2).Visible = true;
         }
     }
 }

@@ -11,13 +11,13 @@ using SistemaResultadosDeportivos.APIs;
 
 namespace SistemaResultadosDeportivos.Logica
 {
-    public class LogicaAnotaciones
+    public class LogicaIncidencias
     {
-        DatosAnotacion datosAnotacion;
+        DatosIncidencias datosAnotacion;
 
-        public LogicaAnotaciones()
+        public LogicaIncidencias()
         {
-            datosAnotacion = new DatosAnotacion();
+            datosAnotacion = new DatosIncidencias();
         }
 
         public List<Anotacion> devolverAnotacionesPorEncuentro(int idEncuentro)
@@ -63,6 +63,24 @@ namespace SistemaResultadosDeportivos.Logica
             int puntaje = datosAnotacion.getSumAnotaciones(idEncuentro, idEquipo);
             RespuestaAnotaciones res = new RespuestaAnotaciones(puntaje);
             return res;
+        }
+
+        public List<AmonestacionAlineacion> devolverAmonestacionesPorEncuentroo(int idEncuentro, int idEquipo)
+        {
+            //Devuelve una lista con las amonestaciones pertenecientes a un encuentro en la BD
+            return datosAnotacion.getAmonestacionesByEncuentro(idEncuentro);
+        }
+
+        public bool agregarAmonestacionAlineacion(int idEquipo, int idEncuentro, int idJugador, int idDeporte, string nombreAmonestacion, int minuto)
+        {
+            //Agrega una amonestacion a un jugador en determinado encuentro
+            return datosAnotacion.agregarAmonestacionAlineacion(idEquipo, idEncuentro, idJugador, idDeporte, nombreAmonestacion, minuto);
+        }
+
+        public bool eliminarAmonestacion(int idEquipo, int idEncuentro, int idJugador, int idDeporte, string nombreAmonestacion, int minuto)
+        {
+            //Elimina una amonestacion a un jugador en determinado encuentro
+            return datosAnotacion.eliminarAmonestacionDeEncuentro(idEquipo, idEncuentro, idJugador, idDeporte, nombreAmonestacion, minuto);
         }
     }
 }

@@ -43,6 +43,18 @@ namespace SistemaResultadosDeportivos.Logica
             return datosEncuentro.getEncuentrosByDeporte(idDeporte);
         }
 
+        public List<Alineacion> devolverJugando(int idEquipo, int idEncuentro)
+        {
+            //Devuelve una lista de los jugandores jugando de un equipo en un encuentro dado de la BD
+            return datosEncuentro.getJugando(idEquipo, idEncuentro);
+        }
+
+        public List<Alineacion> devolverBanca(int idEquipo, int idEncuentro)
+        {
+            //Devuelve una lista de los jugandores en el banco de un equipo en un encuentro dado de la BD
+            return datosEncuentro.getBanco(idEquipo, idEncuentro);
+        }
+
         public bool actualizarMinActual(int id, int minActual)
         {
             //Intenta actualizar el minuto actual de un encuentro
