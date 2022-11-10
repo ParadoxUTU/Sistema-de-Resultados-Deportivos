@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ABMEncuentros));
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbxEtapa = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -56,6 +57,7 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.cbxEtapa);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.timeHora);
@@ -72,248 +74,163 @@
             this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(24, 67);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(248, 564);
-            this.panel1.TabIndex = 0;
             // 
             // cbxEtapa
             // 
-            this.cbxEtapa.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.cbxEtapa, "cbxEtapa");
             this.cbxEtapa.FormattingEnabled = true;
             this.cbxEtapa.Items.AddRange(new object[] {
-            "Grupos",
-            "Dieciseisavos",
-            "Octavos",
-            "Cuartos",
-            "Semifinales",
-            "Final"});
-            this.cbxEtapa.Location = new System.Drawing.Point(23, 476);
+            resources.GetString("cbxEtapa.Items"),
+            resources.GetString("cbxEtapa.Items1"),
+            resources.GetString("cbxEtapa.Items2"),
+            resources.GetString("cbxEtapa.Items3"),
+            resources.GetString("cbxEtapa.Items4"),
+            resources.GetString("cbxEtapa.Items5")});
             this.cbxEtapa.Name = "cbxEtapa";
-            this.cbxEtapa.Size = new System.Drawing.Size(203, 24);
-            this.cbxEtapa.TabIndex = 13;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
+            resources.ApplyResources(this.label5, "label5");
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label5.Location = new System.Drawing.Point(21, 446);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 16);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Etapa:";
             // 
             // timeHora
             // 
+            resources.ApplyResources(this.timeHora, "timeHora");
             this.timeHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.timeHora.Location = new System.Drawing.Point(22, 206);
             this.timeHora.Name = "timeHora";
-            this.timeHora.Size = new System.Drawing.Size(200, 20);
-            this.timeHora.TabIndex = 11;
             // 
             // dateFecha
             // 
-            this.dateFecha.Location = new System.Drawing.Point(22, 141);
+            resources.ApplyResources(this.dateFecha, "dateFecha");
             this.dateFecha.Name = "dateFecha";
-            this.dateFecha.Size = new System.Drawing.Size(200, 20);
-            this.dateFecha.TabIndex = 10;
             // 
             // cbxTorneos
             // 
-            this.cbxTorneos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.cbxTorneos, "cbxTorneos");
             this.cbxTorneos.FormattingEnabled = true;
-            this.cbxTorneos.Location = new System.Drawing.Point(22, 411);
             this.cbxTorneos.Name = "cbxTorneos";
-            this.cbxTorneos.Size = new System.Drawing.Size(203, 24);
-            this.cbxTorneos.TabIndex = 9;
             this.cbxTorneos.SelectedIndexChanged += new System.EventHandler(this.cbxTorneos_SelectedIndexChanged);
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
+            resources.ApplyResources(this.label8, "label8");
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label8.Location = new System.Drawing.Point(20, 381);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 16);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Torneo:";
             // 
             // btnAgregar
             // 
+            resources.ApplyResources(this.btnAgregar, "btnAgregar");
             this.btnAgregar.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAgregar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnAgregar.Location = new System.Drawing.Point(22, 515);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(203, 37);
-            this.btnAgregar.TabIndex = 0;
-            this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // cbxDeportes
             // 
-            this.cbxDeportes.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.cbxDeportes, "cbxDeportes");
             this.cbxDeportes.FormattingEnabled = true;
-            this.cbxDeportes.Location = new System.Drawing.Point(19, 344);
             this.cbxDeportes.Name = "cbxDeportes";
-            this.cbxDeportes.Size = new System.Drawing.Size(203, 24);
-            this.cbxDeportes.TabIndex = 0;
             this.cbxDeportes.SelectedIndexChanged += new System.EventHandler(this.cbxDeportes_SelectedIndexChanged);
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
+            resources.ApplyResources(this.label7, "label7");
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label7.Location = new System.Drawing.Point(19, 316);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 16);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Deporte:";
             // 
             // cbxEstado
             // 
-            this.cbxEstado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.cbxEstado, "cbxEstado");
             this.cbxEstado.FormattingEnabled = true;
             this.cbxEstado.Items.AddRange(new object[] {
-            "Iniciado",
-            "Pausado",
-            "Finalizado"});
-            this.cbxEstado.Location = new System.Drawing.Point(19, 277);
+            resources.GetString("cbxEstado.Items"),
+            resources.GetString("cbxEstado.Items1"),
+            resources.GetString("cbxEstado.Items2")});
             this.cbxEstado.Name = "cbxEstado";
-            this.cbxEstado.Size = new System.Drawing.Size(203, 24);
-            this.cbxEstado.TabIndex = 0;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
+            resources.ApplyResources(this.label6, "label6");
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label6.Location = new System.Drawing.Point(19, 246);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(145, 16);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Estado del encuentro:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
+            resources.ApplyResources(this.label4, "label4");
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label4.Location = new System.Drawing.Point(19, 174);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 16);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Hora:";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
+            resources.ApplyResources(this.label3, "label3");
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label3.Location = new System.Drawing.Point(19, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Fecha:";
             // 
             // txtNombre
             // 
-            this.txtNombre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(22, 71);
+            resources.ApplyResources(this.txtNombre, "txtNombre");
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(203, 22);
-            this.txtNombre.TabIndex = 0;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
+            resources.ApplyResources(this.label2, "label2");
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label2.Location = new System.Drawing.Point(19, 41);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Nombre:";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            resources.ApplyResources(this.label1, "label1");
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label1.Location = new System.Drawing.Point(19, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(212, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Agregar encuentros";
             // 
             // pnlBuscar
             // 
+            resources.ApplyResources(this.pnlBuscar, "pnlBuscar");
             this.pnlBuscar.Controls.Add(this.btnBuscar);
             this.pnlBuscar.Controls.Add(this.txtBuscar);
-            this.pnlBuscar.Location = new System.Drawing.Point(24, 12);
             this.pnlBuscar.Name = "pnlBuscar";
-            this.pnlBuscar.Size = new System.Drawing.Size(858, 39);
-            this.pnlBuscar.TabIndex = 1;
             // 
             // btnBuscar
             // 
+            resources.ApplyResources(this.btnBuscar, "btnBuscar");
             this.btnBuscar.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnBuscar.Location = new System.Drawing.Point(644, 6);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(74, 26);
-            this.btnBuscar.TabIndex = 1;
-            this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(70, 10);
+            resources.ApplyResources(this.txtBuscar, "txtBuscar");
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(561, 22);
-            this.txtBuscar.TabIndex = 0;
-            this.txtBuscar.Text = "Escriba el nombre del encuentro que desea consultar";
             this.txtBuscar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtBuscar_MouseClick);
             // 
             // flpEncuentros
             // 
-            this.flpEncuentros.AutoScroll = true;
-            this.flpEncuentros.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpEncuentros.Location = new System.Drawing.Point(296, 67);
+            resources.ApplyResources(this.flpEncuentros, "flpEncuentros");
             this.flpEncuentros.Name = "flpEncuentros";
-            this.flpEncuentros.Size = new System.Drawing.Size(586, 564);
-            this.flpEncuentros.TabIndex = 2;
             // 
             // pnlLupa
             // 
+            resources.ApplyResources(this.pnlLupa, "pnlLupa");
             this.pnlLupa.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.lupa;
-            this.pnlLupa.Location = new System.Drawing.Point(24, 12);
             this.pnlLupa.Name = "pnlLupa";
-            this.pnlLupa.Size = new System.Drawing.Size(54, 39);
-            this.pnlLupa.TabIndex = 0;
             // 
             // ABMEncuentros
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(904, 643);
             this.Controls.Add(this.pnlLupa);
             this.Controls.Add(this.flpEncuentros);
             this.Controls.Add(this.pnlBuscar);
@@ -322,7 +239,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ABMEncuentros";
-            this.Text = "ABMEncuentros";
             this.Load += new System.EventHandler(this.ABMEncuentros_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

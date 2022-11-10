@@ -39,6 +39,7 @@
             this.flpTorneos.Name = "flpTorneos";
             this.flpTorneos.Size = new System.Drawing.Size(967, 564);
             this.flpTorneos.TabIndex = 3;
+            this.flpTorneos.Paint += new System.Windows.Forms.PaintEventHandler(this.flpTorneos_Paint);
             // 
             // FrmTorneosDeporteApp
             // 

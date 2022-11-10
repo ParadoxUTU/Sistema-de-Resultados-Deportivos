@@ -28,44 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicioEquipos));
             this.flpEquipos = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCrear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flpEquipos
             // 
-            this.flpEquipos.AutoScroll = true;
-            this.flpEquipos.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpEquipos.Location = new System.Drawing.Point(12, 39);
+            resources.ApplyResources(this.flpEquipos, "flpEquipos");
             this.flpEquipos.Name = "flpEquipos";
-            this.flpEquipos.Size = new System.Drawing.Size(884, 441);
-            this.flpEquipos.TabIndex = 18;
-            this.flpEquipos.WrapContents = false;
             // 
             // btnCrear
             // 
+            resources.ApplyResources(this.btnCrear, "btnCrear");
             this.btnCrear.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCrear.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrear.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnCrear.Location = new System.Drawing.Point(12, 498);
             this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(203, 37);
-            this.btnCrear.TabIndex = 17;
-            this.btnCrear.Text = "Crear";
             this.btnCrear.UseVisualStyleBackColor = false;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
             // FrmInicioEquipos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(908, 546);
             this.Controls.Add(this.flpEquipos);
             this.Controls.Add(this.btnCrear);
             this.Name = "FrmInicioEquipos";
-            this.Text = "FrmInicioEquipos";
             this.Load += new System.EventHandler(this.FrmInicioEquipos_Load);
             this.ResumeLayout(false);
 

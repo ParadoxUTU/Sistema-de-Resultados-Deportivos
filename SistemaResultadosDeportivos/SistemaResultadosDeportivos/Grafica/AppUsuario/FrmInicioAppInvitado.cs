@@ -141,11 +141,11 @@ namespace SistemaResultadosDeportivos
             }
             else if(!deporte.porEquipos && deporte.cantParticipantes == 2)
             {
-                new FrmVerEncuentroIndDeADos(encuentro).Visible = true;
+                new FrmVerEncuentroIndDeADos(encuentro, null).Visible = true;
             }
             else if(deporte.cantParticipantes > 2)
             {
-                new FrmVerEncuentroInd(encuentro).Visible = true;
+                new FrmVerEncuentroInd(encuentro, null).Visible = true;
             }
         }
 

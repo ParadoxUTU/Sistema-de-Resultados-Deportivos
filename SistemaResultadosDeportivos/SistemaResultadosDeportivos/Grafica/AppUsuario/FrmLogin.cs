@@ -12,6 +12,8 @@ using SistemaResultadosDeportivos.Modelos;
 using SistemaResultadosDeportivos.Logica;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Diagnostics;
+using System.IO;
 
 namespace SistemaResultadosDeportivos
 {
@@ -19,12 +21,26 @@ namespace SistemaResultadosDeportivos
     {
         APIautenticacion autenticacion;
         LogicaUsuarios lgu;
+        Image imagenIdioma;
+        bool espanol = true;
 
         public FrmLogin()
         {
             InitializeComponent();
             autenticacion = new APIautenticacion();
             lgu = new LogicaUsuarios();
+            setImageIdioma("spain.png");
+        }
+
+        private void setImageIdioma(String path)
+        {
+            try
+            {
+                imagenIdioma = Image.FromFile(Directory.GetCurrentDirectory() + "\\Img\\" + path);
+                Bitmap bitmapBanner = new Bitmap(imagenIdioma, imagenIdioma.Width, imagenIdioma.Height);
+                lenguaje.Image = bitmapBanner;
+            }
+            catch { }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -72,6 +88,19 @@ namespace SistemaResultadosDeportivos
             if (exito)
             {
                 new FrmInicioAppInvitado().Visible = true;
+            }
+        }
+
+        private void lenguaje_Click(object sender, EventArgs e)
+        {
+            espanol = !espanol;
+            if (!espanol)
+            {
+                setImageIdioma("uk.png");
+            }
+            else
+            {
+                setImageIdioma("spain.png");
             }
         }
     }

@@ -145,5 +145,10 @@ namespace SistemaResultadosDeportivos
             gestionar.listarIncidencias();
             this.Dispose();
         }
+
+        private void lblEquipo1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

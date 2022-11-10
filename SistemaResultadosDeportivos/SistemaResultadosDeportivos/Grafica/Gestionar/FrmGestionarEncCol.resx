@@ -117,7 +117,508 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;btnCambio1.Name" xml:space="preserve">
+    <value>btnCambio1</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnCambio2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="btnPausar.Text" xml:space="preserve">
+    <value>Pausar</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnIniciar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 40</value>
+  </data>
+  <data name="lblPuntaje1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 31</value>
+  </data>
+  <data name="&gt;&gt;lblPuntaje1.Name" xml:space="preserve">
+    <value>lblPuntaje1</value>
+  </data>
+  <data name="btnAgregarPuntos1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 40</value>
+  </data>
+  <data name="lblEquipo1.Text" xml:space="preserve">
+    <value>Equipo 1</value>
+  </data>
+  <data name="btnCambio2.Text" xml:space="preserve">
+    <value>Cambio</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnIniciar.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="btnReanudar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>509, 442</value>
+  </data>
+  <data name="lblEquipo1.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="lblEquipo2.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="btnPausar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;btnCambio2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnFinalizar.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lblPuntaje2.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;btnAmonestacion2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnReanudar.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnAmonestacion2.Text" xml:space="preserve">
+    <value>Amonestación</value>
+  </data>
+  <data name="lblEquipo2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>845, 31</value>
+  </data>
+  <data name="&gt;&gt;btnCambio2.Name" xml:space="preserve">
+    <value>btnCambio2</value>
+  </data>
+  <data name="btnReanudar.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;lblMinuto.Name" xml:space="preserve">
+    <value>lblMinuto</value>
+  </data>
+  <data name="btnPausar.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="lblPuntaje2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>510, 31</value>
+  </data>
+  <data name="lblEquipo2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 20.25pt, style=Bold</value>
+  </data>
+  <data name="btnAgregarPuntos2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 40</value>
+  </data>
+  <data name="lblPuntaje1.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;lblEquipo2.Name" xml:space="preserve">
+    <value>lblEquipo2</value>
+  </data>
+  <data name="btnAgregarPuntos2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnAmonestacion2.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="btnAmonestacion2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="flpIncidencias.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 93</value>
+  </data>
+  <data name="lblPuntaje2.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnCambio1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="&gt;&gt;flpIncidencias.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnReanudar.Name" xml:space="preserve">
+    <value>btnReanudar</value>
+  </data>
+  <data name="lblPuntaje2.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FrmGestionarEncCol</value>
+  </data>
+  <data name="&gt;&gt;timer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFinalizar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAmonestacion1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEquipo1.Name" xml:space="preserve">
+    <value>lblEquipo1</value>
+  </data>
+  <data name="btnAmonestacion2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 40</value>
+  </data>
+  <data name="&gt;&gt;btnAgregarPuntos1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblMinuto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 32</value>
+  </data>
+  <data name="btnIniciar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="&gt;&gt;lblPuntaje2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblEquipo1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 31</value>
+  </data>
+  <data name="flpIncidencias.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>RightToLeft</value>
+  </data>
+  <data name="btnCambio2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;lblPuntaje1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEquipo2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEquipo2.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="btnAmonestacion1.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="lblPuntaje1.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnCambio2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>756, 534</value>
+  </data>
+  <data name="btnAgregarPuntos1.Text" xml:space="preserve">
+    <value>Agregar Puntos</value>
+  </data>
+  <data name="lblMinuto.Location" type="System.Drawing.Point, System.Drawing">
+    <value>464, 31</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>991, 589</value>
+  </data>
+  <data name="&gt;&gt;lblEquipo2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnAgregarPuntos1.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;lblMinuto.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="btnAgregarPuntos1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="flpIncidencias.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnAmonestacion1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="&gt;&gt;btnCambio1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblPuntaje2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flpIncidencias.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPausar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnReanudar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="&gt;&gt;btnReanudar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timer1.Name" xml:space="preserve">
+    <value>timer1</value>
+  </data>
+  <data name="lblPuntaje2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 20.25pt, style=Bold</value>
+  </data>
+  <data name="btnAmonestacion2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>756, 488</value>
+  </data>
+  <data name="lblPuntaje1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 20.25pt, style=Bold</value>
+  </data>
+  <data name="btnIniciar.Text" xml:space="preserve">
+    <value>Iniciar</value>
+  </data>
+  <data name="&gt;&gt;btnIniciar.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;btnCambio1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnFinalizar.Text" xml:space="preserve">
+    <value>Finalizar</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>GestionarEncCol</value>
+  </data>
+  <data name="btnFinalizar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>626, 442</value>
+  </data>
+  <data name="btnFinalizar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
+  </data>
+  <data name="lblMinuto.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnCambio2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 40</value>
+  </data>
+  <data name="&gt;&gt;lblMinuto.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnReanudar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 40</value>
+  </data>
+  <data name="&gt;&gt;flpIncidencias.Name" xml:space="preserve">
+    <value>flpIncidencias</value>
+  </data>
+  <data name="&gt;&gt;lblEquipo1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblEquipo1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 20.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;btnPausar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnAgregarPuntos2.Text" xml:space="preserve">
+    <value>Agregar Puntos</value>
+  </data>
+  <data name="btnAmonestacion1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 40</value>
+  </data>
+  <data name="&gt;&gt;btnCambio2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblMinuto.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;btnFinalizar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAgregarPuntos2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPausar.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnIniciar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnIniciar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>275, 442</value>
+  </data>
+  <data name="&gt;&gt;btnAmonestacion2.Name" xml:space="preserve">
+    <value>btnAmonestacion2</value>
+  </data>
+  <data name="btnPausar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>391, 442</value>
+  </data>
+  <data name="&gt;&gt;lblPuntaje1.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;flpIncidencias.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="lblMinuto.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 20.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;btnAmonestacion1.Name" xml:space="preserve">
+    <value>btnAmonestacion1</value>
+  </data>
+  <data name="btnAgregarPuntos1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;btnCambio2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnFinalizar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="&gt;&gt;btnAmonestacion1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAmonestacion1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnAgregarPuntos2.Name" xml:space="preserve">
+    <value>btnAgregarPuntos2</value>
+  </data>
+  <data name="btnCambio2.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;btnAgregarPuntos1.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="btnCambio1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 534</value>
+  </data>
+  <data name="btnAgregarPuntos2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="btnReanudar.Text" xml:space="preserve">
+    <value>Reanudar</value>
+  </data>
+  <data name="&gt;&gt;btnAmonestacion2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnAmonestacion1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
+  </data>
+  <data name="flpIncidencias.Size" type="System.Drawing.Size, System.Drawing">
+    <value>964, 331</value>
+  </data>
+  <data name="btnPausar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="btnCambio1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;btnIniciar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblPuntaje2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="btnReanudar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnFinalizar.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;btnIniciar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAgregarPuntos1.Name" xml:space="preserve">
+    <value>btnAgregarPuntos1</value>
+  </data>
+  <data name="lblMinuto.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPuntaje1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 32</value>
+  </data>
+  <data name="btnAmonestacion1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 488</value>
+  </data>
+  <data name="btnCambio1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 40</value>
+  </data>
+  <data name="flpIncidencias.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnCambio1.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="btnAgregarPuntos2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>756, 442</value>
+  </data>
+  <data name="&gt;&gt;lblPuntaje1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblMinuto.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAgregarPuntos1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblEquipo2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="btnPausar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 40</value>
+  </data>
+  <data name="&gt;&gt;btnReanudar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblEquipo2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 32</value>
+  </data>
+  <data name="btnAmonestacion1.Text" xml:space="preserve">
+    <value>Amonestación</value>
+  </data>
+  <data name="btnAgregarPuntos2.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="lblEquipo2.Text" xml:space="preserve">
+    <value>Equipo 2</value>
+  </data>
+  <data name="&gt;&gt;lblPuntaje2.Name" xml:space="preserve">
+    <value>lblPuntaje2</value>
+  </data>
+  <data name="&gt;&gt;btnAgregarPuntos2.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;btnPausar.Name" xml:space="preserve">
+    <value>btnPausar</value>
+  </data>
+  <data name="&gt;&gt;btnAmonestacion2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFinalizar.Name" xml:space="preserve">
+    <value>btnFinalizar</value>
+  </data>
+  <data name="&gt;&gt;btnIniciar.Name" xml:space="preserve">
+    <value>btnIniciar</value>
+  </data>
+  <data name="btnAmonestacion2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
+  </data>
+  <data name="lblPuntaje2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 32</value>
+  </data>
+  <data name="lblEquipo1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 32</value>
+  </data>
+  <data name="btnAgregarPuntos1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 442</value>
+  </data>
+  <data name="&gt;&gt;lblEquipo1.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;btnCambio1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEquipo1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAgregarPuntos2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnCambio1.Text" xml:space="preserve">
+    <value>Cambio</value>
+  </data>
+  <data name="btnFinalizar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 40</value>
+  </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>21, 14</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>es</value>
   </metadata>
 </root>

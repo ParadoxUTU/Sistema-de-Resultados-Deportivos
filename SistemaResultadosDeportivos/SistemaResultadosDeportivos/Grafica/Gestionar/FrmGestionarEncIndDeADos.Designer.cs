@@ -121,7 +121,7 @@
             this.btnAgregarPuntos1.Name = "btnAgregarPuntos1";
             this.btnAgregarPuntos1.Size = new System.Drawing.Size(220, 40);
             this.btnAgregarPuntos1.TabIndex = 33;
-            this.btnAgregarPuntos1.Text = "Agregar Puntos";
+            this.btnAgregarPuntos1.Text = "Add Points";
             this.btnAgregarPuntos1.UseVisualStyleBackColor = false;
             this.btnAgregarPuntos1.Click += new System.EventHandler(this.btnAgregarPuntos1_Click);
             // 
@@ -135,7 +135,7 @@
             this.btnAgregarPuntos2.Name = "btnAgregarPuntos2";
             this.btnAgregarPuntos2.Size = new System.Drawing.Size(220, 40);
             this.btnAgregarPuntos2.TabIndex = 34;
-            this.btnAgregarPuntos2.Text = "Agregar Puntos";
+            this.btnAgregarPuntos2.Text = "Add Points";
             this.btnAgregarPuntos2.UseVisualStyleBackColor = false;
             this.btnAgregarPuntos2.Click += new System.EventHandler(this.btnAgregarPuntos2_Click);
             // 
@@ -149,7 +149,7 @@
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(87, 40);
             this.btnIniciar.TabIndex = 38;
-            this.btnIniciar.Text = "Iniciar";
+            this.btnIniciar.Text = "Start";
             this.btnIniciar.UseVisualStyleBackColor = false;
             this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
@@ -163,7 +163,7 @@
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(87, 40);
             this.btnFinalizar.TabIndex = 37;
-            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.Text = "End";
             this.btnFinalizar.UseVisualStyleBackColor = false;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
@@ -177,7 +177,7 @@
             this.btnReanudar.Name = "btnReanudar";
             this.btnReanudar.Size = new System.Drawing.Size(87, 40);
             this.btnReanudar.TabIndex = 36;
-            this.btnReanudar.Text = "Reanudar";
+            this.btnReanudar.Text = "Resume";
             this.btnReanudar.UseVisualStyleBackColor = false;
             this.btnReanudar.Click += new System.EventHandler(this.btnReanudar_Click);
             // 
@@ -191,7 +191,7 @@
             this.btnPausar.Name = "btnPausar";
             this.btnPausar.Size = new System.Drawing.Size(87, 40);
             this.btnPausar.TabIndex = 35;
-            this.btnPausar.Text = "Pausar";
+            this.btnPausar.Text = "Pause";
             this.btnPausar.UseVisualStyleBackColor = false;
             this.btnPausar.Click += new System.EventHandler(this.btnPausar_Click);
             // 

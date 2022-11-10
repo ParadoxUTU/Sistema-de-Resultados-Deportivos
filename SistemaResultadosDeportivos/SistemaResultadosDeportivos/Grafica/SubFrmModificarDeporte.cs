@@ -32,7 +32,6 @@ namespace SistemaResultadosDeportivos
             txtNombre.Enabled = false;
             cbxModalidad.Enabled = false;
             cbxPuntuacion.Enabled = false;
-            numAlineacion.Enabled = false;
             numParticipantes.Enabled = false;
         }
 
@@ -45,7 +44,6 @@ namespace SistemaResultadosDeportivos
             bool anotaciones;
             bool sets;
             int participantes = (int)numParticipantes.Value;
-            int alineacion = (int)numAlineacion.Value;
             modalidad = cbxModalidad.SelectedItem.ToString();
             puntuacion = cbxPuntuacion.SelectedItem.ToString();
             porEquipos = (modalidad == "Por equipos");
@@ -54,7 +52,7 @@ namespace SistemaResultadosDeportivos
             if (!nombre.Equals(""))
             {
                 this.Dispose();
-                if (!deportes.confirmarModificacion(porEquipos, anotaciones, sets, participantes, nombre, alineacion))
+                if (!deportes.confirmarModificacion(porEquipos, anotaciones, sets, participantes, nombre, 0))
                 {
                     new SubFrmModificarDeporte(deportes).Visible = true;
                 }
@@ -86,7 +84,6 @@ namespace SistemaResultadosDeportivos
             {
                 cbxPuntuacion.SelectedIndex = 1;
             }
-            numAlineacion.Value = deporte.tamAlineacion;
             numParticipantes.Value = deporte.cantParticipantes;
         }
 
@@ -95,7 +92,6 @@ namespace SistemaResultadosDeportivos
             txtNombre.Enabled = true;
             cbxModalidad.Enabled = true;
             cbxPuntuacion.Enabled = true;
-            numAlineacion.Enabled = true;
             numParticipantes.Enabled = true;
         }
 

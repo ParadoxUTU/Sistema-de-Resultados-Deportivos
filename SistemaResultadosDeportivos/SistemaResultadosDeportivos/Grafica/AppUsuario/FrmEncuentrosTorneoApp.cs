@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaResultadosDeportivos.APIs;
 using SistemaResultadosDeportivos.Modelos;
+using SistemaResultadosDeportivos.Logica;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
@@ -21,17 +22,22 @@ namespace SistemaResultadosDeportivos
         APIpublicidad publicidad;
         APIresultados resultados;
         Image imagenBanner;
+        LogicaNotificaciones lgn;
         Deporte deporte;
         Torneo torneo;
+        LogicaUsuarios lgu;
         String urlSitio;
         List<EncuentroTorneo> encuentros;
         int var = 0;
+        Usuario usuario;
 
-        public FrmEncuentrosTorneoApp(Deporte deporte, Torneo torneo)
+        public FrmEncuentrosTorneoApp(Deporte deporte, Torneo torneo, Usuario usuario)
         {
             InitializeComponent();
             publicidad = new APIpublicidad();
             resultados = new APIresultados();
+            lgn = new LogicaNotificaciones();
+            lgu = new LogicaUsuarios();
             this.deporte = deporte;
             this.torneo = torneo;
             RespuestaPublicidad res = JsonConvert.DeserializeObject<RespuestaPublicidad>(publicidad.publicidadToJSON());
@@ -40,6 +46,8 @@ namespace SistemaResultadosDeportivos
             encuentros = new List<EncuentroTorneo>();
             setEncuentros();
             listarEncuentros();
+            this.usuario = usuario;
+            actualizarSuscribirse();
         }
 
         private void setEncuentros()
@@ -145,11 +153,11 @@ namespace SistemaResultadosDeportivos
             }
             else if (!deporte.porEquipos && deporte.cantParticipantes == 2)
             {
-                new FrmVerEncuentroIndDeADos(encuentro).Visible = true;
+                new FrmVerEncuentroIndDeADos(encuentro, usuario).Visible = true;
             }
             else if (deporte.cantParticipantes > 2)
             {
-                new FrmVerEncuentroInd(encuentro).Visible = true;
+                new FrmVerEncuentroInd(encuentro, usuario).Visible = true;
             }
         }
 
@@ -168,6 +176,42 @@ namespace SistemaResultadosDeportivos
         private void FrmEncuentrosTorneoApp_Load(object sender, EventArgs e)
         {
             flpEncuentros.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
+        }
+
+        private void btnSuscribirse_Click(object sender, EventArgs e)
+        {
+            if (lgu.esMiembro(usuario.correo))
+            {
+                List<String> correos = lgn.devolverMiembrosPorSuscripcionTorneo(torneo.idTorneo);
+                if (correos.Contains(usuario.correo))
+                {
+                    lgn.eliminarSuscripcionATorneo(usuario.correo, torneo.idTorneo);
+                }
+                else
+                {
+                    lgn.agregarSuscripcionATorneo(usuario.correo, torneo.idTorneo);
+                }
+                actualizarSuscribirse();
+            }
+            else
+            {
+                MessageBox.Show("Para acceder a esta función debe de obtener la membresía.");
+            }
+        }
+
+        private void actualizarSuscribirse()
+        {
+            List<String> correos = lgn.devolverMiembrosPorSuscripcionTorneo(torneo.idTorneo);
+            if (correos.Contains(usuario.correo))
+            {
+                btnSuscribirse.BackColor = Color.Gray;
+                btnSuscribirse.Text = "Suscrito";
+            }
+            else
+            {
+                btnSuscribirse.BackColor = Color.MediumTurquoise;
+                btnSuscribirse.Text = "Suscribirse";
+            }
         }
     }
 }

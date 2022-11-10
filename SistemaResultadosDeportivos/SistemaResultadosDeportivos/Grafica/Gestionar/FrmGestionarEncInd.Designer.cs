@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestionarEncInd));
             this.flpJugadores = new System.Windows.Forms.FlowLayoutPanel();
             this.lblMinuto = new System.Windows.Forms.Label();
             this.lblNombreEncuentro = new System.Windows.Forms.Label();
@@ -45,130 +46,84 @@
             // 
             // flpJugadores
             // 
-            this.flpJugadores.AutoScroll = true;
-            this.flpJugadores.Location = new System.Drawing.Point(22, 90);
+            resources.ApplyResources(this.flpJugadores, "flpJugadores");
             this.flpJugadores.Name = "flpJugadores";
-            this.flpJugadores.Size = new System.Drawing.Size(964, 436);
-            this.flpJugadores.TabIndex = 6;
             // 
             // lblMinuto
             // 
-            this.lblMinuto.AutoSize = true;
+            resources.ApplyResources(this.lblMinuto, "lblMinuto");
             this.lblMinuto.BackColor = System.Drawing.Color.Transparent;
-            this.lblMinuto.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMinuto.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblMinuto.Location = new System.Drawing.Point(870, 31);
             this.lblMinuto.Name = "lblMinuto";
-            this.lblMinuto.Size = new System.Drawing.Size(29, 32);
-            this.lblMinuto.TabIndex = 28;
-            this.lblMinuto.Text = "0";
             // 
             // lblNombreEncuentro
             // 
+            resources.ApplyResources(this.lblNombreEncuentro, "lblNombreEncuentro");
             this.lblNombreEncuentro.BackColor = System.Drawing.Color.Transparent;
-            this.lblNombreEncuentro.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreEncuentro.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblNombreEncuentro.Location = new System.Drawing.Point(22, 31);
             this.lblNombreEncuentro.Name = "lblNombreEncuentro";
-            this.lblNombreEncuentro.Size = new System.Drawing.Size(796, 32);
-            this.lblNombreEncuentro.TabIndex = 29;
-            this.lblNombreEncuentro.Text = "Nombre Encuentro";
-            this.lblNombreEncuentro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnAgregarPuntos
             // 
+            resources.ApplyResources(this.btnAgregarPuntos, "btnAgregarPuntos");
             this.btnAgregarPuntos.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnAgregarPuntos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAgregarPuntos.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarPuntos.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnAgregarPuntos.Location = new System.Drawing.Point(28, 553);
             this.btnAgregarPuntos.Name = "btnAgregarPuntos";
-            this.btnAgregarPuntos.Size = new System.Drawing.Size(220, 40);
-            this.btnAgregarPuntos.TabIndex = 30;
-            this.btnAgregarPuntos.Text = "Agregar Puntos";
             this.btnAgregarPuntos.UseVisualStyleBackColor = false;
             this.btnAgregarPuntos.Click += new System.EventHandler(this.btnAgregarPuntos_Click);
             // 
             // btnQuitarPuntos
             // 
+            resources.ApplyResources(this.btnQuitarPuntos, "btnQuitarPuntos");
             this.btnQuitarPuntos.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnQuitarPuntos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnQuitarPuntos.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitarPuntos.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnQuitarPuntos.Location = new System.Drawing.Point(766, 553);
             this.btnQuitarPuntos.Name = "btnQuitarPuntos";
-            this.btnQuitarPuntos.Size = new System.Drawing.Size(220, 40);
-            this.btnQuitarPuntos.TabIndex = 31;
-            this.btnQuitarPuntos.Text = "Quitar Puntos";
             this.btnQuitarPuntos.UseVisualStyleBackColor = false;
             this.btnQuitarPuntos.Click += new System.EventHandler(this.btnQuitarPuntos_Click);
             // 
             // numPuntuacion
             // 
-            this.numPuntuacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numPuntuacion.Location = new System.Drawing.Point(404, 553);
+            resources.ApplyResources(this.numPuntuacion, "numPuntuacion");
             this.numPuntuacion.Maximum = new decimal(new int[] {
             10000000,
             0,
             0,
             0});
             this.numPuntuacion.Name = "numPuntuacion";
-            this.numPuntuacion.Size = new System.Drawing.Size(180, 38);
-            this.numPuntuacion.TabIndex = 32;
             // 
             // btnIniciar
             // 
+            resources.ApplyResources(this.btnIniciar, "btnIniciar");
             this.btnIniciar.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnIniciar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciar.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnIniciar.Location = new System.Drawing.Point(281, 551);
             this.btnIniciar.Name = "btnIniciar";
-            this.btnIniciar.Size = new System.Drawing.Size(87, 40);
-            this.btnIniciar.TabIndex = 40;
-            this.btnIniciar.Text = "Iniciar";
             this.btnIniciar.UseVisualStyleBackColor = false;
             this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
             // btnPausar
             // 
+            resources.ApplyResources(this.btnPausar, "btnPausar");
             this.btnPausar.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnPausar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPausar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPausar.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnPausar.Location = new System.Drawing.Point(281, 597);
             this.btnPausar.Name = "btnPausar";
-            this.btnPausar.Size = new System.Drawing.Size(87, 40);
-            this.btnPausar.TabIndex = 39;
-            this.btnPausar.Text = "Pausar";
             this.btnPausar.UseVisualStyleBackColor = false;
             this.btnPausar.Click += new System.EventHandler(this.btnPausar_Click);
             // 
             // btnFinalizar
             // 
+            resources.ApplyResources(this.btnFinalizar, "btnFinalizar");
             this.btnFinalizar.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFinalizar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnFinalizar.Location = new System.Drawing.Point(632, 551);
             this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(87, 40);
-            this.btnFinalizar.TabIndex = 42;
-            this.btnFinalizar.Text = "Finalizar";
             this.btnFinalizar.UseVisualStyleBackColor = false;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // btnReanudar
             // 
+            resources.ApplyResources(this.btnReanudar, "btnReanudar");
             this.btnReanudar.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnReanudar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReanudar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReanudar.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnReanudar.Location = new System.Drawing.Point(632, 597);
             this.btnReanudar.Name = "btnReanudar";
-            this.btnReanudar.Size = new System.Drawing.Size(87, 40);
-            this.btnReanudar.TabIndex = 41;
-            this.btnReanudar.Text = "Reanudar";
             this.btnReanudar.UseVisualStyleBackColor = false;
             this.btnReanudar.Click += new System.EventHandler(this.btnReanudar_Click);
             // 
@@ -178,10 +133,9 @@
             // 
             // FrmGestionarEncInd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(1008, 649);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.btnReanudar);
             this.Controls.Add(this.btnIniciar);
@@ -193,7 +147,6 @@
             this.Controls.Add(this.lblMinuto);
             this.Controls.Add(this.flpJugadores);
             this.Name = "FrmGestionarEncInd";
-            this.Text = "FrmGestionarEncInd";
             this.Load += new System.EventHandler(this.FrmGestionarEncInd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numPuntuacion)).EndInit();
             this.ResumeLayout(false);

@@ -201,6 +201,12 @@
     <Compile Include="Grafica\AppUsuario\FrmVerEncuentroIndDeADos.Designer.cs">
       <DependentUpon>FrmVerEncuentroIndDeADos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grafica\AppUsuario\SubFrmEquipoApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\SubFrmEquipoApp.Designer.cs">
+      <DependentUpon>SubFrmEquipoApp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grafica\Gestionar\FrmGestionarEncInd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -404,23 +410,47 @@
     <Compile Include="Grafica\SubFrmModificarPublicidad.Designer.cs">
       <DependentUpon>SubFrmModificarPublicidad.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Grafica\ABMDeportes.en-AT.resx">
+      <DependentUpon>ABMDeportes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\ABMDeportes.resx">
       <DependentUpon>ABMDeportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\ABMEncuentros.en-AT.resx">
+      <DependentUpon>ABMEncuentros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\ABMEncuentros.resx">
       <DependentUpon>ABMEncuentros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\ABMEquipos.en-AT.resx">
+      <DependentUpon>ABMEquipos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\ABMEquipos.resx">
       <DependentUpon>ABMEquipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\ABMJugadores.en-AT.resx">
+      <DependentUpon>ABMJugadores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\ABMJugadores.resx">
       <DependentUpon>ABMJugadores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\ABMPublicidad.en-AT.resx">
+      <DependentUpon>ABMPublicidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\ABMTorneos.en-AT.resx">
+      <DependentUpon>ABMTorneos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\ABMTorneos.resx">
       <DependentUpon>ABMTorneos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\ABMUsuarios.en-AT.resx">
+      <DependentUpon>ABMUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\AppUsuario\FrmEncuentrosDeporteApp.resx">
       <DependentUpon>FrmEncuentrosDeporteApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmEncuentrosTorneoApp.en-AT.resx">
+      <DependentUpon>FrmEncuentrosTorneoApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\AppUsuario\FrmEncuentrosTorneoApp.resx">
       <DependentUpon>FrmEncuentrosTorneoApp.cs</DependentUpon>
@@ -428,17 +458,32 @@
     <EmbeddedResource Include="Grafica\AppUsuario\FrmEquiposDeporteApp.resx">
       <DependentUpon>FrmEquiposDeporteApp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmInicioAppLogin.en-AT.resx">
+      <DependentUpon>FrmInicioAppLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\AppUsuario\FrmInicioAppLogin.resx">
       <DependentUpon>FrmInicioAppLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\AppUsuario\FrmJugadoresDeporteApp.resx">
       <DependentUpon>FrmJugadoresDeporteApp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmLogin.en-AT.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmParent.en-AT.resx">
+      <DependentUpon>FrmParent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\AppUsuario\FrmParent.resx">
       <DependentUpon>FrmParent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmPerfil.en-AT.resx">
+      <DependentUpon>FrmPerfil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\AppUsuario\FrmPerfil.resx">
       <DependentUpon>FrmPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmRegistro.en-AT.resx">
+      <DependentUpon>FrmRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\AppUsuario\FrmRegistro.resx">
       <DependentUpon>FrmRegistro.cs</DependentUpon>
@@ -446,14 +491,47 @@
     <EmbeddedResource Include="Grafica\AppUsuario\FrmTorneosDeporteApp.resx">
       <DependentUpon>FrmTorneosDeporteApp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmVerEncuentroEquipo.en-AT.resx">
+      <DependentUpon>FrmVerEncuentroEquipo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\AppUsuario\FrmVerEncuentroEquipo.resx">
       <DependentUpon>FrmVerEncuentroEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmVerEncuentroInd.es.resx">
+      <DependentUpon>FrmVerEncuentroInd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\AppUsuario\FrmVerEncuentroInd.resx">
       <DependentUpon>FrmVerEncuentroInd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\FrmVerEncuentroIndDeADos.es.resx">
+      <DependentUpon>FrmVerEncuentroIndDeADos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\AppUsuario\FrmVerEncuentroIndDeADos.resx">
       <DependentUpon>FrmVerEncuentroIndDeADos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\SubFrmEquipoApp.en-AT.resx">
+      <DependentUpon>SubFrmEquipoApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\SubFrmEquipoApp.resx">
+      <DependentUpon>SubFrmEquipoApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\FrmBackoffice.en-AT.resx">
+      <DependentUpon>FrmBackoffice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\FrmInicioEncuentros.en-AT.resx">
+      <DependentUpon>FrmInicioEncuentros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\FrmInicioEquipos.en-AT.resx">
+      <DependentUpon>FrmInicioEquipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\FrmSeleccionarPlantel.en-AT.resx">
+      <DependentUpon>FrmSeleccionarPlantel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\Gestionar\FrmGestionarEncCol.en-AT.resx">
+      <DependentUpon>FrmGestionarEncCol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\Gestionar\FrmGestionarEncInd.es.resx">
+      <DependentUpon>FrmGestionarEncInd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\Gestionar\FrmGestionarEncInd.resx">
       <DependentUpon>FrmGestionarEncInd.cs</DependentUpon>
@@ -488,17 +566,35 @@
     <EmbeddedResource Include="Grafica\FrmSeleccionarPlantel.resx">
       <DependentUpon>FrmSeleccionarPlantel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\Gestionar\FrmSeleccionarAlineacion.es.resx">
+      <DependentUpon>FrmSeleccionarAlineacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\Gestionar\FrmSeleccionarJugadorAnotacion.en-AT.resx">
+      <DependentUpon>FrmSeleccionarJugadorAnotacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\Gestionar\FrmSeleccionarJugadorAnotacion.resx">
       <DependentUpon>FrmSeleccionarJugadorAnotacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\Gestionar\SubFrmDatosAmonestacion.en-AT.resx">
+      <DependentUpon>SubFrmDatosAmonestacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\Gestionar\SubFrmDatosAmonestacion.resx">
       <DependentUpon>SubFrmDatosAmonestacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\Gestionar\SubFrmDatosCambio.en-AT.resx">
+      <DependentUpon>SubFrmDatosCambio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\Gestionar\SubFrmDatosCambio.resx">
       <DependentUpon>SubFrmDatosCambio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\Gestionar\SubFrmDatosSetEq.en-AT.resx">
+      <DependentUpon>SubFrmDatosSetEq.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\Gestionar\SubFrmDatosSetEq.resx">
       <DependentUpon>SubFrmDatosSetEq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\Gestionar\SubFrmDatosSetJug.en-AT.resx">
+      <DependentUpon>SubFrmDatosSetJug.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\Gestionar\SubFrmDatosSetJug.resx">
       <DependentUpon>SubFrmDatosSetJug.cs</DependentUpon>
@@ -506,23 +602,47 @@
     <EmbeddedResource Include="Grafica\SubFrmEncuentrosTorneo.resx">
       <DependentUpon>SubFrmEncuentrosTorneo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmModificarDeporte.en-AT.resx">
+      <DependentUpon>SubFrmModificarDeporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\SubFrmModificarDeporte.resx">
       <DependentUpon>SubFrmModificarDeporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmModificarEncuentro.en-AT.resx">
+      <DependentUpon>SubFrmModificarEncuentro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\SubFrmModificarEncuentro.resx">
       <DependentUpon>SubFrmModificarEncuentro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmModificarEquipo.en-AT.resx">
+      <DependentUpon>SubFrmModificarEquipo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\SubFrmModificarEquipo.resx">
       <DependentUpon>SubFrmModificarEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmModificarJugador.en-AT.resx">
+      <DependentUpon>SubFrmModificarJugador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\SubFrmModificarJugador.resx">
       <DependentUpon>SubFrmModificarJugador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmModificarPublicidad.es.resx">
+      <DependentUpon>SubFrmModificarPublicidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmModificarTorneo.en-AT.resx">
+      <DependentUpon>SubFrmModificarTorneo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\SubFrmModificarTorneo.resx">
       <DependentUpon>SubFrmModificarTorneo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmModificarUsuario.en-AT.resx">
+      <DependentUpon>SubFrmModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\SubFrmModificarUsuario.resx">
       <DependentUpon>SubFrmModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmSeleccionarParticipantes.en-AT.resx">
+      <DependentUpon>SubFrmSeleccionarParticipantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\SubFrmSeleccionarParticipantes.resx">
       <DependentUpon>SubFrmSeleccionarParticipantes.cs</DependentUpon>
@@ -530,8 +650,14 @@
     <EmbeddedResource Include="Grafica\Gestionar\FrmSeleccionarAlineacion.resx">
       <DependentUpon>FrmSeleccionarAlineacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmSeleccionarParticipantesTorneo.en-AT.resx">
+      <DependentUpon>SubFrmSeleccionarParticipantesTorneo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\SubFrmSeleccionarParticipantesTorneo.resx">
       <DependentUpon>SubFrmSeleccionarParticipantesTorneo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmVerParticipantes.en-AT.resx">
+      <DependentUpon>SubFrmVerParticipantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\SubFrmVerParticipantes.resx">
       <DependentUpon>SubFrmVerParticipantes.cs</DependentUpon>
@@ -598,6 +724,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spain.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

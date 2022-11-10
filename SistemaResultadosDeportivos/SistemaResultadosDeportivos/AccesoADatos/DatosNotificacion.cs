@@ -119,13 +119,14 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-                String stringSql = "DELETE FROM Miembros_equipos (DirCorreo, IdEquipo) WHERE DirCorreo = '" + dirCorreo + "' AND IdEquipo = '" + idEquipo + "';";
+                String stringSql = "DELETE FROM Miembros_equipos WHERE DirCorreo = '" + dirCorreo + "' AND IdEquipo = '" + idEquipo + "';";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;
             }
-            catch
+            catch(Exception ex)
             {
+                MessageBox.Show(ex.ToString());
                 return false;
             }
         }
@@ -179,13 +180,14 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-                String stringSql = "DELETE FROM Miembros_encuentro (DirCorreo, IdEncuentro) WHERE DirCorreo = '" + dirCorreo + "' AND IdEncuentro = '" + idEncuentro + "';";
+                String stringSql = "DELETE FROM Miembros_encuentros WHERE DirCorreo = '" + dirCorreo + "' AND IdEncuentro = '" + idEncuentro + "';";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;
             }
-            catch
+            catch(Exception ex)
             {
+                MessageBox.Show(ex.ToString());
                 return false;
             }
         }
@@ -196,13 +198,14 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-                String stringSql = "INSERT INTO Miembros_torneos (DirCorreo, IdTorneo) VALUES('" + dirCorreo + "', '" + idTorneo + "');";
+                String stringSql = "INSERT INTO Miembros_torneos(DirCorreo, IdTorneo) VALUES('" + dirCorreo + "', '" + idTorneo + "');";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;
             }
-            catch
+            catch(System.Exception ex)
             {
+                MessageBox.Show(ex.ToString());
                 return false;
             }
         }
@@ -238,7 +241,7 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             try
             {
                 ADODB.Connection cn = Conexion.Crear();
-                String stringSql = "DELETE FROM Miembros_torneos (DirCorreo, IdTorneo) WHERE DirCorreo = '" + dirCorreo + "' AND IdTorneo = '" + idTorneo + "';";
+                String stringSql = "DELETE FROM Miembros_torneos WHERE DirCorreo = '" + dirCorreo + "' AND IdTorneo = '" + idTorneo + "';";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;

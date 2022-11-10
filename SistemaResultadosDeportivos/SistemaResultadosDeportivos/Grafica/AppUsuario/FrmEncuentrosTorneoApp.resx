@@ -117,4 +117,109 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="banner.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 502</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnSuscribirse.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="&gt;&gt;btnSuscribirse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>946, 660</value>
+  </data>
+  <data name="btnSuscribirse.Text" xml:space="preserve">
+    <value>Suscribirse</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FrmEncuentrosTorneoApp</value>
+  </data>
+  <data name="btnSuscribirse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 29</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnSuscribirse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 12</value>
+  </data>
+  <data name="btnSuscribirse.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnSuscribirse.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;flpEncuentros.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>FrmEncuentrosTorneoApp</value>
+  </data>
+  <data name="flpEncuentros.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
+  </data>
+  <data name="&gt;&gt;btnSuscribirse.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="banner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>776, 139</value>
+  </data>
+  <data name="&gt;&gt;btnSuscribirse.Name" xml:space="preserve">
+    <value>btnSuscribirse</value>
+  </data>
+  <data name="&gt;&gt;btnSuscribirse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="flpEncuentros.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;banner.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="banner.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;flpEncuentros.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="flpEncuentros.Size" type="System.Drawing.Size, System.Drawing">
+    <value>884, 419</value>
+  </data>
+  <data name="&gt;&gt;banner.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="flpEncuentros.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;banner.Name" xml:space="preserve">
+    <value>banner</value>
+  </data>
+  <data name="flpEncuentros.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;flpEncuentros.Name" xml:space="preserve">
+    <value>flpEncuentros</value>
+  </data>
+  <data name="flpEncuentros.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 48</value>
+  </data>
+  <data name="&gt;&gt;banner.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flpEncuentros.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>en-AT</value>
+  </metadata>
 </root>

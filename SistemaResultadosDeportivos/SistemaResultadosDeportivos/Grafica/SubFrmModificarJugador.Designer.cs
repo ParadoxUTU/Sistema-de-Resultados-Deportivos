@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SubFrmModificarJugador));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateFecha = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.numPeso = new System.Windows.Forms.NumericUpDown();
             this.numEstatura = new System.Windows.Forms.NumericUpDown();
             this.txtPais = new System.Windows.Forms.TextBox();
@@ -41,8 +44,6 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.pnlPerfil = new System.Windows.Forms.Panel();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.dateFecha = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPeso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numEstatura)).BeginInit();
@@ -50,6 +51,7 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.dateFecha);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.numPeso);
@@ -64,15 +66,23 @@
             this.panel1.Controls.Add(this.btnModificar);
             this.panel1.Controls.Add(this.pnlPerfil);
             this.panel1.Controls.Add(this.btnAceptar);
-            this.panel1.Location = new System.Drawing.Point(105, 34);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(709, 496);
-            this.panel1.TabIndex = 23;
+            // 
+            // dateFecha
+            // 
+            resources.ApplyResources(this.dateFecha, "dateFecha");
+            this.dateFecha.Name = "dateFecha";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.SystemColors.Menu;
+            this.label3.Name = "label3";
             // 
             // numPeso
             // 
-            this.numPeso.Enabled = false;
-            this.numPeso.Location = new System.Drawing.Point(399, 187);
+            resources.ApplyResources(this.numPeso, "numPeso");
             this.numPeso.Maximum = new decimal(new int[] {
             300,
             0,
@@ -84,8 +94,6 @@
             0,
             0});
             this.numPeso.Name = "numPeso";
-            this.numPeso.Size = new System.Drawing.Size(194, 20);
-            this.numPeso.TabIndex = 37;
             this.numPeso.Value = new decimal(new int[] {
             20,
             0,
@@ -94,8 +102,7 @@
             // 
             // numEstatura
             // 
-            this.numEstatura.Enabled = false;
-            this.numEstatura.Location = new System.Drawing.Point(402, 251);
+            resources.ApplyResources(this.numEstatura, "numEstatura");
             this.numEstatura.Maximum = new decimal(new int[] {
             270,
             0,
@@ -107,8 +114,6 @@
             0,
             0});
             this.numEstatura.Name = "numEstatura";
-            this.numEstatura.Size = new System.Drawing.Size(191, 20);
-            this.numEstatura.TabIndex = 36;
             this.numEstatura.Value = new decimal(new int[] {
             60,
             0,
@@ -117,148 +122,81 @@
             // 
             // txtPais
             // 
-            this.txtPais.Enabled = false;
-            this.txtPais.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPais.Location = new System.Drawing.Point(399, 312);
+            resources.ApplyResources(this.txtPais, "txtPais");
             this.txtPais.Name = "txtPais";
-            this.txtPais.Size = new System.Drawing.Size(194, 22);
-            this.txtPais.TabIndex = 29;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
+            resources.ApplyResources(this.label6, "label6");
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label6.Location = new System.Drawing.Point(396, 284);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 16);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "País:";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
+            resources.ApplyResources(this.label5, "label5");
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label5.Location = new System.Drawing.Point(396, 219);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 16);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "Estatura:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
+            resources.ApplyResources(this.label4, "label4");
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label4.Location = new System.Drawing.Point(396, 155);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 16);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Peso:";
             // 
             // txtNombre
             // 
-            this.txtNombre.Enabled = false;
-            this.txtNombre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(399, 55);
+            resources.ApplyResources(this.txtNombre, "txtNombre");
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(194, 22);
-            this.txtNombre.TabIndex = 34;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
+            resources.ApplyResources(this.label2, "label2");
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label2.Location = new System.Drawing.Point(396, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 16);
-            this.label2.TabIndex = 35;
-            this.label2.Text = "Nombre completo:";
             // 
             // btnEliminar
             // 
+            resources.ApplyResources(this.btnEliminar, "btnEliminar");
             this.btnEliminar.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEliminar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnEliminar.Location = new System.Drawing.Point(44, 430);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(220, 40);
-            this.btnEliminar.TabIndex = 26;
-            this.btnEliminar.Text = "Eliminar jugador";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
+            resources.ApplyResources(this.btnModificar, "btnModificar");
             this.btnModificar.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnModificar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnModificar.Location = new System.Drawing.Point(399, 357);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(220, 40);
-            this.btnModificar.TabIndex = 25;
-            this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // pnlPerfil
             // 
-            this.pnlPerfil.Location = new System.Drawing.Point(44, 31);
+            resources.ApplyResources(this.pnlPerfil, "pnlPerfil");
             this.pnlPerfil.Name = "pnlPerfil";
-            this.pnlPerfil.Size = new System.Drawing.Size(220, 220);
-            this.pnlPerfil.TabIndex = 24;
             // 
             // btnAceptar
             // 
+            resources.ApplyResources(this.btnAceptar, "btnAceptar");
             this.btnAceptar.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAceptar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnAceptar.Location = new System.Drawing.Point(44, 357);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(220, 40);
-            this.btnAceptar.TabIndex = 21;
-            this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // dateFecha
-            // 
-            this.dateFecha.Enabled = false;
-            this.dateFecha.Location = new System.Drawing.Point(399, 132);
-            this.dateFecha.Name = "dateFecha";
-            this.dateFecha.Size = new System.Drawing.Size(200, 20);
-            this.dateFecha.TabIndex = 39;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label3.Location = new System.Drawing.Point(396, 99);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 16);
-            this.label3.TabIndex = 38;
-            this.label3.Text = "Fecha de Nacimiento:";
-            // 
             // SubFrmModificarJugador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(918, 565);
             this.Controls.Add(this.panel1);
             this.Name = "SubFrmModificarJugador";
-            this.Text = "SubFrmModificarJugador";
             this.Load += new System.EventHandler(this.SubFrmModificarJugador_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

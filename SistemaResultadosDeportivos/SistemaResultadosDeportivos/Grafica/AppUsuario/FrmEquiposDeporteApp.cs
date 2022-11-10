@@ -23,8 +23,9 @@ namespace SistemaResultadosDeportivos
         Deporte deporte;
         List<Equipo> equipos;
         int var = 0;
+        Usuario usuario;
 
-        public FrmEquiposDeporteApp(Deporte deporte)
+        public FrmEquiposDeporteApp(Deporte deporte, Usuario usuario)
         {
             InitializeComponent();
             equipos = new List<Equipo>();
@@ -32,6 +33,7 @@ namespace SistemaResultadosDeportivos
             this.deporte = deporte;
             setEncEquipos();
             listarEquipos();
+            this.usuario = usuario;
         }
 
         private void setEncEquipos()
@@ -119,6 +121,7 @@ namespace SistemaResultadosDeportivos
             int i = (Int32)btnEncuentro.Tag;
             var = i;
             Equipo equipo = equipos[var];
+            new SubFrmEquipoApp(usuario, equipo).Visible = true;
         }
 
         private void FrmEquiposDeporteApp_Load(object sender, EventArgs e)

@@ -117,50 +117,178 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="notifyIcon1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="notifyIcon1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        j1we2/l+fwK4m0T0W7QI7AAAAABJRU5ErkJggg==
-</value>
+  <data name="btnTorneos.Text" xml:space="preserve">
+    <value>Torneos</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnEncuentros.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 28</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnEquipos.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>589, 260</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnEquipos.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;btnEquipos.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnTorneos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 40</value>
+  </data>
+  <data name="btnJugadores.Text" xml:space="preserve">
+    <value>Jugadores</value>
+  </data>
+  <data name="btnEquipos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 131</value>
+  </data>
+  <data name="&gt;&gt;btnPerfil.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnJugadores.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnJugadores.Location" type="System.Drawing.Point, System.Drawing">
+    <value>348, 28</value>
+  </data>
+  <data name="btnPerfil.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="btnJugadores.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="&gt;&gt;btnJugadores.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnEncuentros.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnEquipos.Text" xml:space="preserve">
+    <value>Equipos</value>
+  </data>
+  <data name="btnTorneos.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnTorneos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>348, 131</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>FrmParent</value>
+  </data>
+  <data name="btnEncuentros.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FrmParent</value>
+  </data>
+  <data name="btnTorneos.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;btnTorneos.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnEncuentros.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnPerfil.Name" xml:space="preserve">
+    <value>btnPerfil</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnJugadores.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnEncuentros.Name" xml:space="preserve">
+    <value>btnEncuentros</value>
+  </data>
+  <data name="btnEncuentros.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 40</value>
+  </data>
+  <data name="btnTorneos.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="btnPerfil.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 196</value>
+  </data>
+  <data name="&gt;&gt;btnPerfil.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnEncuentros.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;btnEquipos.Name" xml:space="preserve">
+    <value>btnEquipos</value>
+  </data>
+  <data name="&gt;&gt;btnEquipos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnJugadores.Name" xml:space="preserve">
+    <value>btnJugadores</value>
+  </data>
+  <data name="btnJugadores.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnEncuentros.Text" xml:space="preserve">
+    <value>Encuentros</value>
+  </data>
+  <data name="btnEncuentros.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnEquipos.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnPerfil.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;btnTorneos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTorneos.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnTorneos.Name" xml:space="preserve">
+    <value>btnTorneos</value>
+  </data>
+  <data name="&gt;&gt;btnPerfil.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnEquipos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 40</value>
+  </data>
+  <data name="btnPerfil.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 40</value>
+  </data>
+  <data name="&gt;&gt;btnEquipos.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnJugadores.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnPerfil.Text" xml:space="preserve">
+    <value>Perfil</value>
+  </data>
+  <data name="btnJugadores.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 40</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="btnPerfil.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;btnEncuentros.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>en-AT</value>
+  </metadata>
 </root>

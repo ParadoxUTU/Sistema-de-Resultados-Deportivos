@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtContrasena = new System.Windows.Forms.TextBox();
@@ -37,65 +38,48 @@
             this.btnInvitado = new System.Windows.Forms.Button();
             this.btnRegistrarse = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.lenguaje = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lenguaje)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLogin.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.btnLogin, "btnLogin");
             this.btnLogin.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnLogin.Location = new System.Drawing.Point(65, 283);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(220, 40);
-            this.btnLogin.TabIndex = 0;
-            this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(65, 101);
+            resources.ApplyResources(this.txtCorreo, "txtCorreo");
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(220, 22);
-            this.txtCorreo.TabIndex = 1;
             // 
             // txtContrasena
             // 
-            this.txtContrasena.Location = new System.Drawing.Point(65, 175);
+            resources.ApplyResources(this.txtContrasena, "txtContrasena");
             this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.PasswordChar = '●';
-            this.txtContrasena.Size = new System.Drawing.Size(220, 22);
-            this.txtContrasena.TabIndex = 2;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            resources.ApplyResources(this.label1, "label1");
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.label1.Location = new System.Drawing.Point(62, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Email:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
+            resources.ApplyResources(this.label2, "label2");
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.label2.Location = new System.Drawing.Point(62, 143);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Contraseña:";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lenguaje);
             this.panel1.Controls.Add(this.btnInvitado);
             this.panel1.Controls.Add(this.btnRegistrarse);
             this.panel1.Controls.Add(this.label3);
@@ -104,67 +88,56 @@
             this.panel1.Controls.Add(this.txtCorreo);
             this.panel1.Controls.Add(this.txtContrasena);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(292, 93);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(333, 396);
-            this.panel1.TabIndex = 5;
             // 
             // btnInvitado
             // 
             this.btnInvitado.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnInvitado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnInvitado.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.btnInvitado, "btnInvitado");
             this.btnInvitado.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnInvitado.Location = new System.Drawing.Point(65, 226);
             this.btnInvitado.Name = "btnInvitado";
-            this.btnInvitado.Size = new System.Drawing.Size(220, 40);
-            this.btnInvitado.TabIndex = 7;
-            this.btnInvitado.Text = "Continuar como Invitado";
             this.btnInvitado.UseVisualStyleBackColor = false;
             this.btnInvitado.Click += new System.EventHandler(this.btnInvitado_Click);
             // 
             // btnRegistrarse
             // 
             this.btnRegistrarse.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnRegistrarse.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRegistrarse.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.btnRegistrarse, "btnRegistrarse");
             this.btnRegistrarse.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnRegistrarse.Location = new System.Drawing.Point(65, 338);
             this.btnRegistrarse.Name = "btnRegistrarse";
-            this.btnRegistrarse.Size = new System.Drawing.Size(220, 40);
-            this.btnRegistrarse.TabIndex = 6;
-            this.btnRegistrarse.Text = "Registrarse";
             this.btnRegistrarse.UseVisualStyleBackColor = false;
             this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
+            resources.ApplyResources(this.label3, "label3");
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label3.Location = new System.Drawing.Point(137, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 24);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Login";
+            // 
+            // lenguaje
+            // 
+            this.lenguaje.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.lenguaje, "lenguaje");
+            this.lenguaje.Name = "lenguaje";
+            this.lenguaje.TabStop = false;
+            this.lenguaje.Click += new System.EventHandler(this.lenguaje_Click);
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(904, 581);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmLogin";
-            this.Text = "Login";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lenguaje)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -180,5 +153,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnRegistrarse;
         private System.Windows.Forms.Button btnInvitado;
+        private System.Windows.Forms.PictureBox lenguaje;
     }
 }

@@ -19,24 +19,6 @@ namespace SistemaResultadosDeportivos.Logica
             dt = new DatosUsuario();
         }
 
-        /*public RespuestaAutenticacion autenticar(String correo, String contrasena)
-        {*/
-        /*Autentica las credenciales dadas en la BD, y devuelve una respuesta
-        con el rol del usuario, y si fue exitosa la autenticacion*/
-        /*Usuario usuario = dt.getPorId(correo);
-        RespuestaAutenticacion res;
-        if (usuario != null && dt.testConexion(correo, contrasena))
-        {
-            dt.actualizarConexion(correo, contrasena);
-            res = new RespuestaAutenticacion(true, usuario.rol);
-        }
-        else
-        {
-            res = new RespuestaAutenticacion(false, -1);
-        }
-        return res;
-        }*/
-
         public RespuestaAutenticacion autenticar(String correo, String contrasena)
         {
             /*Autentica las credenciales dadas en la BD, y devuelve una respuesta

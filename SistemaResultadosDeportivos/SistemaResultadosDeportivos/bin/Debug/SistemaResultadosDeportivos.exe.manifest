@@ -54,14 +54,38 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaResultadosDeportivos.exe" size="399888">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaResultadosDeportivos.exe" size="894480">
       <assemblyIdentity name="SistemaResultadosDeportivos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hzPcaqKyLoqAshCZ9Zn9pxxEl2as4VqrvaqS7eeTkZs=</dsig:DigestValue>
+        <dsig:DigestValue>3OPEQV8A7ZS9N7nNSIfEacWjdpTDMRPYwjuLWeFCJvg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="en-AT\SistemaResultadosDeportivos.resources.dll" size="40448">
+      <assemblyIdentity name="SistemaResultadosDeportivos.resources" version="1.0.0.0" language="en-AT" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>EcsX5SAjPIL2WBJW5FBqxkydYkl08KPK2yckG2XUHq4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="es\SistemaResultadosDeportivos.resources.dll" size="5632">
+      <assemblyIdentity name="SistemaResultadosDeportivos.resources" version="1.0.0.0" language="es" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>MIrUJppH31n6hDC7+KR7ydW187cGgh9HQG6YX2vVPRQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaResultadosDeportivos.APIs;
 using SistemaResultadosDeportivos.Modelos;
+using SistemaResultadosDeportivos.Logica;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
@@ -19,18 +20,22 @@ namespace SistemaResultadosDeportivos
     public partial class FrmTorneosDeporteApp : Form
     {
         APIresultados resultados;
+        LogicaNotificaciones lgn;
         Deporte deporte;
+        Usuario usuario;
         List<Torneo> torneos;
         int var = 0;
 
-        public FrmTorneosDeporteApp(Deporte deporte)
+        public FrmTorneosDeporteApp(Deporte deporte, Usuario usuario)
         {
             InitializeComponent();
             torneos = new List<Torneo>();
+            lgn = new LogicaNotificaciones();
             resultados = new APIresultados();
             this.deporte = deporte;
             setTorneos();
             listarTorneos();
+            this.usuario = usuario;
         }
 
         private void setTorneos()
@@ -119,12 +124,22 @@ namespace SistemaResultadosDeportivos
             Button btnTorneo = sender as Button;
             int i = (Int32)btnTorneo.Tag;
             var = i;
-            new FrmEncuentrosTorneoApp(deporte, torneos[var]).Visible = true;
+            new FrmEncuentrosTorneoApp(deporte, torneos[var], usuario).Visible = true;
         }
 
         private void FrmTorneosDeporteApp_Load(object sender, EventArgs e)
         {
             flpTorneos.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
+        }
+
+        private void flpTorneos_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSuscribirse_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

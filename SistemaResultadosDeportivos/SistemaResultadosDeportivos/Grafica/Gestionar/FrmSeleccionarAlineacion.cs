@@ -202,8 +202,16 @@ namespace SistemaResultadosDeportivos
         {
             lblEquipo.Text = equipo1.nombreEquipo;
             flpJugadores.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
-            pnlBuscar.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
-            pnlLupa.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
+        }
+
+        private void lblEquipo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flpJugadores_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

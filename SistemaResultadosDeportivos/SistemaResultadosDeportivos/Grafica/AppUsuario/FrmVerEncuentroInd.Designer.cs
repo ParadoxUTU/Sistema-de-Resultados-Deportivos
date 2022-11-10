@@ -29,61 +29,63 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVerEncuentroInd));
             this.lblNombreEncuentro = new System.Windows.Forms.Label();
             this.lblMinuto = new System.Windows.Forms.Label();
             this.flpJugadores = new System.Windows.Forms.FlowLayoutPanel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.btnSuscribirse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNombreEncuentro
             // 
+            resources.ApplyResources(this.lblNombreEncuentro, "lblNombreEncuentro");
             this.lblNombreEncuentro.BackColor = System.Drawing.Color.Transparent;
-            this.lblNombreEncuentro.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreEncuentro.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblNombreEncuentro.Location = new System.Drawing.Point(23, 9);
             this.lblNombreEncuentro.Name = "lblNombreEncuentro";
-            this.lblNombreEncuentro.Size = new System.Drawing.Size(796, 32);
-            this.lblNombreEncuentro.TabIndex = 32;
-            this.lblNombreEncuentro.Text = "Nombre Encuentro";
-            this.lblNombreEncuentro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblNombreEncuentro.Click += new System.EventHandler(this.lblNombreEncuentro_Click);
             // 
             // lblMinuto
             // 
-            this.lblMinuto.AutoSize = true;
+            resources.ApplyResources(this.lblMinuto, "lblMinuto");
             this.lblMinuto.BackColor = System.Drawing.Color.Transparent;
-            this.lblMinuto.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMinuto.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblMinuto.Location = new System.Drawing.Point(871, 9);
             this.lblMinuto.Name = "lblMinuto";
-            this.lblMinuto.Size = new System.Drawing.Size(29, 32);
-            this.lblMinuto.TabIndex = 31;
-            this.lblMinuto.Text = "0";
             // 
             // flpJugadores
             // 
-            this.flpJugadores.AutoScroll = true;
-            this.flpJugadores.Location = new System.Drawing.Point(23, 68);
+            resources.ApplyResources(this.flpJugadores, "flpJugadores");
             this.flpJugadores.Name = "flpJugadores";
-            this.flpJugadores.Size = new System.Drawing.Size(964, 436);
-            this.flpJugadores.TabIndex = 30;
             // 
             // timer1
             // 
             this.timer1.Interval = 10000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // btnSuscribirse
+            // 
+            resources.ApplyResources(this.btnSuscribirse, "btnSuscribirse");
+            this.btnSuscribirse.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSuscribirse.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnSuscribirse.Name = "btnSuscribirse";
+            this.btnSuscribirse.UseVisualStyleBackColor = false;
+            this.btnSuscribirse.Click += new System.EventHandler(this.btnSuscribirse_Click);
+            // 
             // FrmVerEncuentroInd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(1004, 521);
+            this.Controls.Add(this.btnSuscribirse);
             this.Controls.Add(this.lblNombreEncuentro);
             this.Controls.Add(this.lblMinuto);
             this.Controls.Add(this.flpJugadores);
             this.Name = "FrmVerEncuentroInd";
-            this.Text = "FrmVerEncuentroInd";
             this.Load += new System.EventHandler(this.FrmVerEncuentroInd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -96,5 +98,7 @@
         public System.Windows.Forms.Label lblMinuto;
         private System.Windows.Forms.FlowLayoutPanel flpJugadores;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Button btnSuscribirse;
     }
 }

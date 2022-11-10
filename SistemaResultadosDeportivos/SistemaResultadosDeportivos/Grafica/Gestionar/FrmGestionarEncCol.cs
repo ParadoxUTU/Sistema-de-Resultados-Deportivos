@@ -20,6 +20,7 @@ namespace SistemaResultadosDeportivos
         public LogicaCambios lgc;
         public LogicaJugadores lgj;
         public LogicaNotificaciones lgn;
+        public LogicaTorneos lgt;
         public Encuentro encuentro;
         public Equipo equipo1;
         public Equipo equipo2;
@@ -36,6 +37,7 @@ namespace SistemaResultadosDeportivos
             lgc = new LogicaCambios();
             lgj = new LogicaJugadores();
             lgn = new LogicaNotificaciones();
+            lgt = new LogicaTorneos();
             incidencias = new List<Incidencia>();
             encuentro = en;
             equipo1 = eq1;
@@ -389,6 +391,16 @@ namespace SistemaResultadosDeportivos
             List<String> correosEncuentro = lgn.devolverMiembrosPorSuscripcionEncuentro(encuentro.idEncuentro);
             List<String> correosEquipo1 = lgn.devolverMiembrosPorSuscripcionEquipo(equipo1.idEquipo);
             List<String> correosEquipo2 = lgn.devolverMiembrosPorSuscripcionEquipo(equipo2.idEquipo);
+            List<String> correosTorneo = null;
+            if(lgt.devolverTorneoPorEncuentro(encuentro.idEncuentro) != null)
+            {
+                Torneo torneo = lgt.devolverTorneoPorEncuentro(encuentro.idEncuentro);
+                correosTorneo = lgn.devolverMiembrosPorSuscripcionTorneo(torneo.idTorneo);
+                foreach (String correo in correosTorneo)
+                {
+                    lgn.agregarNotificacion(correo, "Ha empezado el encuentro de " + equipo1.nombreEquipo + " VS " + equipo2.nombreEquipo + " del torneo " + torneo.nombreTorneo);
+                }
+            }
             foreach (String correo in correosEncuentro)
             {
                 lgn.agregarNotificacion(correo, "Ha empezado el encuentro de " + equipo1.nombreEquipo + " VS " + equipo2.nombreEquipo);

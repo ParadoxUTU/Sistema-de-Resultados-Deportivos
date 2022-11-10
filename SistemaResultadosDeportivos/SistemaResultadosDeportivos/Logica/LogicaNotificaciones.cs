@@ -32,7 +32,7 @@ namespace SistemaResultadosDeportivos.Logica
             return datosNotificacion.agregarNotificacion(dirCorreo, descripcion);
         }
 
-        public bool eliminarNotificacion(String dirCorreo, String descripcion)
+        public bool eliminarNotificacionesPorUsuario(String dirCorreo)
         {
             //Intenta eliminar las notificaciones de un usuario
             return datosNotificacion.eliminarNotificacionesPorUsuario(dirCorreo);

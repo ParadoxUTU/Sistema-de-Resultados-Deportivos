@@ -28,28 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SubFrmEncuentrosTorneo));
             this.flpEncuentros = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // flpEncuentros
             // 
-            this.flpEncuentros.AutoScroll = true;
-            this.flpEncuentros.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpEncuentros.Location = new System.Drawing.Point(21, 12);
+            resources.ApplyResources(this.flpEncuentros, "flpEncuentros");
             this.flpEncuentros.Name = "flpEncuentros";
-            this.flpEncuentros.Size = new System.Drawing.Size(884, 557);
-            this.flpEncuentros.TabIndex = 18;
-            this.flpEncuentros.WrapContents = false;
             // 
             // SubFrmEncuentrosTorneo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(927, 581);
             this.Controls.Add(this.flpEncuentros);
             this.Name = "SubFrmEncuentrosTorneo";
-            this.Text = "SubFrmEncuentrosTorneo";
             this.Load += new System.EventHandler(this.SubFrmEncuentrosTorneo_Load);
             this.ResumeLayout(false);
 

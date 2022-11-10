@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SubFrmModificarDeporte));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.numAlineacion = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtAmonestacion = new System.Windows.Forms.TextBox();
+            this.btnAmonestacion = new System.Windows.Forms.Button();
             this.numParticipantes = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbxPuntuacion = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,22 +45,17 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.pnlPerfil = new System.Windows.Forms.Panel();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnAmonestacion = new System.Windows.Forms.Button();
-            this.txtAmonestacion = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numAlineacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numParticipantes)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtAmonestacion);
             this.panel1.Controls.Add(this.btnAmonestacion);
-            this.panel1.Controls.Add(this.numAlineacion);
             this.panel1.Controls.Add(this.numParticipantes);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.cbxPuntuacion);
             this.panel1.Controls.Add(this.label4);
@@ -70,21 +67,34 @@
             this.panel1.Controls.Add(this.btnModificar);
             this.panel1.Controls.Add(this.pnlPerfil);
             this.panel1.Controls.Add(this.btnAceptar);
-            this.panel1.Location = new System.Drawing.Point(95, 25);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(709, 528);
-            this.panel1.TabIndex = 24;
             // 
-            // numAlineacion
+            // label1
             // 
-            this.numAlineacion.Location = new System.Drawing.Point(399, 318);
-            this.numAlineacion.Name = "numAlineacion";
-            this.numAlineacion.Size = new System.Drawing.Size(180, 20);
-            this.numAlineacion.TabIndex = 36;
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.SystemColors.Menu;
+            this.label1.Name = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtAmonestacion
+            // 
+            resources.ApplyResources(this.txtAmonestacion, "txtAmonestacion");
+            this.txtAmonestacion.Name = "txtAmonestacion";
+            this.txtAmonestacion.TextChanged += new System.EventHandler(this.txtAmonestacion_TextChanged);
+            // 
+            // btnAmonestacion
+            // 
+            resources.ApplyResources(this.btnAmonestacion, "btnAmonestacion");
+            this.btnAmonestacion.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnAmonestacion.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnAmonestacion.Name = "btnAmonestacion";
+            this.btnAmonestacion.UseVisualStyleBackColor = false;
+            this.btnAmonestacion.Click += new System.EventHandler(this.btnAmonestacion_Click);
             // 
             // numParticipantes
             // 
-            this.numParticipantes.Location = new System.Drawing.Point(399, 265);
+            resources.ApplyResources(this.numParticipantes, "numParticipantes");
             this.numParticipantes.Maximum = new decimal(new int[] {
             20,
             0,
@@ -96,204 +106,105 @@
             0,
             0});
             this.numParticipantes.Name = "numParticipantes";
-            this.numParticipantes.Size = new System.Drawing.Size(180, 20);
-            this.numParticipantes.TabIndex = 35;
             this.numParticipantes.Value = new decimal(new int[] {
             2,
             0,
             0,
             0});
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label6.Location = new System.Drawing.Point(396, 288);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(169, 16);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "Tamaño de la alineación:";
-            // 
             // label5
             // 
-            this.label5.AutoSize = true;
+            resources.ApplyResources(this.label5, "label5");
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label5.Location = new System.Drawing.Point(396, 223);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(174, 16);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "Cantidad de participantes:";
             // 
             // cbxPuntuacion
             // 
-            this.cbxPuntuacion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.cbxPuntuacion, "cbxPuntuacion");
             this.cbxPuntuacion.FormattingEnabled = true;
             this.cbxPuntuacion.Items.AddRange(new object[] {
-            "Anotaciones",
-            "Sets"});
-            this.cbxPuntuacion.Location = new System.Drawing.Point(399, 183);
+            resources.GetString("cbxPuntuacion.Items"),
+            resources.GetString("cbxPuntuacion.Items1")});
             this.cbxPuntuacion.Name = "cbxPuntuacion";
-            this.cbxPuntuacion.Size = new System.Drawing.Size(180, 24);
-            this.cbxPuntuacion.TabIndex = 29;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
+            resources.ApplyResources(this.label4, "label4");
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label4.Location = new System.Drawing.Point(396, 155);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 16);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Puntuación:";
             // 
             // cbxModalidad
             // 
-            this.cbxModalidad.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.cbxModalidad, "cbxModalidad");
             this.cbxModalidad.FormattingEnabled = true;
             this.cbxModalidad.Items.AddRange(new object[] {
-            "Individual",
-            "Por equipos"});
-            this.cbxModalidad.Location = new System.Drawing.Point(399, 119);
+            resources.GetString("cbxModalidad.Items"),
+            resources.GetString("cbxModalidad.Items1")});
             this.cbxModalidad.Name = "cbxModalidad";
-            this.cbxModalidad.Size = new System.Drawing.Size(180, 24);
-            this.cbxModalidad.TabIndex = 31;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
+            resources.ApplyResources(this.label3, "label3");
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label3.Location = new System.Drawing.Point(396, 89);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 16);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Modalidad:";
             // 
             // txtNombre
             // 
-            this.txtNombre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(399, 51);
+            resources.ApplyResources(this.txtNombre, "txtNombre");
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(180, 22);
-            this.txtNombre.TabIndex = 33;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
+            resources.ApplyResources(this.label2, "label2");
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label2.Location = new System.Drawing.Point(396, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 16);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "Nombre:";
             // 
             // btnEliminar
             // 
+            resources.ApplyResources(this.btnEliminar, "btnEliminar");
             this.btnEliminar.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEliminar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnEliminar.Location = new System.Drawing.Point(44, 468);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(220, 40);
-            this.btnEliminar.TabIndex = 26;
-            this.btnEliminar.Text = "Eliminar Deporte";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
+            resources.ApplyResources(this.btnModificar, "btnModificar");
             this.btnModificar.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnModificar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnModificar.Location = new System.Drawing.Point(399, 357);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(220, 40);
-            this.btnModificar.TabIndex = 25;
-            this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // pnlPerfil
             // 
-            this.pnlPerfil.Location = new System.Drawing.Point(44, 31);
+            resources.ApplyResources(this.pnlPerfil, "pnlPerfil");
             this.pnlPerfil.Name = "pnlPerfil";
-            this.pnlPerfil.Size = new System.Drawing.Size(220, 220);
-            this.pnlPerfil.TabIndex = 24;
             // 
             // btnAceptar
             // 
+            resources.ApplyResources(this.btnAceptar, "btnAceptar");
             this.btnAceptar.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAceptar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnAceptar.Location = new System.Drawing.Point(44, 357);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(220, 40);
-            this.btnAceptar.TabIndex = 21;
-            this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // btnAmonestacion
-            // 
-            this.btnAmonestacion.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnAmonestacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAmonestacion.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAmonestacion.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnAmonestacion.Location = new System.Drawing.Point(399, 468);
-            this.btnAmonestacion.Name = "btnAmonestacion";
-            this.btnAmonestacion.Size = new System.Drawing.Size(220, 40);
-            this.btnAmonestacion.TabIndex = 37;
-            this.btnAmonestacion.Text = "Agregar amonestación";
-            this.btnAmonestacion.UseVisualStyleBackColor = false;
-            this.btnAmonestacion.Click += new System.EventHandler(this.btnAmonestacion_Click);
-            // 
-            // txtAmonestacion
-            // 
-            this.txtAmonestacion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmonestacion.Location = new System.Drawing.Point(399, 440);
-            this.txtAmonestacion.Name = "txtAmonestacion";
-            this.txtAmonestacion.Size = new System.Drawing.Size(220, 22);
-            this.txtAmonestacion.TabIndex = 38;
-            this.txtAmonestacion.TextChanged += new System.EventHandler(this.txtAmonestacion_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label1.Location = new System.Drawing.Point(396, 421);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 16);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "Nombre de la amonestación:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // SubFrmModificarDeporte
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(899, 583);
             this.Controls.Add(this.panel1);
             this.Name = "SubFrmModificarDeporte";
-            this.Text = "SubFrmModificarDeporte";
             this.Load += new System.EventHandler(this.SubFrmModificarDeporte_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numAlineacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numParticipantes)).EndInit();
             this.ResumeLayout(false);
 
@@ -306,9 +217,7 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Panel pnlPerfil;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.NumericUpDown numAlineacion;
         private System.Windows.Forms.NumericUpDown numParticipantes;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbxPuntuacion;
         private System.Windows.Forms.Label label4;

@@ -117,7 +117,241 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="flpIncidencias.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
+  </data>
+  <data name="&gt;&gt;btnSuscribirse.Name" xml:space="preserve">
+    <value>btnSuscribirse</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblMinuto.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 20.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;lblPuntaje2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblJugador2.Name" xml:space="preserve">
+    <value>lblJugador2</value>
+  </data>
+  <data name="lblPuntaje2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 20.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;timer1.Name" xml:space="preserve">
+    <value>timer1</value>
+  </data>
+  <data name="&gt;&gt;lblPuntaje2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblJugador2.Text" xml:space="preserve">
+    <value>Jugador 2</value>
+  </data>
+  <data name="&gt;&gt;flpIncidencias.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="flpIncidencias.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 116</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnSuscribirse.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;lblPuntaje2.Name" xml:space="preserve">
+    <value>lblPuntaje2</value>
+  </data>
+  <data name="&gt;&gt;btnSuscribirse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblPuntaje2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>519, 62</value>
+  </data>
+  <data name="&gt;&gt;lblMinuto.Name" xml:space="preserve">
+    <value>lblMinuto</value>
+  </data>
+  <data name="&gt;&gt;btnSuscribirse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="flpIncidencias.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="btnSuscribirse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 21</value>
+  </data>
+  <data name="lblJugador2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="lblPuntaje1.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnSuscribirse.Text" xml:space="preserve">
+    <value>Suscribe</value>
+  </data>
+  <data name="lblPuntaje2.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="lblJugador2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>840, 62</value>
+  </data>
+  <data name="lblJugador1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 32</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblMinuto.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblJugador2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 32</value>
+  </data>
+  <data name="&gt;&gt;lblPuntaje1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblMinuto.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblJugador1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblJugador2.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>FrmVerEncuentroIndDeADos</value>
+  </data>
+  <data name="&gt;&gt;lblJugador1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblMinuto.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="&gt;&gt;timer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnSuscribirse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;flpIncidencias.Name" xml:space="preserve">
+    <value>flpIncidencias</value>
+  </data>
+  <data name="flpIncidencias.Size" type="System.Drawing.Size, System.Drawing">
+    <value>964, 417</value>
+  </data>
+  <data name="btnSuscribirse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 29</value>
+  </data>
+  <data name="lblPuntaje2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 32</value>
+  </data>
+  <data name="&gt;&gt;lblPuntaje1.Name" xml:space="preserve">
+    <value>lblPuntaje1</value>
+  </data>
+  <data name="lblPuntaje2.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FrmVerEncuentroIndDeADos</value>
+  </data>
+  <data name="&gt;&gt;lblJugador2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblJugador1.Text" xml:space="preserve">
+    <value>Jugador 1</value>
+  </data>
+  <data name="lblMinuto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 32</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1005, 545</value>
+  </data>
+  <data name="btnSuscribirse.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="flpIncidencias.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPuntaje2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;flpIncidencias.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;btnSuscribirse.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblMinuto.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblMinuto.Location" type="System.Drawing.Point, System.Drawing">
+    <value>473, 62</value>
+  </data>
+  <data name="lblPuntaje1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>217, 62</value>
+  </data>
+  <data name="&gt;&gt;lblJugador1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lblJugador1.Name" xml:space="preserve">
+    <value>lblJugador1</value>
+  </data>
+  <data name="&gt;&gt;lblPuntaje2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblJugador2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblPuntaje1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 20.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;lblPuntaje1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;flpIncidencias.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblJugador2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblPuntaje1.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;lblMinuto.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblJugador1.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="lblPuntaje1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 32</value>
+  </data>
+  <data name="lblJugador1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 20.25pt, style=Bold</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="lblJugador2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 20.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;lblPuntaje1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMinuto.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnSuscribirse.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
+  </data>
+  <data name="lblJugador1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 62</value>
+  </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>es</value>
   </metadata>
 </root>

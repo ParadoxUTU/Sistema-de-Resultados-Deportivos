@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaResultadosDeportivos.APIs;
 using SistemaResultadosDeportivos.Modelos;
+using SistemaResultadosDeportivos.Logica;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -20,19 +21,43 @@ namespace SistemaResultadosDeportivos
         public List<JugadorDeEncuentro> jugadores;
         Encuentro encuentro;
         Deporte deporte;
+        LogicaNotificaciones lgn;
+        LogicaUsuarios lgu;
+        Usuario usuario;
         int var = 0;
 
-        public FrmVerEncuentroInd(Encuentro e)
+        public FrmVerEncuentroInd(Encuentro e, Usuario usuario)
         {
             InitializeComponent();
             timer1.Enabled = true;
             jugadores = new List<JugadorDeEncuentro>();
             resultados = new APIresultados();
+            lgn = new LogicaNotificaciones();
+            lgu = new LogicaUsuarios();
             encuentro = e;
+            timer2.Enabled = true;
             deporte = JsonConvert.DeserializeObject<Deporte>(resultados.getDeporte(encuentro.idDeporte));
             lblNombreEncuentro.Text = encuentro.nombreEncuentro;
             lblMinuto.Text = encuentro.minActual.ToString();
             listarJugadores();
+            if (encuentro.minActual < 10)
+            {
+                lblMinuto.Text = "0" + encuentro.minActual.ToString();
+            }
+            else
+            {
+                lblMinuto.Text = encuentro.minActual.ToString();
+            }
+            if (encuentro.segActual < 10)
+            {
+                lblMinuto.Text += ":0" + encuentro.segActual.ToString();
+            }
+            else
+            {
+                lblMinuto.Text += ":" + encuentro.segActual.ToString();
+            }
+            this.usuario = usuario;
+            actualizarSuscribirse();
         }
 
         public void listarJugadores()
@@ -143,8 +168,64 @@ namespace SistemaResultadosDeportivos
         private void timer1_Tick(object sender, EventArgs e)
         {
             encuentro = JsonConvert.DeserializeObject<Encuentro>(resultados.getEncuentro(encuentro.idEncuentro));
-            lblMinuto.Text = encuentro.minActual.ToString();
             listarJugadores();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            encuentro = JsonConvert.DeserializeObject<Encuentro>(resultados.getEncuentro(encuentro.idEncuentro));
+            if (encuentro.minActual < 10)
+            {
+                lblMinuto.Text = "0" + encuentro.minActual.ToString();
+            }
+            else
+            {
+                lblMinuto.Text = encuentro.minActual.ToString();
+            }
+            if (encuentro.segActual < 10)
+            {
+                lblMinuto.Text += ":0" + encuentro.segActual.ToString();
+            }
+            else
+            {
+                lblMinuto.Text += ":" + encuentro.segActual.ToString();
+            }
+        }
+
+        private void btnSuscribirse_Click(object sender, EventArgs e)
+        {
+            if (lgu.esMiembro(usuario.correo))
+            {
+                List<String> correos = lgn.devolverMiembrosPorSuscripcionEncuentro(encuentro.idEncuentro);
+                if (correos.Contains(usuario.correo))
+                {
+                    lgn.eliminarSuscripcionAEncuentro(usuario.correo, encuentro.idEncuentro);
+                }
+                else
+                {
+                    lgn.agregarSuscripcionAEncuentro(usuario.correo, encuentro.idEncuentro);
+                }
+                actualizarSuscribirse();
+            }
+            else
+            {
+                MessageBox.Show("Para acceder a esta función debe de obtener la membresía.");
+            }
+        }
+
+        private void actualizarSuscribirse()
+        {
+            List<String> correos = lgn.devolverMiembrosPorSuscripcionEncuentro(encuentro.idEncuentro);
+            if (correos.Contains(usuario.correo))
+            {
+                btnSuscribirse.BackColor = Color.Gray;
+                btnSuscribirse.Text = "Suscrito";
+            }
+            else
+            {
+                btnSuscribirse.BackColor = Color.MediumTurquoise;
+                btnSuscribirse.Text = "Suscribirse";
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaResultadosDeportivos.APIs;
 using SistemaResultadosDeportivos.Modelos;
+using SistemaResultadosDeportivos.Logica;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
@@ -20,6 +21,7 @@ namespace SistemaResultadosDeportivos
     {
         APIresultados resultados; 
         List<Deporte> deportes;
+        LogicaNotificaciones lgn;
         int var = 0;
         Usuario usuario;
 
@@ -28,9 +30,21 @@ namespace SistemaResultadosDeportivos
             InitializeComponent();
             resultados = new APIresultados();
             deportes = new List<Deporte>();
+            lgn = new LogicaNotificaciones();
             setDeportes();
             listarDeportes();
             this.usuario = usuario;
+            mostrarNotificacion();
+        }
+
+        private void mostrarNotificacion()
+        {
+            List<Notificacion> notificaciones = lgn.devolverNotificacionesPorMiembro(usuario.correo);
+            foreach (Notificacion notificacion in notificaciones)
+            {
+                notifyIcon1.ShowBalloonTip(100, notificacion.descripcion, "Ha recibido una notificación", ToolTipIcon.Info);
+                lgn.eliminarNotificacionesPorUsuario(usuario.correo);
+            }
         }
 
         public void setDeportes()
