@@ -38,9 +38,8 @@
             this.btnInvitado = new System.Windows.Forms.Button();
             this.btnRegistrarse = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.lenguaje = new System.Windows.Forms.PictureBox();
+            this.lblIdioma = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lenguaje)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -79,7 +78,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.lenguaje);
             this.panel1.Controls.Add(this.btnInvitado);
             this.panel1.Controls.Add(this.btnRegistrarse);
             this.panel1.Controls.Add(this.label3);
@@ -116,19 +114,20 @@
             this.label3.ForeColor = System.Drawing.SystemColors.Menu;
             this.label3.Name = "label3";
             // 
-            // lenguaje
+            // lblIdioma
             // 
-            this.lenguaje.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.lenguaje, "lenguaje");
-            this.lenguaje.Name = "lenguaje";
-            this.lenguaje.TabStop = false;
-            this.lenguaje.Click += new System.EventHandler(this.lenguaje_Click);
+            resources.ApplyResources(this.lblIdioma, "lblIdioma");
+            this.lblIdioma.BackColor = System.Drawing.Color.Transparent;
+            this.lblIdioma.ForeColor = System.Drawing.SystemColors.Menu;
+            this.lblIdioma.Name = "lblIdioma";
+            this.lblIdioma.Click += new System.EventHandler(this.lblIdioma_Click);
             // 
             // FrmLogin
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
+            this.Controls.Add(this.lblIdioma);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -137,8 +136,8 @@
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lenguaje)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -153,6 +152,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnRegistrarse;
         private System.Windows.Forms.Button btnInvitado;
-        private System.Windows.Forms.PictureBox lenguaje;
+        private System.Windows.Forms.Label lblIdioma;
     }
 }

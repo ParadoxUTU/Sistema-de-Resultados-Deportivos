@@ -133,11 +133,14 @@
   <data name="torneosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 24</value>
   </data>
-  <data name="&gt;&gt;logoutToolStripMenuItem.Name" xml:space="preserve">
-    <value>logoutToolStripMenuItem</value>
-  </data>
   <data name="equiposToolStripMenuItem.Text" xml:space="preserve">
     <value>Equipos</value>
+  </data>
+  <data name="encuentrosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 24</value>
+  </data>
+  <data name="&gt;&gt;usuariosToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="publicidadToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt, style=Bold</value>
@@ -169,15 +172,11 @@
   <data name="&gt;&gt;equiposToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="menuStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
+  <data name="logoutToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9.75pt, style=Bold</value>
   </data>
   <data name="&gt;&gt;encuentrosToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="jugadoresToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9.75pt, style=Bold</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
@@ -210,8 +209,8 @@
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>914, 24</value>
   </data>
-  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="jugadoresToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9.75pt, style=Bold</value>
   </data>
   <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -222,8 +221,8 @@
   <data name="usuariosToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;usuariosToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;logoutToolStripMenuItem.Name" xml:space="preserve">
+    <value>logoutToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;deportesToolStripMenuItem.Name" xml:space="preserve">
     <value>deportesToolStripMenuItem</value>
@@ -231,14 +230,14 @@
   <data name="&gt;&gt;publicidadToolStripMenuItem.Name" xml:space="preserve">
     <value>publicidadToolStripMenuItem</value>
   </data>
+  <data name="&gt;&gt;jugadoresToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="usuariosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 24</value>
   </data>
   <data name="&gt;&gt;jugadoresToolStripMenuItem.Name" xml:space="preserve">
     <value>jugadoresToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;equiposToolStripMenuItem.Name" xml:space="preserve">
-    <value>equiposToolStripMenuItem</value>
   </data>
   <data name="publicidadToolStripMenuItem.Text" xml:space="preserve">
     <value>Publicidad</value>
@@ -261,20 +260,21 @@
   <data name="&gt;&gt;torneosToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;jugadoresToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="encuentrosToolStripMenuItem.Text" xml:space="preserve">
     <value>Encuentros</value>
   </data>
-  <data name="logoutToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9.75pt, style=Bold</value>
+  <data name="&gt;&gt;equiposToolStripMenuItem.Name" xml:space="preserve">
+    <value>equiposToolStripMenuItem</value>
   </data>
   <data name="usuariosToolStripMenuItem.Text" xml:space="preserve">
     <value>Usuarios</value>
   </data>
-  <data name="encuentrosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 24</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="menuStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="deportesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>

@@ -119,52 +119,45 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="encuentrosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 36</value>
+    <value>71, 24</value>
   </data>
   <data name="encuentrosToolStripMenuItem.Text" xml:space="preserve">
     <value>Matches</value>
   </data>
   <data name="equiposToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 36</value>
+    <value>60, 24</value>
   </data>
   <data name="equiposToolStripMenuItem.Text" xml:space="preserve">
     <value>Teams</value>
   </data>
   <data name="jugadoresToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 36</value>
+    <value>66, 24</value>
   </data>
   <data name="jugadoresToolStripMenuItem.Text" xml:space="preserve">
     <value>Players</value>
   </data>
   <data name="torneosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 36</value>
+    <value>101, 24</value>
   </data>
   <data name="torneosToolStripMenuItem.Text" xml:space="preserve">
     <value>Tournaments</value>
   </data>
   <data name="deportesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 36</value>
+    <value>59, 24</value>
   </data>
   <data name="deportesToolStripMenuItem.Text" xml:space="preserve">
     <value>Sports</value>
   </data>
   <data name="publicidadToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 36</value>
+    <value>90, 24</value>
   </data>
   <data name="publicidadToolStripMenuItem.Text" xml:space="preserve">
-    <value>
-Advertising</value>
+    <value>Advertising</value>
   </data>
   <data name="usuariosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 36</value>
+    <value>53, 24</value>
   </data>
   <data name="usuariosToolStripMenuItem.Text" xml:space="preserve">
     <value>Users</value>
-  </data>
-  <data name="logoutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 36</value>
-  </data>
-  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>914, 36</value>
   </data>
 </root>

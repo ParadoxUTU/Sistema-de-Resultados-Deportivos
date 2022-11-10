@@ -14,6 +14,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using System.IO;
+using System.Threading;
 
 namespace SistemaResultadosDeportivos
 {
@@ -29,18 +30,6 @@ namespace SistemaResultadosDeportivos
             InitializeComponent();
             autenticacion = new APIautenticacion();
             lgu = new LogicaUsuarios();
-            setImageIdioma("spain.png");
-        }
-
-        private void setImageIdioma(String path)
-        {
-            try
-            {
-                imagenIdioma = Image.FromFile(Directory.GetCurrentDirectory() + "\\Img\\" + path);
-                Bitmap bitmapBanner = new Bitmap(imagenIdioma, imagenIdioma.Width, imagenIdioma.Height);
-                lenguaje.Image = bitmapBanner;
-            }
-            catch { }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -91,16 +80,18 @@ namespace SistemaResultadosDeportivos
             }
         }
 
-        private void lenguaje_Click(object sender, EventArgs e)
+        private void lblIdioma_Click(object sender, EventArgs e)
         {
             espanol = !espanol;
             if (!espanol)
             {
-                setImageIdioma("uk.png");
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-AT");
+                lblIdioma.Text = "English";
             }
             else
             {
-                setImageIdioma("spain.png");
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("es");
+                lblIdioma.Text = "Español";
             }
         }
     }
