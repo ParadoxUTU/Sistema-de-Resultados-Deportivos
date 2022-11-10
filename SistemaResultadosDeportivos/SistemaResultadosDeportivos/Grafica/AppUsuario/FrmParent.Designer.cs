@@ -92,6 +92,8 @@
             this.Controls.Add(this.btnEquipos);
             this.Controls.Add(this.btnEncuentros);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmParent";
             this.ResumeLayout(false);
 

@@ -85,6 +85,8 @@
             this.Controls.Add(this.lblNombreEncuentro);
             this.Controls.Add(this.lblMinuto);
             this.Controls.Add(this.flpJugadores);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmVerEncuentroInd";
             this.Load += new System.EventHandler(this.FrmVerEncuentroInd_Load);
             this.ResumeLayout(false);

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="SistemaResultadosDeportivos.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="SistemaResultadosDeportivos.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="SistemaResultadosDeportivos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -54,26 +54,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaResultadosDeportivos.exe" size="904208">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaResultadosDeportivos.exe" size="905744">
       <assemblyIdentity name="SistemaResultadosDeportivos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vXdk/T/FyLUu4FGQf+kj38I65WVsCWa+5GYSWEGM89s=</dsig:DigestValue>
+        <dsig:DigestValue>IQCRQMUvIQXjVD39Ft9lkEAufQTAPMTpyg1zIVKNba8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="en-AT\SistemaResultadosDeportivos.resources.dll" size="39936">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="en-AT\SistemaResultadosDeportivos.resources.dll" size="40448">
       <assemblyIdentity name="SistemaResultadosDeportivos.resources" version="1.0.0.0" language="en-AT" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xy97H1e0vwImS/LHIhSWO3pfz3ugUdSNqg5W2mv9q30=</dsig:DigestValue>
+        <dsig:DigestValue>mlfWibM5rX1kHdNjRWsOPD/fDt1AE3nF0Z4gvmZ+YrI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,7 +85,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>CJbn/B94zszKUmOV4m8IuSpJKoeBcSrMA0vcVXbh+eg=</dsig:DigestValue>
+        <dsig:DigestValue>4eP3PIeS8zQGTgqP/rEXvnHvfxn5JnSHHRfMwahsGJc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

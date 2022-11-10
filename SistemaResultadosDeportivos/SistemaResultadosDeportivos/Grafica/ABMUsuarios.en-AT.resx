@@ -139,6 +139,10 @@
   <data name="label5.Text" xml:space="preserve">
     <value>Add User</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="flpUsuarios.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>BottomUp</value>
+  </data>
   <data name="btnBuscar.Text" xml:space="preserve">
     <value>Search</value>
   </data>

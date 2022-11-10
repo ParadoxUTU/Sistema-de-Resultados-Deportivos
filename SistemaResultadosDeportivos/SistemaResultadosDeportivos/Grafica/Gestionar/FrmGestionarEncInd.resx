@@ -120,6 +120,9 @@
   <data name="btnPausar.Text" xml:space="preserve">
     <value>Pause</value>
   </data>
+  <data name="&gt;&gt;lblNombreEncuentro.Name" xml:space="preserve">
+    <value>lblNombreEncuentro</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnQuitarPuntos.Location" type="System.Drawing.Point, System.Drawing">
     <value>766, 553</value>
@@ -143,14 +146,8 @@
   <data name="&gt;&gt;flpJugadores.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="btnReanudar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>632, 597</value>
-  </data>
   <data name="&gt;&gt;btnReanudar.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnReanudar.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
   </data>
   <data name="btnQuitarPuntos.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial Black, 9.75pt, style=Bold</value>
@@ -180,6 +177,9 @@
   <data name="&gt;&gt;btnAgregarPuntos.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="btnPausar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
+  </data>
   <data name="&gt;&gt;btnAgregarPuntos.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -201,20 +201,17 @@
   <data name="&gt;&gt;btnPausar.Name" xml:space="preserve">
     <value>btnPausar</value>
   </data>
-  <data name="btnFinalizar.Text" xml:space="preserve">
-    <value>End</value>
-  </data>
   <data name="&gt;&gt;btnIniciar.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="numPuntuacion.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
+  <data name="btnQuitarPuntos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 40</value>
+  </data>
   <data name="btnAgregarPuntos.Location" type="System.Drawing.Point, System.Drawing">
     <value>28, 553</value>
-  </data>
-  <data name="&gt;&gt;flpJugadores.Name" xml:space="preserve">
-    <value>flpJugadores</value>
   </data>
   <data name="&gt;&gt;btnFinalizar.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -224,12 +221,6 @@
   </data>
   <data name="&gt;&gt;btnFinalizar.Name" xml:space="preserve">
     <value>btnFinalizar</value>
-  </data>
-  <data name="&gt;&gt;btnPausar.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblNombreEncuentro.Text" xml:space="preserve">
-    <value>Nombre Encuentro</value>
   </data>
   <data name="&gt;&gt;lblMinuto.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -245,6 +236,9 @@
   </data>
   <data name="btnQuitarPuntos.Text" xml:space="preserve">
     <value>Remove Points</value>
+  </data>
+  <data name="&gt;&gt;btnIniciar.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;timer1.Name" xml:space="preserve">
     <value>timer1</value>
@@ -267,9 +261,6 @@
   <data name="btnAgregarPuntos.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
-  <data name="btnAgregarPuntos.Text" xml:space="preserve">
-    <value>Add Points</value>
-  </data>
   <data name="&gt;&gt;btnQuitarPuntos.Name" xml:space="preserve">
     <value>btnQuitarPuntos</value>
   </data>
@@ -282,19 +273,19 @@
   <data name="&gt;&gt;lblNombreEncuentro.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;lblMinuto.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="btnIniciar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
-  <data name="btnPausar.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial Black, 9.75pt, style=Bold</value>
+  <data name="btnAgregarPuntos.Text" xml:space="preserve">
+    <value>Add Points</value>
   </data>
   <data name="btnAgregarPuntos.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial Black, 9.75pt, style=Bold</value>
   </data>
   <data name="&gt;&gt;btnIniciar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnQuitarPuntos.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnIniciar.Font" type="System.Drawing.Font, System.Drawing">
@@ -303,11 +294,17 @@
   <data name="lblMinuto.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 32</value>
   </data>
+  <data name="flpJugadores.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 90</value>
+  </data>
   <data name="btnFinalizar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial Black, 9.75pt, style=Bold</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1008, 649</value>
+  </data>
+  <data name="btnPausar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 40</value>
   </data>
   <data name="&gt;&gt;flpJugadores.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -318,8 +315,8 @@
   <data name="&gt;&gt;btnQuitarPuntos.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="numPuntuacion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 38</value>
+  <data name="lblNombreEncuentro.Text" xml:space="preserve">
+    <value>Nombre Encuentro</value>
   </data>
   <data name="&gt;&gt;btnReanudar.Parent" xml:space="preserve">
     <value>$this</value>
@@ -354,23 +351,23 @@
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FrmGestionarEncInd</value>
   </data>
-  <data name="btnPausar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 40</value>
+  <data name="&gt;&gt;btnPausar.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="numPuntuacion.Location" type="System.Drawing.Point, System.Drawing">
     <value>404, 553</value>
   </data>
-  <data name="&gt;&gt;btnPausar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;btnReanudar.Name" xml:space="preserve">
     <value>btnReanudar</value>
   </data>
-  <data name="btnQuitarPuntos.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
+  <data name="&gt;&gt;flpJugadores.Name" xml:space="preserve">
+    <value>flpJugadores</value>
   </data>
   <data name="btnReanudar.Text" xml:space="preserve">
     <value>Resume</value>
+  </data>
+  <data name="&gt;&gt;btnAgregarPuntos.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="btnAgregarPuntos.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -378,14 +375,14 @@
   <data name="&gt;&gt;btnIniciar.Name" xml:space="preserve">
     <value>btnIniciar</value>
   </data>
-  <data name="flpJugadores.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 90</value>
+  <data name="&gt;&gt;lblMinuto.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="lblNombreEncuentro.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
   </data>
-  <data name="flpJugadores.Size" type="System.Drawing.Size, System.Drawing">
-    <value>964, 436</value>
+  <data name="numPuntuacion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 38</value>
   </data>
   <data name="lblNombreEncuentro.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 20.25pt, style=Bold</value>
@@ -402,20 +399,23 @@
   <data name="&gt;&gt;lblMinuto.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="flpJugadores.Size" type="System.Drawing.Size, System.Drawing">
+    <value>964, 436</value>
+  </data>
   <data name="&gt;&gt;btnFinalizar.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;lblNombreEncuentro.Name" xml:space="preserve">
-    <value>lblNombreEncuentro</value>
+  <data name="&gt;&gt;btnPausar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnAgregarPuntos.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="btnFinalizar.Text" xml:space="preserve">
+    <value>End</value>
   </data>
-  <data name="&gt;&gt;btnIniciar.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="btnReanudar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>632, 597</value>
   </data>
-  <data name="btnQuitarPuntos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 40</value>
+  <data name="btnReanudar.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
   </data>
   <data name="lblNombreEncuentro.Size" type="System.Drawing.Size, System.Drawing">
     <value>796, 32</value>
@@ -426,8 +426,8 @@
   <data name="btnPausar.TabIndex" type="System.Int32, mscorlib">
     <value>39</value>
   </data>
-  <data name="&gt;&gt;btnQuitarPuntos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnQuitarPuntos.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

@@ -72,11 +72,12 @@ namespace SistemaResultadosDeportivos
 
         private void btnInvitado_Click(object sender, EventArgs e)
         {
-            RespuestaAutenticacion res = JsonConvert.DeserializeObject<RespuestaAutenticacion>(autenticacion.loginToJSON("guest", "1"));
+            RespuestaAutenticacion res = JsonConvert.DeserializeObject<RespuestaAutenticacion>(autenticacion.loginToJSON("guest", ""));
             bool exito = res.exito;
             if (exito)
             {
-                new FrmInicioAppInvitado().Visible = true;
+                Usuario usuario = new Usuario("guest", "guest", 0, "");
+                new FrmInicioAppInvitado(usuario).Visible = true;
             }
         }
 

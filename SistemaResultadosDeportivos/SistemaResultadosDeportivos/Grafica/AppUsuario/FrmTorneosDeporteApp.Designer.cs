@@ -48,6 +48,8 @@
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(991, 589);
             this.Controls.Add(this.flpTorneos);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmTorneosDeporteApp";
             this.Text = "FrmTorneosDeporteApp";
             this.Load += new System.EventHandler(this.FrmTorneosDeporteApp_Load);

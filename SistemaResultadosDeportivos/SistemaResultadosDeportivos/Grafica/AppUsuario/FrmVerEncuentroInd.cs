@@ -63,6 +63,7 @@ namespace SistemaResultadosDeportivos
         public void listarJugadores()
         {
             flpJugadores.Controls.Clear();
+            jugadores.Clear();
             int i = 0;
             int tamano = flpJugadores.Width - 5;
             List<String> jugadoresJSON = resultados.getJugadoresDeEncuentro(encuentro.idEncuentro);

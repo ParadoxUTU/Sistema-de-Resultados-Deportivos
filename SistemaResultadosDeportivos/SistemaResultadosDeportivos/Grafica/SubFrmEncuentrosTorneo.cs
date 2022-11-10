@@ -56,7 +56,24 @@ namespace SistemaResultadosDeportivos
                     Label lblBoton3 = new Label();
                     Button btnEncuentro = new Button();
                     String textNombre = en.nombreEncuentro + "    Etapa: " + en.etapa;
-                    String textFecha = "Fecha: " + en.fecha;
+                    String estado = "";
+                    if (en.finalizo)
+                    {
+                        estado = "Finalizado";
+                    }
+                    else if (en.pausado)
+                    {
+                        estado = "En descanso";
+                    }
+                    else if (en.comenzo)
+                    {
+                        estado = "En curso";
+                    }
+                    else
+                    {
+                        estado = "Sin comenzar";
+                    }
+                    String textFecha = "Fecha: " + en.fecha.Day + "/" + en.fecha.Month + "/" + en.fecha.Year + "                           " + estado;
                     String textHora = "Hora: " + en.hora;
                     propiedadesBoton(btnEncuentro, i, tamano);
                     propiedadesLabel(lblBoton, textNombre, btnEncuentro, 8);

@@ -87,6 +87,8 @@
             this.Controls.Add(this.numPuntuacion);
             this.Controls.Add(this.lblEquipo1);
             this.Controls.Add(this.flpJugadores);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmSeleccionarJugadorAnotacion";
             this.Load += new System.EventHandler(this.SeleccionarJugadorAlineacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numPuntuacion)).EndInit();

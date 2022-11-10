@@ -69,6 +69,8 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.numPuntuacion);
             this.Controls.Add(this.lblEquipo1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SubFrmDatosSetJug";
             ((System.ComponentModel.ISupportInitialize)(this.numPuntuacion)).EndInit();
             this.ResumeLayout(false);

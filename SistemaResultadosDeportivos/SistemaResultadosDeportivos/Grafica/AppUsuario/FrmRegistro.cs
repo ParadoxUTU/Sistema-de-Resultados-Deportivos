@@ -30,15 +30,22 @@ namespace SistemaResultadosDeportivos
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
-            String correo = txtCorreo.Text;
-            String username = txtUsername.Text;
-            String contrasena = txtContrasena.Text;
-            RespuestaRegistro res = JsonConvert.DeserializeObject<RespuestaRegistro>(autenticacion.registroToJSON(correo, username, contrasena, 0));
-            bool exito = res.exito;
-            if (exito)
+            if(txtContrasena.Text != "")
             {
-                MessageBox.Show("Registrado con éxito.");
-                this.Dispose();
+                String correo = txtCorreo.Text;
+                String username = txtUsername.Text;
+                String contrasena = txtContrasena.Text;
+                RespuestaRegistro res = JsonConvert.DeserializeObject<RespuestaRegistro>(autenticacion.registroToJSON(correo, username, contrasena, 0));
+                bool exito = res.exito;
+                if (exito)
+                {
+                    MessageBox.Show("Registrado con éxito.");
+                    this.Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("Datos incorrectos.");
+                }
             }
             else
             {

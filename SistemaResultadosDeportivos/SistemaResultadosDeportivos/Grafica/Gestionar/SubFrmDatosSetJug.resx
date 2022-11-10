@@ -155,10 +155,6 @@
   <data name="numPuntuacion.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnAceptar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>SubFrmDatosSetJug</value>
   </data>
@@ -212,6 +208,10 @@
   </data>
   <data name="&gt;&gt;btnAceptar.Name" xml:space="preserve">
     <value>btnAceptar</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnAceptar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
   </data>
   <data name="&gt;&gt;lblEquipo1.Name" xml:space="preserve">
     <value>lblEquipo1</value>

@@ -24,12 +24,14 @@ namespace SistemaResultadosDeportivos
         String urlSitio;
         List<Encuentro> encuentros;
         int var = 0;
+        Usuario usuario;
 
-        public FrmInicioAppInvitado()
+        public FrmInicioAppInvitado(Usuario usuario)
         {
             InitializeComponent();
             publicidad = new APIpublicidad();
             resultados = new APIresultados();
+            this.usuario = usuario;
             RespuestaPublicidad res = JsonConvert.DeserializeObject<RespuestaPublicidad>(publicidad.publicidadToJSON());
             setImageBanner(res.pathBanner);
             urlSitio = res.urlSitio;
@@ -77,8 +79,23 @@ namespace SistemaResultadosDeportivos
                     Label lblBoton2 = new Label();
                     Label lblBoton3 = new Label();
                     Button btnEncuentro = new Button();
+                    String estado = "";
+                    if (en.finalizo)
+                    {
+                        estado = "Finalizado";
+                    }else if (en.pausado)
+                    {
+                        estado = "En descanso";
+                    }else if (en.comenzo)
+                    {
+                        estado = "En curso";
+                    }
+                    else
+                    {
+                        estado = "Sin comenzar";
+                    }
                     String textNombre = en.nombreEncuentro + "                          " + deporte.nombreDeporte;
-                    String textFecha = "Fecha: " + en.fecha.Day + "/" + en.fecha.Month + "/" + en.fecha.Year;
+                    String textFecha = "Fecha: " + en.fecha.Day + "/" + en.fecha.Month + "/" + en.fecha.Year + "                           " + estado;
                     String textHora = "Hora:";
                     if (en.hora.Hour < 10)
                         textHora += " 0" + en.hora.Hour + ":";
@@ -134,18 +151,25 @@ namespace SistemaResultadosDeportivos
             int i = (Int32)btnEncuentro.Tag;
             var = i;
             Encuentro encuentro = encuentros[var];
-            Deporte deporte = JsonConvert.DeserializeObject<Deporte>(resultados.getDeporte(encuentro.idDeporte));
-            if (deporte.porEquipos)
+            if (encuentro.comenzo)
             {
-                new FrmVerEncuentroEquipo(encuentro, null).Visible = true;
+                Deporte deporte = JsonConvert.DeserializeObject<Deporte>(resultados.getDeporte(encuentro.idDeporte));
+                if (deporte.porEquipos)
+                {
+                    new FrmVerEncuentroEquipo(encuentro, usuario).Visible = true;
+                }
+                else if (!deporte.porEquipos && deporte.cantParticipantes == 2)
+                {
+                    new FrmVerEncuentroIndDeADos(encuentro, usuario).Visible = true;
+                }
+                else if (deporte.cantParticipantes > 2)
+                {
+                    new FrmVerEncuentroInd(encuentro, usuario).Visible = true;
+                }
             }
-            else if(!deporte.porEquipos && deporte.cantParticipantes == 2)
+            else
             {
-                new FrmVerEncuentroIndDeADos(encuentro, null).Visible = true;
-            }
-            else if(deporte.cantParticipantes > 2)
-            {
-                new FrmVerEncuentroInd(encuentro, null).Visible = true;
+                MessageBox.Show("Ese encuentro aún no ha comenzado.");
             }
         }
 

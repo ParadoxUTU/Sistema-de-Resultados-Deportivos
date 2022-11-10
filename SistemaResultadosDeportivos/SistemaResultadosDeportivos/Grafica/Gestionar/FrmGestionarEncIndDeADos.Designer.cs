@@ -217,6 +217,8 @@
             this.Controls.Add(this.lblJugador2);
             this.Controls.Add(this.lblJugador1);
             this.Controls.Add(this.flpIncidencias);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmGestionarEncIndDeADos";
             this.Text = "FrmGestionarEncInd";
             this.Load += new System.EventHandler(this.FrmGestionarEncIndDeADos_Load);

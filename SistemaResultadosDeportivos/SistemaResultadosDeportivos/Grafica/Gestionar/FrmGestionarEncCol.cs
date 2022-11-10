@@ -146,7 +146,6 @@ namespace SistemaResultadosDeportivos
             Label lblBoton = new Label();
             Label lblBoton2 = new Label();
             Label lblBoton3 = new Label();
-            Panel pnlPerfil = new Panel();
             Button btnParticipante = new Button();
             String textNombre = n;
             String textPais = p;
@@ -155,8 +154,6 @@ namespace SistemaResultadosDeportivos
             propiedadesLabel(lblBoton, textNombre, btnParticipante, 8);
             propiedadesLabel(lblBoton2, textPais, btnParticipante, 39);
             propiedadesLabel(lblBoton3, textEdad, btnParticipante, 70);
-            propiedadesPanel(pnlPerfil);
-            btnParticipante.Controls.Add(pnlPerfil);
             btnParticipante.Controls.Add(lblBoton);
             btnParticipante.Controls.Add(lblBoton2);
             btnParticipante.Controls.Add(lblBoton3);

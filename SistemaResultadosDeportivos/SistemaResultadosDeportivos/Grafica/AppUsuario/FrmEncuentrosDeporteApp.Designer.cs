@@ -61,6 +61,8 @@
             this.Controls.Add(this.flpEncuentros);
             this.Controls.Add(this.banner);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmEncuentrosDeporteApp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmEncuentrosDeporteApp";

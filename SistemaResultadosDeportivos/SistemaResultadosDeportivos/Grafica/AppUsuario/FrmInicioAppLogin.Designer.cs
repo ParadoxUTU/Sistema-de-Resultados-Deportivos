@@ -59,6 +59,8 @@
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flpDeportes);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmInicioAppLogin";
             this.Load += new System.EventHandler(this.FrmInicioAppLogin_Load);
             this.ResumeLayout(false);

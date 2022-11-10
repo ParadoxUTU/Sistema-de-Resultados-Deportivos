@@ -146,9 +146,6 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnCerrar.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial Black, 9.75pt, style=Bold</value>
-  </data>
   <data name="&gt;&gt;btnGuardar.Name" xml:space="preserve">
     <value>btnGuardar</value>
   </data>
@@ -177,14 +174,8 @@
   <data name="&gt;&gt;btnRecuperar.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;btnCerrar.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="btnRecuperar.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
-  </data>
-  <data name="btnGuardar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>93, 27</value>
@@ -228,6 +219,9 @@
   <data name="txtContrasena.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="&gt;&gt;txtUsername.Name" xml:space="preserve">
+    <value>txtUsername</value>
+  </data>
   <data name="btnMembresia.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
@@ -237,11 +231,11 @@
   <data name="btnMembresia.Location" type="System.Drawing.Point, System.Drawing">
     <value>44, 333</value>
   </data>
-  <data name="&gt;&gt;txtContrasena.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="btnGuardar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial Black, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnCerrar.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
   </data>
   <data name="&gt;&gt;btnCerrar.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -255,23 +249,23 @@
   <data name="txtContrasena.Location" type="System.Drawing.Point, System.Drawing">
     <value>388, 293</value>
   </data>
+  <data name="pnlPerfil.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 31</value>
+  </data>
   <data name="&gt;&gt;btnMembresia.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="btnCerrar.Text" xml:space="preserve">
     <value>Cerrar sesión</value>
   </data>
-  <data name="&gt;&gt;txtContrasena.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="txtUsername.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="btnGuardar.Location" type="System.Drawing.Point, System.Drawing">
     <value>388, 110</value>
   </data>
-  <data name="txtUsername.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9.75pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;pnlPerfil.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FrmPerfil</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
@@ -279,8 +273,8 @@
   <data name="btnEliminar.Text" xml:space="preserve">
     <value>Eliminar cuenta</value>
   </data>
-  <data name="&gt;&gt;btnGuardar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;txtContrasena.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="txtUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>194, 22</value>
@@ -300,11 +294,11 @@
   <data name="&gt;&gt;btnCerrar.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>709, 496</value>
+  </data>
   <data name="btnGuardar.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
-  </data>
-  <data name="txtUsername.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -317,6 +311,9 @@
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
+  </data>
+  <data name="btnMembresia.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
   </data>
   <data name="&gt;&gt;panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -333,9 +330,6 @@
   <data name="txtContrasena.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;btnGuardar.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -345,8 +339,14 @@
   <data name="&gt;&gt;btnEliminar.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>FrmPerfil</value>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnGuardar.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnMembresia.Name" xml:space="preserve">
+    <value>btnMembresia</value>
   </data>
   <data name="btnRecuperar.Text" xml:space="preserve">
     <value>Restablecer contraseña</value>
@@ -354,8 +354,8 @@
   <data name="btnEliminar.Location" type="System.Drawing.Point, System.Drawing">
     <value>44, 430</value>
   </data>
-  <data name="pnlPerfil.Location" type="System.Drawing.Point, System.Drawing">
-    <value>44, 31</value>
+  <data name="&gt;&gt;txtContrasena.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>894, 551</value>
@@ -366,17 +366,17 @@
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btnGuardar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pnlPerfil.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;txtUsername.Name" xml:space="preserve">
-    <value>txtUsername</value>
+  <data name="btnGuardar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
   </data>
-  <data name="btnCerrar.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
+  <data name="&gt;&gt;btnCerrar.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt, style=Bold</value>
@@ -402,14 +402,14 @@
   <data name="btnRecuperar.Location" type="System.Drawing.Point, System.Drawing">
     <value>388, 333</value>
   </data>
-  <data name="btnMembresia.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
+  <data name="&gt;&gt;pnlPerfil.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>709, 496</value>
+  <data name="txtUsername.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9.75pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;btnMembresia.Name" xml:space="preserve">
-    <value>btnMembresia</value>
+  <data name="btnCerrar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

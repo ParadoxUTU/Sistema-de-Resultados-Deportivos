@@ -78,7 +78,6 @@ namespace SistemaResultadosDeportivos.Logica
             bool exito = dt.agregarUsuario(correo, nombre, contrasena, rol);
             dt.darPermisos(correo, rol);
             RespuestaRegistro res = new RespuestaRegistro(exito);
-            MessageBox.Show(res.exito.ToString());
             return res;
         }
 

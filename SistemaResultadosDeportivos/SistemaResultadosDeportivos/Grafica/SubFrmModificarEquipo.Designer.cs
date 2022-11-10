@@ -46,6 +46,7 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.btnPlantel);
             this.panel1.Controls.Add(this.cbxDeportes);
             this.panel1.Controls.Add(this.label4);
@@ -57,13 +58,12 @@
             this.panel1.Controls.Add(this.btnModificar);
             this.panel1.Controls.Add(this.pnlPerfil);
             this.panel1.Controls.Add(this.btnAceptar);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // btnPlantel
             // 
-            this.btnPlantel.BackColor = System.Drawing.Color.MediumTurquoise;
             resources.ApplyResources(this.btnPlantel, "btnPlantel");
+            this.btnPlantel.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnPlantel.ForeColor = System.Drawing.SystemColors.Menu;
             this.btnPlantel.Name = "btnPlantel";
             this.btnPlantel.UseVisualStyleBackColor = false;
@@ -108,16 +108,16 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.MediumTurquoise;
             resources.ApplyResources(this.btnEliminar, "btnEliminar");
+            this.btnEliminar.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.Menu;
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // btnModificar
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.MediumTurquoise;
             resources.ApplyResources(this.btnModificar, "btnModificar");
+            this.btnModificar.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnModificar.ForeColor = System.Drawing.SystemColors.Menu;
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -129,8 +129,8 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.MediumTurquoise;
             resources.ApplyResources(this.btnAceptar, "btnAceptar");
+            this.btnAceptar.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnAceptar.ForeColor = System.Drawing.SystemColors.Menu;
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;

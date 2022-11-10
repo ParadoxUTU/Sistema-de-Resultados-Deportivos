@@ -208,6 +208,8 @@
             this.Controls.Add(this.lblEquipo1);
             this.Controls.Add(this.btnAgregarPuntos1);
             this.Controls.Add(this.flpIncidencias);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmGestionarEncCol";
             this.Load += new System.EventHandler(this.FrmGestionarEncCol_Load);
             this.ResumeLayout(false);

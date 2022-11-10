@@ -89,8 +89,25 @@ namespace SistemaResultadosDeportivos
                     Label lblBoton2 = new Label();
                     Label lblBoton3 = new Label();
                     Button btnEncuentro = new Button();
+                    String estado = "";
+                    if (en.finalizo)
+                    {
+                        estado = "Finalizado";
+                    }
+                    else if (en.pausado)
+                    {
+                        estado = "En descanso";
+                    }
+                    else if (en.comenzo)
+                    {
+                        estado = "En curso";
+                    }
+                    else
+                    {
+                        estado = "Sin comenzar";
+                    }
                     String textNombre = en.nombreEncuentro + "                          " + deporte.nombreDeporte;
-                    String textFecha = "Fecha: " + en.fecha.Day + "/" + en.fecha.Month + "/" + en.fecha.Year;
+                    String textFecha = "Fecha: " + en.fecha.Day + "/" + en.fecha.Month + "/" + en.fecha.Year + "                           " + estado;
                     String textHora = "Hora:";
                     if (en.hora.Hour < 10)
                         textHora += " 0" + en.hora.Hour + ":";
@@ -146,18 +163,25 @@ namespace SistemaResultadosDeportivos
             int i = (Int32)btnEncuentro.Tag;
             var = i;
             EncuentroTorneo enT = encuentros[var];
-            Encuentro encuentro = new Encuentro(enT.idEncuentro, enT.fecha, enT.hora, enT.pausado, enT.minActual, enT.segActual, enT.comenzo, enT.finalizo, enT.nombreEncuentro, enT.idDeporte);
-            if (deporte.porEquipos)
+            if (enT.comenzo)
             {
-                new FrmVerEncuentroEquipo(encuentro, usuario).Visible = true;
+                Encuentro encuentro = new Encuentro(enT.idEncuentro, enT.fecha, enT.hora, enT.pausado, enT.minActual, enT.segActual, enT.comenzo, enT.finalizo, enT.nombreEncuentro, enT.idDeporte);
+                if (deporte.porEquipos)
+                {
+                    new FrmVerEncuentroEquipo(encuentro, usuario).Visible = true;
+                }
+                else if (!deporte.porEquipos && deporte.cantParticipantes == 2)
+                {
+                    new FrmVerEncuentroIndDeADos(encuentro, usuario).Visible = true;
+                }
+                else if (deporte.cantParticipantes > 2)
+                {
+                    new FrmVerEncuentroInd(encuentro, usuario).Visible = true;
+                }
             }
-            else if (!deporte.porEquipos && deporte.cantParticipantes == 2)
+            else
             {
-                new FrmVerEncuentroIndDeADos(encuentro, usuario).Visible = true;
-            }
-            else if (deporte.cantParticipantes > 2)
-            {
-                new FrmVerEncuentroInd(encuentro, usuario).Visible = true;
+                MessageBox.Show("Ese encuentro aún no ha comenzado.");
             }
         }
 

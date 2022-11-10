@@ -51,8 +51,8 @@
             // 
             // btnAgregar
             // 
-            resources.ApplyResources(this.btnAgregar, "btnAgregar");
             this.btnAgregar.BackColor = System.Drawing.Color.MediumTurquoise;
+            resources.ApplyResources(this.btnAgregar, "btnAgregar");
             this.btnAgregar.ForeColor = System.Drawing.SystemColors.Menu;
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -103,7 +103,6 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.cbxRol);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtNombre);
@@ -114,12 +113,13 @@
             this.panel1.Controls.Add(this.txtContrasena);
             this.panel1.Controls.Add(this.txtCorreo);
             this.panel1.Controls.Add(this.label3);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // cbxRol
             // 
-            resources.ApplyResources(this.cbxRol, "cbxRol");
             this.cbxRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cbxRol, "cbxRol");
             this.cbxRol.FormattingEnabled = true;
             this.cbxRol.Items.AddRange(new object[] {
             resources.GetString("cbxRol.Items"),
@@ -140,15 +140,15 @@
             // 
             // pnlBuscar
             // 
-            resources.ApplyResources(this.pnlBuscar, "pnlBuscar");
             this.pnlBuscar.Controls.Add(this.btnBuscar);
             this.pnlBuscar.Controls.Add(this.txtBuscar);
+            resources.ApplyResources(this.pnlBuscar, "pnlBuscar");
             this.pnlBuscar.Name = "pnlBuscar";
             // 
             // btnBuscar
             // 
-            resources.ApplyResources(this.btnBuscar, "btnBuscar");
             this.btnBuscar.BackColor = System.Drawing.Color.MediumTurquoise;
+            resources.ApplyResources(this.btnBuscar, "btnBuscar");
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.Menu;
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -162,9 +162,9 @@
             // 
             // pnlLupa
             // 
-            resources.ApplyResources(this.pnlLupa, "pnlLupa");
             this.pnlLupa.BackColor = System.Drawing.SystemColors.Control;
             this.pnlLupa.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.lupa;
+            resources.ApplyResources(this.pnlLupa, "pnlLupa");
             this.pnlLupa.Name = "pnlLupa";
             // 
             // ABMUsuarios

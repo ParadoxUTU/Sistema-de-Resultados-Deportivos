@@ -34,7 +34,11 @@ namespace SistemaResultadosDeportivos
 
         private void btnMembresia_Click(object sender, EventArgs e)
         {
-            lgu.agregarMiembro(usuario.correo);
+            if (lgu.agregarMiembro(usuario.correo))
+            {
+                MessageBox.Show("Ha obtenido la membresía, felicidades.");
+                btnMembresia.Enabled = false;
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

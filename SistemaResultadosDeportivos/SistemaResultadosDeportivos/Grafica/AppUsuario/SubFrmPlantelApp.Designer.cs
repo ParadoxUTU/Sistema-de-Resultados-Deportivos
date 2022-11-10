@@ -47,6 +47,8 @@
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(893, 549);
             this.Controls.Add(this.flpParticipantes);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SubFrmPlantelApp";
             this.Text = "SubFrmPlantelApp";
             this.Load += new System.EventHandler(this.SubFrmPlantelApp_Load);

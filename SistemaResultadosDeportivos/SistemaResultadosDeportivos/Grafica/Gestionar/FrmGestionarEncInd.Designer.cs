@@ -146,6 +146,8 @@
             this.Controls.Add(this.lblNombreEncuentro);
             this.Controls.Add(this.lblMinuto);
             this.Controls.Add(this.flpJugadores);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmGestionarEncInd";
             this.Load += new System.EventHandler(this.FrmGestionarEncInd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numPuntuacion)).EndInit();

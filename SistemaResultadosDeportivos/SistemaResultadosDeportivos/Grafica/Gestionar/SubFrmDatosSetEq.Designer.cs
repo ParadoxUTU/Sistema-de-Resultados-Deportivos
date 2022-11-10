@@ -69,6 +69,8 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.numPuntuacion);
             this.Controls.Add(this.lblEquipo1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SubFrmDatosSetEq";
             this.Load += new System.EventHandler(this.SubFrmDatosSetEq_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numPuntuacion)).EndInit();

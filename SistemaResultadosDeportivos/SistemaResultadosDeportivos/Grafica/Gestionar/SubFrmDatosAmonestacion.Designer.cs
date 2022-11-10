@@ -42,8 +42,8 @@
             // 
             // btnAceptar
             // 
-            resources.ApplyResources(this.btnAceptar, "btnAceptar");
             this.btnAceptar.BackColor = System.Drawing.Color.MediumTurquoise;
+            resources.ApplyResources(this.btnAceptar, "btnAceptar");
             this.btnAceptar.ForeColor = System.Drawing.SystemColors.Menu;
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -51,8 +51,8 @@
             // 
             // lblEquipo1
             // 
-            resources.ApplyResources(this.lblEquipo1, "lblEquipo1");
             this.lblEquipo1.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lblEquipo1, "lblEquipo1");
             this.lblEquipo1.ForeColor = System.Drawing.SystemColors.Menu;
             this.lblEquipo1.Name = "lblEquipo1";
             this.lblEquipo1.Click += new System.EventHandler(this.lblEquipo1_Click);
@@ -72,6 +72,8 @@
             this.Controls.Add(this.lblEquipo1);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.flpJugadores);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SubFrmDatosAmonestacion";
             this.Load += new System.EventHandler(this.SubFrmDatosAmonestacion_Load);
             this.ResumeLayout(false);

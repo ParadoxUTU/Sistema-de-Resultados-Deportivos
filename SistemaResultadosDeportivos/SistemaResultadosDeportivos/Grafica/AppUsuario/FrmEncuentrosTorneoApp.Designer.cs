@@ -64,6 +64,8 @@
             this.Controls.Add(this.btnSuscribirse);
             this.Controls.Add(this.flpEncuentros);
             this.Controls.Add(this.banner);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmEncuentrosTorneoApp";
             this.Load += new System.EventHandler(this.FrmEncuentrosTorneoApp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.banner)).EndInit();

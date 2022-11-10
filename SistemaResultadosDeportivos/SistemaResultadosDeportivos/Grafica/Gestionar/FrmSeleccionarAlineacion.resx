@@ -134,8 +134,8 @@
   <data name="btnSiguiente.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
-  <data name="&gt;&gt;flpJugadores.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="lblEquipo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 32</value>
   </data>
   <data name="lblEquipo.Text" xml:space="preserve">
     <value>Equipo</value>
@@ -159,14 +159,14 @@
   <data name="lblEquipo.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
-  <data name="&gt;&gt;lblEquipo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnSiguiente.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 37</value>
+  </data>
+  <data name="&gt;&gt;btnSiguiente.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -174,8 +174,8 @@
   <data name="btnSiguiente.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
-  <data name="lblEquipo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 32</value>
+  <data name="&gt;&gt;flpJugadores.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSiguiente.Name" xml:space="preserve">
     <value>btnSiguiente</value>
@@ -213,8 +213,8 @@
   <data name="flpJugadores.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
     <value>TopDown</value>
   </data>
-  <data name="&gt;&gt;btnSiguiente.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblEquipo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;flpJugadores.ZOrder" xml:space="preserve">
     <value>2</value>

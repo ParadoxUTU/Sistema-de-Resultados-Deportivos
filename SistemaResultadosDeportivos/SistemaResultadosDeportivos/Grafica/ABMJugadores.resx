@@ -171,17 +171,11 @@
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="numPeso.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 20</value>
-  </data>
   <data name="&gt;&gt;pnlBuscar.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 307</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -258,6 +252,9 @@
   <data name="&gt;&gt;flpJugadores.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btnBuscar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
   <data name="pnlBuscar.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -309,11 +306,14 @@
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="btnBuscar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
+  <data name="numPeso.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 20</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
+  </data>
+  <data name="&gt;&gt;btnAgregar.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="btnBuscar.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -540,8 +540,8 @@
   <data name="flpJugadores.Size" type="System.Drawing.Size, System.Drawing">
     <value>586, 498</value>
   </data>
-  <data name="&gt;&gt;btnAgregar.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;btnBuscar.ZOrder" xml:space="preserve">
     <value>0</value>

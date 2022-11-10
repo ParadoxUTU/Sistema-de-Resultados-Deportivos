@@ -134,20 +134,14 @@
   <data name="&gt;&gt;lblJugador2.Name" xml:space="preserve">
     <value>lblJugador2</value>
   </data>
-  <data name="lblPuntaje2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 20.25pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;timer1.Name" xml:space="preserve">
-    <value>timer1</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPuntaje2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblJugador2.Text" xml:space="preserve">
-    <value>Jugador 2</value>
-  </data>
-  <data name="&gt;&gt;flpIncidencias.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="lblPuntaje2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 20.25pt, style=Bold</value>
   </data>
   <data name="flpIncidencias.Location" type="System.Drawing.Point, System.Drawing">
     <value>22, 116</value>
@@ -174,8 +168,14 @@
   <data name="flpIncidencias.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
   </data>
+  <data name="lblMinuto.Location" type="System.Drawing.Point, System.Drawing">
+    <value>473, 62</value>
+  </data>
   <data name="btnSuscribirse.Location" type="System.Drawing.Point, System.Drawing">
     <value>27, 21</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>FrmVerEncuentroIndDeADos</value>
   </data>
   <data name="lblJugador2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopRight</value>
@@ -189,14 +189,8 @@
   <data name="lblPuntaje2.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
   </data>
-  <data name="lblJugador2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>840, 62</value>
-  </data>
   <data name="lblJugador1.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 32</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblMinuto.Text" xml:space="preserve">
     <value>0</value>
@@ -216,8 +210,8 @@
   <data name="lblJugador2.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>FrmVerEncuentroIndDeADos</value>
+  <data name="&gt;&gt;timer1.Name" xml:space="preserve">
+    <value>timer1</value>
   </data>
   <data name="&gt;&gt;lblJugador1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -234,17 +228,17 @@
   <data name="&gt;&gt;flpIncidencias.Name" xml:space="preserve">
     <value>flpIncidencias</value>
   </data>
-  <data name="flpIncidencias.Size" type="System.Drawing.Size, System.Drawing">
-    <value>964, 417</value>
-  </data>
   <data name="btnSuscribirse.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 29</value>
   </data>
   <data name="lblPuntaje2.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 32</value>
   </data>
-  <data name="&gt;&gt;lblPuntaje1.Name" xml:space="preserve">
-    <value>lblPuntaje1</value>
+  <data name="lblJugador1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 62</value>
+  </data>
+  <data name="btnSuscribirse.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
   </data>
   <data name="lblPuntaje2.Text" xml:space="preserve">
     <value>0</value>
@@ -270,8 +264,11 @@
   <data name="flpIncidencias.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblPuntaje2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
+  <data name="lblJugador2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 20.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;flpIncidencias.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;flpIncidencias.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -282,17 +279,14 @@
   <data name="lblMinuto.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblMinuto.Location" type="System.Drawing.Point, System.Drawing">
-    <value>473, 62</value>
-  </data>
   <data name="lblPuntaje1.Location" type="System.Drawing.Point, System.Drawing">
     <value>217, 62</value>
   </data>
   <data name="&gt;&gt;lblJugador1.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;lblJugador1.Name" xml:space="preserve">
-    <value>lblJugador1</value>
+  <data name="&gt;&gt;lblPuntaje1.Name" xml:space="preserve">
+    <value>lblPuntaje1</value>
   </data>
   <data name="&gt;&gt;lblPuntaje2.Parent" xml:space="preserve">
     <value>$this</value>
@@ -302,6 +296,9 @@
   </data>
   <data name="lblPuntaje1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 20.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;lblJugador1.Name" xml:space="preserve">
+    <value>lblJugador1</value>
   </data>
   <data name="&gt;&gt;lblPuntaje1.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -321,6 +318,9 @@
   <data name="lblJugador1.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
   </data>
+  <data name="lblPuntaje2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
   <data name="lblPuntaje1.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 32</value>
   </data>
@@ -330,8 +330,8 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="lblJugador2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 20.25pt, style=Bold</value>
+  <data name="flpIncidencias.Size" type="System.Drawing.Size, System.Drawing">
+    <value>964, 417</value>
   </data>
   <data name="&gt;&gt;lblPuntaje1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -339,11 +339,11 @@
   <data name="&gt;&gt;lblMinuto.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="btnSuscribirse.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial Black, 9.75pt, style=Bold</value>
+  <data name="lblJugador2.Text" xml:space="preserve">
+    <value>Jugador 2</value>
   </data>
-  <data name="lblJugador1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 62</value>
+  <data name="lblJugador2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>840, 62</value>
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

@@ -129,6 +129,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmPerfil";
             this.Load += new System.EventHandler(this.FrmPerfil_Load);
             this.panel1.ResumeLayout(false);

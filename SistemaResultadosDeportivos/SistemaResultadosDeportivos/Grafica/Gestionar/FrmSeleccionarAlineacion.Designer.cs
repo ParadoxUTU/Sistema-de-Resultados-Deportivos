@@ -65,6 +65,8 @@
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.lblEquipo);
             this.Controls.Add(this.flpJugadores);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmSeleccionarAlineacion";
             this.Load += new System.EventHandler(this.FrmSeleccionarAlineacion_Load);
             this.ResumeLayout(false);

@@ -141,8 +141,8 @@
   <data name="btnTorneos.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 40</value>
   </data>
-  <data name="btnJugadores.Text" xml:space="preserve">
-    <value>Jugadores</value>
+  <data name="&gt;&gt;btnTorneos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnEquipos.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 131</value>
@@ -152,6 +152,9 @@
   </data>
   <data name="btnJugadores.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
+  </data>
+  <data name="btnEquipos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 40</value>
   </data>
   <data name="btnJugadores.Location" type="System.Drawing.Point, System.Drawing">
     <value>348, 28</value>
@@ -183,6 +186,9 @@
   <data name="btnEncuentros.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
+  <data name="btnJugadores.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 40</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FrmParent</value>
   </data>
@@ -195,9 +201,6 @@
   <data name="&gt;&gt;btnEncuentros.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnPerfil.Name" xml:space="preserve">
-    <value>btnPerfil</value>
-  </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -207,14 +210,14 @@
   <data name="&gt;&gt;btnEncuentros.Name" xml:space="preserve">
     <value>btnEncuentros</value>
   </data>
-  <data name="btnEncuentros.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 40</value>
+  <data name="&gt;&gt;btnPerfil.Name" xml:space="preserve">
+    <value>btnPerfil</value>
   </data>
   <data name="btnTorneos.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
-  <data name="btnPerfil.Location" type="System.Drawing.Point, System.Drawing">
-    <value>188, 196</value>
+  <data name="&gt;&gt;btnEquipos.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;btnPerfil.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -231,23 +234,17 @@
   <data name="&gt;&gt;btnJugadores.Name" xml:space="preserve">
     <value>btnJugadores</value>
   </data>
-  <data name="btnJugadores.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial Black, 9.75pt, style=Bold</value>
-  </data>
   <data name="btnEncuentros.Text" xml:space="preserve">
     <value>Encuentros</value>
   </data>
   <data name="btnEncuentros.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial Black, 9.75pt, style=Bold</value>
   </data>
-  <data name="btnEquipos.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial Black, 9.75pt, style=Bold</value>
-  </data>
   <data name="btnPerfil.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial Black, 9.75pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;btnTorneos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnEquipos.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
   </data>
   <data name="&gt;&gt;btnTorneos.Parent" xml:space="preserve">
     <value>$this</value>
@@ -258,14 +255,17 @@
   <data name="&gt;&gt;btnPerfil.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="btnEquipos.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnPerfil.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnEncuentros.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 40</value>
+  </data>
+  <data name="btnPerfil.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 196</value>
   </data>
   <data name="btnPerfil.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 40</value>
-  </data>
-  <data name="&gt;&gt;btnEquipos.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="&gt;&gt;btnJugadores.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -273,14 +273,14 @@
   <data name="btnPerfil.Text" xml:space="preserve">
     <value>Perfil</value>
   </data>
-  <data name="btnJugadores.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 40</value>
+  <data name="btnJugadores.Text" xml:space="preserve">
+    <value>Jugadores</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="btnPerfil.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="btnJugadores.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 9.75pt, style=Bold</value>
   </data>
   <data name="&gt;&gt;btnEncuentros.ZOrder" xml:space="preserve">
     <value>4</value>

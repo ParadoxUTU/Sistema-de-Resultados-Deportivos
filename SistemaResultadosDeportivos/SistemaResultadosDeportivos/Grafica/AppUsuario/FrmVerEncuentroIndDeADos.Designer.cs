@@ -108,6 +108,8 @@
             this.Controls.Add(this.lblJugador2);
             this.Controls.Add(this.lblJugador1);
             this.Controls.Add(this.flpIncidencias);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmVerEncuentroIndDeADos";
             this.Load += new System.EventHandler(this.FrmVerEncuentroIndDeADos_Load);
             this.ResumeLayout(false);

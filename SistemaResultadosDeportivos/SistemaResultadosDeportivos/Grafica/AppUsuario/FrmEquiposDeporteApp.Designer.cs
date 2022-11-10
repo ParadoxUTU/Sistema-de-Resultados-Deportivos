@@ -47,6 +47,8 @@
             this.BackgroundImage = global::SistemaResultadosDeportivos.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(993, 580);
             this.Controls.Add(this.flpEquipos);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmEquiposDeporteApp";
             this.Text = "FrmEquiposDeporteApp";
             this.Load += new System.EventHandler(this.FrmEquiposDeporteApp_Load);

@@ -131,8 +131,8 @@
   <data name="&gt;&gt;lblPuntaje2.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lblPuntaje2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 20.25pt, style=Bold</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblEquipo2.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -140,13 +140,19 @@
   <data name="&gt;&gt;lblPuntaje2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblEquipo1.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="lblPuntaje2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 20.25pt, style=Bold</value>
+  </data>
   <data name="lblMinuto.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 20.25pt, style=Bold</value>
   </data>
   <data name="&gt;&gt;lblEquipo1.Name" xml:space="preserve">
     <value>lblEquipo1</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnSuscribirse.TabIndex" type="System.Int32, mscorlib">
     <value>39</value>
   </data>
@@ -180,9 +186,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>FrmVerEncuentroApp</value>
   </data>
-  <data name="&gt;&gt;timer1.Name" xml:space="preserve">
-    <value>timer1</value>
-  </data>
   <data name="lblEquipo1.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 37</value>
   </data>
@@ -200,9 +203,6 @@
   </data>
   <data name="lblPuntaje2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblMinuto.Text" xml:space="preserve">
     <value>0</value>
@@ -222,8 +222,8 @@
   <data name="lblEquipo1.Text" xml:space="preserve">
     <value>Equipo 1</value>
   </data>
-  <data name="lblEquipo1.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
+  <data name="&gt;&gt;timer1.Name" xml:space="preserve">
+    <value>timer1</value>
   </data>
   <data name="lblMinuto.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -234,11 +234,11 @@
   <data name="lblEquipo1.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 32</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
   <data name="&gt;&gt;flpIncidencias.Name" xml:space="preserve">
     <value>flpIncidencias</value>
+  </data>
+  <data name="&gt;&gt;flpIncidencias.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="btnSuscribirse.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 29</value>
@@ -267,8 +267,8 @@
   <data name="&gt;&gt;flpIncidencias.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;flpIncidencias.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FrmVerEncuentroEquipo</value>

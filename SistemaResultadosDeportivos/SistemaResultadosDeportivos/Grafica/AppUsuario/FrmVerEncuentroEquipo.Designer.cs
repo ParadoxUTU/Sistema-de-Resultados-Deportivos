@@ -112,6 +112,8 @@
             this.Controls.Add(this.lblEquipo2);
             this.Controls.Add(this.lblEquipo1);
             this.Controls.Add(this.flpIncidencias);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmVerEncuentroEquipo";
             this.Load += new System.EventHandler(this.FrmVerEncuentroApp_Load);
             this.ResumeLayout(false);

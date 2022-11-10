@@ -79,6 +79,8 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.flpPlantel);
             this.Controls.Add(this.flpAlineacion);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SubFrmDatosCambio";
             this.Load += new System.EventHandler(this.SubFrmDatosCambio_Load);
             this.ResumeLayout(false);
