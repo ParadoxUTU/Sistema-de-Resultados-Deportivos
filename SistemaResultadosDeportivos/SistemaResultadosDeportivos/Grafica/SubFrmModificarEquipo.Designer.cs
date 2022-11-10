@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SubFrmModificarEquipo));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAgregarJugador = new System.Windows.Forms.Button();
+            this.btnPlantel = new System.Windows.Forms.Button();
             this.cbxDeportes = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPais = new System.Windows.Forms.TextBox();
@@ -46,8 +46,7 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Controls.Add(this.btnAgregarJugador);
+            this.panel1.Controls.Add(this.btnPlantel);
             this.panel1.Controls.Add(this.cbxDeportes);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtPais);
@@ -58,16 +57,17 @@
             this.panel1.Controls.Add(this.btnModificar);
             this.panel1.Controls.Add(this.pnlPerfil);
             this.panel1.Controls.Add(this.btnAceptar);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // btnAgregarJugador
+            // btnPlantel
             // 
-            resources.ApplyResources(this.btnAgregarJugador, "btnAgregarJugador");
-            this.btnAgregarJugador.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnAgregarJugador.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnAgregarJugador.Name = "btnAgregarJugador";
-            this.btnAgregarJugador.UseVisualStyleBackColor = false;
-            this.btnAgregarJugador.Click += new System.EventHandler(this.btnAgregarJugador_Click);
+            this.btnPlantel.BackColor = System.Drawing.Color.MediumTurquoise;
+            resources.ApplyResources(this.btnPlantel, "btnPlantel");
+            this.btnPlantel.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnPlantel.Name = "btnPlantel";
+            this.btnPlantel.UseVisualStyleBackColor = false;
+            this.btnPlantel.Click += new System.EventHandler(this.btnPlantel_Click);
             // 
             // cbxDeportes
             // 
@@ -108,16 +108,16 @@
             // 
             // btnEliminar
             // 
-            resources.ApplyResources(this.btnEliminar, "btnEliminar");
             this.btnEliminar.BackColor = System.Drawing.Color.MediumTurquoise;
+            resources.ApplyResources(this.btnEliminar, "btnEliminar");
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.Menu;
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // btnModificar
             // 
-            resources.ApplyResources(this.btnModificar, "btnModificar");
             this.btnModificar.BackColor = System.Drawing.Color.MediumTurquoise;
+            resources.ApplyResources(this.btnModificar, "btnModificar");
             this.btnModificar.ForeColor = System.Drawing.SystemColors.Menu;
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -129,8 +129,8 @@
             // 
             // btnAceptar
             // 
-            resources.ApplyResources(this.btnAceptar, "btnAceptar");
             this.btnAceptar.BackColor = System.Drawing.Color.MediumTurquoise;
+            resources.ApplyResources(this.btnAceptar, "btnAceptar");
             this.btnAceptar.ForeColor = System.Drawing.SystemColors.Menu;
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -163,6 +163,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnAgregarJugador;
+        private System.Windows.Forms.Button btnPlantel;
     }
 }

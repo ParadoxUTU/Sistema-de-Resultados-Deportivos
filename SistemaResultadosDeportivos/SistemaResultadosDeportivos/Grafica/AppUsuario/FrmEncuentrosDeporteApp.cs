@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaResultadosDeportivos.APIs;
 using SistemaResultadosDeportivos.Modelos;
+using SistemaResultadosDeportivos.Logica;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
@@ -22,6 +23,7 @@ namespace SistemaResultadosDeportivos
         APIresultados resultados;
         Image imagenBanner;
         Deporte deporte;
+        LogicaUsuarios lgu;
         Usuario usuario;
         String urlSitio;
         List<Encuentro> encuentros;
@@ -32,14 +34,15 @@ namespace SistemaResultadosDeportivos
             InitializeComponent();
             publicidad = new APIpublicidad();
             resultados = new APIresultados();
+            lgu = new LogicaUsuarios();
             this.deporte = deporte;
+            this.usuario = usuario;
             RespuestaPublicidad res = JsonConvert.DeserializeObject<RespuestaPublicidad>(publicidad.publicidadToJSON());
             setImageBanner(res.pathBanner);
             urlSitio = res.urlSitio;
             encuentros = new List<Encuentro>();
             setEncuentros();
             listarEncuentros();
-            this.usuario = usuario;
         }
 
         private void setEncuentros()
@@ -156,13 +159,20 @@ namespace SistemaResultadosDeportivos
         private void setImageBanner(string path)
         {
             //Establece la imagen del banner, dado la ruta respectiva
-            try
+            if (!lgu.esMiembro(usuario.correo))
             {
-                imagenBanner = Image.FromFile(Directory.GetCurrentDirectory() + "\\Img\\" + path);
-                Bitmap bitmapBanner = new Bitmap(imagenBanner, banner.Width, banner.Height);
-                banner.Image = bitmapBanner;
+                try
+                {
+                    imagenBanner = Image.FromFile(Directory.GetCurrentDirectory() + "\\Img\\" + path);
+                    Bitmap bitmapBanner = new Bitmap(imagenBanner, banner.Width, banner.Height);
+                    banner.Image = bitmapBanner;
+                }
+                catch { }
             }
-            catch { }
+            else
+            {
+                banner.Visible = false;
+            }
         }
 
         private void FrmEncuentrosDeporteApp_Load(object sender, EventArgs e)

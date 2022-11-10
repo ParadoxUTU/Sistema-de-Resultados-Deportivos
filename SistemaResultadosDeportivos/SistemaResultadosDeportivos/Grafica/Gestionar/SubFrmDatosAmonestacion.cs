@@ -143,14 +143,21 @@ namespace SistemaResultadosDeportivos
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            List<Alineacion> alineacion = gestionar.lge.devolverJugando(equipoActual.idEquipo, gestionar.encuentro.idEncuentro);
-            Jugador jugador = lgj.devolverJugadorPorID(alineacion[var].idJugador);
-            int minuto = gestionar.ts.Minutes;
-            int segundo = gestionar.ts.Seconds;
-            String nombre = cbxNombre.Text;
-            gestionar.lga.agregarAmonestacionAlineacion(equipoActual.idEquipo, gestionar.encuentro.idEncuentro, jugador.idJugador, gestionar.encuentro.idDeporte, nombre, minuto, segundo);
-            gestionar.setIncidencias();
-            gestionar.listarIncidencias();
+            if(cbxNombre.SelectedItem != null)
+            {
+                List<Alineacion> alineacion = gestionar.lge.devolverJugando(equipoActual.idEquipo, gestionar.encuentro.idEncuentro);
+                Jugador jugador = lgj.devolverJugadorPorID(alineacion[var].idJugador);
+                int minuto = gestionar.ts.Minutes;
+                int segundo = gestionar.ts.Seconds;
+                String nombre = cbxNombre.Text;
+                gestionar.lga.agregarAmonestacionAlineacion(equipoActual.idEquipo, gestionar.encuentro.idEncuentro, jugador.idJugador, gestionar.encuentro.idDeporte, nombre, minuto, segundo);
+                gestionar.setIncidencias();
+                gestionar.listarIncidencias();
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("Por favor, ingrese el tipo de amonestación");
+            }
         }
 
         private void lblEquipo1_Click(object sender, EventArgs e)

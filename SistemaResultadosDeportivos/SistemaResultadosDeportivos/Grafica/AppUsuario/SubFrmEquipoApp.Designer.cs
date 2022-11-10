@@ -36,18 +36,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnSuscribirse = new System.Windows.Forms.Button();
             this.pnlPerfil = new System.Windows.Forms.Panel();
+            this.btnPlantel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Controls.Add(this.btnPlantel);
             this.panel1.Controls.Add(this.txtPais);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnSuscribirse);
             this.panel1.Controls.Add(this.pnlPerfil);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // txtPais
@@ -76,8 +78,8 @@
             // 
             // btnSuscribirse
             // 
-            resources.ApplyResources(this.btnSuscribirse, "btnSuscribirse");
             this.btnSuscribirse.BackColor = System.Drawing.Color.MediumTurquoise;
+            resources.ApplyResources(this.btnSuscribirse, "btnSuscribirse");
             this.btnSuscribirse.ForeColor = System.Drawing.SystemColors.Menu;
             this.btnSuscribirse.Name = "btnSuscribirse";
             this.btnSuscribirse.UseVisualStyleBackColor = false;
@@ -87,6 +89,15 @@
             // 
             resources.ApplyResources(this.pnlPerfil, "pnlPerfil");
             this.pnlPerfil.Name = "pnlPerfil";
+            // 
+            // btnPlantel
+            // 
+            this.btnPlantel.BackColor = System.Drawing.Color.MediumTurquoise;
+            resources.ApplyResources(this.btnPlantel, "btnPlantel");
+            this.btnPlantel.ForeColor = System.Drawing.SystemColors.Menu;
+            this.btnPlantel.Name = "btnPlantel";
+            this.btnPlantel.UseVisualStyleBackColor = false;
+            this.btnPlantel.Click += new System.EventHandler(this.btnPlantel_Click);
             // 
             // SubFrmEquipoApp
             // 
@@ -111,5 +122,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSuscribirse;
         private System.Windows.Forms.Panel pnlPerfil;
+        private System.Windows.Forms.Button btnPlantel;
     }
 }

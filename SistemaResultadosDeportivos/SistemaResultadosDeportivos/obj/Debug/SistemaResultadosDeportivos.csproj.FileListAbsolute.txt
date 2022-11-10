@@ -238,3 +238,5 @@ C:\Users\Administrador\Documents\GitHub\Sistema-de-Resultados-Deportivos\Sistema
 C:\Users\Administrador\Documents\GitHub\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.SubFrmSeleccionarParticipantes.en-AT.resources
 C:\Users\Administrador\Documents\GitHub\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.SubFrmSeleccionarParticipantesTorneo.en-AT.resources
 C:\Users\Administrador\Documents\GitHub\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.SubFrmVerParticipantes.en-AT.resources
+C:\Users\Administrador\Documents\GitHub\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.SubFrmPlantel.resources
+C:\Users\Administrador\Documents\GitHub\Sistema-de-Resultados-Deportivos\SistemaResultadosDeportivos\SistemaResultadosDeportivos\obj\Debug\SistemaResultadosDeportivos.SubFrmPlantelApp.resources

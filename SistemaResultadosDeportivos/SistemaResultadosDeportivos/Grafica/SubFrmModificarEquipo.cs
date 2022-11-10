@@ -67,10 +67,10 @@ namespace SistemaResultadosDeportivos
             }
         }
 
-        private void btnAgregarJugador_Click(object sender, EventArgs e)
+        private void btnPlantel_Click(object sender, EventArgs e)
         {
             this.Dispose();
-            new FrmSeleccionarPlantel(equipos).Visible = true;
+            new SubFrmPlantel(equipo).Visible = true;
         }
     }
 }

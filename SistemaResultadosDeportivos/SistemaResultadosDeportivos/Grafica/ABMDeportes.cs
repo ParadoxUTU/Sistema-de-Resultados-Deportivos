@@ -175,15 +175,22 @@ namespace SistemaResultadosDeportivos
                     bool anotaciones;
                     bool sets;
                     int participantes = (int)numParticipantes.Value;
-                    modalidad = cbxModalidad.SelectedItem.ToString();
-                    if(cbxPuntuacion.SelectedItem != null)
-                        puntuacion = cbxPuntuacion.SelectedItem.ToString();
-                    porEquipos = (modalidad == "Por equipos");
-                    anotaciones = (puntuacion == "Anotaciones");
-                    sets = (puntuacion == "Sets");
-                    if (lgd.agregarDeporte(porEquipos, anotaciones, sets, participantes, nombre, 0))
+                    if(participantes <= 2 && cbxPuntuacion.SelectedItem == null)
                     {
-                        listarDeportes();
+                        MessageBox.Show("Por favor, ingrese un tipo de puntuación");
+                    }
+                    else
+                    {
+                        modalidad = cbxModalidad.SelectedItem.ToString();
+                        if (cbxPuntuacion.SelectedItem != null)
+                            puntuacion = cbxPuntuacion.SelectedItem.ToString();
+                        porEquipos = (modalidad == "Por equipos");
+                        anotaciones = (puntuacion == "Anotaciones");
+                        sets = (puntuacion == "Sets");
+                        if (lgd.agregarDeporte(porEquipos, anotaciones, sets, participantes, nombre, 0))
+                        {
+                            listarDeportes();
+                        }
                     }
                 }
                 else

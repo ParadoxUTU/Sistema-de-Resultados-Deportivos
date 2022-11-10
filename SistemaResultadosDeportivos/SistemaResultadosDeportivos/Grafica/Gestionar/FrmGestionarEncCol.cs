@@ -119,7 +119,23 @@ namespace SistemaResultadosDeportivos
                     Jugador jugador2 = lgj.devolverJugadorPorID(incidencia.idJugador2);
                     textJugador += " => " + jugador2.nombreJugador;
                 }
-                String textMinuto = incidencia.minuto.ToString() + ":" + incidencia.segundo.ToString();
+                String textMinuto = "";
+                if (incidencia.minuto < 10)
+                {
+                    textMinuto += "0" + incidencia.minuto.ToString();
+                }
+                else
+                {
+                    textMinuto = incidencia.minuto.ToString();
+                }
+                if (incidencia.segundo < 10)
+                {
+                    textMinuto += ":0" + incidencia.segundo.ToString();
+                }
+                else
+                {
+                    textMinuto += ":" + incidencia.segundo.ToString();
+                }
                 asignarComponentes(textNombre, textJugador, textMinuto, i, tamano);
                 i++;
             }

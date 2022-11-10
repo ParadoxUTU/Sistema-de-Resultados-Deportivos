@@ -42,6 +42,7 @@ namespace SistemaResultadosDeportivos
             lga = new LogicaIncidencias();
             lgc = new LogicaCambios();
             lgj = new LogicaJugadores();
+            this.usuario = usuario;
             incidencias = new List<Incidencia>();
             timer2.Enabled = true;
             encuentro = e;
@@ -61,7 +62,6 @@ namespace SistemaResultadosDeportivos
                 setSetsEquipo(encuentro.idEncuentro, equipo2.idEquipo, lblPuntaje2);
             }
             lblMinuto.Text = Convert.ToString(encuentro.minActual);
-            this.usuario = usuario;
             actualizarSuscribirse();
             if (encuentro.minActual < 10)
             {
@@ -118,7 +118,23 @@ namespace SistemaResultadosDeportivos
                     Jugador jugador2 = lgj.devolverJugadorPorID(incidencia.idJugador2);
                     textJugador += " => " + jugador2.nombreJugador;
                 }
-                String textMinuto = incidencia.minuto.ToString() + ":" + incidencia.segundo.ToString();
+                String textMinuto = "";
+                if (incidencia.minuto < 10)
+                {
+                    textMinuto += "0" + incidencia.minuto.ToString();
+                }
+                else
+                {
+                    textMinuto = incidencia.minuto.ToString();
+                }
+                if (incidencia.segundo < 10)
+                {
+                    textMinuto += ":0" + incidencia.segundo.ToString();
+                }
+                else
+                {
+                    textMinuto += ":" + incidencia.segundo.ToString();
+                }
                 asignarComponentes(textNombre, textJugador, textMinuto, i, tamano);
                 i++;
             }

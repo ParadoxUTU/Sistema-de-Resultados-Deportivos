@@ -207,6 +207,12 @@
     <Compile Include="Grafica\AppUsuario\SubFrmEquipoApp.Designer.cs">
       <DependentUpon>SubFrmEquipoApp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grafica\AppUsuario\SubFrmPlantelApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\AppUsuario\SubFrmPlantelApp.Designer.cs">
+      <DependentUpon>SubFrmPlantelApp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grafica\Gestionar\FrmGestionarEncInd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +328,12 @@
     </Compile>
     <Compile Include="Grafica\SubFrmModificarUsuario.Designer.cs">
       <DependentUpon>SubFrmModificarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grafica\SubFrmPlantel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafica\SubFrmPlantel.Designer.cs">
+      <DependentUpon>SubFrmPlantel.cs</DependentUpon>
     </Compile>
     <Compile Include="Grafica\SubFrmSeleccionarParticipantes.cs">
       <SubType>Form</SubType>
@@ -515,6 +527,9 @@
     <EmbeddedResource Include="Grafica\AppUsuario\SubFrmEquipoApp.resx">
       <DependentUpon>SubFrmEquipoApp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\AppUsuario\SubFrmPlantelApp.resx">
+      <DependentUpon>SubFrmPlantelApp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grafica\FrmBackoffice.en-AT.resx">
       <DependentUpon>FrmBackoffice.cs</DependentUpon>
     </EmbeddedResource>
@@ -640,6 +655,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\SubFrmModificarUsuario.resx">
       <DependentUpon>SubFrmModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafica\SubFrmPlantel.resx">
+      <DependentUpon>SubFrmPlantel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grafica\SubFrmSeleccionarParticipantes.en-AT.resx">
       <DependentUpon>SubFrmSeleccionarParticipantes.cs</DependentUpon>

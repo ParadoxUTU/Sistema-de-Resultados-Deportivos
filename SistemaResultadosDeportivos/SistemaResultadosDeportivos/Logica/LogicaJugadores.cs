@@ -25,6 +25,12 @@ namespace SistemaResultadosDeportivos.Logica
             return datosJugador.getJugadores();
         }
 
+        public List<Jugador> devolverJugadoresPorPlantel(int idEquipo)
+        {
+            //Devuelve una lista con los jugadores de un plantel en la BD
+            return datosJugador.getJugadoresByPlantel(idEquipo);
+        }
+
         public Jugador devolverJugadorPorID(int id)
         {
             //Devuelve un jugador en específico por ID
@@ -101,6 +107,12 @@ namespace SistemaResultadosDeportivos.Logica
         {
             //Intenta eliminar un jugador de un torneo de la BD con la id dada
             return datosJugador.eliminarJugadorDeTorneo(idJugador, idTorneo);
+        }
+
+        public bool eliminarJugadorDePlantel(int idEquipo, int idJugador)
+        {
+            //Intenta eliminar un jugador de un plantel de la BD con la id dada
+            return datosJugador.eliminarJugadorDePlantel(idEquipo, idJugador);
         }
 
         public bool eliminarJugadorDeTodoEncuentro(int id)

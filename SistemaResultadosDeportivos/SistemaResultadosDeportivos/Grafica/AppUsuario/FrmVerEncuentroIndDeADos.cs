@@ -111,6 +111,8 @@ namespace SistemaResultadosDeportivos
             {
                 lblMinuto.Text += ":" + encuentro.segActual.ToString();
             }
+            setSetsJugador(encuentro.idEncuentro, jugador1.idJugador, lblPuntaje1);
+            setSetsJugador(encuentro.idEncuentro, jugador2.idJugador, lblPuntaje2);
         }
 
         private void FrmVerEncuentroIndDeADos_Load(object sender, EventArgs e)

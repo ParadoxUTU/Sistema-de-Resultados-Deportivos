@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaResultadosDeportivos.exe" size="894992">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaResultadosDeportivos.exe" size="904208">
       <assemblyIdentity name="SistemaResultadosDeportivos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aFD60/tMxvwC71v2Z7Ye6Xkxq+dvs1/HqtLj9I7kKmU=</dsig:DigestValue>
+        <dsig:DigestValue>vXdk/T/FyLUu4FGQf+kj38I65WVsCWa+5GYSWEGM89s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>X4NZl0DhLN4ID/c2u7dnIK2yWlLkr8UlbNg3VPHLq6w=</dsig:DigestValue>
+        <dsig:DigestValue>xy97H1e0vwImS/LHIhSWO3pfz3ugUdSNqg5W2mv9q30=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,7 +85,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>W+nmAtoJQ7ixqx21ROpiPHGLbUwi0OPlzXPy8+SttAg=</dsig:DigestValue>
+        <dsig:DigestValue>CJbn/B94zszKUmOV4m8IuSpJKoeBcSrMA0vcVXbh+eg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

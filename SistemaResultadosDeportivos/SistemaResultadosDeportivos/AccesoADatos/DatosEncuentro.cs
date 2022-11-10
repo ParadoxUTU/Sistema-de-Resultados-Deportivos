@@ -132,10 +132,10 @@ namespace SistemaResultadosDeportivos.AccesoADatos
                         hora = rs.Fields[5].Value;
                         pausado = Convert.ToBoolean(rs.Fields[6].Value);
                         minActual = (int)rs.Fields[7].Value;
-                        segActual = (int)rs.Fields[5].Value;
-                        comenzo = Convert.ToBoolean(rs.Fields[6].Value);
-                        finalizo = Convert.ToBoolean(rs.Fields[7].Value);
-                        nombreEncuentro = (String)rs.Fields[8].Value;
+                        segActual = (int)rs.Fields[8].Value;
+                        comenzo = Convert.ToBoolean(rs.Fields[9].Value);
+                        finalizo = Convert.ToBoolean(rs.Fields[10].Value);
+                        nombreEncuentro = (String)rs.Fields[11].Value;
                         idDeporte = (int)rs.Fields[9].Value;
                         EncuentroTorneo encuentro = new EncuentroTorneo(etapa, idEncuentro, fecha, hora, pausado, minActual, segActual, comenzo, finalizo, nombreEncuentro, idDeporte);
                         lista.Add(encuentro);

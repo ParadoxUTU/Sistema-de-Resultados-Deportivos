@@ -49,6 +49,44 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             return lista;
         }
 
+        public List<Jugador> getJugadoresByPlantel(int idEquipo)
+        {
+            //Mapea los jugadores existentes a los modelos pertenecientes a un equipo, y los devuelve en una lista
+            int idJugador;
+            String nombreJugador;
+            DateTime fechaNac;
+            int peso;
+            int estatura;
+            String pais;
+            int idDeporte;
+            List<Jugador> lista = new List<Jugador>();
+            String stringSql = "SELECT * FROM Plantel INNER JOIN Jugadores ON Plantel.IdJugador=Jugadores.IdJugador WHERE IdEquipo = '" + idEquipo + "';";
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                ADODB.Recordset rs = cn.Execute(stringSql, out object cantFilas, -1);
+                if (rs.RecordCount > 0)
+                {
+                    for (int i = 0; i < (int)cantFilas; i++)
+                    {
+                        idJugador = (int)rs.Fields[2].Value;
+                        nombreJugador = (string)rs.Fields[3].Value;
+                        fechaNac = rs.Fields[4].Value;
+                        peso = (int)rs.Fields[5].Value;
+                        estatura = (int)rs.Fields[6].Value;
+                        pais = (string)rs.Fields[7].Value;
+                        idDeporte = (int)rs.Fields[8].Value;
+                        Jugador jugador = new Jugador(idJugador, nombreJugador, fechaNac, peso, estatura, pais, idDeporte);
+                        lista.Add(jugador);
+                        rs.MoveNext();
+                    }
+                }
+                cn.Close();
+            }
+            catch { }
+            return lista;
+        }
+
         public Jugador getJugadorByID(int id)
         {
             //Devuelve un jugador dependiendo de su ID
@@ -362,6 +400,24 @@ namespace SistemaResultadosDeportivos.AccesoADatos
             {
                 ADODB.Connection cn = Conexion.Crear();
                 String stringSql = "DELETE FROM Encuentros_Jugadores WHERE IdEncuentro = '" + idEncuentro + "' AND IdJugador = '" + idJugador + "';";
+                cn.Execute(stringSql, out object cantFilas, -1);
+                cn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool eliminarJugadorDePlantel(int idJugador, int idEquipo)
+        {
+            //Intenta eliminar un jugador de un plantel de la BD, dada una id
+            try
+            {
+                ADODB.Connection cn = Conexion.Crear();
+                String stringSql = "DELETE FROM Plantel WHERE IdEquipo = '" + idEquipo + "' AND IdJugador = '" + idJugador + "';";
                 cn.Execute(stringSql, out object cantFilas, -1);
                 cn.Close();
                 return true;

@@ -5,35 +5,34 @@ using System.Windows.Forms;
 using SistemaResultadosDeportivos.Logica;
 using System.Drawing;
 
+
 namespace SistemaResultadosDeportivos
 {
-    public partial class FrmSeleccionarPlantel : Form
+    public partial class SubFrmPlantelApp : Form
     {
-        SubFrmPlantel plantel;
-        LogicaDeportes lgd;
+        public Equipo equipo;
+        LogicaEquipos lgeq;
         LogicaJugadores lgj;
-        Equipo equipo;
-        Deporte deporte;
+        Button botonAnterior = null;
         int var = 0;
-        List<int> idJugadores = new List<int>();
+        List<int> idParticipantes = new List<int>();
 
-        public FrmSeleccionarPlantel(SubFrmPlantel f)
+        public SubFrmPlantelApp(Equipo equipo)
         {
             InitializeComponent();
-            plantel = f;
-            lgd = new LogicaDeportes();
+            lgeq = new LogicaEquipos();
             lgj = new LogicaJugadores();
-            equipo = plantel.equipo;
-            deporte = lgd.devolverDeportePorID(equipo.idDeporte);
-            listarJugadoresPorDeporte(deporte.idDeporte);
+            this.equipo = equipo;
+            listarJugadoresPorPlantel(equipo.idEquipo);
         }
 
-        public void listarJugadoresPorDeporte(int idDeporte)
+        public void listarJugadoresPorPlantel(int idEquipo)
         {
-            flpJugadores.Controls.Clear();
+            idParticipantes.Clear();
+            flpParticipantes.Controls.Clear();
             int i = 0;
-            int tamano = flpJugadores.Width - 5;
-            List<Jugador> lista = lgj.devolverJugadoresPorDeporte(deporte.idDeporte);
+            int tamano = flpParticipantes.Width - 5;
+            List<Jugador> lista = lgj.devolverJugadoresPorPlantel(idEquipo);
             foreach (Jugador j in lista)
             {
                 String tamanoSt = "Nombre: " + j.nombreJugador;
@@ -50,7 +49,7 @@ namespace SistemaResultadosDeportivos
 
             foreach (Jugador j in lista)
             {
-                idJugadores.Add(j.idJugador);
+                idParticipantes.Add(j.idJugador);
                 String textNombre = "Nombre: " + j.nombreJugador;
                 String textPais = "Pais: " + j.pais;
                 String textEdad = "Fecha de Nacimiento: " + j.fechaNac;
@@ -65,19 +64,20 @@ namespace SistemaResultadosDeportivos
             Label lblBoton2 = new Label();
             Label lblBoton3 = new Label();
             Panel pnlPerfil = new Panel();
-            Button btnJugador = new Button();
+            Button btnParticipante = new Button();
             String textNombre = n;
             String textPais = p;
-            propiedadesBoton(btnJugador, i, tamano);
-            propiedadesLabel(lblBoton, textNombre, btnJugador, 8);
-            propiedadesLabel(lblBoton2, textPais, btnJugador, 39);
+            String textEdad = e;
+            propiedadesBoton(btnParticipante, i, tamano);
+            propiedadesLabel(lblBoton, textNombre, btnParticipante, 8);
+            propiedadesLabel(lblBoton2, textPais, btnParticipante, 39);
+            propiedadesLabel(lblBoton3, textEdad, btnParticipante, 70);
             propiedadesPanel(pnlPerfil);
-            btnJugador.Controls.Add(pnlPerfil);
-            btnJugador.Controls.Add(lblBoton);
-            btnJugador.Controls.Add(lblBoton2);
-            btnJugador.Controls.Add(lblBoton3);
-            flpJugadores.Controls.Add(btnJugador);
-            btnJugador.Click += new EventHandler(btnJugadores_Click);
+            btnParticipante.Controls.Add(pnlPerfil);
+            btnParticipante.Controls.Add(lblBoton);
+            btnParticipante.Controls.Add(lblBoton2);
+            btnParticipante.Controls.Add(lblBoton3);
+            flpParticipantes.Controls.Add(btnParticipante);
         }
 
         private void propiedadesBoton(Button btn, int i, int t)
@@ -86,7 +86,7 @@ namespace SistemaResultadosDeportivos
             btn.Tag = i;
             btn.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
             btn.FlatStyle = FlatStyle.Flat;
-            if (t == (flpJugadores.Width - 5))
+            if (t == (flpParticipantes.Width - 5))
             {
                 btn.Width = t;
             }
@@ -115,27 +115,9 @@ namespace SistemaResultadosDeportivos
             pnl.BackgroundImage = bitmapPerfil;
         }
 
-        private void btnJugadores_Click(object sender, EventArgs e)
+        private void SubFrmPlantelApp_Load(object sender, EventArgs e)
         {
-            Button btnJugador = sender as Button;
-            int i = (Int32)btnJugador.Tag;
-            var = i;
-            if(lgj.agregarJugadorAPlantel(idJugadores[var], equipo.idEquipo))
-            {
-                plantel.listarJugadoresPorPlantel(equipo.idEquipo);
-                this.Dispose();
-            }
-            else
-            {
-                MessageBox.Show("Ese jugador ya está en el plantel.");
-            }
-        }
-
-        private void FrmSeleccionarPlantel_Load(object sender, EventArgs e)
-        {
-            flpJugadores.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
-            pnlBuscar.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
-            pnlLupa.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
+            flpParticipantes.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
         }
     }
 }

@@ -78,5 +78,10 @@ namespace SistemaResultadosDeportivos
         {
             panel1.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
         }
+
+        private void btnPlantel_Click(object sender, EventArgs e)
+        {
+            new SubFrmPlantelApp(equipo).Visible = true;
+        }
     }
 }

@@ -33,6 +33,11 @@ namespace SistemaResultadosDeportivos
             cbxModalidad.Enabled = false;
             cbxPuntuacion.Enabled = false;
             numParticipantes.Enabled = false;
+            if (!deportes.obtenerDeporte().porEquipos)
+            {
+                txtAmonestacion.Visible = false;
+                btnAmonestacion.Visible = false;
+            }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
